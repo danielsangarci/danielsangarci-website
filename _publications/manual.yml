@@ -1,0 +1,112 @@
+# =====================================================================
+#  Publicaciones: lo unico que se edita a mano
+# =====================================================================
+#
+# Todo lo que tiene DOI y esta en tu ORCID se importa solo con
+# `_publications/actualizar.R` (datos de OpenAlex y Crossref). Lo que solo
+# aparece en OpenAlex nunca sale como entrada propia: como mucho, como boton
+# "Preprint" o "Data" de uno de tus trabajos.
+#
+# Este archivo sirve para tres cosas:
+#
+#   1. `ajustes`: retocar un trabajo importado, usando su DOI como clave.
+#      Todos los campos son opcionales.
+#
+#      Enlaces:
+#        pdf:       enlace al PDF (sustituye al que se detecte solo)
+#        code:      enlace al codigo (GitHub, Zenodo...)
+#        data:      enlace (o lista de enlaces) a los datos; se suma a los
+#                   detectados solos. `data: none` quita los detectados.
+#        preprint:  enlace al preprint (sustituye al detectado solo).
+#                   `preprint: none` quita el detectado.
+#
+#      Datos que vengan mal de Crossref/OpenAlex:
+#        title:     titulo corregido (admite *cursiva* para especies)
+#        authors:   lista de autores ["Apellido, I.", ...]
+#        venue, volume, issue, pages, year, editors, publisher
+#        type:      article | preprint | chapter | book
+#        abstract:  resumen, si la revista no lo comparte (p. ej. Elsevier)
+#        note:      nota corta que aparece bajo la referencia
+#        hide:      true para que no salga en la web
+#
+#      Solo para un preprint o un dataset (con SU DOI como clave):
+#        link_to:   DOI del articulo al que pertenece. Sirve cuando el
+#                   articulo se publico con otro titulo y no se emparejan
+#                   solos. `link_to: none` impide que se emparejen.
+#
+#   2. `extra`: trabajos SIN DOI o que no estan en ORCID.
+#      Campos: type (article | chapter | preprint | book), year,
+#      authors (lista "Apellido, I."), title, venue, volume, issue,
+#      pages, editors, publisher, url, pdf. Las especies van en *cursiva*.
+#
+#   3. `options`: ajustes de la pagina.
+#        citations: false para no mostrar el numero de citas (OpenAlex
+#                   cuenta menos que Google Scholar).
+#
+# Tu nombre se pone en negrita automaticamente.
+# ---------------------------------------------------------------------
+
+options:
+  citations: true
+
+ajustes:
+  "10.1016/j.gecco.2024.e03104":
+    pdf: "https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf"
+  "10.3897/afrinvertebr.67.180461":
+    pdf: "https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810"
+
+extra:
+  - type: chapter
+    year: 2019
+    authors: ["Angulo Aguado, E.", "Castro Cobo, S.", "Sánchez-García, D.", "Sergio, F.", "Reyes-López, J. L.", "Álvarez Blanco, P.", "Cerdá Sureda, X."]
+    title: "¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?"
+    editors: "J. Junoy (Ed.)"
+    venue: "Especies exóticas invasoras: Cátedra de parques nacionales"
+    pages: "249–262"
+    publisher: "Editorial Universidad de Alcalá"
+    url: "https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html"
+
+  - type: article
+    year: 2019
+    authors: ["García, F.", "Cuesta-Segura, A.", "Espadaler, X.", "García, J. C.", "Sánchez-García, D."]
+    title: "*Lasius piliferus* Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)"
+    venue: "Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)"
+    volume: "65"
+    pages: "39–44"
+    pdf: "http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf"
+
+  - type: article
+    year: 2018
+    authors: ["García García, F.", "Espadaler Gelabert, X.", "Cuesta-Segura, A. D.", "Sánchez-García, D."]
+    title: "Primera cita ibérica para *Temnothorax conatensis* Galkowski & Lebas, 2016, y actualización de la distribución para *Temnothorax grouvellei* (Bondroit, 1918) (Hymenoptera: Formicidae)"
+    venue: "Iberomyrmex"
+    volume: "10"
+    pages: "22–27"
+    pdf: "http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf"
+
+  - type: article
+    year: 2017
+    authors: ["Espadaler, X.", "Sánchez-García, D.", "García-García, F."]
+    title: "*Temnothorax ibericus* Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)"
+    venue: "Iberomyrmex"
+    volume: "9"
+    pages: "5–9"
+    pdf: "http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf"
+
+  - type: article
+    year: 2017
+    authors: ["Sánchez-García, D.", "Espadaler, X."]
+    title: "Una nueva especie parásita social para la península ibérica. *Bothriomyrmex communista* Santschi, 1919 (Hymenoptera: Formicidae) en España"
+    venue: "Iberomyrmex"
+    volume: "9"
+    pages: "11–13"
+    pdf: "https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11"
+
+  - type: article
+    year: 2015
+    authors: ["Sánchez-García, D.", "Espadaler, X."]
+    title: "*Cardiocondyla obscurior* Wheeler, 1929 (Hymenoptera, Formicidae) en España"
+    venue: "Iberomyrmex"
+    volume: "7"
+    pages: "7–9"
+    pdf: "http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf"

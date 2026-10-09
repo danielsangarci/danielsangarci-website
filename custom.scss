@@ -1449,3 +1449,205 @@ a.lightbox {
     transform: none;
   }
 }
+
+// ---------------------------------------------------------------------
+//  Publicaciones (publications.qmd + _publications/publications.ejs)
+// ---------------------------------------------------------------------
+.pubs-intro {
+  text-align: left;
+  font-size: 0.9rem;
+  color: $gray-600;
+  margin-bottom: 1.8rem;
+  p { margin: 0; }
+}
+
+.pubs { text-align: left; }
+
+// Barra de filtros y buscador
+.pubs-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid $dsg-hairline;
+}
+.pubs-filtros { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pubs-chip {
+  font-family: $headings-font-family;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.36rem 0.85rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: $border-radius-pill;
+  background-color: #ffffff;
+  color: $gray-700;
+  transition: $dsg-ease;
+  &:hover { border-color: rgba($primary, 0.35); color: $primary; }
+  &.is-active { background-color: $dsg-ink; border-color: $dsg-ink; color: #ffffff; }
+}
+.pubs-chip__n { margin-left: 0.15rem; opacity: 0.55; }
+.pubs-buscar {
+  position: relative;
+  flex: 1 1 14rem;
+  max-width: 20rem;
+  margin: 0;
+  .bi {
+    position: absolute;
+    top: 50%;
+    left: 0.9rem;
+    transform: translateY(-50%);
+    font-size: 0.78rem;
+    color: $gray-500;
+    pointer-events: none;
+  }
+  input {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.42rem 0.9rem 0.42rem 2.15rem;
+    border: 1px solid $dsg-hairline;
+    border-radius: $border-radius-pill;
+    background-color: #ffffff;
+    color: $body-color;
+    transition: $dsg-ease;
+    &:focus { outline: none; border-color: rgba($primary, 0.5); box-shadow: 0 0 0 3px $dsg-primary-soft; }
+  }
+}
+.pubs-vacio { margin-top: 1.5rem; font-style: italic; color: $gray-600; }
+
+// Un bloque por anio: el anio queda fijo a la izquierda mientras bajas
+.pubs-anio {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid $dsg-hairline;
+  &:last-child { border-bottom: 0; }
+}
+.pubs .pubs-anio__titulo {
+  position: sticky;
+  top: 5.5rem;
+  align-self: start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: $primary;
+}
+.pubs-lista { list-style: none; margin: 0; padding: 0; }
+
+.pub {
+  padding-bottom: 1.5rem;
+  &:last-child { padding-bottom: 0; }
+  & + .pub { padding-top: 1.5rem; border-top: 1px dashed $dsg-hairline; }
+}
+.pub__etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: $headings-font-family;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: $border-radius-pill;
+  background-color: $dsg-primary-soft;
+  color: $primary;
+  &--preprint { background-color: rgba($warning, 0.14); color: darken($warning, 24%); }
+  &--chapter, &--book { background-color: rgba($gray-600, 0.1); color: $gray-700; }
+  &--oa { background-color: rgba($success, 0.12); color: darken($success, 10%); }
+}
+.pub__citas { font-size: 0.7rem; color: $gray-500; }
+
+.pubs .pub__titulo {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.4;
+  a { color: $dsg-ink; transition: $dsg-ease; }
+  a:hover { color: $primary; text-decoration: none; }
+}
+.pub__autores {
+  margin: 0 0 0.15rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: $gray-700;
+  strong { color: $dsg-ink; }
+}
+.pub__revista { margin: 0 0 0.75rem; font-size: 0.82rem; line-height: 1.55; color: $gray-600; }
+.pub__nota { margin: -0.35rem 0 0.75rem; font-size: 0.78rem; color: $gray-600; }
+
+// Botones (DOI, PDF, Preprint, Data, Code, Abstract, Cite)
+.pub__acciones { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: $headings-font-family;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 0.28rem 0.72rem;
+  border: 1px solid rgba($primary, 0.25);
+  border-radius: $border-radius-pill;
+  background-color: transparent;
+  color: $primary;
+  transition: $dsg-ease;
+  .bi { font-size: 0.8rem; }
+  &:hover, &:focus-visible, &[aria-expanded="true"] {
+    background-color: $primary;
+    border-color: $primary;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &:hover { transform: translateY(-1px); }
+}
+
+// Paneles desplegables (resumen y cita)
+.pub__panel {
+  margin-top: 0.85rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.6rem;
+  background-color: #ffffff;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: $gray-700;
+  p { margin: 0; }
+  pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 0.72rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  pre code { white-space: inherit; overflow: visible; }
+  .pub-copiar { margin-top: 0.8rem; }
+}
+
+@media (max-width: 767.98px) {
+  .pubs-anio { grid-template-columns: minmax(0, 1fr); }
+  .pubs .pubs-anio__titulo { position: static; margin-bottom: 0.9rem; }
+  .pubs-buscar { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub-btn:hover { transform: none; }
+}

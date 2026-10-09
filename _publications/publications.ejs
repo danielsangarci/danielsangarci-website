@@ -1,0 +1,174 @@
+<%
+// Plantilla de la pagina de publicaciones. Los datos salen de
+// publications.yml (generado por actualizar.R). Aqui solo va el aspecto.
+// Ojo: Quarto usa plantillas de lodash, donde la etiqueta con guion escapa
+// el texto y la etiqueta con igual lo inserta tal cual (al reves que en EJS).
+// Solo van sin escapar los campos que actualizar.R ya deja limpios
+// (titulo, autores, revista, resumen y nota).
+const tipos = [
+  ["all", "All"],
+  ["article", "Articles"],
+  ["preprint", "Preprints"],
+  ["chapter", "Chapters"],
+  ["book", "Books"]
+];
+const cuenta = (t) => t === "all" ? items.length : items.filter(i => i.type === t).length;
+
+const anios = [];
+for (const it of items) {
+  const ultimo = anios[anios.length - 1];
+  if (ultimo && ultimo.year === it.year) ultimo.items.push(it);
+  else anios.push({ year: it.year, items: [it] });
+}
+let n = 0;
+%>
+```{=html}
+<div class="pubs">
+  <div class="pubs-barra">
+    <div class="pubs-filtros" role="group" aria-label="Filter by type">
+      <% for (const [clave, nombre] of tipos) { if (!cuenta(clave)) continue; %>
+      <button type="button" class="pubs-chip<%- clave === 'all' ? ' is-active' : '' %>" data-filtro="<%- clave %>" aria-pressed="<%- clave === 'all' %>">
+        <%- nombre %> <span class="pubs-chip__n"><%- cuenta(clave) %></span>
+      </button>
+      <% } %>
+    </div>
+    <label class="pubs-buscar">
+      <i class="bi bi-search" aria-hidden="true"></i>
+      <input type="search" placeholder="Search title, author, journal…" aria-label="Search publications">
+    </label>
+  </div>
+
+  <p class="pubs-vacio" hidden>No publications match your search.</p>
+
+  <% for (const grupo of anios) { %>
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored"><%- grupo.year %></h2>
+    <ol class="pubs-lista">
+      <% for (const it of grupo.items) { n++; const id = "pub-" + n; %>
+      <li class="pub" data-type="<%- it.type %>">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--<%- it.type %>"><%- it.type_label %></span>
+          <% if (it.oa) { %><span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span><% } %>
+          <% if (it.cited) { %><span class="pub__citas">Cited by <%- it.cited %></span><% } %>
+        </div>
+
+        <h3 class="pub__titulo"><a href="<%- it.url %>"><%= it.title %></a></h3>
+        <p class="pub__autores"><%= it.authors %></p>
+        <p class="pub__revista"><%= it.venue %></p>
+        <% if (it.note) { %><p class="pub__nota"><%= it.note %></p><% } %>
+
+        <div class="pub__acciones">
+          <% if (it.doi) { %><a class="pub-btn" href="https://doi.org/<%- it.doi %>"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a><% } %>
+          <% if (!it.doi && it.url && it.url !== it.pdf) { %><a class="pub-btn" href="<%- it.url %>"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Link</a><% } %>
+          <% if (it.free) { %><a class="pub-btn" href="<%- it.free %>"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a><% } %>
+          <% if (it.pdf) { %><a class="pub-btn" href="<%- it.pdf %>"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a><% } %>
+          <% if (it.preprint) { %><a class="pub-btn" href="<%- it.preprint %>"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a><% } %>
+          <% (it.data || []).forEach((url, k) => { %><a class="pub-btn" href="<%- url %>"><i class="bi bi-database" aria-hidden="true"></i>Data<%- it.data.length > 1 ? " " + (k + 1) : "" %></a><% }) %>
+          <% if (it.code) { %><a class="pub-btn" href="<%- it.code %>"><i class="bi bi-code-slash" aria-hidden="true"></i>Code</a><% } %>
+          <% if (it.abstract) { %><button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="<%- id %>-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button><% } %>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="<%- id %>-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        <% if (it.abstract) { %>
+        <div class="pub__panel" id="<%- id %>-abs" hidden><p><%= it.abstract %></p></div>
+        <% } %>
+        <div class="pub__panel pub__panel--bib" id="<%- id %>-bib" hidden>
+          <pre><code><%- it.bibtex %></code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      <% } %>
+    </ol>
+  </section>
+  <% } %>
+</div>
+
+<script>
+(function () {
+  var raiz = document.currentScript.previousElementSibling;
+  var chips = raiz.querySelectorAll('.pubs-chip');
+  var buscador = raiz.querySelector('.pubs-buscar input');
+  var pubs = raiz.querySelectorAll('.pub');
+  var vacio = raiz.querySelector('.pubs-vacio');
+  var filtro = 'all';
+
+  function normalizar(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+  pubs.forEach(function (p) {
+    p.dataset.texto = normalizar(
+      p.querySelector('.pub__titulo').textContent + ' ' +
+      p.querySelector('.pub__autores').textContent + ' ' +
+      p.querySelector('.pub__revista').textContent);
+  });
+
+  function aplicar() {
+    var q = normalizar(buscador.value.trim());
+    var visibles = 0;
+    pubs.forEach(function (p) {
+      var ok = (filtro === 'all' || p.dataset.type === filtro) &&
+               (!q || p.dataset.texto.indexOf(q) !== -1);
+      p.hidden = !ok;
+      if (ok) visibles++;
+    });
+    raiz.querySelectorAll('.pubs-anio').forEach(function (s) {
+      s.hidden = !s.querySelector('.pub:not([hidden])');
+    });
+    vacio.hidden = visibles > 0;
+  }
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      filtro = c.dataset.filtro;
+      chips.forEach(function (o) {
+        o.classList.toggle('is-active', o === c);
+        o.setAttribute('aria-pressed', o === c);
+      });
+      aplicar();
+    });
+  });
+  buscador.addEventListener('input', aplicar);
+
+  // Abstract / Cite: abre su panel y cierra el otro de la misma entrada
+  raiz.addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.pub-btn--toggle');
+    if (boton) {
+      var pub = boton.closest('.pub');
+      var abrir = boton.getAttribute('aria-expanded') !== 'true';
+      pub.querySelectorAll('.pub-btn--toggle').forEach(function (b) {
+        var panel = document.getElementById(b.getAttribute('aria-controls'));
+        var este = b === boton && abrir;
+        b.setAttribute('aria-expanded', este);
+        panel.hidden = !este;
+      });
+      return;
+    }
+    var copiar = ev.target.closest('.pub-copiar');
+    if (copiar) {
+      var codigo = copiar.parentElement.querySelector('code');
+      var etiqueta = copiar.querySelector('span');
+      var avisar = function (texto) {
+        etiqueta.textContent = texto;
+        setTimeout(function () { etiqueta.textContent = 'Copy BibTeX'; }, 1800);
+      };
+      var aMano = function () {
+        // Navegadores sin acceso al portapapeles: selecciona el texto
+        var rango = document.createRange();
+        rango.selectNodeContents(codigo);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(rango);
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        avisar(ok ? 'Copied!' : 'Press Ctrl/⌘+C');
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(codigo.textContent).then(function () { avisar('Copied!'); }, aMano);
+      } else {
+        aMano();
+      }
+    }
+  });
+})();
+</script>
+```

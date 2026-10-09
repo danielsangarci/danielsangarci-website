@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  # Actualiza la lista de publicaciones (ORCID + OpenAlex + Crossref).
+  # Consulta internet como mucho una vez al dia; sin conexion usa la copia.
+  pre-render: Rscript _publications/actualizar.R
 
 website:
   site-url: https://danielsangarci.github.io/

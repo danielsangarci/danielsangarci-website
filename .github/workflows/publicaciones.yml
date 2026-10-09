@@ -1,0 +1,97 @@
+# Actualiza la pagina de publicaciones una vez por semana.
+#
+# Consulta ORCID, OpenAlex y Crossref (_publications/actualizar.R). Si hay
+# algo nuevo (un articulo, un preprint, un dataset, nuevas citas...),
+# renderiza solo publications.qmd y sube el resultado a docs/, que es lo
+# que publica GitHub Pages. Si no hay cambios, no toca nada.
+#
+# Avisos:
+#   - Si aparece un trabajo nuevo en la web, abre un issue con la lista
+#     para que compruebes que es tuyo y esta bien (te llega por email).
+#   - Si ORCID/OpenAlex/Crossref fallan, la tarea sale en rojo y GitHub
+#     avisa por email. La web se queda como estaba.
+#
+# Tambien se puede lanzar a mano: pestana Actions -> "Actualizar
+# publicaciones" -> Run workflow.
+
+name: Actualizar publicaciones
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # lunes a las 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # subir la pagina actualizada
+  issues: write     # avisar de trabajos nuevos
+  actions: write    # mantener activa la tarea (ver el ultimo paso)
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    env:
+      PUBS_NOVEDADES: /tmp/novedades.txt
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Paquetes de R
+        run: Rscript -e 'install.packages(c("yaml", "jsonlite", "curl"))'
+
+      - name: Consultar ORCID, OpenAlex y Crossref
+        run: Rscript _publications/actualizar.R --forzar
+
+      - name: Comprobar si hay cambios
+        id: cambios
+        run: |
+          if git diff --quiet -- publications.yml; then
+            echo "hay=no" >> "$GITHUB_OUTPUT"
+            echo "Sin novedades."
+          else
+            echo "hay=si" >> "$GITHUB_OUTPUT"
+            git diff --stat -- publications.yml
+          fi
+
+      # La misma version de Quarto que en local, para que el CSS no cambie
+      - uses: quarto-dev/quarto-actions/setup@v2
+        if: steps.cambios.outputs.hay == 'si'
+        with:
+          version: 1.9.38
+
+      - name: Renderizar la pagina de publicaciones
+        if: steps.cambios.outputs.hay == 'si'
+        run: quarto render publications.qmd
+
+      - name: Subir los cambios
+        if: steps.cambios.outputs.hay == 'si'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add publications.yml _publications/cache.json docs/
+          git commit -m "Publicaciones actualizadas desde ORCID"
+          git push
+
+      - name: Avisar de trabajos nuevos
+        if: steps.cambios.outputs.hay == 'si'
+        run: |
+          [ -s "$PUBS_NOVEDADES" ] || { echo "Ningun trabajo nuevo."; exit 0; }
+          {
+            echo "Han aparecido en la web estos trabajos nuevos:"
+            echo
+            cat "$PUBS_NOVEDADES"
+            echo
+            echo "Comprueba en https://danielsangarci.com/publications.html que son tuyos y que los datos estan bien."
+            echo "Si alguno no es tuyo, o hay que corregir algo, editalo en \`_publications/manual.yml\` (\`hide: true\`, \`authors:\`, \`link_to:\`...)."
+            echo "Despues, cierra este issue."
+          } > aviso.md
+          gh issue create --title "Nuevas publicaciones en la web" --body-file aviso.md
+
+      # GitHub pausa las tareas programadas de un repositorio que pasa 60
+      # dias sin actividad. Volver a activarla en cada ejecucion lo evita.
+      - name: Mantener activa la tarea
+        if: always()
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/publicaciones.yml/enable"

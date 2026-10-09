@@ -1,0 +1,316 @@
+# ARCHIVO GENERADO por _publications/actualizar.R -- no editar a mano.
+# Para cambiar algo, edita _publications/manual.yml.
+- type: article
+  type_label: Journal article
+  year: 2026
+  title: 'Uncovering ant diversity across forest successional stages in the Yangambi
+    Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling'
+  url: https://doi.org/10.3897/afrinvertebr.67.180461
+  authors: Ambakina, H., Gómez, K., Monzenga, J.-C., <strong>Sánchez-García, D.</strong>,
+    and Dekoninck, W.
+  venue: <i>African Invertebrates</i>, 67(1), 65–91
+  doi: 10.3897/afrinvertebr.67.180461
+  pdf: https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810
+  preprint: https://doi.org/10.64898/2025.12.04.692217
+  data:
+    - https://doi.org/10.5281/zenodo.17809129
+  oa: true
+  abstract: Litter ant communities constitute an important component of biodiversity
+    in tropical regions. They are currently used in several ecosystem management programmes
+    to assess forest health. The aim of this study was to uncover the ant diversity
+    across forest successional stages (fallow land, secondary forest and primary forest)
+    in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These
+    habitats were sampled at six localities using pitfall traps and Winkler extractions.
+    In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded
+    in the Yangambi Biosphere Reserve. Ant diversity increased significantly along
+    the successional gradient, being lowest in fallow land, intermediate in secondary
+    forest, and highest in primary forest. Sixty ant species were shared across all
+    three habitats, while each habitat supported a distinct assemblage of species.
+    Primary forests contained the greatest number of exclusive species, followed by
+    secondary forests and fallow land. Winkler extractors captured substantially more
+    ant species than pitfall traps, recording nearly 50% greater species richness.
+    However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve
+    likely remains unrecorded, and additional sampling methods (like arboreal traps,
+    net sweeping and baiting) could provide a more complete picture of its biodiversity.
+  bibtex: |-
+    @article{ambakina2026uncovering,
+      title = {Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling},
+      author = {Ambakina, Hervé and Gómez, Kiko and Monzenga, Jean-Claude and Sánchez-García, Daniel and Dekoninck, Wouter},
+      year = {2026},
+      journal = {African Invertebrates},
+      volume = {67},
+      number = {1},
+      pages = {65--91},
+      doi = {10.3897/afrinvertebr.67.180461}
+    }
+- type: preprint
+  type_label: Preprint
+  year: 2025
+  title: Ongoing coevolution between reintroduced <i>Phengaris teleius</i> butterflies
+    and their <i>Myrmica</i> host ants
+  url: https://doi.org/10.64898/2025.12.02.691951
+  authors: <strong>Sánchez-García, D.</strong>, Wynhoff, I., d’Ettorre, P., Leroy,
+    C., Kajzer-Bonk, J., Maák, I. E., Barbero, F., Casacci, L. P., and Witek, M.
+  venue: <i>bioRxiv</i>
+  doi: 10.64898/2025.12.02.691951
+  data:
+    - https://doi.org/10.5281/zenodo.17791047
+  oa: true
+  abstract: 'Coevolutionary interactions between parasites and hosts are key drivers
+    of biological adaptation. In this study, we explore the evolutionary response
+    of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis
+    , taking advantage of a unique opportunity: the reintroduction of the butterfly
+    in the Netherlands thirty years ago. We compared the degree of host mimicry and
+    behavioural performance of caterpillars between the reintroduced and the Polish
+    source population. After about thirty generations, chemical and vibroacoustical
+    signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption
+    phase for both groups; however, in the post-adoption phase, the source population
+    showed significantly higher chemical similarity to their local hosts. In contrast,
+    reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling
+    local hosts, also resulting in a stronger response from their local host ants.
+    This suggests that adoption is driven by acoustics and subsequently serves as
+    a selective filter promoting post-entry chemical refinement. Behavioural data
+    evince that despite the differences between the different communication channels,
+    the combination of signals remains sufficient to ensure recognition and integration
+    in both host-parasite systems. These results illustrate how social parasites involved
+    in multisensory mimicry can rapidly recalibrate strategies to remain functional
+    in new ecological contexts.'
+  bibtex: |-
+    @misc{sanchezgarcia2025ongoing,
+      title = {Ongoing coevolution between reintroduced Phengaris teleius butterflies and their Myrmica host ants},
+      author = {Sánchez-García, Daniel and Wynhoff, Irma and d’Ettorre, Patrizia and Leroy, Chloé and Kajzer-Bonk, Joanna and Maák, István Elek and Barbero, Francesca and Casacci, Luca Pietro and Witek, Magdalena},
+      year = {2025},
+      howpublished = {bioRxiv},
+      doi = {10.64898/2025.12.02.691951}
+    }
+- type: article
+  type_label: Journal article
+  year: 2024
+  title: Temporal and spatial variation of morphological traits and genetic structure
+    in Phengaris teleius myrmecophilous butterflies following habitat and climate
+    changes three decades after reintroduction
+  url: https://doi.org/10.1016/j.gecco.2024.e03104
+  authors: <strong>Sánchez-García, D.</strong>, Wynhoff, I., Kajzer-Bonk, J., Sztencel-Jabłonka,
+    A., Nowicki, P., Casacci, L. P., and Witek, M.
+  venue: <i>Global Ecology and Conservation</i>, 54, e03104
+  doi: 10.1016/j.gecco.2024.e03104
+  pdf: https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf
+  preprint: https://doi.org/10.2139/ssrn.4779205
+  oa: true
+  cited: 3
+  abstract: A successful reintroduction of Phengaris teleius performed in the Netherlands
+    by translocating 86 individuals from a Polish metapopulation in 1990 represents
+    a unique opportunity to study changes in butterflies from a source and reintroduced
+    metapopulation after such a common conservation practice. Using multilevel comparisons,
+    we tested morphological and genetic changes that occurred after 30 generations
+    since the reintroduction. We also assessed the climatic and connectivity changes
+    that occurred over time in both metapopulation networks. Unexpectedly, we found
+    more significant morphological changes in the current individuals from the source
+    metapopulation, where both sexes had bigger hindwings with different shapes in
+    comparison to the individuals from the original metapopulation in the year of
+    the reintroduction and the ones from the current reintroduced metapopulation.
+    The butterflies from the Dutch metapopulation also had smaller thorax width compared
+    to the ones from the current source metapopulation. The observed morphological
+    changes can be shaped by various factors like changes in climatic conditions and
+    habitat connectivity. Additionally, the genetic analysis revealed a differentiation
+    between the source and reintroduced metapopulation. We found a loss of half of
+    the allelic richness and a bottleneck effect in the reintroduced metapopulation
+    compared to the current Polish one. Our results show that Phengaris butterflies
+    have the potential to adapt to new habitats and respond to climatic changes despite
+    their complex life cycle. A proper long-term habitat management in reintroduced
+    butterfly metapopulations and habitat restoration are key factors influencing
+    the success of reintroduction.
+  bibtex: |-
+    @article{sanchezgarcia2024temporal,
+      title = {Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades after reintroduction},
+      author = {Sánchez-García, Daniel and Wynhoff, Irma and Kajzer-Bonk, Joanna and Sztencel-Jabłonka, Anna and Nowicki, Piotr and Casacci, Luca Pietro and Witek, Magdalena},
+      year = {2024},
+      journal = {Global Ecology and Conservation},
+      volume = {54},
+      pages = {e03104},
+      doi = {10.1016/j.gecco.2024.e03104}
+    }
+- type: article
+  type_label: Journal article
+  year: 2024
+  title: Urban abiotic stressors drive changes in the foraging activity and colony
+    growth of the black garden ant Lasius niger
+  url: https://doi.org/10.1016/j.scitotenv.2024.170157
+  authors: Trigos-Peral, G., Maák, I. E., Schmid, S., Chudzik, P., Czaczkes, T. J.,
+    Witek, M., Casacci, L. P., <strong>Sánchez-García, D.</strong>, Lőrincz, Á., Kochanowski,
+    M., and Heinze, J.
+  venue: <i>Science of The Total Environment</i>, 915, 170157
+  doi: 10.1016/j.scitotenv.2024.170157
+  free: https://hdl.handle.net/2318/1978112
+  preprint: https://doi.org/10.2139/ssrn.4610852
+  data:
+    - https://doi.org/10.6084/m9.figshare.23507211
+  oa: true
+  cited: 19
+  bibtex: |-
+    @article{trigosperal2024urban,
+      title = {Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger},
+      author = {Trigos-Peral, G. and Maák, I.E. and Schmid, S. and Chudzik, P. and Czaczkes, T.J. and Witek, M. and Casacci, L.P. and Sánchez-García, D. and Lőrincz, Á. and Kochanowski, M. and Heinze, J.},
+      year = {2024},
+      journal = {Science of The Total Environment},
+      volume = {915},
+      pages = {170157},
+      doi = {10.1016/j.scitotenv.2024.170157}
+    }
+- type: article
+  type_label: Journal article
+  year: 2022
+  title: 'Temperature or competition: Which has more influence on Mediterranean ant
+    communities?'
+  url: https://doi.org/10.1371/journal.pone.0267547
+  authors: <strong>Sánchez-García, D.</strong>, Cerdá, X., and Angulo, E.
+  venue: <i>PLOS ONE</i>, 17(4), e0267547
+  doi: 10.1371/journal.pone.0267547
+  pdf: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable
+  oa: true
+  cited: 8
+  abstract: Temperature and competition are two of the main factors determining ant
+    community assemblages. Temperature may allow species to forage more or less efficiently
+    throughout the day (in accordance with the maximum activity temperature of each
+    species). Competition can be observed and quantified from species replacements
+    occurring during resource exploitation. We studied the interspecific competitive
+    interactions of ant communities from the Doñana Biological Reserve (southern Spain).
+    Ants were sampled from pitfall traps and baits in three habitats with contrasted
+    vegetation physiognomy (savin forest, pine forest, and dry scrubland). We measured
+    the temperature during the competitive interactions between species and created
+    a thermal competition index (TCI) to assess the relative contribution of temperature
+    and numerical dominance to the competitive outcomes. Temperature had unequal effects
+    on ant activity in each type of habitat, and modulated competitive interactions.
+    The TCI showed that a species’ success during pair interactions (replacements
+    at baits) was driven by the proportion of workers between the two competing species
+    and by the species-specific effect of temperature (how advantageous the temperature
+    change is for each species during bait replacement). During competitive interactions,
+    the effect of temperature (higher values of TCI) and numeric supremacy (higher
+    worker proportion) gave higher success probabilities. Interspecific competitive
+    relationships in these Mediterranean ant communities are habitat dependent and
+    greatly influenced by temperature.
+  bibtex: |-
+    @article{sanchezgarcia2022temperature,
+      title = {Temperature or competition: Which has more influence on Mediterranean ant communities?},
+      author = {Sánchez-García, Daniel and Cerdá, Xim and Angulo, Elena},
+      year = {2022},
+      journal = {PLOS ONE},
+      volume = {17},
+      number = {4},
+      pages = {e0267547},
+      doi = {10.1371/journal.pone.0267547}
+    }
+- type: chapter
+  type_label: Book chapter
+  year: 2019
+  title: ¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?
+  url: https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html
+  authors: Angulo Aguado, E., Castro Cobo, S., <strong>Sánchez-García, D.</strong>,
+    Sergio, F., Reyes-López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X.
+  venue: 'In J. Junoy (Ed.), <i>Especies exóticas invasoras: Cátedra de parques nacionales</i>
+    (pp. 249–262). Editorial Universidad de Alcalá'
+  bibtex: |-
+    @incollection{anguloaguado2019podra,
+      title = {¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?},
+      author = {Angulo Aguado, E. and Castro Cobo, S. and Sánchez-García, D. and Sergio, F. and Reyes-López, J. L. and Álvarez Blanco, P. and Cerdá Sureda, X.},
+      year = {2019},
+      booktitle = {Especies exóticas invasoras: Cátedra de parques nacionales},
+      editor = {J. Junoy},
+      pages = {249--262},
+      publisher = {Editorial Universidad de Alcalá}
+    }
+- type: article
+  type_label: Journal article
+  year: 2019
+  title: '<i>Lasius piliferus</i> Seifert, 1992: descripción de la reina y actualización
+    de su distribución ibérica (Hymenoptera: Formicidae)'
+  url: http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf
+  authors: García, F., Cuesta-Segura, A., Espadaler, X., García, J. C., and <strong>Sánchez-García,
+    D.</strong>
+  venue: <i>Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)</i>, 65, 39–44
+  pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf
+  bibtex: |-
+    @article{garcia2019lasius,
+      title = {Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)},
+      author = {García, F. and Cuesta-Segura, A. and Espadaler, X. and García, J. C. and Sánchez-García, D.},
+      year = {2019},
+      journal = {Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)},
+      volume = {65},
+      pages = {39--44}
+    }
+- type: article
+  type_label: Journal article
+  year: 2018
+  title: 'Primera cita ibérica para <i>Temnothorax conatensis</i> Galkowski &amp;
+    Lebas, 2016, y actualización de la distribución para <i>Temnothorax grouvellei</i>
+    (Bondroit, 1918) (Hymenoptera: Formicidae)'
+  url: http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf
+  authors: García García, F., Espadaler Gelabert, X., Cuesta-Segura, A. D., and <strong>Sánchez-García,
+    D.</strong>
+  venue: <i>Iberomyrmex</i>, 10, 22–27
+  pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf
+  bibtex: |-
+    @article{garciagarcia2018primera,
+      title = {Primera cita ibérica para Temnothorax conatensis Galkowski \& Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (Bondroit, 1918) (Hymenoptera: Formicidae)},
+      author = {García García, F. and Espadaler Gelabert, X. and Cuesta-Segura, A. D. and Sánchez-García, D.},
+      year = {2018},
+      journal = {Iberomyrmex},
+      volume = {10},
+      pages = {22--27}
+    }
+- type: article
+  type_label: Journal article
+  year: 2017
+  title: <i>Temnothorax ibericus</i> Menozzi (1922), un endemismo ibérico orófilo
+    (Hymenoptera, Formicidae)
+  url: http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf
+  authors: Espadaler, X., <strong>Sánchez-García, D.</strong>, and García-García,
+    F.
+  venue: <i>Iberomyrmex</i>, 9, 5–9
+  pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf
+  bibtex: |-
+    @article{espadaler2017temnothorax,
+      title = {Temnothorax ibericus Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)},
+      author = {Espadaler, X. and Sánchez-García, D. and García-García, F.},
+      year = {2017},
+      journal = {Iberomyrmex},
+      volume = {9},
+      pages = {5--9}
+    }
+- type: article
+  type_label: Journal article
+  year: 2017
+  title: 'Una nueva especie parásita social para la península ibérica. <i>Bothriomyrmex
+    communista</i> Santschi, 1919 (Hymenoptera: Formicidae) en España'
+  url: https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11
+  authors: <strong>Sánchez-García, D.</strong> and Espadaler, X.
+  venue: <i>Iberomyrmex</i>, 9, 11–13
+  pdf: https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11
+  bibtex: |-
+    @article{sanchezgarcia2017nueva,
+      title = {Una nueva especie parásita social para la península ibérica. Bothriomyrmex communista Santschi, 1919 (Hymenoptera: Formicidae) en España},
+      author = {Sánchez-García, D. and Espadaler, X.},
+      year = {2017},
+      journal = {Iberomyrmex},
+      volume = {9},
+      pages = {11--13}
+    }
+- type: article
+  type_label: Journal article
+  year: 2015
+  title: <i>Cardiocondyla obscurior</i> Wheeler, 1929 (Hymenoptera, Formicidae) en
+    España
+  url: http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf
+  authors: <strong>Sánchez-García, D.</strong> and Espadaler, X.
+  venue: <i>Iberomyrmex</i>, 7, 7–9
+  pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf
+  bibtex: |-
+    @article{sanchezgarcia2015cardiocondyla,
+      title = {Cardiocondyla obscurior Wheeler, 1929 (Hymenoptera, Formicidae) en España},
+      author = {Sánchez-García, D. and Espadaler, X.},
+      year = {2015},
+      journal = {Iberomyrmex},
+      volume = {7},
+      pages = {7--9}
+    }
+

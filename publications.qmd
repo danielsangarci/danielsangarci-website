@@ -2,48 +2,20 @@
 title: "Publications"
 title-block-banner: false
 comments: false
+toc: false
+# La lista se genera sola: _publications/actualizar.R lee ORCID, OpenAlex
+# y Crossref y escribe publications.yml. Los trabajos sin DOI
+# y los retoques a mano van en _publications/manual.yml.
+listing:
+  id: pubs
+  contents: publications.yml
+  template: _publications/publications.ejs
+  sort: false
 ---
 
-Also in [my Google Scholar profile](https://scholar.google.com/citations?hl=en&user=5EQSDqwAAAAJ)
+::: pubs-intro
+Also on [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?hl=en&user=5EQSDqwAAAAJ) and [{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0002-0710-6292). If a paper is not open access, [{{< fa envelope >}} reach out to me](contact.qmd) and I will send you a copy.
+:::
 
-Reach me out to obtain the paper if it is not available through open access!   [{{< fa envelope >}}](contact.qmd)
-
-## 2025
-
-10. Hervé Ambakina, H., Kiko Gómez, K., Monzenga, J.C., Sánchez-García, D., Dekoninck, W. (2026). Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling. *African Invertebrates*, 67: 65-91.   [{{< fa link >}}](https://doi.org/10.3897/AfrInvertebr.67.180461)     [{{< fa file-pdf >}}](https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810)
-
-## 2024
-
-9.  **Sánchez‑García, D.**, Wynhoff, I., Kajzer‑Bonk, J., Sztencel‑Jablonka, A., Nowicki, P., Casacci, L. P., and Witek, M. (2024). Temporal and spatial variation of morphological traits and genetic structure in *Phengaris teleius* myrmecophilous butterflies following habitat and climate changes three decades after reintroduction. *Global Ecology and Conservation*, 54, e03104.   [{{< fa link >}}](https://doi.org/10.1016/j.gecco.2024.e03104)     [{{< fa file-pdf >}}](https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf)
-
-<!-- -->
-
-8.  Trigos‑Peral, G., Maák, I.E., Schmid, S., Chudzik, P., Czaczkes, T.J., Witek, M., Casacci, L.P., **Sánchez‑García, D.**, Lorincz, Á., Kochanowski, M., and Heinze, J. (2024). Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant *Lasius niger*. *Science of the Total Environment*, 915, 170157. [{{< fa link >}}](https://doi.org/10.1016/j.scitotenv.2024.170157)
-
-## 2022
-
-7.  **Sánchez-García, D.**, Cerdá, X. and Angulo, E. (2022) Temperature or competition: Which has more influence on Mediterranean ant communities? *PloS ONE,* 17(4): e0267547.   [{{< fa link >}}](https://doi.org/10.1371/journal.pone.0267547)     [{{< fa file-pdf >}}](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable)
-
-## 2019
-
-6.  Angulo Aguado, E., Castro Cobo, S., **Sánchez‑García, D.**, Sergio, F., Reyes‑López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X. (2019). ¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana? In J. Junoy (Ed.), *Especies exóticas invasoras: Catedra de parques nacionales* (pp. 249–262). Editorial Universidad de Alcalá.   [{{< fa link >}}](https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html)
-
-<!-- -->
-
-5.  García, F., Cuesta-Segura, A., Espadaler, X., García, J.C. and **Sánchez-García, D.** (2019) *Lasius piliferus* Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae). *Boletín de la Sociedad Entomológica Aragonesa (S.E.A.),* 65: 39-44. [{{< fa file-pdf >}}](http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf)
-
-## 2018
-
-4.  García García, F., Espadaler Gelabert, X., Cuesta‑Segura, A.D., & **Sánchez‑García, D.** (2018) Primera cita ibérica para Temnothorax conatensis Galkowski & Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (bondroit, 1918) (Hymenoptera: Formicidae). *Iberomyrmex*,10: 22--27. [{{< fa file-pdf >}}](http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf)
-
-## 2017
-
-3.  Espadaler, X., **Sánchez-García, D.**, García-García, F. (2017) *Temnothorax ibericus* Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae). *Iberomyrmex,* 9: 5-9. [{{< fa file-pdf >}}](http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf)
-
-<!-- -->
-
-2.  **Sánchez-García, D.** and Espadaler, X. (2017) Una nueva especie parásita social para la península ibérica. *Bothriomyrmex communista* Santschi, 1919 (Hymenoptera: Formicidae) en España. *Iberomyrmex,* 9: 11-13. [{{< fa file-pdf >}}](https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11)
-
-## 2015
-
-1.  **Sánchez-García, D.** and Espadaler, X. (2015) *Cardiocondyla obscurior* Wheeler, 1929 (Hymenoptera, Formicidae) en España. *Iberomyrmex,* 7: 7-9. [{{< fa file-pdf >}}](http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf)
+::: {#pubs}
+:::

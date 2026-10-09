@@ -34,6 +34,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./img/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -47,11 +49,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-125621c42c42094e7c526ee5b5992823.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-772525d82210aba7f5c084a75996fb8d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-125621c42c42094e7c526ee5b5992823.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-feb1641e436ef654657d266f6c53a61e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,6 +83,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-pubs .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-preprint','listing-data','listing-oa','listing-abstract','listing-bibtex','listing-cited','listing-free',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-preprint","listing-data","listing-oa","listing-abstract","listing-bibtex","listing-cited","listing-free"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-pubs'] = new List('listing-pubs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H3GD3Z7KWV"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -113,13 +146,40 @@ cookieconsent.run({
 <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
 <link rel="apple-touch-icon" href="./img/favicon.png">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Publications – Daniel Sánchez-García">
-<meta property="og:description" content="">
 <meta property="og:site_name" content="Daniel Sánchez-García">
 <meta name="twitter:title" content="Publications – Daniel Sánchez-García">
-<meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@DanielSánchez-García">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -351,23 +411,9 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2024</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2022</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2019</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2018</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2017</a></li>
-  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">2015</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -377,7 +423,7 @@ cookieconsent.run({
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -389,64 +435,623 @@ cookieconsent.run({
 </header>
 
 
-<p>Also in <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">my Google Scholar profile</a></p>
-<p>Reach me out to obtain the paper if it is not available through open access! &nbsp; <a href="./contact.html"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a></p>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">2025</h2>
-<ol start="10" type="1">
-<li>Hervé Ambakina, H., Kiko Gómez, K., Monzenga, J.C., Sánchez-García, D., Dekoninck, W. (2026). Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling. <em>African Invertebrates</em>, 67: 65-91. &nbsp; <a href="https://doi.org/10.3897/AfrInvertebr.67.180461"><i class="fa-solid fa-link" aria-label="link"></i></a> &nbsp;&nbsp;&nbsp; <a href="https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-</section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">2024</h2>
-<ol start="9" type="1">
-<li><strong>Sánchez‑García, D.</strong>, Wynhoff, I., Kajzer‑Bonk, J., Sztencel‑Jablonka, A., Nowicki, P., Casacci, L. P., and Witek, M. (2024). Temporal and spatial variation of morphological traits and genetic structure in <em>Phengaris teleius</em> myrmecophilous butterflies following habitat and climate changes three decades after reintroduction. <em>Global Ecology and Conservation</em>, 54, e03104. &nbsp; <a href="https://doi.org/10.1016/j.gecco.2024.e03104"><i class="fa-solid fa-link" aria-label="link"></i></a> &nbsp;&nbsp;&nbsp; <a href="https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&amp;pid=1-s2.0-S2351989424003081-main.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-<!-- -->
-<ol start="8" type="1">
-<li>Trigos‑Peral, G., Maák, I.E., Schmid, S., Chudzik, P., Czaczkes, T.J., Witek, M., Casacci, L.P., <strong>Sánchez‑García, D.</strong>, Lorincz, Á., Kochanowski, M., and Heinze, J. (2024). Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant <em>Lasius niger</em>. <em>Science of the Total Environment</em>, 915, 170157. <a href="https://doi.org/10.1016/j.scitotenv.2024.170157"><i class="fa-solid fa-link" aria-label="link"></i></a></li>
-</ol>
-</section>
-<section id="section-2" class="level2">
-<h2 class="anchored" data-anchor-id="section-2">2022</h2>
-<ol start="7" type="1">
-<li><strong>Sánchez-García, D.</strong>, Cerdá, X. and Angulo, E. (2022) Temperature or competition: Which has more influence on Mediterranean ant communities? <em>PloS ONE,</em> 17(4): e0267547. &nbsp; <a href="https://doi.org/10.1371/journal.pone.0267547"><i class="fa-solid fa-link" aria-label="link"></i></a> &nbsp;&nbsp;&nbsp; <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&amp;type=printable"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-</section>
-<section id="section-3" class="level2">
-<h2 class="anchored" data-anchor-id="section-3">2019</h2>
-<ol start="6" type="1">
-<li>Angulo Aguado, E., Castro Cobo, S., <strong>Sánchez‑García, D.</strong>, Sergio, F., Reyes‑López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X. (2019). ¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana? In J. Junoy (Ed.), <em>Especies exóticas invasoras: Catedra de parques nacionales</em> (pp.&nbsp;249–262). Editorial Universidad de Alcalá. &nbsp; <a href="https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html"><i class="fa-solid fa-link" aria-label="link"></i></a></li>
-</ol>
-<!-- -->
-<ol start="5" type="1">
-<li>García, F., Cuesta-Segura, A., Espadaler, X., García, J.C. and <strong>Sánchez-García, D.</strong> (2019) <em>Lasius piliferus</em> Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae). <em>Boletín de la Sociedad Entomológica Aragonesa (S.E.A.),</em> 65: 39-44. <a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-</section>
-<section id="section-4" class="level2">
-<h2 class="anchored" data-anchor-id="section-4">2018</h2>
-<ol start="4" type="1">
-<li>García García, F., Espadaler Gelabert, X., Cuesta‑Segura, A.D., &amp; <strong>Sánchez‑García, D.</strong> (2018) Primera cita ibérica para Temnothorax conatensis Galkowski &amp; Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (bondroit, 1918) (Hymenoptera: Formicidae). <em>Iberomyrmex</em>,10: 22–27. <a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-</section>
-<section id="section-5" class="level2">
-<h2 class="anchored" data-anchor-id="section-5">2017</h2>
-<ol start="3" type="1">
-<li>Espadaler, X., <strong>Sánchez-García, D.</strong>, García-García, F. (2017) <em>Temnothorax ibericus</em> Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae). <em>Iberomyrmex,</em> 9: 5-9. <a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-<!-- -->
-<ol start="2" type="1">
-<li><strong>Sánchez-García, D.</strong> and Espadaler, X. (2017) Una nueva especie parásita social para la península ibérica. <em>Bothriomyrmex communista</em> Santschi, 1919 (Hymenoptera: Formicidae) en España. <em>Iberomyrmex,</em> 9: 11-13. <a href="https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
-</section>
-<section id="section-6" class="level2">
-<h2 class="anchored" data-anchor-id="section-6">2015</h2>
-<ol type="1">
-<li><strong>Sánchez-García, D.</strong> and Espadaler, X. (2015) <em>Cardiocondyla obscurior</em> Wheeler, 1929 (Hymenoptera, Formicidae) en España. <em>Iberomyrmex,</em> 7: 7-9. <a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i></a></li>
-</ol>
+<div class="pubs-intro">
+<p>Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ"><i class="ai  ai-google-scholar" title="" style="color:"></i> Google Scholar</a> and <a href="https://orcid.org/0000-0002-0710-6292"><i class="fa-brands fa-orcid" aria-label="orcid"></i> ORCID</a>. If a paper is not open access, <a href="./contact.html"><i class="fa-solid fa-envelope" aria-label="envelope"></i> reach out to me</a> and I will send you a copy.</p>
+</div>
+<div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
+<div class="pubs">
+  <div class="pubs-barra">
+    <div class="pubs-filtros" role="group" aria-label="Filter by type">
+      
+      <button type="button" class="pubs-chip is-active" data-filtro="all" aria-pressed="true">
+        All <span class="pubs-chip__n">11</span>
+      </button>
+      
+      <button type="button" class="pubs-chip" data-filtro="article" aria-pressed="false">
+        Articles <span class="pubs-chip__n">9</span>
+      </button>
+      
+      <button type="button" class="pubs-chip" data-filtro="preprint" aria-pressed="false">
+        Preprints <span class="pubs-chip__n">1</span>
+      </button>
+      
+      <button type="button" class="pubs-chip" data-filtro="chapter" aria-pressed="false">
+        Chapters <span class="pubs-chip__n">1</span>
+      </button>
+      
+    </div>
+    <label class="pubs-buscar">
+      <i class="bi bi-search" aria-hidden="true"></i>
+      <input type="search" placeholder="Search title, author, journal…" aria-label="Search publications">
+    </label>
+  </div>
+
+  <p class="pubs-vacio" hidden="">No publications match your search.</p>
+
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2026</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.3897/afrinvertebr.67.180461">Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling</a></h3>
+        <p class="pub__autores">Ambakina, H., Gómez, K., Monzenga, J.-C., <strong>Sánchez-García, D.</strong>, and Dekoninck, W.</p>
+        <p class="pub__revista"><i>African Invertebrates</i>, 67(1), 65–91</p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.3897/afrinvertebr.67.180461"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          
+          <a class="pub-btn" href="https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          <a class="pub-btn" href="https://doi.org/10.64898/2025.12.04.692217"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
+          <a class="pub-btn" href="https://doi.org/10.5281/zenodo.17809129"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-1-abs" hidden=""><p>Litter ant communities constitute an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow land, secondary forest and primary forest) in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These habitats were sampled at six localities using pitfall traps and Winkler extractions. In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded in the Yangambi Biosphere Reserve. Ant diversity increased significantly along the successional gradient, being lowest in fallow land, intermediate in secondary forest, and highest in primary forest. Sixty ant species were shared across all three habitats, while each habitat supported a distinct assemblage of species. Primary forests contained the greatest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, recording nearly 50% greater species richness. However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve likely remains unrecorded, and additional sampling methods (like arboreal traps, net sweeping and baiting) could provide a more complete picture of its biodiversity.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-1-bib" hidden="">
+          <pre><code>@article{ambakina2026uncovering,
+  title = {Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling},
+  author = {Ambakina, Hervé and Gómez, Kiko and Monzenga, Jean-Claude and Sánchez-García, Daniel and Dekoninck, Wouter},
+  year = {2026},
+  journal = {African Invertebrates},
+  volume = {67},
+  number = {1},
+  pages = {65--91},
+  doi = {10.3897/afrinvertebr.67.180461}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2025</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="preprint">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--preprint">Preprint</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.64898/2025.12.02.691951">Ongoing coevolution between reintroduced <i>Phengaris teleius</i> butterflies and their <i>Myrmica</i> host ants</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong>, Wynhoff, I., d’Ettorre, P., Leroy, C., Kajzer-Bonk, J., Maák, I. E., Barbero, F., Casacci, L. P., and Witek, M.</p>
+        <p class="pub__revista"><i>bioRxiv</i></p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.64898/2025.12.02.691951"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          
+          
+          
+          <a class="pub-btn" href="https://doi.org/10.5281/zenodo.17791047"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-2-abs" hidden=""><p>Coevolutionary interactions between parasites and hosts are key drivers of biological adaptation. In this study, we explore the evolutionary response of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis , taking advantage of a unique opportunity: the reintroduction of the butterfly in the Netherlands thirty years ago. We compared the degree of host mimicry and behavioural performance of caterpillars between the reintroduced and the Polish source population. After about thirty generations, chemical and vibroacoustical signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption phase for both groups; however, in the post-adoption phase, the source population showed significantly higher chemical similarity to their local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling local hosts, also resulting in a stronger response from their local host ants. This suggests that adoption is driven by acoustics and subsequently serves as a selective filter promoting post-entry chemical refinement. Behavioural data evince that despite the differences between the different communication channels, the combination of signals remains sufficient to ensure recognition and integration in both host-parasite systems. These results illustrate how social parasites involved in multisensory mimicry can rapidly recalibrate strategies to remain functional in new ecological contexts.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-2-bib" hidden="">
+          <pre><code>@misc{sanchezgarcia2025ongoing,
+  title = {Ongoing coevolution between reintroduced Phengaris teleius butterflies and their Myrmica host ants},
+  author = {Sánchez-García, Daniel and Wynhoff, Irma and d’Ettorre, Patrizia and Leroy, Chloé and Kajzer-Bonk, Joanna and Maák, István Elek and Barbero, Francesca and Casacci, Luca Pietro and Witek, Magdalena},
+  year = {2025},
+  howpublished = {bioRxiv},
+  doi = {10.64898/2025.12.02.691951}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2024</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          <span class="pub__citas">Cited by 3</span>
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.gecco.2024.e03104">Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades after reintroduction</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong>, Wynhoff, I., Kajzer-Bonk, J., Sztencel-Jabłonka, A., Nowicki, P., Casacci, L. P., and Witek, M.</p>
+        <p class="pub__revista"><i>Global Ecology and Conservation</i>, 54, e03104</p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.1016/j.gecco.2024.e03104"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          
+          <a class="pub-btn" href="https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&amp;pid=1-s2.0-S2351989424003081-main.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4779205"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-3-abs" hidden=""><p>A successful reintroduction of Phengaris teleius performed in the Netherlands by translocating 86 individuals from a Polish metapopulation in 1990 represents a unique opportunity to study changes in butterflies from a source and reintroduced metapopulation after such a common conservation practice. Using multilevel comparisons, we tested morphological and genetic changes that occurred after 30 generations since the reintroduction. We also assessed the climatic and connectivity changes that occurred over time in both metapopulation networks. Unexpectedly, we found more significant morphological changes in the current individuals from the source metapopulation, where both sexes had bigger hindwings with different shapes in comparison to the individuals from the original metapopulation in the year of the reintroduction and the ones from the current reintroduced metapopulation. The butterflies from the Dutch metapopulation also had smaller thorax width compared to the ones from the current source metapopulation. The observed morphological changes can be shaped by various factors like changes in climatic conditions and habitat connectivity. Additionally, the genetic analysis revealed a differentiation between the source and reintroduced metapopulation. We found a loss of half of the allelic richness and a bottleneck effect in the reintroduced metapopulation compared to the current Polish one. Our results show that Phengaris butterflies have the potential to adapt to new habitats and respond to climatic changes despite their complex life cycle. A proper long-term habitat management in reintroduced butterfly metapopulations and habitat restoration are key factors influencing the success of reintroduction.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-3-bib" hidden="">
+          <pre><code>@article{sanchezgarcia2024temporal,
+  title = {Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades after reintroduction},
+  author = {Sánchez-García, Daniel and Wynhoff, Irma and Kajzer-Bonk, Joanna and Sztencel-Jabłonka, Anna and Nowicki, Piotr and Casacci, Luca Pietro and Witek, Magdalena},
+  year = {2024},
+  journal = {Global Ecology and Conservation},
+  volume = {54},
+  pages = {e03104},
+  doi = {10.1016/j.gecco.2024.e03104}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          <span class="pub__citas">Cited by 19</span>
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.scitotenv.2024.170157">Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger</a></h3>
+        <p class="pub__autores">Trigos-Peral, G., Maák, I. E., Schmid, S., Chudzik, P., Czaczkes, T. J., Witek, M., Casacci, L. P., <strong>Sánchez-García, D.</strong>, Lőrincz, Á., Kochanowski, M., and Heinze, J.</p>
+        <p class="pub__revista"><i>Science of The Total Environment</i>, 915, 170157</p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.1016/j.scitotenv.2024.170157"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          <a class="pub-btn" href="https://hdl.handle.net/2318/1978112"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a>
+          
+          <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4610852"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
+          <a class="pub-btn" href="https://doi.org/10.6084/m9.figshare.23507211"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-4-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-4-bib" hidden="">
+          <pre><code>@article{trigosperal2024urban,
+  title = {Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger},
+  author = {Trigos-Peral, G. and Maák, I.E. and Schmid, S. and Chudzik, P. and Czaczkes, T.J. and Witek, M. and Casacci, L.P. and Sánchez-García, D. and Lőrincz, Á. and Kochanowski, M. and Heinze, J.},
+  year = {2024},
+  journal = {Science of The Total Environment},
+  volume = {915},
+  pages = {170157},
+  doi = {10.1016/j.scitotenv.2024.170157}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2022</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          <span class="pub__citas">Cited by 8</span>
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1371/journal.pone.0267547">Temperature or competition: Which has more influence on Mediterranean ant communities?</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong>, Cerdá, X., and Angulo, E.</p>
+        <p class="pub__revista"><i>PLOS ONE</i>, 17(4), e0267547</p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.1371/journal.pone.0267547"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          
+          <a class="pub-btn" href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&amp;type=printable"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-5-abs" hidden=""><p>Temperature and competition are two of the main factors determining ant community assemblages. Temperature may allow species to forage more or less efficiently throughout the day (in accordance with the maximum activity temperature of each species). Competition can be observed and quantified from species replacements occurring during resource exploitation. We studied the interspecific competitive interactions of ant communities from the Doñana Biological Reserve (southern Spain). Ants were sampled from pitfall traps and baits in three habitats with contrasted vegetation physiognomy (savin forest, pine forest, and dry scrubland). We measured the temperature during the competitive interactions between species and created a thermal competition index (TCI) to assess the relative contribution of temperature and numerical dominance to the competitive outcomes. Temperature had unequal effects on ant activity in each type of habitat, and modulated competitive interactions. The TCI showed that a species’ success during pair interactions (replacements at baits) was driven by the proportion of workers between the two competing species and by the species-specific effect of temperature (how advantageous the temperature change is for each species during bait replacement). During competitive interactions, the effect of temperature (higher values of TCI) and numeric supremacy (higher worker proportion) gave higher success probabilities. Interspecific competitive relationships in these Mediterranean ant communities are habitat dependent and greatly influenced by temperature.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-5-bib" hidden="">
+          <pre><code>@article{sanchezgarcia2022temperature,
+  title = {Temperature or competition: Which has more influence on Mediterranean ant communities?},
+  author = {Sánchez-García, Daniel and Cerdá, Xim and Angulo, Elena},
+  year = {2022},
+  journal = {PLOS ONE},
+  volume = {17},
+  number = {4},
+  pages = {e0267547},
+  doi = {10.1371/journal.pone.0267547}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2019</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="chapter">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--chapter">Book chapter</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html">¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?</a></h3>
+        <p class="pub__autores">Angulo Aguado, E., Castro Cobo, S., <strong>Sánchez-García, D.</strong>, Sergio, F., Reyes-López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X.</p>
+        <p class="pub__revista">In J. Junoy (Ed.), <i>Especies exóticas invasoras: Cátedra de parques nacionales</i> (pp. 249–262). Editorial Universidad de Alcalá</p>
+        
+
+        <div class="pub__acciones">
+          
+          <a class="pub-btn" href="https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Link</a>
+          
+          
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-6-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-6-bib" hidden="">
+          <pre><code>@incollection{anguloaguado2019podra,
+  title = {¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?},
+  author = {Angulo Aguado, E. and Castro Cobo, S. and Sánchez-García, D. and Sergio, F. and Reyes-López, J. L. and Álvarez Blanco, P. and Cerdá Sureda, X.},
+  year = {2019},
+  booktitle = {Especies exóticas invasoras: Cátedra de parques nacionales},
+  editor = {J. Junoy},
+  pages = {249--262},
+  publisher = {Editorial Universidad de Alcalá}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf"><i>Lasius piliferus</i> Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)</a></h3>
+        <p class="pub__autores">García, F., Cuesta-Segura, A., Espadaler, X., García, J. C., and <strong>Sánchez-García, D.</strong></p>
+        <p class="pub__revista"><i>Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)</i>, 65, 39–44</p>
+        
+
+        <div class="pub__acciones">
+          
+          
+          
+          <a class="pub-btn" href="http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-7-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-7-bib" hidden="">
+          <pre><code>@article{garcia2019lasius,
+  title = {Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)},
+  author = {García, F. and Cuesta-Segura, A. and Espadaler, X. and García, J. C. and Sánchez-García, D.},
+  year = {2019},
+  journal = {Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)},
+  volume = {65},
+  pages = {39--44}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2018</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf">Primera cita ibérica para <i>Temnothorax conatensis</i> Galkowski &amp; Lebas, 2016, y actualización de la distribución para <i>Temnothorax grouvellei</i> (Bondroit, 1918) (Hymenoptera: Formicidae)</a></h3>
+        <p class="pub__autores">García García, F., Espadaler Gelabert, X., Cuesta-Segura, A. D., and <strong>Sánchez-García, D.</strong></p>
+        <p class="pub__revista"><i>Iberomyrmex</i>, 10, 22–27</p>
+        
+
+        <div class="pub__acciones">
+          
+          
+          
+          <a class="pub-btn" href="http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-8-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-8-bib" hidden="">
+          <pre><code>@article{garciagarcia2018primera,
+  title = {Primera cita ibérica para Temnothorax conatensis Galkowski \&amp; Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (Bondroit, 1918) (Hymenoptera: Formicidae)},
+  author = {García García, F. and Espadaler Gelabert, X. and Cuesta-Segura, A. D. and Sánchez-García, D.},
+  year = {2018},
+  journal = {Iberomyrmex},
+  volume = {10},
+  pages = {22--27}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2017</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf"><i>Temnothorax ibericus</i> Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)</a></h3>
+        <p class="pub__autores">Espadaler, X., <strong>Sánchez-García, D.</strong>, and García-García, F.</p>
+        <p class="pub__revista"><i>Iberomyrmex</i>, 9, 5–9</p>
+        
+
+        <div class="pub__acciones">
+          
+          
+          
+          <a class="pub-btn" href="http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-9-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-9-bib" hidden="">
+          <pre><code>@article{espadaler2017temnothorax,
+  title = {Temnothorax ibericus Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)},
+  author = {Espadaler, X. and Sánchez-García, D. and García-García, F.},
+  year = {2017},
+  journal = {Iberomyrmex},
+  volume = {9},
+  pages = {5--9}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11">Una nueva especie parásita social para la península ibérica. <i>Bothriomyrmex communista</i> Santschi, 1919 (Hymenoptera: Formicidae) en España</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong> and Espadaler, X.</p>
+        <p class="pub__revista"><i>Iberomyrmex</i>, 9, 11–13</p>
+        
+
+        <div class="pub__acciones">
+          
+          
+          
+          <a class="pub-btn" href="https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-10-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-10-bib" hidden="">
+          <pre><code>@article{sanchezgarcia2017nueva,
+  title = {Una nueva especie parásita social para la península ibérica. Bothriomyrmex communista Santschi, 1919 (Hymenoptera: Formicidae) en España},
+  author = {Sánchez-García, D. and Espadaler, X.},
+  year = {2017},
+  journal = {Iberomyrmex},
+  volume = {9},
+  pages = {11--13}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+  <section class="pubs-anio">
+    <h2 class="pubs-anio__titulo anchored">2015</h2>
+    <ol class="pubs-lista">
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf"><i>Cardiocondyla obscurior</i> Wheeler, 1929 (Hymenoptera, Formicidae) en España</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong> and Espadaler, X.</p>
+        <p class="pub__revista"><i>Iberomyrmex</i>, 7, 7–9</p>
+        
+
+        <div class="pub__acciones">
+          
+          
+          
+          <a class="pub-btn" href="http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-11-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel pub__panel--bib" id="pub-11-bib" hidden="">
+          <pre><code>@article{sanchezgarcia2015cardiocondyla,
+  title = {Cardiocondyla obscurior Wheeler, 1929 (Hymenoptera, Formicidae) en España},
+  author = {Sánchez-García, D. and Espadaler, X.},
+  year = {2015},
+  journal = {Iberomyrmex},
+  volume = {7},
+  pages = {7--9}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+    </ol>
+  </section>
+  
+</div>
+
+<script>
+(function () {
+  var raiz = document.currentScript.previousElementSibling;
+  var chips = raiz.querySelectorAll('.pubs-chip');
+  var buscador = raiz.querySelector('.pubs-buscar input');
+  var pubs = raiz.querySelectorAll('.pub');
+  var vacio = raiz.querySelector('.pubs-vacio');
+  var filtro = 'all';
+
+  function normalizar(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+  pubs.forEach(function (p) {
+    p.dataset.texto = normalizar(
+      p.querySelector('.pub__titulo').textContent + ' ' +
+      p.querySelector('.pub__autores').textContent + ' ' +
+      p.querySelector('.pub__revista').textContent);
+  });
+
+  function aplicar() {
+    var q = normalizar(buscador.value.trim());
+    var visibles = 0;
+    pubs.forEach(function (p) {
+      var ok = (filtro === 'all' || p.dataset.type === filtro) &&
+               (!q || p.dataset.texto.indexOf(q) !== -1);
+      p.hidden = !ok;
+      if (ok) visibles++;
+    });
+    raiz.querySelectorAll('.pubs-anio').forEach(function (s) {
+      s.hidden = !s.querySelector('.pub:not([hidden])');
+    });
+    vacio.hidden = visibles > 0;
+  }
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      filtro = c.dataset.filtro;
+      chips.forEach(function (o) {
+        o.classList.toggle('is-active', o === c);
+        o.setAttribute('aria-pressed', o === c);
+      });
+      aplicar();
+    });
+  });
+  buscador.addEventListener('input', aplicar);
+
+  // Abstract / Cite: abre su panel y cierra el otro de la misma entrada
+  raiz.addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.pub-btn--toggle');
+    if (boton) {
+      var pub = boton.closest('.pub');
+      var abrir = boton.getAttribute('aria-expanded') !== 'true';
+      pub.querySelectorAll('.pub-btn--toggle').forEach(function (b) {
+        var panel = document.getElementById(b.getAttribute('aria-controls'));
+        var este = b === boton && abrir;
+        b.setAttribute('aria-expanded', este);
+        panel.hidden = !este;
+      });
+      return;
+    }
+    var copiar = ev.target.closest('.pub-copiar');
+    if (copiar) {
+      var codigo = copiar.parentElement.querySelector('code');
+      var etiqueta = copiar.querySelector('span');
+      var avisar = function (texto) {
+        etiqueta.textContent = texto;
+        setTimeout(function () { etiqueta.textContent = 'Copy BibTeX'; }, 1800);
+      };
+      var aMano = function () {
+        // Navegadores sin acceso al portapapeles: selecciona el texto
+        var rango = document.createRange();
+        rango.selectNodeContents(codigo);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(rango);
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        avisar(ok ? 'Copied!' : 'Press Ctrl/⌘+C');
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(codigo.textContent).then(function () { avisar('Copied!'); }, aMano);
+      } else {
+        aMano();
+      }
+    }
+  });
+})();
+</script>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
 
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
