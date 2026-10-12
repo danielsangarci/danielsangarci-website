@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-feb1641e436ef654657d266f6c53a61e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ebf212b1101f7a6f0b33256998b61241.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d869a4d14091e16679017b57a1c15e0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ebf212b1101f7a6f0b33256998b61241.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
@@ -93,9 +93,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-preprint','listing-data','listing-oa','listing-abstract','listing-bibtex','listing-cited','listing-free',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-data','listing-oa','listing-abstract','listing-bibtex','listing-free','listing-preprint','listing-cited',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-preprint","listing-data","listing-oa","listing-abstract","listing-bibtex","listing-cited","listing-free"],
+      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-data","listing-oa","listing-abstract","listing-bibtex","listing-free","listing-preprint","listing-cited"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -444,15 +444,15 @@ window.Quarto = {
     <div class="pubs-filtros" role="group" aria-label="Filter by type">
       
       <button type="button" class="pubs-chip is-active" data-filtro="all" aria-pressed="true">
-        All <span class="pubs-chip__n">11</span>
+        All <span class="pubs-chip__n">13</span>
       </button>
       
       <button type="button" class="pubs-chip" data-filtro="article" aria-pressed="false">
-        Articles <span class="pubs-chip__n">9</span>
+        Articles <span class="pubs-chip__n">10</span>
       </button>
       
       <button type="button" class="pubs-chip" data-filtro="preprint" aria-pressed="false">
-        Preprints <span class="pubs-chip__n">1</span>
+        Preprints <span class="pubs-chip__n">2</span>
       </button>
       
       <button type="button" class="pubs-chip" data-filtro="chapter" aria-pressed="false">
@@ -473,6 +473,45 @@ window.Quarto = {
     <h2 class="pubs-anio__titulo anchored">2026</h2>
     <ol class="pubs-lista">
       
+      <li class="pub" data-type="preprint">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--preprint">Preprint</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.64898/2026.10.08.756264">Temperature and management reduce the abundance of the invasive Argentine ant ( <i>Linepithema humile</i> )</a></h3>
+        <p class="pub__autores"><strong>Sánchez-García, D.</strong>, Cerdá, X., and Angulo, E.</p>
+        <p class="pub__revista"><i>bioRxiv</i></p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.64898/2026.10.08.756264"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          
+          <a class="pub-btn" href="https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
+          
+          <a class="pub-btn" href="https://doi.org/10.5281/zenodo.23105816"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-1-abs" hidden=""><p>BACKGROUND: The Argentine ant ( Linepithema humile ) is among the world's worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. RESULTS: Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-1-bib" hidden="">
+          <pre><code>@misc{sanchezgarcia2026temperature,
+  title = {Temperature and management reduce the abundance of the invasive Argentine ant ( Linepithema humile )},
+  author = {Sánchez-García, Daniel and Cerdá, Xim and Angulo, Elena},
+  year = {2026},
+  howpublished = {bioRxiv},
+  doi = {10.64898/2026.10.08.756264}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
       <li class="pub" data-type="article">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
@@ -490,17 +529,17 @@ window.Quarto = {
           
           
           <a class="pub-btn" href="https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
-          <a class="pub-btn" href="https://doi.org/10.64898/2025.12.04.692217"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
+          
           <a class="pub-btn" href="https://doi.org/10.5281/zenodo.17809129"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel" id="pub-1-abs" hidden=""><p>Litter ant communities constitute an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow land, secondary forest and primary forest) in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These habitats were sampled at six localities using pitfall traps and Winkler extractions. In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded in the Yangambi Biosphere Reserve. Ant diversity increased significantly along the successional gradient, being lowest in fallow land, intermediate in secondary forest, and highest in primary forest. Sixty ant species were shared across all three habitats, while each habitat supported a distinct assemblage of species. Primary forests contained the greatest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, recording nearly 50% greater species richness. However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve likely remains unrecorded, and additional sampling methods (like arboreal traps, net sweeping and baiting) could provide a more complete picture of its biodiversity.</p></div>
+        <div class="pub__panel" id="pub-2-abs" hidden=""><p>Litter ant communities constitute an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow land, secondary forest and primary forest) in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These habitats were sampled at six localities using pitfall traps and Winkler extractions. In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded in the Yangambi Biosphere Reserve. Ant diversity increased significantly along the successional gradient, being lowest in fallow land, intermediate in secondary forest, and highest in primary forest. Sixty ant species were shared across all three habitats, while each habitat supported a distinct assemblage of species. Primary forests contained the greatest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, recording nearly 50% greater species richness. However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve likely remains unrecorded, and additional sampling methods (like arboreal traps, net sweeping and baiting) could provide a more complete picture of its biodiversity.</p></div>
         
-        <div class="pub__panel pub__panel--bib" id="pub-1-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-2-bib" hidden="">
           <pre><code>@article{ambakina2026uncovering,
   title = {Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling},
   author = {Ambakina, Hervé and Gómez, Kiko and Monzenga, Jean-Claude and Sánchez-García, Daniel and Dekoninck, Wouter},
@@ -510,6 +549,48 @@ window.Quarto = {
   number = {1},
   pages = {65--91},
   doi = {10.3897/afrinvertebr.67.180461}
+}</code></pre>
+          <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
+        </div>
+      </li>
+      
+      <li class="pub" data-type="article">
+        <div class="pub__etiquetas">
+          <span class="pub-badge pub-badge--article">Journal article</span>
+          <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
+          
+        </div>
+
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.64898/2025.12.04.692217">Uncovering Ant Diversity Across Forest Successional Stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and Pitfall Trap Sampling</a></h3>
+        <p class="pub__autores">Ambakina, H., Gomez, K., Monzenga, J.-C., <strong>Sánchez-García, D.</strong>, and Dekoninck, W.</p>
+        <p class="pub__revista"><i>African Invertebrates</i>, 67(1), 65–91</p>
+        
+
+        <div class="pub__acciones">
+          <a class="pub-btn" href="https://doi.org/10.64898/2025.12.04.692217"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+          
+          <a class="pub-btn" href="https://doi.org/10.3897/afrinvertebr.67.180461"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a>
+          
+          
+          
+          
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        
+        <div class="pub__panel" id="pub-3-abs" hidden=""><p>Litter ant communities are an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow, secondary forest and primary forest) in the Yangambi Biosphere Reserve, The Democratic Republic of the Congo. These three forest habitats were sampled in six localities with pitfall traps and Winkler extractions. The discovered ant communities, the species typical of each habitat and the effectiveness of both sampling methods are discussed. The results showed that 190 species belonging to 50 genera and 8 sub-families of Formicidae were sampled in the Yangambi region. Ant diversity was lowest in fallow land, higher in secondary forests, and highest in primary forests, reflecting a clear pattern along the successional gradient. A relatively small proportion of ant species were shared among all three habitats, while each habitat also supported a distinct set of species. Primary forests hosted the highest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, with nearly 50% greater species richness observed. However, a significant portion of the ant fauna in Yangambi likely remains undocumented, and additional sampling methods could help provide a more complete picture of its biodiversity.</p></div>
+        
+        <div class="pub__panel pub__panel--bib" id="pub-3-bib" hidden="">
+          <pre><code>@article{ambakina2026uncovering,
+  title = {Uncovering Ant Diversity Across Forest Successional Stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and Pitfall Trap Sampling},
+  author = {Ambakina, Hervé and Gomez, Kiko and Monzenga, Jean-Claude and Sánchez-García, Daniel and Dekoninck, Wouter},
+  year = {2026},
+  journal = {African Invertebrates},
+  volume = {67},
+  number = {1},
+  pages = {65--91},
+  doi = {10.64898/2025.12.04.692217}
 }</code></pre>
           <button type="button" class="pub-btn pub-copiar"><i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy BibTeX</span></button>
         </div>
@@ -542,14 +623,14 @@ window.Quarto = {
           
           <a class="pub-btn" href="https://doi.org/10.5281/zenodo.17791047"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-4-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-4-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel" id="pub-2-abs" hidden=""><p>Coevolutionary interactions between parasites and hosts are key drivers of biological adaptation. In this study, we explore the evolutionary response of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis , taking advantage of a unique opportunity: the reintroduction of the butterfly in the Netherlands thirty years ago. We compared the degree of host mimicry and behavioural performance of caterpillars between the reintroduced and the Polish source population. After about thirty generations, chemical and vibroacoustical signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption phase for both groups; however, in the post-adoption phase, the source population showed significantly higher chemical similarity to their local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling local hosts, also resulting in a stronger response from their local host ants. This suggests that adoption is driven by acoustics and subsequently serves as a selective filter promoting post-entry chemical refinement. Behavioural data evince that despite the differences between the different communication channels, the combination of signals remains sufficient to ensure recognition and integration in both host-parasite systems. These results illustrate how social parasites involved in multisensory mimicry can rapidly recalibrate strategies to remain functional in new ecological contexts.</p></div>
+        <div class="pub__panel" id="pub-4-abs" hidden=""><p>Coevolutionary interactions between parasites and hosts are key drivers of biological adaptation. In this study, we explore the evolutionary response of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis , taking advantage of a unique opportunity: the reintroduction of the butterfly in the Netherlands thirty years ago. We compared the degree of host mimicry and behavioural performance of caterpillars between the reintroduced and the Polish source population. After about thirty generations, chemical and vibroacoustical signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption phase for both groups; however, in the post-adoption phase, the source population showed significantly higher chemical similarity to their local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling local hosts, also resulting in a stronger response from their local host ants. This suggests that adoption is driven by acoustics and subsequently serves as a selective filter promoting post-entry chemical refinement. Behavioural data evince that despite the differences between the different communication channels, the combination of signals remains sufficient to ensure recognition and integration in both host-parasite systems. These results illustrate how social parasites involved in multisensory mimicry can rapidly recalibrate strategies to remain functional in new ecological contexts.</p></div>
         
-        <div class="pub__panel pub__panel--bib" id="pub-2-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-4-bib" hidden="">
           <pre><code>@misc{sanchezgarcia2025ongoing,
   title = {Ongoing coevolution between reintroduced Phengaris teleius butterflies and their Myrmica host ants},
   author = {Sánchez-García, Daniel and Wynhoff, Irma and d’Ettorre, Patrizia and Leroy, Chloé and Kajzer-Bonk, Joanna and Maák, István Elek and Barbero, Francesca and Casacci, Luca Pietro and Witek, Magdalena},
@@ -588,14 +669,14 @@ window.Quarto = {
           <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4779205"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel" id="pub-3-abs" hidden=""><p>A successful reintroduction of Phengaris teleius performed in the Netherlands by translocating 86 individuals from a Polish metapopulation in 1990 represents a unique opportunity to study changes in butterflies from a source and reintroduced metapopulation after such a common conservation practice. Using multilevel comparisons, we tested morphological and genetic changes that occurred after 30 generations since the reintroduction. We also assessed the climatic and connectivity changes that occurred over time in both metapopulation networks. Unexpectedly, we found more significant morphological changes in the current individuals from the source metapopulation, where both sexes had bigger hindwings with different shapes in comparison to the individuals from the original metapopulation in the year of the reintroduction and the ones from the current reintroduced metapopulation. The butterflies from the Dutch metapopulation also had smaller thorax width compared to the ones from the current source metapopulation. The observed morphological changes can be shaped by various factors like changes in climatic conditions and habitat connectivity. Additionally, the genetic analysis revealed a differentiation between the source and reintroduced metapopulation. We found a loss of half of the allelic richness and a bottleneck effect in the reintroduced metapopulation compared to the current Polish one. Our results show that Phengaris butterflies have the potential to adapt to new habitats and respond to climatic changes despite their complex life cycle. A proper long-term habitat management in reintroduced butterfly metapopulations and habitat restoration are key factors influencing the success of reintroduction.</p></div>
+        <div class="pub__panel" id="pub-5-abs" hidden=""><p>A successful reintroduction of Phengaris teleius performed in the Netherlands by translocating 86 individuals from a Polish metapopulation in 1990 represents a unique opportunity to study changes in butterflies from a source and reintroduced metapopulation after such a common conservation practice. Using multilevel comparisons, we tested morphological and genetic changes that occurred after 30 generations since the reintroduction. We also assessed the climatic and connectivity changes that occurred over time in both metapopulation networks. Unexpectedly, we found more significant morphological changes in the current individuals from the source metapopulation, where both sexes had bigger hindwings with different shapes in comparison to the individuals from the original metapopulation in the year of the reintroduction and the ones from the current reintroduced metapopulation. The butterflies from the Dutch metapopulation also had smaller thorax width compared to the ones from the current source metapopulation. The observed morphological changes can be shaped by various factors like changes in climatic conditions and habitat connectivity. Additionally, the genetic analysis revealed a differentiation between the source and reintroduced metapopulation. We found a loss of half of the allelic richness and a bottleneck effect in the reintroduced metapopulation compared to the current Polish one. Our results show that Phengaris butterflies have the potential to adapt to new habitats and respond to climatic changes despite their complex life cycle. A proper long-term habitat management in reintroduced butterfly metapopulations and habitat restoration are key factors influencing the success of reintroduction.</p></div>
         
-        <div class="pub__panel pub__panel--bib" id="pub-3-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-5-bib" hidden="">
           <pre><code>@article{sanchezgarcia2024temporal,
   title = {Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades after reintroduction},
   author = {Sánchez-García, Daniel and Wynhoff, Irma and Kajzer-Bonk, Joanna and Sztencel-Jabłonka, Anna and Nowicki, Piotr and Casacci, Luca Pietro and Witek, Magdalena},
@@ -624,17 +705,17 @@ window.Quarto = {
         <div class="pub__acciones">
           <a class="pub-btn" href="https://doi.org/10.1016/j.scitotenv.2024.170157"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
           
-          <a class="pub-btn" href="https://hdl.handle.net/2318/1978112"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a>
+          <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4610852"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a>
           
           <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4610852"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
           <a class="pub-btn" href="https://doi.org/10.6084/m9.figshare.23507211"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-4-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-6-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-4-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-6-bib" hidden="">
           <pre><code>@article{trigosperal2024urban,
   title = {Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger},
   author = {Trigos-Peral, G. and Maák, I.E. and Schmid, S. and Chudzik, P. and Czaczkes, T.J. and Witek, M. and Casacci, L.P. and Sánchez-García, D. and Lőrincz, Á. and Kochanowski, M. and Heinze, J.},
@@ -675,14 +756,14 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-7-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-7-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel" id="pub-5-abs" hidden=""><p>Temperature and competition are two of the main factors determining ant community assemblages. Temperature may allow species to forage more or less efficiently throughout the day (in accordance with the maximum activity temperature of each species). Competition can be observed and quantified from species replacements occurring during resource exploitation. We studied the interspecific competitive interactions of ant communities from the Doñana Biological Reserve (southern Spain). Ants were sampled from pitfall traps and baits in three habitats with contrasted vegetation physiognomy (savin forest, pine forest, and dry scrubland). We measured the temperature during the competitive interactions between species and created a thermal competition index (TCI) to assess the relative contribution of temperature and numerical dominance to the competitive outcomes. Temperature had unequal effects on ant activity in each type of habitat, and modulated competitive interactions. The TCI showed that a species’ success during pair interactions (replacements at baits) was driven by the proportion of workers between the two competing species and by the species-specific effect of temperature (how advantageous the temperature change is for each species during bait replacement). During competitive interactions, the effect of temperature (higher values of TCI) and numeric supremacy (higher worker proportion) gave higher success probabilities. Interspecific competitive relationships in these Mediterranean ant communities are habitat dependent and greatly influenced by temperature.</p></div>
+        <div class="pub__panel" id="pub-7-abs" hidden=""><p>Temperature and competition are two of the main factors determining ant community assemblages. Temperature may allow species to forage more or less efficiently throughout the day (in accordance with the maximum activity temperature of each species). Competition can be observed and quantified from species replacements occurring during resource exploitation. We studied the interspecific competitive interactions of ant communities from the Doñana Biological Reserve (southern Spain). Ants were sampled from pitfall traps and baits in three habitats with contrasted vegetation physiognomy (savin forest, pine forest, and dry scrubland). We measured the temperature during the competitive interactions between species and created a thermal competition index (TCI) to assess the relative contribution of temperature and numerical dominance to the competitive outcomes. Temperature had unequal effects on ant activity in each type of habitat, and modulated competitive interactions. The TCI showed that a species’ success during pair interactions (replacements at baits) was driven by the proportion of workers between the two competing species and by the species-specific effect of temperature (how advantageous the temperature change is for each species during bait replacement). During competitive interactions, the effect of temperature (higher values of TCI) and numeric supremacy (higher worker proportion) gave higher success probabilities. Interspecific competitive relationships in these Mediterranean ant communities are habitat dependent and greatly influenced by temperature.</p></div>
         
-        <div class="pub__panel pub__panel--bib" id="pub-5-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-7-bib" hidden="">
           <pre><code>@article{sanchezgarcia2022temperature,
   title = {Temperature or competition: Which has more influence on Mediterranean ant communities?},
   author = {Sánchez-García, Daniel and Cerdá, Xim and Angulo, Elena},
@@ -725,11 +806,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-6-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-8-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-6-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-8-bib" hidden="">
           <pre><code>@incollection{anguloaguado2019podra,
   title = {¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?},
   author = {Angulo Aguado, E. and Castro Cobo, S. and Sánchez-García, D. and Sergio, F. and Reyes-López, J. L. and Álvarez Blanco, P. and Cerdá Sureda, X.},
@@ -764,11 +845,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-7-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-9-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-7-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-9-bib" hidden="">
           <pre><code>@article{garcia2019lasius,
   title = {Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)},
   author = {García, F. and Cuesta-Segura, A. and Espadaler, X. and García, J. C. and Sánchez-García, D.},
@@ -809,11 +890,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-8-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-10-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-8-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-10-bib" hidden="">
           <pre><code>@article{garciagarcia2018primera,
   title = {Primera cita ibérica para Temnothorax conatensis Galkowski \&amp; Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (Bondroit, 1918) (Hymenoptera: Formicidae)},
   author = {García García, F. and Espadaler Gelabert, X. and Cuesta-Segura, A. D. and Sánchez-García, D.},
@@ -854,11 +935,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-9-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-11-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-9-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-11-bib" hidden="">
           <pre><code>@article{espadaler2017temnothorax,
   title = {Temnothorax ibericus Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)},
   author = {Espadaler, X. and Sánchez-García, D. and García-García, F.},
@@ -892,11 +973,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-10-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-12-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-10-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-12-bib" hidden="">
           <pre><code>@article{sanchezgarcia2017nueva,
   title = {Una nueva especie parásita social para la península ibérica. Bothriomyrmex communista Santschi, 1919 (Hymenoptera: Formicidae) en España},
   author = {Sánchez-García, D. and Espadaler, X.},
@@ -937,11 +1018,11 @@ window.Quarto = {
           
           
           
-          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-11-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+          <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-13-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
         
-        <div class="pub__panel pub__panel--bib" id="pub-11-bib" hidden="">
+        <div class="pub__panel pub__panel--bib" id="pub-13-bib" hidden="">
           <pre><code>@article{sanchezgarcia2015cardiocondyla,
   title = {Cardiocondyla obscurior Wheeler, 1929 (Hymenoptera, Formicidae) en España},
   author = {Sánchez-García, D. and Espadaler, X.},

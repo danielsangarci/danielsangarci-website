@@ -39,7 +39,7 @@
       "editorial": "Elsevier BV",
       "resumen": null,
       "oa": true,
-      "oa_url": "https://hdl.handle.net/2318/1978112",
+      "oa_url": "https://doi.org/10.2139/ssrn.4610852",
       "pdf": null,
       "web": "https://doi.org/10.1016/j.scitotenv.2024.170157",
       "citas": 19,
@@ -412,10 +412,39 @@
       "en_orcid": false
     },
     {
-      "doi": "10.64898/2025.12.04.692217",
+      "doi": "10.64898/2026.10.08.756264",
       "tipo": "preprint",
-      "anio": 2025,
-      "fecha": null,
+      "anio": 2026,
+      "fecha": "2026-10-09",
+      "titulo": "Temperature and management reduce the abundance of the invasive Argentine ant ( <i>Linepithema humile<\/i> )",
+      "autores": [
+        "Sánchez-García, D.",
+        "Cerdá, X.",
+        "Angulo, E."
+      ],
+      "autores_bib": [
+        "Sánchez-García, Daniel",
+        "Cerdá, Xim",
+        "Angulo, Elena"
+      ],
+      "revista": "bioRxiv",
+      "volumen": null,
+      "numero": null,
+      "paginas": null,
+      "editorial": "openRxiv",
+      "resumen": "BACKGROUND: The Argentine ant ( Linepithema humile ) is among the world's worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. RESULTS: Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.",
+      "oa": true,
+      "oa_url": "https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf",
+      "pdf": "https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf",
+      "web": "https://doi.org/10.64898/2026.10.08.756264",
+      "citas": 0,
+      "en_orcid": true
+    },
+    {
+      "doi": "10.64898/2025.12.04.692217",
+      "tipo": "article",
+      "anio": 2026,
+      "fecha": "2026-05-11",
       "titulo": "Uncovering Ant Diversity Across Forest Successional Stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and Pitfall Trap Sampling",
       "autores": [
         "Ambakina, H.",
@@ -431,16 +460,16 @@
         "Sánchez-García, Daniel",
         "Dekoninck, Wouter"
       ],
-      "revista": null,
-      "volumen": null,
-      "numero": null,
-      "paginas": null,
+      "revista": "African Invertebrates",
+      "volumen": "67",
+      "numero": "1",
+      "paginas": "65-91",
       "editorial": "openRxiv",
       "resumen": "Litter ant communities are an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow, secondary forest and primary forest) in the Yangambi Biosphere Reserve, The Democratic Republic of the Congo. These three forest habitats were sampled in six localities with pitfall traps and Winkler extractions. The discovered ant communities, the species typical of each habitat and the effectiveness of both sampling methods are discussed. The results showed that 190 species belonging to 50 genera and 8 sub-families of Formicidae were sampled in the Yangambi region. Ant diversity was lowest in fallow land, higher in secondary forests, and highest in primary forests, reflecting a clear pattern along the successional gradient. A relatively small proportion of ant species were shared among all three habitats, while each habitat also supported a distinct set of species. Primary forests hosted the highest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, with nearly 50% greater species richness observed. However, a significant portion of the ant fauna in Yangambi likely remains undocumented, and additional sampling methods could help provide a more complete picture of its biodiversity.",
-      "oa": false,
-      "oa_url": null,
+      "oa": true,
+      "oa_url": "https://doi.org/10.3897/afrinvertebr.67.180461",
       "pdf": null,
-      "web": "https://doi.org/10.64898/2025.12.04.692217",
+      "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
       "citas": 0,
       "en_orcid": true
     }
