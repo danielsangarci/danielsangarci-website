@@ -66,7 +66,9 @@ html_seguro <- function(x) {
   x <- gsub("<", "&lt;", x, fixed = TRUE)
   x <- gsub(">", "&gt;", x, fixed = TRUE)
   x <- gsub("\u0001", "<", gsub("\u0002", ">", x))
-  trimws(gsub("\\s+", " ", x))
+  x <- gsub("\\s+", " ", x)
+  x <- gsub("\\(\\s+", "(", gsub("\\s+\\)", ")", x))
+  trimws(x)
 }
 
 # *cursiva* (estilo markdown) -> <i>cursiva</i>
@@ -131,7 +133,10 @@ leer_json <- function(url) {
 intentar <- function(url) tryCatch(leer_json(url), error = function(e) NULL)
 
 tipo_comun <- function(oa_tipo, cr_tipo) {
-  t <- oa_tipo %||% cr_tipo %||% "article"
+  # Crossref primero: es quien registra el DOI. OpenAlex fusiona a veces un
+  # preprint con su articulo publicado y entonces lo llama "article".
+  t <- cr_tipo %||% oa_tipo %||% "article"
+  if (identical(t, "journal-article")) t <- "article"
   switch(t,
     "posted-content" = , "preprint" = "preprint",
     "dataset" = "dataset",
@@ -172,19 +177,33 @@ registro <- function(doi, w, cr) {
                                          sin_html(gsub("<jats:title>[^<]*</jats:title>", "", resumen)))
   resumen <- resumen %||% resumen_openalex(w$abstract_inverted_index)
 
+  tipo <- tipo_comun(w$type, cr$type)
+  revista <- if (tipo == "preprint") {
+    # El servidor del preprint (bioRxiv, SSRN...), no la revista de la
+    # version publicada con la que OpenAlex lo haya fusionado
+    primero(cr$institution)$name %||% primero(cr$`container-title`) %||%
+      (if (!is.null(fuente)) sub("\\s*\\(.*\\)$", "", fuente))
+  } else {
+    primero(cr$`container-title`) %||% (if (!is.null(fuente)) sub("\\s*\\(.*\\)$", "", fuente))
+  }
+  preprint_de <- primero(Filter(function(r) identical(r$`id-type`, "doi"),
+                                cr$relation$`is-preprint-of` %||% list()))$id
+
   list(
     doi      = doi,
-    tipo     = tipo_comun(w$type, cr$type),
+    tipo     = tipo,
+    openalex = w$id,
+    preprint_de = if (!is.null(preprint_de)) limpiar_doi(preprint_de),
     anio     = w$publication_year %||% primero(primero(cr$issued$`date-parts`)),
     fecha    = w$publication_date %||% NULL,
     titulo   = html_seguro(primero(cr$title) %||% w$title %||% w$display_name),
     autores  = as.list(autores),
     autores_bib = as.list(autores_bib),
-    revista  = primero(cr$`container-title`) %||% (if (!is.null(fuente)) sub("\\s*\\(.*\\)$", "", fuente)),
-    volumen  = cr[["volume"]] %||% w$biblio$volume,
-    numero   = cr[["issue"]] %||% w$biblio$issue,
+    revista  = revista,
+    volumen  = cr[["volume"]] %||% (if (tipo != "preprint") w$biblio$volume),
+    numero   = cr[["issue"]] %||% (if (tipo != "preprint") w$biblio$issue),
     paginas  = cr[["page"]] %||% cr$`article-number` %||%
-               (if (!is.null(w$biblio$first_page)) paste(unique(c(w$biblio$first_page, w$biblio$last_page)), collapse = "-")),
+               (if (tipo != "preprint" && !is.null(w$biblio$first_page)) paste(unique(c(w$biblio$first_page, w$biblio$last_page)), collapse = "-")),
     editorial = cr$publisher,
     resumen  = resumen,
     oa       = isTRUE(w$open_access$is_oa),
@@ -297,6 +316,18 @@ datasets  <- trabajos[tipos == "dataset"]
 preprints <- trabajos[tipos == "preprint"]
 entradas  <- Filter(en_orcid, trabajos[!tipos %in% c("dataset", "preprint")])
 
+# Dos DOI de la misma ficha de OpenAlex son el mismo trabajo: se queda uno
+ids_vistos <- character()
+entradas <- Filter(function(e) {
+  id <- e$openalex %||% ""
+  if (nzchar(id) && id %in% ids_vistos) {
+    message("Aviso: ", e$doi, " es el mismo trabajo que otro de la lista; se omite.")
+    return(FALSE)
+  }
+  ids_vistos <<- c(ids_vistos, id)
+  TRUE
+}, entradas)
+
 # A que entrada se engancha un preprint o un dataset: la que diga `link_to`
 # en manual.yml, o si no la de titulo mas parecido (por encima del umbral)
 destino <- function(t, umbral) {
@@ -308,6 +339,11 @@ destino <- function(t, umbral) {
     if (is.na(i)) message("Aviso: link_to de ", t$doi, " apunta a ", forzado, ", que no esta en la lista.")
     return(i)
   }
+  # La revista o el servidor declaran en Crossref de que articulo es preprint
+  if (!is.null(t$preprint_de) && !is.na(i <- match(t$preprint_de, dois))) return(i)
+  # OpenAlex los ha fusionado en la misma ficha
+  ids <- vapply(entradas, function(e) e$openalex %||% "", "")
+  if (!is.null(t$openalex) && !is.na(i <- match(t$openalex, ids))) return(i)
   sims <- vapply(entradas, function(e) parecido(t$titulo, e$titulo), 0)
   if (length(sims) && max(sims) >= umbral) which.max(sims) else NA
 }
@@ -393,6 +429,11 @@ formatear <- function(e) {
   datos   <- if (es_no(aj$data)) NULL else unique(c(unlist(e$datos), unlist(aj$data)))
   web     <- e$url %||% (if (!is.null(e$doi)) paste0("https://doi.org/", e$doi)) %||% e$pdf
 
+  preprint <- if (es_no(aj$preprint)) NULL else aj$preprint %||% e$preprint
+  free <- if (is.null(aj$pdf %||% e$pdf) && !is.null(e$oa_url) && !is.null(e$doi) &&
+              !grepl(e$doi, tolower(e$oa_url), fixed = TRUE) &&
+              !identical(tolower(e$oa_url), tolower(preprint %||% ""))) e$oa_url
+
   item <- list(
     type       = e$tipo,
     type_label = unname(ETIQUETAS[e$tipo]) %||% "Publication",
@@ -404,9 +445,8 @@ formatear <- function(e) {
     doi        = e$doi,
     pdf        = aj$pdf %||% e$pdf,
     # Copia gratuita en un repositorio, si no hay PDF directo
-    free       = if (is.null(aj$pdf %||% e$pdf) && !is.null(e$oa_url) && !is.null(e$doi) &&
-                     !grepl(e$doi, tolower(e$oa_url), fixed = TRUE)) e$oa_url,
-    preprint   = if (es_no(aj$preprint)) NULL else aj$preprint %||% e$preprint,
+    free       = free,
+    preprint   = preprint,
     data       = if (length(datos)) as.list(datos),
     code       = aj$code,
     note       = if (!is.null(aj$note)) html_seguro(cursivas(aj$note)),

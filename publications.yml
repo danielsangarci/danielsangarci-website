@@ -4,7 +4,7 @@
   type_label: Preprint
   year: 2026
   title: Temperature and management reduce the abundance of the invasive Argentine
-    ant ( <i>Linepithema humile</i> )
+    ant (<i>Linepithema humile</i>)
   url: https://doi.org/10.64898/2026.10.08.756264
   authors: <strong>Sánchez-García, D.</strong>, Cerdá, X., and Angulo, E.
   venue: <i>bioRxiv</i>
@@ -13,7 +13,7 @@
   data:
     - https://doi.org/10.5281/zenodo.23105816
   oa: true
-  abstract: 'BACKGROUND: The Argentine ant ( Linepithema humile ) is among the world''s
+  abstract: 'BACKGROUND: The Argentine ant (Linepithema humile) is among the world''s
     worst invasive species. In the Doñana Biological Reserve (Spain), it is associated
     with human structures that provide the mild, moist conditions it needs within
     the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting
@@ -36,7 +36,7 @@
     monitoring and prevention of spread.'
   bibtex: |-
     @misc{sanchezgarcia2026temperature,
-      title = {Temperature and management reduce the abundance of the invasive Argentine ant ( Linepithema humile )},
+      title = {Temperature and management reduce the abundance of the invasive Argentine ant (Linepithema humile)},
       author = {Sánchez-García, Daniel and Cerdá, Xim and Angulo, Elena},
       year = {2026},
       howpublished = {bioRxiv},
@@ -53,6 +53,7 @@
   venue: <i>African Invertebrates</i>, 67(1), 65–91
   doi: 10.3897/afrinvertebr.67.180461
   pdf: https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810
+  preprint: https://doi.org/10.64898/2025.12.04.692217
   data:
     - https://doi.org/10.5281/zenodo.17809129
   oa: true
@@ -83,48 +84,6 @@
       number = {1},
       pages = {65--91},
       doi = {10.3897/afrinvertebr.67.180461}
-    }
-- type: article
-  type_label: Journal article
-  year: 2026
-  title: 'Uncovering Ant Diversity Across Forest Successional Stages in the Yangambi
-    Biosphere Reserve (DRC): Insights from Winkler and Pitfall Trap Sampling'
-  url: https://doi.org/10.64898/2025.12.04.692217
-  authors: Ambakina, H., Gomez, K., Monzenga, J.-C., <strong>Sánchez-García, D.</strong>,
-    and Dekoninck, W.
-  venue: <i>African Invertebrates</i>, 67(1), 65–91
-  doi: 10.64898/2025.12.04.692217
-  free: https://doi.org/10.3897/afrinvertebr.67.180461
-  oa: true
-  abstract: Litter ant communities are an important component of biodiversity in tropical
-    regions. They are currently used in several ecosystem management programmes to
-    assess forest health. The aim of this study was to uncover the ant diversity across
-    forest successional stages (fallow, secondary forest and primary forest) in the
-    Yangambi Biosphere Reserve, The Democratic Republic of the Congo. These three
-    forest habitats were sampled in six localities with pitfall traps and Winkler
-    extractions. The discovered ant communities, the species typical of each habitat
-    and the effectiveness of both sampling methods are discussed. The results showed
-    that 190 species belonging to 50 genera and 8 sub-families of Formicidae were
-    sampled in the Yangambi region. Ant diversity was lowest in fallow land, higher
-    in secondary forests, and highest in primary forests, reflecting a clear pattern
-    along the successional gradient. A relatively small proportion of ant species
-    were shared among all three habitats, while each habitat also supported a distinct
-    set of species. Primary forests hosted the highest number of exclusive species,
-    followed by secondary forests and fallow land. Winkler extractors captured substantially
-    more ant species than pitfall traps, with nearly 50% greater species richness
-    observed. However, a significant portion of the ant fauna in Yangambi likely remains
-    undocumented, and additional sampling methods could help provide a more complete
-    picture of its biodiversity.
-  bibtex: |-
-    @article{ambakina2026uncovering,
-      title = {Uncovering Ant Diversity Across Forest Successional Stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and Pitfall Trap Sampling},
-      author = {Ambakina, Hervé and Gomez, Kiko and Monzenga, Jean-Claude and Sánchez-García, Daniel and Dekoninck, Wouter},
-      year = {2026},
-      journal = {African Invertebrates},
-      volume = {67},
-      number = {1},
-      pages = {65--91},
-      doi = {10.64898/2025.12.04.692217}
     }
 - type: preprint
   type_label: Preprint
@@ -224,7 +183,6 @@
     M., and Heinze, J.
   venue: <i>Science of The Total Environment</i>, 915, 170157
   doi: 10.1016/j.scitotenv.2024.170157
-  free: https://doi.org/10.2139/ssrn.4610852
   preprint: https://doi.org/10.2139/ssrn.4610852
   data:
     - https://doi.org/10.6084/m9.figshare.23507211

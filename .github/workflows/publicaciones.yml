@@ -18,7 +18,9 @@ name: Actualizar publicaciones
 
 on:
   schedule:
-    - cron: "0 6 * * 1"   # lunes a las 06:00 UTC
+    # Minuto poco habitual a proposito: a las horas en punto GitHub va
+    # saturado y retrasa (o incluso salta) las tareas programadas.
+    - cron: "23 4 * * 1"   # lunes a las 04:23 UTC (06:23 en Espana en verano)
   workflow_dispatch:
 
 permissions:
