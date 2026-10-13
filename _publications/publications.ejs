@@ -27,8 +27,16 @@ const conMetricas = items.some(i => i.metrics);
 const citas = items.map(i => i.cited || 0).sort((a, b) => b - a);
 const totalCitas = citas.reduce((a, b) => a + b, 0);
 const indiceH = citas.filter((c, k) => c >= k + 1).length;
+// Citas por anio: las del perfil de Google Scholar si las hay (cuadran con
+// su total); si no, la suma de OpenAlex de cada trabajo
+const perfilGrafico = items.find(i => i.scholar_by_year);
+const fuenteGrafico = perfilGrafico ? "Google Scholar" : "OpenAlex";
 const porAnio = {};
-for (const it of items) for (const c of (it.cites_by_year || [])) porAnio[c.year] = (porAnio[c.year] || 0) + c.n;
+if (perfilGrafico) {
+  for (const g of perfilGrafico.scholar_by_year) porAnio[g.year] = g.n;
+} else {
+  for (const it of items) for (const c of (it.cites_by_year || [])) porAnio[c.year] = (porAnio[c.year] || 0) + c.n;
+}
 const anioActual = new Date().getFullYear();
 const aniosCitas = Object.keys(porAnio).map(Number);
 const desde = aniosCitas.length ? Math.min(...aniosCitas) : anioActual;
@@ -54,10 +62,17 @@ const hayDimensions = conMetricas && items.some(i => i.doi);
       <div class="pubs-cifra"><dt>Publications</dt><dd><%- items.length %></dd></div>
       <div class="pubs-cifra"><dt>Citations</dt><dd><%- citasResumen %><span class="pubs-cifra__fuente"><%- fuenteResumen %></span></dd></div>
       <div class="pubs-cifra"><dt>h-index</dt><dd><%- hResumen %><span class="pubs-cifra__fuente"><%- fuenteResumen %></span></dd></div>
+      <% if (perfilScholar) { %>
+      <%/* Total de Dimensions: lo suma el navegador con las cifras de sus
+           insignias (ver el script del final), para no usar su API desde
+           el servidor, que sus condiciones no permiten. Sin insignias, no sale. */%>
+      <div class="pubs-cifra pubs-cifra--dimensions" hidden><dt>Citations</dt><dd><span class="pubs-dim-total"></span><span class="pubs-cifra__fuente">Dimensions</span></dd></div>
+      <% } else { %>
       <div class="pubs-cifra"><dt>Citations in <%- anioActual %></dt><dd><%- citasEsteAnio %><span class="pubs-cifra__fuente">OpenAlex</span></dd></div>
+      <% } %>
     </dl>
     <figure class="pubs-grafico">
-      <figcaption>Citations per year <span class="pubs-cifra__fuente">OpenAlex</span></figcaption>
+      <figcaption>Citations per year <span class="pubs-cifra__fuente"><%- fuenteGrafico %></span></figcaption>
       <div class="pubs-columnas" role="img" aria-label="Citations per year: <%- serie.map(s => s.year + ', ' + s.n).join('; ') %>">
         <% for (const s of serie) { %>
         <div class="pubs-columna" tabindex="0" data-tip="<%- s.year %>: <%- s.n %> citation<%- s.n === 1 ? '' : 's' %>">
@@ -67,7 +82,11 @@ const hayDimensions = conMetricas && items.some(i => i.doi);
         <% } %>
       </div>
     </figure>
-    <p class="pubs-fuente">Updated weekly from <% if (perfilScholar) { %><a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> and <% } %><a href="https://openalex.org/">OpenAlex</a>. Each database counts citations differently; see each paper below.</p>
+    <% if (perfilScholar) { %>
+    <p class="pubs-fuente"><a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> figures are updated weekly; <a href="https://www.dimensions.ai/">Dimensions</a> figures are live. Each database counts citations differently; see each paper below.</p>
+    <% } else { %>
+    <p class="pubs-fuente">Citation counts from <a href="https://openalex.org/">OpenAlex</a>, updated weekly. Each database counts citations differently; see each paper below.</p>
+    <% } %>
   </section>
   <% } %>
 
@@ -204,6 +223,28 @@ const hayDimensions = conMetricas && items.some(i => i.doi);
     });
   });
   buscador.addEventListener('input', aplicar);
+
+  // Total de Dimensions en el resumen: suma lo que muestran sus insignias
+  // cuando terminan de cargar (las que tienen 0 citas quedan vacias).
+  var cifraDim = raiz.querySelector('.pubs-cifra--dimensions');
+  if (cifraDim) {
+    var intentos = 0;
+    var sumar = function () {
+      var insignias = raiz.querySelectorAll('.__dimensions_badge_embed__');
+      var cargadas = 0, total = 0;
+      insignias.forEach(function (b) {
+        if (b.getAttribute('data-dimensions-badge-installed') || b.children.length) cargadas++;
+        var n = b.children.length ? parseInt((b.textContent.match(/\d+/) || ['0'])[0], 10) : 0;
+        total += n;
+      });
+      if (total > 0) {
+        cifraDim.querySelector('.pubs-dim-total').textContent = total;
+        cifraDim.hidden = false;
+      }
+      if (++intentos < 20 && cargadas < insignias.length) setTimeout(sumar, 500);
+    };
+    setTimeout(sumar, 800);
+  }
 
   // Abstract / Cite: abre su panel y cierra el otro de la misma entrada
   raiz.addEventListener('click', function (ev) {

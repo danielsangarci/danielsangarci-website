@@ -93,9 +93,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-data','listing-oa','listing-metrics','listing-abstract','listing-bibtex','listing-scholar_total','listing-scholar_h','listing-preprint','listing-s2_cited','listing-s2_influential','listing-s2_url','listing-cited','listing-cites_by_year','listing-scholar',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-data','listing-oa','listing-metrics','listing-abstract','listing-bibtex','listing-scholar_total','listing-scholar_h','listing-scholar_by_year','listing-preprint','listing-s2_cited','listing-s2_influential','listing-s2_url','listing-cited','listing-cites_by_year','listing-scholar',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-data","listing-oa","listing-metrics","listing-abstract","listing-bibtex","listing-scholar_total","listing-scholar_h","listing-preprint","listing-s2_cited","listing-s2_influential","listing-s2_url","listing-cited","listing-cites_by_year","listing-scholar"],
+      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-data","listing-oa","listing-metrics","listing-abstract","listing-bibtex","listing-scholar_total","listing-scholar_h","listing-scholar_by_year","listing-preprint","listing-s2_cited","listing-s2_influential","listing-s2_url","listing-cited","listing-cites_by_year","listing-scholar"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -436,7 +436,7 @@ window.Quarto = {
 
 
 <div class="pubs-intro">
-<p>Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ"><i class="ai  ai-google-scholar" title="" style="color:"></i> Google Scholar</a> and <a href="https://orcid.org/0000-0002-0710-6292"><i class="fa-brands fa-orcid" aria-label="orcid"></i> ORCID</a>. If a paper is not open access, <a href="./contact.html"><i class="fa-solid fa-envelope" aria-label="envelope"></i> reach out to me</a> and I will send you a copy.</p>
+<p>Also on <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ"><i class="ai  ai-google-scholar" title="" style="color:"></i> Google Scholar</a> and <a href="https://orcid.org/0000-0002-0710-6292"><i class="fa-brands fa-orcid" aria-label="orcid"></i> ORCID</a>. If a paper is not open access, <a href="./contact.html"><i class="fa-solid fa-envelope" aria-label="envelope"></i> reach out to me</a> for a copy.</p>
 </div>
 <div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
 <div class="pubs">
@@ -446,40 +446,75 @@ window.Quarto = {
       <div class="pubs-cifra"><dt>Publications</dt><dd>12</dd></div>
       <div class="pubs-cifra"><dt>Citations</dt><dd>89<span class="pubs-cifra__fuente">Google Scholar</span></dd></div>
       <div class="pubs-cifra"><dt>h-index</dt><dd>5<span class="pubs-cifra__fuente">Google Scholar</span></dd></div>
-      <div class="pubs-cifra"><dt>Citations in 2026</dt><dd>17<span class="pubs-cifra__fuente">OpenAlex</span></dd></div>
+      
+      
+      <div class="pubs-cifra pubs-cifra--dimensions" hidden=""><dt>Citations</dt><dd><span class="pubs-dim-total"></span><span class="pubs-cifra__fuente">Dimensions</span></dd></div>
+      
     </dl>
     <figure class="pubs-grafico figure">
-      <figcaption>Citations per year <span class="pubs-cifra__fuente">OpenAlex</span></figcaption>
-      <div class="pubs-columnas" role="img" aria-label="Citations per year: 2022, 1; 2023, 0; 2024, 3; 2025, 9; 2026, 17">
+      <figcaption>Citations per year <span class="pubs-cifra__fuente">Google Scholar</span></figcaption>
+      <div class="pubs-columnas" role="img" aria-label="Citations per year: 2016, 1; 2017, 0; 2018, 1; 2019, 3; 2020, 3; 2021, 6; 2022, 6; 2023, 8; 2024, 15; 2025, 19; 2026, 27">
         
-        <div class="pubs-columna" tabindex="0" data-tip="2022: 1 citation">
-          <span class="pubs-columna__barra" style="height: 6%"></span>
+        <div class="pubs-columna" tabindex="0" data-tip="2016: 1 citation">
+          <span class="pubs-columna__barra" style="height: 4%"></span>
+          <span class="pubs-columna__anio">2016</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2017: 0 citations">
+          <span class="pubs-columna__barra" style="height: 0%"></span>
+          <span class="pubs-columna__anio">2017</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2018: 1 citation">
+          <span class="pubs-columna__barra" style="height: 4%"></span>
+          <span class="pubs-columna__anio">2018</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2019: 3 citations">
+          <span class="pubs-columna__barra" style="height: 11%"></span>
+          <span class="pubs-columna__anio">2019</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2020: 3 citations">
+          <span class="pubs-columna__barra" style="height: 11%"></span>
+          <span class="pubs-columna__anio">2020</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2021: 6 citations">
+          <span class="pubs-columna__barra" style="height: 22%"></span>
+          <span class="pubs-columna__anio">2021</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2022: 6 citations">
+          <span class="pubs-columna__barra" style="height: 22%"></span>
           <span class="pubs-columna__anio">2022</span>
         </div>
         
-        <div class="pubs-columna" tabindex="0" data-tip="2023: 0 citations">
-          <span class="pubs-columna__barra" style="height: 0%"></span>
+        <div class="pubs-columna" tabindex="0" data-tip="2023: 8 citations">
+          <span class="pubs-columna__barra" style="height: 30%"></span>
           <span class="pubs-columna__anio">2023</span>
         </div>
         
-        <div class="pubs-columna" tabindex="0" data-tip="2024: 3 citations">
-          <span class="pubs-columna__barra" style="height: 18%"></span>
+        <div class="pubs-columna" tabindex="0" data-tip="2024: 15 citations">
+          <span class="pubs-columna__barra" style="height: 56%"></span>
           <span class="pubs-columna__anio">2024</span>
         </div>
         
-        <div class="pubs-columna" tabindex="0" data-tip="2025: 9 citations">
-          <span class="pubs-columna__barra" style="height: 53%"></span>
+        <div class="pubs-columna" tabindex="0" data-tip="2025: 19 citations">
+          <span class="pubs-columna__barra" style="height: 70%"></span>
           <span class="pubs-columna__anio">2025</span>
         </div>
         
-        <div class="pubs-columna" tabindex="0" data-tip="2026: 17 citations">
+        <div class="pubs-columna" tabindex="0" data-tip="2026: 27 citations">
           <span class="pubs-columna__barra" style="height: 100%"></span>
           <span class="pubs-columna__anio">2026</span>
         </div>
         
       </div>
     </figure>
-    <p class="pubs-fuente">Updated weekly from <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> and <a href="https://openalex.org/">OpenAlex</a>. Each database counts citations differently; see each paper below.</p>
+    
+    <p class="pubs-fuente"><a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> figures are updated weekly; <a href="https://www.dimensions.ai/">Dimensions</a> figures are live. Each database counts citations differently; see each paper below.</p>
+    
   </section>
   
 
@@ -1324,6 +1359,28 @@ window.Quarto = {
     });
   });
   buscador.addEventListener('input', aplicar);
+
+  // Total de Dimensions en el resumen: suma lo que muestran sus insignias
+  // cuando terminan de cargar (las que tienen 0 citas quedan vacias).
+  var cifraDim = raiz.querySelector('.pubs-cifra--dimensions');
+  if (cifraDim) {
+    var intentos = 0;
+    var sumar = function () {
+      var insignias = raiz.querySelectorAll('.__dimensions_badge_embed__');
+      var cargadas = 0, total = 0;
+      insignias.forEach(function (b) {
+        if (b.getAttribute('data-dimensions-badge-installed') || b.children.length) cargadas++;
+        var n = b.children.length ? parseInt((b.textContent.match(/\d+/) || ['0'])[0], 10) : 0;
+        total += n;
+      });
+      if (total > 0) {
+        cifraDim.querySelector('.pubs-dim-total').textContent = total;
+        cifraDim.hidden = false;
+      }
+      if (++intentos < 20 && cargadas < insignias.length) setTimeout(sumar, 500);
+    };
+    setTimeout(sumar, 800);
+  }
 
   // Abstract / Cite: abre su panel y cierra el otro de la misma entrada
   raiz.addEventListener('click', function (ev) {

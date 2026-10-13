@@ -1,6 +1,48 @@
 {
   "total": 89,
   "h": 5,
+  "por_anio": [
+    {
+      "anio": 2016,
+      "n": 1
+    },
+    {
+      "anio": 2018,
+      "n": 1
+    },
+    {
+      "anio": 2019,
+      "n": 3
+    },
+    {
+      "anio": 2020,
+      "n": 3
+    },
+    {
+      "anio": 2021,
+      "n": 6
+    },
+    {
+      "anio": 2022,
+      "n": 6
+    },
+    {
+      "anio": 2023,
+      "n": 8
+    },
+    {
+      "anio": 2024,
+      "n": 15
+    },
+    {
+      "anio": 2025,
+      "n": 19
+    },
+    {
+      "anio": 2026,
+      "n": 27
+    }
+  ],
   "articulos": [
     {
       "titulo": "Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger",

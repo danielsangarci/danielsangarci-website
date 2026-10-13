@@ -428,6 +428,9 @@ descargar_scholar <- function() {
   list(
     total = dato("citations"),
     h     = dato("h_index"),
+    # el grafico de citas por anio del perfil de Scholar
+    por_anio = lapply(r$cited_by$graph %||% list(), function(g)
+      list(anio = as.integer(g$year), n = as.integer(g$citations %||% 0))),
     articulos = lapply(r$articles, function(a) list(
       titulo = a$title, anio = suppressWarnings(as.integer(a$year)),
       citas  = a$cited_by$value %||% 0))
@@ -699,6 +702,8 @@ items <- lapply(items[orden], function(i) { i$orden <- NULL; i })
 if (length(items) && !isFALSE(opciones$citations) && !is.null(scholar$total)) {
   items[[1]]$scholar_total <- as.integer(scholar$total)
   if (!is.null(scholar$h)) items[[1]]$scholar_h <- as.integer(scholar$h)
+  if (length(scholar$por_anio)) items[[1]]$scholar_by_year <-
+    lapply(scholar$por_anio, function(g) list(year = as.integer(g$anio), n = as.integer(g$n)))
 }
 
 if (length(gbif) != gbif_n) {

@@ -14,7 +14,7 @@ listing:
 ---
 
 ::: pubs-intro
-Also on [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?hl=en&user=5EQSDqwAAAAJ) and [{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0002-0710-6292). If a paper is not open access, [{{< fa envelope >}} reach out to me](contact.qmd) and I will send you a copy.
+Also on [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?hl=en&user=5EQSDqwAAAAJ) and [{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0002-0710-6292). If a paper is not open access, [{{< fa envelope >}} reach out to me](contact.qmd) for a copy.
 :::
 
 ::: {#pubs}
