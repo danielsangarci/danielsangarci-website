@@ -13,27 +13,28 @@
   data:
     - https://doi.org/10.5281/zenodo.23105816
   oa: true
-  abstract: 'BACKGROUND: The Argentine ant (Linepithema humile) is among the world''s
-    worst invasive species. In the Doñana Biological Reserve (Spain), it is associated
-    with human structures that provide the mild, moist conditions it needs within
-    the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting
-    that removing this suitable habitat would eradicate the invader locally. Over
-    an 18-year period, we monitored ant communities at a treated and an untreated
+  metrics: true
+  abstract: 'BACKGROUND: The Argentine ant (<i>Linepithema humile</i>) is among the
+    world''s worst invasive species. In the Doñana Biological Reserve (Spain), it
+    is associated with human structures that provide the mild, moist conditions it
+    needs within the hot, dry scrubland. We evaluated a habitat-modification treatment,
+    predicting that removing this suitable habitat would eradicate the invader locally.
+    Over an 18-year period, we monitored ant communities at a treated and an untreated
     site, at different distances from the human structures, before and after treatment,
     and analysed how temperature and worker numbers affected encounters at baits between
     the Argentine ant and native ants. RESULTS: Distance to the human structures shaped
     ant communities at both sites, but only the treated site changed after treatment.
     There, the Argentine ant decreased close to the human structure and almost disappeared
-    farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered,
-    especially close to the structure. At baits, the outcome of encounters depended
-    mainly on how temperature changes favoured each species relative to its maximum
-    activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning,
-    as temperature increased, and the Argentine ant recovered the baits in the late
-    afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat
-    modification reduced the Argentine ant and allowed endemic ants to recover, but
-    did not eradicate the invader, which persisted at low abundance 13 years after
-    treatment. In protected areas, habitat management should be combined with eradication,
-    monitoring and prevention of spread.'
+    farther from it, whereas the endemic <i>Cataglyphis tartessica</i> and <i>C. floricola</i>
+    recovered, especially close to the structure. At baits, the outcome of encounters
+    depended mainly on how temperature changes favoured each species relative to its
+    maximum activity temperature: <i>Cataglyphis</i> spp. displaced the Argentine
+    ant in the morning, as temperature increased, and the Argentine ant recovered
+    the baits in the late afternoon. Numerical advantage favoured only the Argentine
+    ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic
+    ants to recover, but did not eradicate the invader, which persisted at low abundance
+    13 years after treatment. In protected areas, habitat management should be combined
+    with eradication, monitoring and prevention of spread.'
   bibtex: |-
     @misc{sanchezgarcia2026temperature,
       title = {Temperature and management reduce the abundance of the invasive Argentine ant (Linepithema humile)},
@@ -42,6 +43,8 @@
       howpublished = {bioRxiv},
       doi = {10.64898/2026.10.08.756264}
     }
+  scholar_total: 89
+  scholar_h: 5
 - type: article
   type_label: Journal article
   year: 2026
@@ -57,6 +60,7 @@
   data:
     - https://doi.org/10.5281/zenodo.17809129
   oa: true
+  metrics: true
   abstract: Litter ant communities constitute an important component of biodiversity
     in tropical regions. They are currently used in several ecosystem management programmes
     to assess forest health. The aim of this study was to uncover the ant diversity
@@ -98,25 +102,29 @@
   data:
     - https://doi.org/10.5281/zenodo.17791047
   oa: true
+  metrics: true
+  s2_cited: 0
+  s2_influential: 0
+  s2_url: https://www.semanticscholar.org/paper/66eaacfb483a7ea8b508c2ebd42b55cc77a08114
   abstract: 'Coevolutionary interactions between parasites and hosts are key drivers
     of biological adaptation. In this study, we explore the evolutionary response
-    of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis
-    , taking advantage of a unique opportunity: the reintroduction of the butterfly
-    in the Netherlands thirty years ago. We compared the degree of host mimicry and
-    behavioural performance of caterpillars between the reintroduced and the Polish
-    source population. After about thirty generations, chemical and vibroacoustical
-    signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption
-    phase for both groups; however, in the post-adoption phase, the source population
-    showed significantly higher chemical similarity to their local hosts. In contrast,
-    reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling
-    local hosts, also resulting in a stronger response from their local host ants.
-    This suggests that adoption is driven by acoustics and subsequently serves as
-    a selective filter promoting post-entry chemical refinement. Behavioural data
-    evince that despite the differences between the different communication channels,
-    the combination of signals remains sufficient to ensure recognition and integration
-    in both host-parasite systems. These results illustrate how social parasites involved
-    in multisensory mimicry can rapidly recalibrate strategies to remain functional
-    in new ecological contexts.'
+    of the social parasitic butterfly <i>Phengaris teleius</i> to its host ant, <i>Myrmica
+    scabrinodis</i>, taking advantage of a unique opportunity: the reintroduction
+    of the butterfly in the Netherlands thirty years ago. We compared the degree of
+    host mimicry and behavioural performance of caterpillars between the reintroduced
+    and the Polish source population. After about thirty generations, chemical and
+    vibroacoustical signal profiles have diverged. Chemical mimicry remained limited
+    during the pre-adoption phase for both groups; however, in the post-adoption phase,
+    the source population showed significantly higher chemical similarity to their
+    local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic
+    signals closely resembling local hosts, also resulting in a stronger response
+    from their local host ants. This suggests that adoption is driven by acoustics
+    and subsequently serves as a selective filter promoting post-entry chemical refinement.
+    Behavioural data evince that despite the differences between the different communication
+    channels, the combination of signals remains sufficient to ensure recognition
+    and integration in both host-parasite systems. These results illustrate how social
+    parasites involved in multisensory mimicry can rapidly recalibrate strategies
+    to remain functional in new ecological contexts.'
   bibtex: |-
     @misc{sanchezgarcia2025ongoing,
       title = {Ongoing coevolution between reintroduced Phengaris teleius butterflies and their Myrmica host ants},
@@ -129,7 +137,7 @@
   type_label: Journal article
   year: 2024
   title: Temporal and spatial variation of morphological traits and genetic structure
-    in Phengaris teleius myrmecophilous butterflies following habitat and climate
+    in <i>Phengaris teleius</i> myrmecophilous butterflies following habitat and climate
     changes three decades after reintroduction
   url: https://doi.org/10.1016/j.gecco.2024.e03104
   authors: <strong>Sánchez-García, D.</strong>, Wynhoff, I., Kajzer-Bonk, J., Sztencel-Jabłonka,
@@ -139,25 +147,35 @@
   pdf: https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf
   preprint: https://doi.org/10.2139/ssrn.4779205
   oa: true
+  metrics: true
   cited: 3
-  abstract: A successful reintroduction of Phengaris teleius performed in the Netherlands
-    by translocating 86 individuals from a Polish metapopulation in 1990 represents
-    a unique opportunity to study changes in butterflies from a source and reintroduced
-    metapopulation after such a common conservation practice. Using multilevel comparisons,
-    we tested morphological and genetic changes that occurred after 30 generations
-    since the reintroduction. We also assessed the climatic and connectivity changes
-    that occurred over time in both metapopulation networks. Unexpectedly, we found
-    more significant morphological changes in the current individuals from the source
-    metapopulation, where both sexes had bigger hindwings with different shapes in
-    comparison to the individuals from the original metapopulation in the year of
-    the reintroduction and the ones from the current reintroduced metapopulation.
+  cites_by_year:
+    - year: 2025
+      'n': 2
+    - year: 2024
+      'n': 1
+  s2_cited: 3
+  s2_influential: 0
+  s2_url: https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9
+  scholar: 3
+  abstract: A successful reintroduction of <i>Phengaris teleius</i> performed in the
+    Netherlands by translocating 86 individuals from a Polish metapopulation in 1990
+    represents a unique opportunity to study changes in butterflies from a source
+    and reintroduced metapopulation after such a common conservation practice. Using
+    multilevel comparisons, we tested morphological and genetic changes that occurred
+    after 30 generations since the reintroduction. We also assessed the climatic and
+    connectivity changes that occurred over time in both metapopulation networks.
+    Unexpectedly, we found more significant morphological changes in the current individuals
+    from the source metapopulation, where both sexes had bigger hindwings with different
+    shapes in comparison to the individuals from the original metapopulation in the
+    year of the reintroduction and the ones from the current reintroduced metapopulation.
     The butterflies from the Dutch metapopulation also had smaller thorax width compared
     to the ones from the current source metapopulation. The observed morphological
     changes can be shaped by various factors like changes in climatic conditions and
     habitat connectivity. Additionally, the genetic analysis revealed a differentiation
     between the source and reintroduced metapopulation. We found a loss of half of
     the allelic richness and a bottleneck effect in the reintroduced metapopulation
-    compared to the current Polish one. Our results show that Phengaris butterflies
+    compared to the current Polish one. Our results show that <i>Phengaris</i> butterflies
     have the potential to adapt to new habitats and respond to climatic changes despite
     their complex life cycle. A proper long-term habitat management in reintroduced
     butterfly metapopulations and habitat restoration are key factors influencing
@@ -176,7 +194,7 @@
   type_label: Journal article
   year: 2024
   title: Urban abiotic stressors drive changes in the foraging activity and colony
-    growth of the black garden ant Lasius niger
+    growth of the black garden ant <i>Lasius niger</i>
   url: https://doi.org/10.1016/j.scitotenv.2024.170157
   authors: Trigos-Peral, G., Maák, I. E., Schmid, S., Chudzik, P., Czaczkes, T. J.,
     Witek, M., Casacci, L. P., <strong>Sánchez-García, D.</strong>, Lőrincz, Á., Kochanowski,
@@ -187,7 +205,19 @@
   data:
     - https://doi.org/10.6084/m9.figshare.23507211
   oa: true
+  metrics: true
   cited: 19
+  cites_by_year:
+    - year: 2026
+      'n': 14
+    - year: 2025
+      'n': 3
+    - year: 2024
+      'n': 2
+  s2_cited: 15
+  s2_influential: 0
+  s2_url: https://www.semanticscholar.org/paper/ae28335953a291f80ff83a2f21182f0741ce5b8e
+  scholar: 31
   bibtex: |-
     @article{trigosperal2024urban,
       title = {Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger},
@@ -209,7 +239,19 @@
   doi: 10.1371/journal.pone.0267547
   pdf: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable
   oa: true
+  metrics: true
   cited: 8
+  cites_by_year:
+    - year: 2026
+      'n': 3
+    - year: 2025
+      'n': 4
+    - year: 2022
+      'n': 1
+  s2_cited: 6
+  s2_influential: 0
+  s2_url: https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40
+  scholar: 22
   abstract: Temperature and competition are two of the main factors determining ant
     community assemblages. Temperature may allow species to forage more or less efficiently
     throughout the day (in accordance with the maximum activity temperature of each
@@ -250,6 +292,8 @@
     Sergio, F., Reyes-López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X.
   venue: 'In J. Junoy (Ed.), <i>Especies exóticas invasoras: Cátedra de parques nacionales</i>
     (pp. 249–262). Editorial Universidad de Alcalá'
+  metrics: true
+  scholar: 2
   bibtex: |-
     @incollection{anguloaguado2019podra,
       title = {¿Se podrá controlar la expansión de la invasora hormiga argentina en Doñana?},
@@ -270,6 +314,8 @@
     D.</strong>
   venue: <i>Boletín de la Sociedad Entomológica Aragonesa (S.E.A.)</i>, 65, 39–44
   pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2019/BSEA%2065_39_44.pdf
+  metrics: true
+  scholar: 4
   bibtex: |-
     @article{garcia2019lasius,
       title = {Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)},
@@ -290,6 +336,8 @@
     D.</strong>
   venue: <i>Iberomyrmex</i>, 10, 22–27
   pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2018/Iberomyrmex10_22_27.pdf
+  metrics: true
+  scholar: 7
   bibtex: |-
     @article{garciagarcia2018primera,
       title = {Primera cita ibérica para Temnothorax conatensis Galkowski \& Lebas, 2016, y actualización de la distribución para Temnothorax grouvellei (Bondroit, 1918) (Hymenoptera: Formicidae)},
@@ -309,6 +357,8 @@
     F.
   venue: <i>Iberomyrmex</i>, 9, 5–9
   pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2017/Iberomyrmex9_5_9.pdf
+  metrics: true
+  scholar: 6
   bibtex: |-
     @article{espadaler2017temnothorax,
       title = {Temnothorax ibericus Menozzi (1922), un endemismo ibérico orófilo (Hymenoptera, Formicidae)},
@@ -327,6 +377,8 @@
   authors: <strong>Sánchez-García, D.</strong> and Espadaler, X.
   venue: <i>Iberomyrmex</i>, 9, 11–13
   pdf: https://mirmiberica.org/files/IBEROMYRMEX%20sin%20pliegos.pdf#page=11
+  metrics: true
+  scholar: 3
   bibtex: |-
     @article{sanchezgarcia2017nueva,
       title = {Una nueva especie parásita social para la península ibérica. Bothriomyrmex communista Santschi, 1919 (Hymenoptera: Formicidae) en España},
@@ -345,6 +397,8 @@
   authors: <strong>Sánchez-García, D.</strong> and Espadaler, X.
   venue: <i>Iberomyrmex</i>, 7, 7–9
   pdf: http://xavierespadaler.creaf.cat/Archivos/2010s/2015/Iberomyrmex7_7_9.pdf
+  metrics: true
+  scholar: 11
   bibtex: |-
     @article{sanchezgarcia2015cardiocondyla,
       title = {Cardiocondyla obscurior Wheeler, 1929 (Hymenoptera, Formicidae) en España},

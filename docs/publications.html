@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-feb1641e436ef654657d266f6c53a61e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-77fd6e282fbb1c2d5d0c498ec33420ce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-feaef5a97c932c62ca3d1a33cb38d004.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-385f42bf2cdc38f1845faa2cb8e1f8bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-feaef5a97c932c62ca3d1a33cb38d004.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
@@ -93,9 +93,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-data','listing-oa','listing-abstract','listing-bibtex','listing-preprint','listing-cited',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-data','listing-oa','listing-metrics','listing-abstract','listing-bibtex','listing-scholar_total','listing-scholar_h','listing-preprint','listing-s2_cited','listing-s2_influential','listing-s2_url','listing-cited','listing-cites_by_year','listing-scholar',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-data","listing-oa","listing-abstract","listing-bibtex","listing-preprint","listing-cited"],
+      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-data","listing-oa","listing-metrics","listing-abstract","listing-bibtex","listing-scholar_total","listing-scholar_h","listing-preprint","listing-s2_cited","listing-s2_influential","listing-s2_url","listing-cited","listing-cites_by_year","listing-scholar"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -440,6 +440,49 @@ window.Quarto = {
 </div>
 <div id="listing-pubs" class="quarto-listing quarto-listing-container-custom">
 <div class="pubs">
+  
+  <section class="pubs-resumen" aria-label="Publication metrics">
+    <dl class="pubs-cifras">
+      <div class="pubs-cifra"><dt>Publications</dt><dd>12</dd></div>
+      <div class="pubs-cifra"><dt>Citations</dt><dd>89<span class="pubs-cifra__fuente">Google Scholar</span></dd></div>
+      <div class="pubs-cifra"><dt>h-index</dt><dd>5<span class="pubs-cifra__fuente">Google Scholar</span></dd></div>
+      <div class="pubs-cifra"><dt>Citations in 2026</dt><dd>17<span class="pubs-cifra__fuente">OpenAlex</span></dd></div>
+    </dl>
+    <figure class="pubs-grafico figure">
+      <figcaption>Citations per year <span class="pubs-cifra__fuente">OpenAlex</span></figcaption>
+      <div class="pubs-columnas" role="img" aria-label="Citations per year: 2022, 1; 2023, 0; 2024, 3; 2025, 9; 2026, 17">
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2022: 1 citation">
+          <span class="pubs-columna__barra" style="height: 6%"></span>
+          <span class="pubs-columna__anio">2022</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2023: 0 citations">
+          <span class="pubs-columna__barra" style="height: 0%"></span>
+          <span class="pubs-columna__anio">2023</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2024: 3 citations">
+          <span class="pubs-columna__barra" style="height: 18%"></span>
+          <span class="pubs-columna__anio">2024</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2025: 9 citations">
+          <span class="pubs-columna__barra" style="height: 53%"></span>
+          <span class="pubs-columna__anio">2025</span>
+        </div>
+        
+        <div class="pubs-columna" tabindex="0" data-tip="2026: 17 citations">
+          <span class="pubs-columna__barra" style="height: 100%"></span>
+          <span class="pubs-columna__anio">2026</span>
+        </div>
+        
+      </div>
+    </figure>
+    <p class="pubs-fuente">Updated weekly from <a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> and <a href="https://openalex.org/">OpenAlex</a>. Each database counts citations differently; see each paper below.</p>
+  </section>
+  
+
   <div class="pubs-barra">
     <div class="pubs-filtros" role="group" aria-label="Filter by type">
       
@@ -474,10 +517,11 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="preprint">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--preprint">Preprint</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          
         </div>
 
         <h3 class="pub__titulo anchored"><a href="https://doi.org/10.64898/2026.10.08.756264">Temperature and management reduce the abundance of the invasive Argentine ant (<i>Linepithema humile</i>)</a></h3>
@@ -497,8 +541,24 @@ window.Quarto = {
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-1-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
         
-        <div class="pub__panel" id="pub-1-abs" hidden=""><p>BACKGROUND: The Argentine ant (Linepithema humile) is among the world's worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. RESULTS: Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.</p></div>
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.64898/2026.10.08.756264" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          
+        </div>
+        
+        </div>
+
+        
+        <div class="pub__panel" id="pub-1-abs" hidden=""><p>BACKGROUND: The Argentine ant (<i>Linepithema humile</i>) is among the world's worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. RESULTS: Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic <i>Cataglyphis tartessica</i> and <i>C. floricola</i> recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: <i>Cataglyphis</i> spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.</p></div>
         
         <div class="pub__panel pub__panel--bib" id="pub-1-bib" hidden="">
           <pre><code>@misc{sanchezgarcia2026temperature,
@@ -513,10 +573,11 @@ window.Quarto = {
       </li>
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          
         </div>
 
         <h3 class="pub__titulo anchored"><a href="https://doi.org/10.3897/afrinvertebr.67.180461">Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling</a></h3>
@@ -534,6 +595,22 @@ window.Quarto = {
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-2-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.3897/afrinvertebr.67.180461" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          
+        </div>
+        
         </div>
 
         
@@ -562,10 +639,11 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="preprint">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--preprint">Preprint</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          
         </div>
 
         <h3 class="pub__titulo anchored"><a href="https://doi.org/10.64898/2025.12.02.691951">Ongoing coevolution between reintroduced <i>Phengaris teleius</i> butterflies and their <i>Myrmica</i> host ants</a></h3>
@@ -585,8 +663,24 @@ window.Quarto = {
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-3-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
         
-        <div class="pub__panel" id="pub-3-abs" hidden=""><p>Coevolutionary interactions between parasites and hosts are key drivers of biological adaptation. In this study, we explore the evolutionary response of the social parasitic butterfly Phengaris teleius to its host ant, Myrmica scabrinodis , taking advantage of a unique opportunity: the reintroduction of the butterfly in the Netherlands thirty years ago. We compared the degree of host mimicry and behavioural performance of caterpillars between the reintroduced and the Polish source population. After about thirty generations, chemical and vibroacoustical signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption phase for both groups; however, in the post-adoption phase, the source population showed significantly higher chemical similarity to their local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling local hosts, also resulting in a stronger response from their local host ants. This suggests that adoption is driven by acoustics and subsequently serves as a selective filter promoting post-entry chemical refinement. Behavioural data evince that despite the differences between the different communication channels, the combination of signals remains sufficient to ensure recognition and integration in both host-parasite systems. These results illustrate how social parasites involved in multisensory mimicry can rapidly recalibrate strategies to remain functional in new ecological contexts.</p></div>
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.64898/2025.12.02.691951" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          
+        </div>
+        
+        </div>
+
+        
+        <div class="pub__panel" id="pub-3-abs" hidden=""><p>Coevolutionary interactions between parasites and hosts are key drivers of biological adaptation. In this study, we explore the evolutionary response of the social parasitic butterfly <i>Phengaris teleius</i> to its host ant, <i>Myrmica scabrinodis</i>, taking advantage of a unique opportunity: the reintroduction of the butterfly in the Netherlands thirty years ago. We compared the degree of host mimicry and behavioural performance of caterpillars between the reintroduced and the Polish source population. After about thirty generations, chemical and vibroacoustical signal profiles have diverged. Chemical mimicry remained limited during the pre-adoption phase for both groups; however, in the post-adoption phase, the source population showed significantly higher chemical similarity to their local hosts. In contrast, reintroduced pre-adoption caterpillars evolved vibroacoustic signals closely resembling local hosts, also resulting in a stronger response from their local host ants. This suggests that adoption is driven by acoustics and subsequently serves as a selective filter promoting post-entry chemical refinement. Behavioural data evince that despite the differences between the different communication channels, the combination of signals remains sufficient to ensure recognition and integration in both host-parasite systems. These results illustrate how social parasites involved in multisensory mimicry can rapidly recalibrate strategies to remain functional in new ecological contexts.</p></div>
         
         <div class="pub__panel pub__panel--bib" id="pub-3-bib" hidden="">
           <pre><code>@misc{sanchezgarcia2025ongoing,
@@ -608,13 +702,14 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          <span class="pub__citas">Cited by 3</span>
         </div>
 
-        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.gecco.2024.e03104">Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades after reintroduction</a></h3>
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.gecco.2024.e03104">Temporal and spatial variation of morphological traits and genetic structure in <i>Phengaris teleius</i> myrmecophilous butterflies following habitat and climate changes three decades after reintroduction</a></h3>
         <p class="pub__autores"><strong>Sánchez-García, D.</strong>, Wynhoff, I., Kajzer-Bonk, J., Sztencel-Jabłonka, A., Nowicki, P., Casacci, L. P., and Witek, M.</p>
         <p class="pub__revista"><i>Global Ecology and Conservation</i>, 54, e03104</p>
         
@@ -631,8 +726,35 @@ window.Quarto = {
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-4-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
         
-        <div class="pub__panel" id="pub-4-abs" hidden=""><p>A successful reintroduction of Phengaris teleius performed in the Netherlands by translocating 86 individuals from a Polish metapopulation in 1990 represents a unique opportunity to study changes in butterflies from a source and reintroduced metapopulation after such a common conservation practice. Using multilevel comparisons, we tested morphological and genetic changes that occurred after 30 generations since the reintroduction. We also assessed the climatic and connectivity changes that occurred over time in both metapopulation networks. Unexpectedly, we found more significant morphological changes in the current individuals from the source metapopulation, where both sexes had bigger hindwings with different shapes in comparison to the individuals from the original metapopulation in the year of the reintroduction and the ones from the current reintroduced metapopulation. The butterflies from the Dutch metapopulation also had smaller thorax width compared to the ones from the current source metapopulation. The observed morphological changes can be shaped by various factors like changes in climatic conditions and habitat connectivity. Additionally, the genetic analysis revealed a differentiation between the source and reintroduced metapopulation. We found a loss of half of the allelic richness and a bottleneck effect in the reintroduced metapopulation compared to the current Polish one. Our results show that Phengaris butterflies have the potential to adapt to new habitats and respond to climatic changes despite their complex life cycle. A proper long-term habitat management in reintroduced butterfly metapopulations and habitat restoration are key factors influencing the success of reintroduction.</p></div>
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.gecco.2024.e03104" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="3 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">3</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+          <a class="pub-circulo" href="https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9" title="3 citations in Semantic Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">3</span></span>
+            <span class="pub-circulo__fuente">Semantic Scholar</span>
+            
+          </a>
+          
+        </div>
+        
+        </div>
+
+        
+        <div class="pub__panel" id="pub-4-abs" hidden=""><p>A successful reintroduction of <i>Phengaris teleius</i> performed in the Netherlands by translocating 86 individuals from a Polish metapopulation in 1990 represents a unique opportunity to study changes in butterflies from a source and reintroduced metapopulation after such a common conservation practice. Using multilevel comparisons, we tested morphological and genetic changes that occurred after 30 generations since the reintroduction. We also assessed the climatic and connectivity changes that occurred over time in both metapopulation networks. Unexpectedly, we found more significant morphological changes in the current individuals from the source metapopulation, where both sexes had bigger hindwings with different shapes in comparison to the individuals from the original metapopulation in the year of the reintroduction and the ones from the current reintroduced metapopulation. The butterflies from the Dutch metapopulation also had smaller thorax width compared to the ones from the current source metapopulation. The observed morphological changes can be shaped by various factors like changes in climatic conditions and habitat connectivity. Additionally, the genetic analysis revealed a differentiation between the source and reintroduced metapopulation. We found a loss of half of the allelic richness and a bottleneck effect in the reintroduced metapopulation compared to the current Polish one. Our results show that <i>Phengaris</i> butterflies have the potential to adapt to new habitats and respond to climatic changes despite their complex life cycle. A proper long-term habitat management in reintroduced butterfly metapopulations and habitat restoration are key factors influencing the success of reintroduction.</p></div>
         
         <div class="pub__panel pub__panel--bib" id="pub-4-bib" hidden="">
           <pre><code>@article{sanchezgarcia2024temporal,
@@ -649,13 +771,14 @@ window.Quarto = {
       </li>
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          <span class="pub__citas">Cited by 19</span>
         </div>
 
-        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.scitotenv.2024.170157">Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger</a></h3>
+        <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1016/j.scitotenv.2024.170157">Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant <i>Lasius niger</i></a></h3>
         <p class="pub__autores">Trigos-Peral, G., Maák, I. E., Schmid, S., Chudzik, P., Czaczkes, T. J., Witek, M., Casacci, L. P., <strong>Sánchez-García, D.</strong>, Lőrincz, Á., Kochanowski, M., and Heinze, J.</p>
         <p class="pub__revista"><i>Science of The Total Environment</i>, 915, 170157</p>
         
@@ -670,6 +793,33 @@ window.Quarto = {
           
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-5-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.1016/j.scitotenv.2024.170157" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="31 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">31</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+          <a class="pub-circulo" href="https://www.semanticscholar.org/paper/ae28335953a291f80ff83a2f21182f0741ce5b8e" title="15 citations in Semantic Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">15</span></span>
+            <span class="pub-circulo__fuente">Semantic Scholar</span>
+            
+          </a>
+          
+        </div>
+        
         </div>
 
         
@@ -695,10 +845,11 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
           <span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span>
-          <span class="pub__citas">Cited by 8</span>
         </div>
 
         <h3 class="pub__titulo anchored"><a href="https://doi.org/10.1371/journal.pone.0267547">Temperature or competition: Which has more influence on Mediterranean ant communities?</a></h3>
@@ -716,6 +867,33 @@ window.Quarto = {
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-6-abs"><i class="bi bi-text-paragraph" aria-hidden="true"></i>Abstract</button>
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-6-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="10.1371/journal.pone.0267547" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="22 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">22</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+          <a class="pub-circulo" href="https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40" title="6 citations in Semantic Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">6</span></span>
+            <span class="pub-circulo__fuente">Semantic Scholar</span>
+            
+          </a>
+          
+        </div>
+        
         </div>
 
         
@@ -744,9 +922,10 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="chapter">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--chapter">Book chapter</span>
-          
           
         </div>
 
@@ -767,6 +946,22 @@ window.Quarto = {
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-7-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="2 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">2</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
+        </div>
+
         
         <div class="pub__panel pub__panel--bib" id="pub-7-bib" hidden="">
           <pre><code>@incollection{anguloaguado2019podra,
@@ -783,9 +978,10 @@ window.Quarto = {
       </li>
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
-          
           
         </div>
 
@@ -804,6 +1000,22 @@ window.Quarto = {
           
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-8-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="4 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">4</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
         </div>
 
         
@@ -828,9 +1040,10 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
-          
           
         </div>
 
@@ -849,6 +1062,22 @@ window.Quarto = {
           
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-9-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="7 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">7</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
         </div>
 
         
@@ -873,9 +1102,10 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
-          
           
         </div>
 
@@ -896,6 +1126,22 @@ window.Quarto = {
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-10-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="6 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">6</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
+        </div>
+
         
         <div class="pub__panel pub__panel--bib" id="pub-10-bib" hidden="">
           <pre><code>@article{espadaler2017temnothorax,
@@ -911,9 +1157,10 @@ window.Quarto = {
       </li>
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
-          
           
         </div>
 
@@ -932,6 +1179,22 @@ window.Quarto = {
           
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-11-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="3 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">3</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
         </div>
 
         
@@ -956,9 +1219,10 @@ window.Quarto = {
     <ol class="pubs-lista">
       
       <li class="pub" data-type="article">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--article">Journal article</span>
-          
           
         </div>
 
@@ -977,6 +1241,22 @@ window.Quarto = {
           
           
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="pub-12-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
+        </div>
+
+        </div>
+
+        
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          
+          
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="11 citations in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n">11</span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          
+          
+        </div>
+        
         </div>
 
         
@@ -998,9 +1278,10 @@ window.Quarto = {
   
 </div>
 
+<script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 <script>
 (function () {
-  var raiz = document.currentScript.previousElementSibling;
+  var raiz = document.querySelector('.pubs');
   var chips = raiz.querySelectorAll('.pubs-chip');
   var buscador = raiz.querySelector('.pubs-buscar input');
   var pubs = raiz.querySelectorAll('.pub');

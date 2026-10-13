@@ -1651,3 +1651,209 @@ a.lightbox {
 @media (prefers-reduced-motion: reduce) {
   .pub-btn:hover { transform: none; }
 }
+
+// Resumen de metricas (OpenAlex) encima de la lista
+.pubs-resumen {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+  align-items: end;
+  margin-bottom: 1.75rem;
+  padding: 1.4rem 1.5rem 1.1rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+.pubs-cifras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.1rem 1.5rem;
+  margin: 0;
+}
+// De que base sale cada cifra: debajo del numero, y junto al titulo del grafico
+.pubs-cifra dd .pubs-cifra__fuente {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: $font-family-sans-serif;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: $gray-500;
+}
+.pubs-grafico .pubs-cifra__fuente {
+  margin-left: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: $gray-500;
+  text-transform: none;
+}
+.pubs-cifra {
+  dt {
+    order: 2;
+    font-family: $headings-font-family;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $gray-600;
+  }
+  dd {
+    margin: 0 0 0.15rem;
+    font-family: $headings-font-family;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: $dsg-ink;
+  }
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+// Grafico de columnas: una serie, el azul del sitio, valores al pasar el raton
+.pubs-grafico { margin: 0; }
+.pubs-grafico figcaption {
+  margin-bottom: 0.6rem;
+  font-family: $headings-font-family;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $gray-600;
+}
+.pubs-columnas {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 7.5rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid $dsg-hairline;
+  position: relative;
+}
+.pubs-columna {
+  position: relative;
+  flex: 1 1 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  outline: none;
+  cursor: default;
+}
+.pubs-columna__barra {
+  display: block;
+  width: min(100%, 1.6rem);
+  border-radius: 4px 4px 0 0;
+  background-color: $primary;
+  transition: $dsg-ease;
+}
+.pubs-columna__anio {
+  position: absolute;
+  bottom: -1.3rem;
+  font-size: 0.62rem;
+  color: $gray-600;
+  font-variant-numeric: tabular-nums;
+}
+.pubs-columna::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 0.2rem);
+  left: 50%;
+  transform: translate(-50%, 0.25rem);
+  padding: 0.25rem 0.55rem;
+  border-radius: 0.4rem;
+  background-color: $dsg-ink;
+  color: #ffffff;
+  font-size: 0.68rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: $dsg-ease;
+  z-index: 2;
+}
+.pubs-columna:hover::after,
+.pubs-columna:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+.pubs-columna:hover .pubs-columna__barra,
+.pubs-columna:focus-visible .pubs-columna__barra { background-color: $dsg-ink; }
+// la etiqueta flotante se coloca sobre la barra, no sobre la columna entera
+.pubs-columna::after { bottom: auto; top: -0.4rem; }
+
+.pubs-fuente {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.72rem;
+  color: $gray-600;
+}
+
+// Metricas por articulo: circulos a la derecha (debajo en el movil).
+// Dimensions es su insignia oficial en circulo; Google Scholar y Semantic
+// Scholar se dibujan aqui con la misma forma y los colores del sitio.
+.pub__principal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.pub__cuerpo { flex: 1 1 auto; min-width: 0; }
+.pub__metricas {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-top: 1.6rem;
+  &:not(:empty) { margin-left: 1.75rem; }
+}
+.pub-circulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4.4rem;
+  text-align: center;
+  color: $gray-700;
+  &:hover { text-decoration: none; }
+}
+a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow: 0 6px 16px rgba($primary, 0.18); }
+// sin citas en Dimensions, su badge queda vacio: se oculta el circulo entero
+.pub-circulo--dimensions:not(:has(.__dimensions_badge_embed__ > *)) { display: none; }
+.pub-circulo--dimensions .__dimensions_badge_embed__ { line-height: 0; min-height: 3.3rem; display: flex; align-items: center; }
+.pub-circulo__aro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 50%;
+  border: 3px solid $primary;
+  background-color: #ffffff;
+  transition: $dsg-ease;
+  // las citas "highly influential" se marcan con un aro doble
+  &--influyente { box-shadow: 0 0 0 3px #ffffff, 0 0 0 5px rgba($primary, 0.35); }
+}
+.pub-circulo__n {
+  font-family: $headings-font-family;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+  color: $dsg-ink;
+  font-variant-numeric: tabular-nums;
+}
+.pub-circulo__fuente {
+  margin-top: 0.4rem;
+  font-family: $headings-font-family;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: $gray-600;
+}
+.pub-circulo__extra { margin-top: 0.1rem; font-size: 0.62rem; color: $gray-500; }
+
+// En pantallas medianas y moviles, los circulos van debajo del articulo
+@media (max-width: 991.98px) {
+  .pub__principal { flex-direction: column; }
+  .pub__metricas { padding-top: 0.9rem; &:not(:empty) { margin-left: 0; } }
+}
+@media (max-width: 767.98px) {
+  .pubs-resumen { grid-template-columns: minmax(0, 1fr); padding: 1.2rem 1.1rem 1rem; }
+  .pubs-cifra dd { font-size: 1.7rem; }
+}

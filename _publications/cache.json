@@ -45,7 +45,24 @@
       "pdf": null,
       "web": "https://doi.org/10.1016/j.scitotenv.2024.170157",
       "citas": 19,
-      "en_orcid": true
+      "citas_anio": [
+        {
+          "anio": 2026,
+          "n": 14
+        },
+        {
+          "anio": 2025,
+          "n": 3
+        },
+        {
+          "anio": 2024,
+          "n": 2
+        }
+      ],
+      "en_orcid": true,
+      "s2_citas": 15,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ae28335953a291f80ff83a2f21182f0741ce5b8e"
     },
     {
       "doi": "10.1371/journal.pone.0267547",
@@ -76,7 +93,24 @@
       "pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable",
       "web": "https://doi.org/10.1371/journal.pone.0267547",
       "citas": 8,
-      "en_orcid": true
+      "citas_anio": [
+        {
+          "anio": 2026,
+          "n": 3
+        },
+        {
+          "anio": 2025,
+          "n": 4
+        },
+        {
+          "anio": 2022,
+          "n": 1
+        }
+      ],
+      "en_orcid": true,
+      "s2_citas": 6,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40"
     },
     {
       "doi": "10.1016/j.gecco.2024.e03104",
@@ -115,7 +149,20 @@
       "pdf": null,
       "web": "https://doi.org/10.1016/j.gecco.2024.e03104",
       "citas": 3,
-      "en_orcid": true
+      "citas_anio": [
+        {
+          "anio": 2025,
+          "n": 2
+        },
+        {
+          "anio": 2024,
+          "n": 1
+        }
+      ],
+      "en_orcid": true,
+      "s2_citas": 3,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9"
     },
     {
       "doi": "10.6084/m9.figshare.23507211",
@@ -158,6 +205,7 @@
       "pdf": null,
       "web": "https://figshare.com/articles/dataset/Data_-_Urban_abiotic_stressors_drive_changes_in_the_foraging_activity_and_colony_growth_of_the_black_garden_ant_i_Lasius_niger_i_/23507211",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": false
     },
     {
@@ -197,6 +245,7 @@
       "pdf": null,
       "web": "https://doi.org/10.2139/ssrn.4779205",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": false
     },
     {
@@ -240,7 +289,11 @@
       "pdf": null,
       "web": "https://doi.org/10.64898/2025.12.02.691951",
       "citas": 0,
-      "en_orcid": true
+      "citas_anio": [],
+      "en_orcid": true,
+      "s2_citas": 0,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/66eaacfb483a7ea8b508c2ebd42b55cc77a08114"
     },
     {
       "doi": "10.3897/afrinvertebr.67.180461",
@@ -275,6 +328,7 @@
       "pdf": null,
       "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": true
     },
     {
@@ -318,6 +372,7 @@
       "pdf": null,
       "web": "http://hdl.handle.net/10261/424794",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": false
     },
     {
@@ -353,6 +408,7 @@
       "pdf": null,
       "web": "http://hdl.handle.net/10261/424860",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": false
     },
     {
@@ -384,6 +440,7 @@
       "pdf": null,
       "web": "https://doi.org/10.5281/zenodo.23105816",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": false
     },
     {
@@ -415,6 +472,7 @@
       "pdf": "https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf",
       "web": "https://doi.org/10.64898/2026.10.08.756264",
       "citas": 0,
+      "citas_anio": [],
       "en_orcid": true
     },
     {
@@ -450,7 +508,11 @@
       "pdf": null,
       "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
       "citas": 0,
-      "en_orcid": true
+      "citas_anio": [],
+      "en_orcid": true,
+      "s2_citas": 0,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ed1c82aee3f35d03614a5b45dab258033fd98a3f"
     },
     {
       "doi": "10.2139/ssrn.4610852",

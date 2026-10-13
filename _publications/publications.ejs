@@ -21,9 +21,56 @@ for (const it of items) {
   else anios.push({ year: it.year, items: [it] });
 }
 let n = 0;
+
+// Resumen de metricas (OpenAlex). Solo cuenta lo que sale en la lista.
+const conMetricas = items.some(i => i.metrics);
+const citas = items.map(i => i.cited || 0).sort((a, b) => b - a);
+const totalCitas = citas.reduce((a, b) => a + b, 0);
+const indiceH = citas.filter((c, k) => c >= k + 1).length;
+const porAnio = {};
+for (const it of items) for (const c of (it.cites_by_year || [])) porAnio[c.year] = (porAnio[c.year] || 0) + c.n;
+const anioActual = new Date().getFullYear();
+const aniosCitas = Object.keys(porAnio).map(Number);
+const desde = aniosCitas.length ? Math.min(...aniosCitas) : anioActual;
+const serie = [];
+for (let a = desde; a <= anioActual; a++) serie.push({ year: a, n: porAnio[a] || 0 });
+const maxAnio = Math.max(1, ...serie.map(s => s.n));
+const citasEsteAnio = porAnio[anioActual] || 0;
+// Google Scholar: el total del perfil si lo hay (SerpApi); si no, la suma
+// de las cifras puestas a mano en cada trabajo
+const perfilScholar = items.find(i => i.scholar_total);
+// Citas totales e indice h: de Google Scholar si lo hay (es la cifra que
+// la gente consulta); si no, de OpenAlex. Cada cifra dice de donde sale.
+const citasResumen = perfilScholar ? perfilScholar.scholar_total : totalCitas;
+const hResumen = perfilScholar && perfilScholar.scholar_h != null ? perfilScholar.scholar_h : indiceH;
+const fuenteResumen = perfilScholar ? "Google Scholar" : "OpenAlex";
+const hayDimensions = conMetricas && items.some(i => i.doi);
 %>
 ```{=html}
 <div class="pubs">
+  <% if (conMetricas && citasResumen > 0) { %>
+  <section class="pubs-resumen" aria-label="Publication metrics">
+    <dl class="pubs-cifras">
+      <div class="pubs-cifra"><dt>Publications</dt><dd><%- items.length %></dd></div>
+      <div class="pubs-cifra"><dt>Citations</dt><dd><%- citasResumen %><span class="pubs-cifra__fuente"><%- fuenteResumen %></span></dd></div>
+      <div class="pubs-cifra"><dt>h-index</dt><dd><%- hResumen %><span class="pubs-cifra__fuente"><%- fuenteResumen %></span></dd></div>
+      <div class="pubs-cifra"><dt>Citations in <%- anioActual %></dt><dd><%- citasEsteAnio %><span class="pubs-cifra__fuente">OpenAlex</span></dd></div>
+    </dl>
+    <figure class="pubs-grafico">
+      <figcaption>Citations per year <span class="pubs-cifra__fuente">OpenAlex</span></figcaption>
+      <div class="pubs-columnas" role="img" aria-label="Citations per year: <%- serie.map(s => s.year + ', ' + s.n).join('; ') %>">
+        <% for (const s of serie) { %>
+        <div class="pubs-columna" tabindex="0" data-tip="<%- s.year %>: <%- s.n %> citation<%- s.n === 1 ? '' : 's' %>">
+          <span class="pubs-columna__barra" style="height: <%- Math.max(s.n ? 4 : 0, Math.round(100 * s.n / maxAnio)) %>%"></span>
+          <span class="pubs-columna__anio"><%- s.year %></span>
+        </div>
+        <% } %>
+      </div>
+    </figure>
+    <p class="pubs-fuente">Updated weekly from <% if (perfilScholar) { %><a href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ">Google Scholar</a> and <% } %><a href="https://openalex.org/">OpenAlex</a>. Each database counts citations differently; see each paper below.</p>
+  </section>
+  <% } %>
+
   <div class="pubs-barra">
     <div class="pubs-filtros" role="group" aria-label="Filter by type">
       <% for (const [clave, nombre] of tipos) { if (!cuenta(clave)) continue; %>
@@ -46,10 +93,11 @@ let n = 0;
     <ol class="pubs-lista">
       <% for (const it of grupo.items) { n++; const id = "pub-" + n; %>
       <li class="pub" data-type="<%- it.type %>">
+        <div class="pub__principal">
+        <div class="pub__cuerpo">
         <div class="pub__etiquetas">
           <span class="pub-badge pub-badge--<%- it.type %>"><%- it.type_label %></span>
           <% if (it.oa) { %><span class="pub-badge pub-badge--oa"><i class="bi bi-unlock" aria-hidden="true"></i> Open access</span><% } %>
-          <% if (it.cited) { %><span class="pub__citas">Cited by <%- it.cited %></span><% } %>
         </div>
 
         <h3 class="pub__titulo"><a href="<%- it.url %>"><%= it.title %></a></h3>
@@ -69,6 +117,33 @@ let n = 0;
           <button type="button" class="pub-btn pub-btn--toggle" aria-expanded="false" aria-controls="<%- id %>-bib"><i class="bi bi-quote" aria-hidden="true"></i>Cite</button>
         </div>
 
+        </div>
+
+        <% if (it.metrics && (it.doi || it.s2_cited || it.scholar)) { %>
+        <div class="pub__metricas" role="group" aria-label="Citations">
+          <% if (it.doi) { %>
+          <div class="pub-circulo pub-circulo--dimensions">
+            <span class="__dimensions_badge_embed__" data-doi="<%- it.doi %>" data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>
+            <span class="pub-circulo__fuente">Dimensions</span>
+          </div>
+          <% } %>
+          <% if (it.scholar) { %>
+          <a class="pub-circulo" href="https://scholar.google.com/citations?hl=en&amp;user=5EQSDqwAAAAJ" title="<%- it.scholar %> citation<%- it.scholar === 1 ? '' : 's' %> in Google Scholar">
+            <span class="pub-circulo__aro"><span class="pub-circulo__n"><%- it.scholar %></span></span>
+            <span class="pub-circulo__fuente">Google Scholar</span>
+          </a>
+          <% } %>
+          <% if (it.s2_cited) { %>
+          <a class="pub-circulo" href="<%- it.s2_url %>" title="<%- it.s2_cited %> citation<%- it.s2_cited === 1 ? '' : 's' %> in Semantic Scholar<%- it.s2_influential ? ', ' + it.s2_influential + ' highly influential' : '' %>">
+            <span class="pub-circulo__aro<%- it.s2_influential ? ' pub-circulo__aro--influyente' : '' %>"><span class="pub-circulo__n"><%- it.s2_cited %></span></span>
+            <span class="pub-circulo__fuente">Semantic Scholar</span>
+            <% if (it.s2_influential) { %><span class="pub-circulo__extra"><%- it.s2_influential %> influential</span><% } %>
+          </a>
+          <% } %>
+        </div>
+        <% } %>
+        </div>
+
         <% if (it.abstract) { %>
         <div class="pub__panel" id="<%- id %>-abs" hidden><p><%= it.abstract %></p></div>
         <% } %>
@@ -83,9 +158,10 @@ let n = 0;
   <% } %>
 </div>
 
+<% if (hayDimensions) { %><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script><% } %>
 <script>
 (function () {
-  var raiz = document.currentScript.previousElementSibling;
+  var raiz = document.querySelector('.pubs');
   var chips = raiz.querySelectorAll('.pubs-chip');
   var buscador = raiz.querySelector('.pubs-buscar input');
   var pubs = raiz.querySelectorAll('.pub');

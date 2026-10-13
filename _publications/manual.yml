@@ -27,6 +27,8 @@
 #        type:      article | preprint | chapter | book
 #        abstract:  resumen, si la revista no lo comparte (p. ej. Elsevier)
 #        note:      nota corta que aparece bajo la referencia
+#        scholar:   numero de citas en Google Scholar (a mano: Google
+#                   Scholar no se puede consultar de forma automatica)
 #        hide:      true para que no salga en la web
 #
 #      Solo para un preprint o un dataset (con SU DOI como clave):
@@ -37,17 +39,29 @@
 #   2. `extra`: trabajos SIN DOI o que no estan en ORCID.
 #      Campos: type (article | chapter | preprint | book), year,
 #      authors (lista "Apellido, I."), title, venue, volume, issue,
-#      pages, editors, publisher, url, pdf. Las especies van en *cursiva*.
+#      pages, editors, publisher, url, pdf, scholar. Las especies van
+#      en *cursiva*.
 #
 #   3. `options`: ajustes de la pagina.
-#        citations: false para no mostrar el numero de citas (OpenAlex
-#                   cuenta menos que Google Scholar).
+#        citations: false para no mostrar ninguna metrica de citas.
+#
+#   4. Cursivas. Los nombres cientificos de titulos y resumenes importados
+#      se ponen en cursiva solos (los reconoce GBIF). Para las excepciones:
+#        italics:     nombres que deben ir en cursiva aunque GBIF no los
+#                     reconozca, p. ej. ["Myrmica sp. nov."]
+#        no_italics:  palabras o nombres que nunca deben ir en cursiva
+#
+#   Si pones `scholar:` en algun trabajo, arriba sale tambien el total de
+#   Google Scholar: ponlo en todos los que tengan citas para que cuadre.
 #
 # Tu nombre se pone en negrita automaticamente.
 # ---------------------------------------------------------------------
 
 options:
   citations: true
+
+italics: []
+no_italics: []
 
 ajustes:
   "10.1016/j.gecco.2024.e03104":

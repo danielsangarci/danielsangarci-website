@@ -44,8 +44,10 @@ jobs:
       - name: Paquetes de R
         run: Rscript -e 'install.packages(c("yaml", "jsonlite", "curl"))'
 
-      - name: Consultar ORCID, OpenAlex y Crossref
+      - name: Consultar ORCID, OpenAlex, Crossref y Google Scholar
         run: Rscript _publications/actualizar.R --forzar
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
 
       - name: Comprobar si hay cambios
         id: cambios
@@ -73,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publications.yml _publications/cache.json docs/
+          git add publications.yml _publications/ docs/
           git commit -m "Publicaciones actualizadas desde ORCID"
           git push
 
