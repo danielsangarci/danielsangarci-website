@@ -39,7 +39,9 @@ if (perfilGrafico) {
 }
 const anioActual = new Date().getFullYear();
 const aniosCitas = Object.keys(porAnio).map(Number);
-const desde = aniosCitas.length ? Math.min(...aniosCitas) : anioActual;
+// Como mucho los ultimos 10 anios, para que el grafico no crezca sin fin
+const ANIOS_GRAFICO = 10;
+const desde = Math.max(aniosCitas.length ? Math.min(...aniosCitas) : anioActual, anioActual - ANIOS_GRAFICO + 1);
 const serie = [];
 for (let a = desde; a <= anioActual; a++) serie.push({ year: a, n: porAnio[a] || 0 });
 const maxAnio = Math.max(1, ...serie.map(s => s.n));
@@ -72,7 +74,7 @@ const hayDimensions = conMetricas && items.some(i => i.doi);
       <% } %>
     </dl>
     <figure class="pubs-grafico">
-      <figcaption>Citations per year <span class="pubs-cifra__fuente"><%- fuenteGrafico %></span></figcaption>
+      <figcaption>Citations per year<%- serie.length === ANIOS_GRAFICO && aniosCitas.some(a => a < desde) ? ", last " + ANIOS_GRAFICO + " years" : "" %> <span class="pubs-cifra__fuente"><%- fuenteGrafico %></span></figcaption>
       <div class="pubs-columnas" role="img" aria-label="Citations per year: <%- serie.map(s => s.year + ', ' + s.n).join('; ') %>">
         <% for (const s of serie) { %>
         <div class="pubs-columna" tabindex="0" data-tip="<%- s.year %>: <%- s.n %> citation<%- s.n === 1 ? '' : 's' %>">
