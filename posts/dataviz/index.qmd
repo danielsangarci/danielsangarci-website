@@ -4,7 +4,7 @@ description: "An interactive R Shiny application to explore data, customize ggpl
 author:
   - name: Daniel Sánchez-García
     url: https://danielsangarci.com/
-date: last-modified
+date: 2026-06-09
 date-format: "D MMMM YYYY"
 categories: [R, Shiny, Data Visualization, Open Science, Lab Tools]
 image: dataviz.jpg

@@ -4,7 +4,7 @@ description: "An intuitive R Shiny tool that automates PCR master mix calculatio
 author:
   - name: Daniel Sánchez-García
     url: https://danielsangarci.com/
-date: last-modified
+date: 2026-03-12
 date-format: "D MMMM YYYY"
 categories: [R, Shiny, Molecular Biology, Lab Tools]
 citation: 

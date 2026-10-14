@@ -4,7 +4,7 @@ description: "A precision R Shiny tool for normalizing and pooling double-strand
 author:
   - name: Daniel Sánchez-García
     url: https://danielsangarci.com/
-date: last-modified
+date: 2026-01-29
 date-format: "D MMMM YYYY"
 categories: [R, Shiny, Bioinformatics, Lab Tools]
 citation: 

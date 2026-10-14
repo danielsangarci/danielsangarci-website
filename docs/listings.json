@@ -28,11 +28,11 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/post_trial/index.html",
       "/posts/dataviz/index.html",
       "/posts/DNA_purity_QC_nanodrop/index.html",
       "/posts/pcr_calculator/index.html",
-      "/posts/dna_molar_pooling_calculator/index.html"
+      "/posts/dna_molar_pooling_calculator/index.html",
+      "/posts/post_trial/index.html"
     ]
   }
 ]

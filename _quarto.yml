@@ -34,7 +34,7 @@ website:
       - research.qmd  
       - publications.qmd
       - text: CV
-        href: cv.pdf
+        href: cv.qmd
       - posts.qmd
       - gallery.qmd
       - contact.qmd

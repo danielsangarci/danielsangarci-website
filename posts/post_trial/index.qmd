@@ -5,7 +5,7 @@ description: ""
 author:
     - name: Daniel Sánchez-García
       url: https://danielsangarci.netlify.app/
-date: last-modified
+date: 2023-12-21
 date-format: "D MMMM YYYY"
 categories: [ggplot2] # self-defined categories
 citation: 

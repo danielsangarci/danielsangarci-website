@@ -1,5 +1,4 @@
 /* css styles */
 
-body {
-  text-align: justify;
-}
+/* Texto alineado a la izquierda: el justificado dejaba huecos grandes
+   entre palabras en pantallas anchas y moviles. */

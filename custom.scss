@@ -198,9 +198,9 @@ h1, h2, h3, h4, h5, h6,
   text-wrap: balance;
 }
 
-// styles.css justifica todo el body. En titulares y elementos de
-// interfaz eso abre huecos enormes entre palabras, así que el
-// justificado se reserva para el texto corrido.
+// Titulares y elementos de interfaz siempre a la izquierda (antes
+// styles.css justificaba todo el body; ya no, pero esto se mantiene
+// por si algun bloque hereda otra alineacion).
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .listing-title, .listing-title a,
@@ -1191,8 +1191,9 @@ a.lightbox {
 // última foto suelta y descuadrada.
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
-  gap: 1rem;
+  // Fotos grandes: dos por fila en escritorio, una en el movil
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+  gap: 1.25rem;
   margin: 1.5rem 0 3.25rem;
 
   // Pandoc envuelve cada imagen en su propio <p>
@@ -1369,14 +1370,12 @@ a.lightbox {
 .about-text {
   text-align: center;
 
-  // Bloque centrado con líneas justificadas. text-align-last centra
-  // la última línea: si no, quedaría suelta a la izquierda y rompería
-  // la simetría de la columna.
+  // Bloque centrado (sin justificar: el justificado abria huecos
+  // grandes entre palabras)
   .hero-lead-intro {
     max-width: 34em;
     margin-inline: auto;
-    text-align: justify;
-    text-align-last: center;
+    text-align: center;
   }
 
   .social-pills > p {
@@ -1391,9 +1390,7 @@ a.lightbox {
 
     .hero-lead-intro {
       margin-inline: 0;
-      // Al no ser ya un bloque centrado, la última línea vuelve a su
-      // sitio natural (izquierda), como en un párrafo justificado normal.
-      text-align-last: auto;
+      text-align: left;
     }
 
     .social-pills > p {
@@ -1901,4 +1898,154 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 }
 @media (prefers-reduced-motion: reduce) {
   .page-404__logo { animation: none; }
+}
+
+
+// ---------------------------------------------------------------------
+//  Pagina del CV (cv.qmd)
+// ---------------------------------------------------------------------
+// Cabecera: resumen y botones (PDF, publicaciones, contacto)
+.cv-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+.cv-cabecera__texto {
+  flex: 1 1 26rem;
+  p { margin: 0; color: $gray-700; }
+}
+.cv-cabecera__botones {
+  flex: 0 1 auto;
+  min-width: 0;
+  p { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
+  .btn { border-radius: $border-radius-pill; font-size: 0.78rem; padding: 0.42rem 1.05rem; }
+  .btn .svg-inline--fa, .btn i { margin-right: 0.3rem; }
+}
+
+// Linea de tiempo: experiencia, formacion, estancias y practicas
+.cv-linea {
+  position: relative;
+  margin: 0.5rem 0 2.5rem;
+  padding-left: 1.6rem;
+  border-left: 2px solid rgba($primary, 0.22);
+}
+.cv-hito {
+  position: relative;
+  padding-bottom: 1.4rem;
+  &:last-child { padding-bottom: 0; }
+  // punto de la linea
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    left: calc(-1.6rem - 6px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid $primary;
+  }
+  &:first-child::before { background-color: $primary; }
+  p { margin: 0; }
+  > p:last-child:not(:has(.cv-lugar)) { margin-top: 0.4rem; font-size: 0.86rem; color: $gray-700; }
+}
+.cv-fecha {
+  display: block;
+  font-family: $headings-font-family;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $primary;
+}
+.cv-puesto {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: $headings-font-family;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $dsg-ink;
+}
+.cv-lugar { display: block; font-size: 0.82rem; color: $gray-600; }
+
+// Tarjetas: financiacion, premios, servicio, formacion y competencias
+.cv-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 2.5rem;
+}
+.cv-tarjeta {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.8rem;
+  background-color: #ffffff;
+  font-size: 0.86rem;
+  color: $gray-700;
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  ul { padding-left: 1.1rem; }
+  li { margin-bottom: 0.2rem; }
+}
+.cv-tarjeta__etiqueta {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: $headings-font-family;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $primary;
+  .svg-inline--fa, i { margin-right: 0.3rem; }
+}
+.cv-tarjeta__nota { display: block; margin-top: 0.5rem; font-style: italic; color: $gray-600; }
+.cv-chips p { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0; }
+.cv-chip {
+  padding: 0.18rem 0.6rem;
+  border-radius: $border-radius-pill;
+  background-color: $dsg-primary-soft;
+  font-size: 0.74rem;
+  color: $primary;
+}
+
+// Charlas y posteres: lista compacta con su tipo
+.cv-charlas {
+  ul { list-style: none; margin: 0.5rem 0 1.25rem; padding: 0; }
+  li {
+    position: relative;
+    padding: 0.7rem 0 0.7rem 4.6rem;
+    border-bottom: 1px solid $dsg-hairline;
+    font-size: 0.86rem;
+    color: $gray-700;
+    &:last-child { border-bottom: 0; }
+  }
+  strong { color: $dsg-ink; font-weight: 600; }
+}
+.cv-tipo {
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 3.8rem;
+  padding: 0.12rem 0;
+  border-radius: $border-radius-pill;
+  background-color: $dsg-primary-soft;
+  font-family: $headings-font-family;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary;
+  &--poster { background-color: rgba($warning, 0.14); color: darken($warning, 24%); }
+}
+
+@media (max-width: 575.98px) {
+  .cv-charlas li { padding-left: 0; padding-top: 2rem; }
+  .cv-tipo { top: 0.7rem; }
 }

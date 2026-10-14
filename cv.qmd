@@ -1,8 +1,227 @@
 ---
 description-meta: "Curriculum vitae of Daniel Sánchez-García, ecologist and postdoctoral researcher at the Doñana Biological Station (EBD-CSIC)."
-title: "CV"
-title-block-banner: true
+title: "Curriculum vitae"
+title-block-banner: false
 comments: false
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+# El contenido sigue el PDF (cv.pdf). Al actualizar uno, actualiza el otro.
+# No se publican aqui el telefono ni los correos de las referencias: estan
+# en el PDF para quien lo descargue, pero una pagina web los expone mas a
+# los robots que recopilan direcciones.
 ---
 
-My CV
+::: cv-cabecera
+::: cv-cabecera__texto
+**Postdoctoral Researcher** at the Doñana Biological Station (EBD-CSIC), Seville, Spain. PhD in Biology (Museum and Institute of Zoology, Warsaw). I study species interactions in ant, microbiome and mycobiome communities.
+:::
+
+::: cv-cabecera__botones
+[{{< fa file-pdf >}} Download PDF](cv.pdf){.btn .btn-primary} [{{< fa book-open >}} Publications](publications.qmd){.btn .btn-outline-primary} [{{< fa envelope >}} Contact](contact.qmd){.btn .btn-outline-primary}
+:::
+:::
+
+## Professional experience
+
+::: cv-linea
+::: cv-hito
+[Jan 2025 – present]{.cv-fecha}
+
+[Postdoctoral Researcher]{.cv-puesto}
+
+[Doñana Biological Station (EBD-CSIC), Department of Conservation Biology and Global Change · Seville, Spain]{.cv-lugar}
+:::
+
+::: cv-hito
+[May 2024 – Jun 2024]{.cv-fecha}
+
+[Specialist in ant species identification]{.cv-puesto}
+
+[Doñana Biological Station (EBD-CSIC), Department of Conservation Biology and Global Change · Seville, Spain]{.cv-lugar}
+
+Identification of ant species from pitfall-trap samples from Spain, France, Belgium and the Netherlands, for ecological research and biodiversity assessments.
+:::
+:::
+
+## Education
+
+::: cv-linea
+::: cv-hito
+[Oct 2019 – Sep 2024]{.cv-fecha}
+
+[PhD in Biology]{.cv-puesto}
+
+[Museum and Institute of Zoology, Polish Academy of Sciences · Warsaw, Poland]{.cv-lugar}
+
+How do reintroductions of parasites work? A multi-level comparison of source and reintroduced populations of *Phengaris teleius*: population genetics, adult morphology, and the behavioural, chemical and acoustic adaptations of the caterpillars to their *Myrmica* host ants.
+:::
+
+::: cv-hito
+[Oct 2017 – Jul 2018]{.cv-fecha}
+
+[MSc in Biodiversity and Conservation Biology]{.cv-puesto}
+
+[Universidad Pablo de Olavide · Seville, Spain]{.cv-lugar}
+
+Thesis graded 9.8/10, with honours. The effect of temperature on ant assemblages from different habitats, through taxonomic and functional diversity, and a new index for the direct effect of temperature on interspecific competition.
+:::
+
+::: cv-hito
+[Sep 2012 – Sep 2016]{.cv-fecha}
+
+[BSc in Biology]{.cv-puesto}
+
+[Universitat de València · Valencia, Spain]{.cv-lugar}
+
+Thesis graded 9.5/10. Ant communities of the Sierra de Javalambre: species distribution along an altitudinal gradient, and the patching effect of *Juniperus sabina* on ant activity and nesting.
+:::
+:::
+
+## Research stays
+
+::: cv-linea
+::: cv-hito
+[Oct 2021]{.cv-fecha}
+
+[University of Turin · Turin, Italy]{.cv-puesto}
+
+[Department of Life Sciences and Systems Biology · Host: Prof. Luca Pietro Casacci]{.cv-lugar}
+
+Recording of insect vibroacoustic signals, sonogram analysis and behavioural assays.
+:::
+
+::: cv-hito
+[Jan 2020 – Feb 2020]{.cv-fecha}
+
+[Sorbonne Paris North University · Paris, France]{.cv-puesto}
+
+[Laboratory of Experimental and Comparative Ethology · Host: Prof. Patrizia d'Ettorre]{.cv-lugar}
+
+GC-MS analysis of cuticular hydrocarbons and bioinformatics workflows for chemical communication in social insects.
+:::
+:::
+
+## Funding and awards
+
+::: cv-tarjetas
+::: cv-tarjeta
+[{{< fa coins >}} Funding · 2022 – 2025]{.cv-tarjeta__etiqueta}
+
+**PRELUDIUM grant** 2021/41/N/NZ8/04360, National Science Centre (NCN), Poland. *Bacteria – ant – plant interaction: the effect of ants as bacteria dispersal vectors and indirect drivers of plant health.*
+
+[202,001 PLN (≈ 46,000 €)]{.cv-tarjeta__nota}
+:::
+
+::: cv-tarjeta
+[{{< fa award >}} Award · 2025]{.cv-tarjeta__etiqueta}
+
+**Best oral presentation** at the XIX International Congress of the Spanish Society of Ethology and Evolutionary Ecology (Seville, Spain).
+:::
+:::
+
+## Conference talks and posters
+
+::: cv-charlas
+- [Talk]{.cv-tipo} **Reintroduction provides insight into multimodal mimicry evolution in an ant social parasite.** *XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology*, Seville, Spain (2025).
+- [Talk]{.cv-tipo} **Mariposas mirmecófilas reescriben su lenguaje para adaptarse a nuevas hormigas huésped.** *XIX International Congress of Myrmecology, Taxomara 2025*, Girona, Spain (2025).
+- [Poster]{.cv-tipo .cv-tipo--poster} **ANT HUNTERS: A citizen science initiative for ant biodiversity research.** *XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology*, Seville, Spain (2025).
+- [Poster]{.cv-tipo .cv-tipo--poster} **ANT HUNTERS: La ciudadanía a la caza de la biodiversidad de hormigas.** *XIX International Congress of Myrmecology, Taxomara 2025*, Girona, Spain (2025).
+- [Talk]{.cv-tipo} **Modificación del hábitat como herramienta de control de la invasión de la hormiga argentina.** *XVIII International Congress of Myrmecology, Taxomara 2024*, Málaga, Spain (2024).
+- [Talk]{.cv-tipo} **Recovering native ant communities by removing suitable conditions for the invasive Argentine ant.** *IV International Young Researchers Conference on Invasive Species (IyrCIS)*, online (2024).
+- [Talk]{.cv-tipo} **Changes in morphology and genetic structure in two populations of *Phengaris* (= *Maculinea*) *teleius* 30 years after separation.** *Butterfly Conservation Symposium 2023*, Wyboston, England (2023).
+- [Talk]{.cv-tipo} **Short-time evolution in the morphology of the myrmecophilous *Maculinea teleius* butterfly.** *8th Polish Evolutionary Conference*, Toruń, Poland (2022).
+- [Talk]{.cv-tipo} **Fotografía de insectos: material, técnicas y aplicaciones.** *XIV International Congress of Myrmecology, Taxomara 2019*, Chefchaouen, Morocco (2019).
+- [Talk]{.cv-tipo} **¿Temperatura o competencia, qué afecta más a las hormigas de Doñana?** *XIII Iberian Congress of Myrmecology, Taxomara 2018*, León, Spain (2018).
+- [Poster]{.cv-tipo .cv-tipo--poster} **Listado actualizado de las hormigas de la península ibérica e islas Baleares (Hymenoptera: Formicidae).** *XII Iberian Congress of Myrmecology, Taxomara 2017*, Madrid, Spain (2017).
+- [Talk]{.cv-tipo} **Aspectos ecológicos sobre la mirmecocenosis de solana de la Sierra de Javalambre (Teruel).** *XI Iberian Congress of Myrmecology, Taxomara 2016*, Murcia, Spain (2016).
+:::
+
+For journal articles and book chapters, see [Publications](publications.qmd).
+
+## Service to the community
+
+::: cv-tarjetas
+::: cv-tarjeta
+[{{< fa calendar-check >}} Event organization]{.cv-tarjeta__etiqueta}
+
+Organizing and Scientific Committee of the **XVI** (2021) and **XV** (2020) International Conferences of Myrmecology, Taxomara.
+:::
+
+::: cv-tarjeta
+[{{< fa eye >}} Peer review]{.cv-tarjeta__etiqueta}
+
+*Applied and Environmental Microbiology* (1), *Insect Conservation and Diversity* (2), *Arthropod-Plant Interactions* (1), *Polish Journal of Ecology* (1).
+:::
+
+::: cv-tarjeta
+[{{< fa users >}} Memberships]{.cv-tarjeta__etiqueta}
+
+[SORTEE](https://www.sortee.org/), Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology (since 2025).
+
+Iberian Association of Myrmecology, member of the Governing Board (since 2012).
+:::
+
+::: cv-tarjeta
+[{{< fa people-group >}} Workshops]{.cv-tarjeta__etiqueta}
+
+Invited participant in **InvaPact III**: analysis of the ecological effects of biological invasions (2025).
+:::
+:::
+
+## Internships
+
+::: cv-linea
+::: cv-hito
+[Feb 2016 – May 2016]{.cv-fecha}
+
+[Scientific assistant]{.cv-puesto}
+
+[Valencian Institute of Agricultural Research (IVIA), Department of Entomology · Valencia, Spain]{.cv-lugar}
+
+With Alejandro Tena: effect of the ant *Lasius grandis* on the behaviour of the parasitoid wasp *Anagyrus pseudococci* in mealybug colonies of *Planococcus citri*, a citrus pest.
+:::
+
+::: cv-hito
+[Jul 2015 – Sep 2015]{.cv-fecha}
+
+[Environmental manager]{.cv-puesto}
+
+[Agricultural, Stockbreeding and Environmental Public Service, Government of Aragón · Teruel, Spain]{.cv-lugar}
+
+Environmental impact reports, monitoring of river fish and deer populations in the Montes Universales National Hunting Reserve, and translocation of native plants.
+:::
+:::
+
+## Training, skills and languages
+
+::: cv-tarjetas
+::: cv-tarjeta
+[{{< fa graduation-cap >}} Courses]{.cv-tarjeta__etiqueta}
+
+- Systematic Reviews and Meta-analysis in R (2025)
+- Optimizing the use of R for ecological analyses (2025)
+- Advanced University Course in Ecological Network Analysis (2019)
+- Animal Tracking Course (2018)
+:::
+
+::: cv-tarjeta
+[{{< fa screwdriver-wrench >}} Skills]{.cv-tarjeta__etiqueta}
+
+::: cv-chips
+[R]{.cv-chip} [R Markdown / Quarto]{.cv-chip} [ggplot2]{.cv-chip} [vegan]{.cv-chip} [geomorph]{.cv-chip} [GC-MS]{.cv-chip} [Morphometrics]{.cv-chip} [Network analysis]{.cv-chip} [Population genetics]{.cv-chip} [Ant taxonomy]{.cv-chip} [Oxford Nanopore sequencing]{.cv-chip} [Macro photography]{.cv-chip}
+:::
+:::
+
+::: cv-tarjeta
+[{{< fa language >}} Languages]{.cv-tarjeta__etiqueta}
+
+**Spanish**: native<br>**English**: B2 (independent user)
+:::
+
+::: cv-tarjeta
+[{{< fa address-book >}} References]{.cv-tarjeta__etiqueta}
+
+Dr. Elena Angulo (postdoc, EBD-CSIC) · Dr. Magdalena Witek (PhD, MIIZ-PAS) · Dr. Xim Cerdá (MSc, EBD-CSIC) · Prof. Ximo Baixeras (BSc, Universitat de València). Contact details in the [PDF](cv.pdf) or on request.
+:::
+:::

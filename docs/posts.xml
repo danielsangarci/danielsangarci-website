@@ -10,7 +10,212 @@
 <atom:link href="https://danielsangarci.com/posts.xml" rel="self" type="application/rss+xml"/>
 <description>Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.</description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 14 Oct 2026 22:32:38 GMT</lastBuildDate>
+<lastBuildDate>Mon, 08 Jun 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>DataViz &amp; Script Generator: Publication-Ready Plots in Seconds</title>
+  <dc:creator>Daniel Sánchez-García</dc:creator>
+  <link>https://danielsangarci.com/posts/dataviz/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="the-problem-the-visualization-bottleneck" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-the-visualization-bottleneck">The Problem: The Visualization Bottleneck</h2>
+<p>Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.</p>
+<p>You open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same <code>ggplot2</code> boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache.</p>
+</section>
+<section id="the-solution-a-visual-interface-with-reproducible-output" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-a-visual-interface-with-reproducible-output">The Solution: A Visual Interface with Reproducible Output</h2>
+<p>To keep data exploration frictionless without sacrificing the principles of Open Science, I built the <strong>DataViz &amp; Script Generator</strong>.</p>
+<p>This tool provides a complete, drag-and-drop GUI for <code>ggplot2</code>. It allows you to upload your raw data, manipulate parameters visually in real-time, and download your finalized, high-resolution figure. Most importantly, it bridges the gap between no-code tools and reproducible science by <strong>generating the exact R script</strong> (<code>dplyr</code> and <code>ggplot2</code>) needed to recreate your custom plot from scratch.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Smart Uploads &amp; Auto-Cleaning:</strong> Drag and drop <code>.csv</code>, <code>.txt</code>, or <code>.xlsx</code> files. The app’s background engine automatically detects and corrects European comma-decimal formatting, ensuring your numeric columns don’t crash the plot.</li>
+<li><strong>Dynamic Filtering &amp; Renaming:</strong> No need to use <code>filter()</code> or <code>mutate()</code> before plotting. You can actively include or exclude specific categorical levels and rename axis labels on the fly directly from the UI.</li>
+<li><strong>Complete Aesthetic Control:</strong> Build Histograms, Density plots, Barplots, Boxplots, Violins, or Scatterplots. Customize them with professional palettes (including ColorBrewer and colorblind-friendly Viridis options), adjust opacity, and toggle standard <code>ggplot2</code> themes (minimal, classic, dark, etc.).</li>
+<li><strong>Reproducible Code Generation:</strong> As you tweak sliders and dropdowns, the app writes a clean, fully functional R script alongside your plot. Simply copy and paste the code to your local machine to guarantee long-term reproducibility.</li>
+<li><strong>Publication-Ready Export:</strong> Download your visualizations in the exact format required by scientific journals (<code>.tiff</code>, <code>.png</code>, <code>.jpg</code>), with full control over the physical dimensions (in centimeters) and resolution (up to 600 DPI).</li>
+</ul>
+</section>
+</section>
+<section id="live-application" class="level2">
+<h2 class="anchored" data-anchor-id="live-application">🚀 Live Application</h2>
+<p>Upload your dataset and start building your reproducible plot below, or open the tool in a <a href="https://danielsangarci.shinyapps.io/dataviz/">new window</a>.</p>
+<p><em>(Note: Your data is processed locally in the session and is never saved on any server).</em></p>
+<iframe src="https://danielsangarci.shinyapps.io/dataviz/" width="100%" height="950px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+</iframe>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Shiny</category>
+  <category>Data Visualization</category>
+  <category>Open Science</category>
+  <category>Lab Tools</category>
+  <guid>https://danielsangarci.com/posts/dataviz/</guid>
+  <pubDate>Mon, 08 Jun 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://danielsangarci.com/posts/dataviz/dataviz.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>DNA Quality Control &amp; Traceability App</title>
+  <dc:creator>Daniel Sánchez-García</dc:creator>
+  <link>https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="the-problem-the-chaos-of-nanodrop-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-the-chaos-of-nanodrop-data">The Problem: The Chaos of Nanodrop Data</h2>
+<p>Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.</p>
+<p>The real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult.</p>
+</section>
+<section id="the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
+<p>I developed the <strong>DNA Quality Control &amp; Traceability App</strong> to completely automate this workflow.</p>
+<p>This R Shiny application ingests raw <code>.csv</code> or <code>.txt</code> files directly exported from your spectrophotometer, applies your custom quality thresholds, and automatically pairs initial and post-purification datasets. It provides a crystal-clear, automated diagnostic status for every single sample.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Automated Quality Assessment:</strong> Set your own minimum and maximum thresholds for 260/280 and 260/230 ratios. The app instantly classifies samples into <code>APPROVED</code>, <code>PENDING PURIFICATION</code>, or <code>DISCARDED</code>.</li>
+<li><strong>Full Traceability:</strong> Track sample types, initial extraction kits (e.g., <em>Qiagen PowerSoil</em>), and the specific purification method used. The algorithm intelligently matches cleaned samples by looking for the <code>_cl</code> suffix in the Sample ID.</li>
+<li><strong>Dynamic, Visual Management:</strong> Monitor your workflow across separate, interactive data tables: a global overview, a dedicated workspace for samples needing purification, and a log of permanently discarded samples.</li>
+<li><strong>Lab-Ready Excel Export:</strong> Download a multi-sheet <code>.xlsx</code> report with a single click. It features an embedded data dictionary and automatic conditional formatting (color-coded by sample status), making it completely ready for your digital lab notebook or quality control records.</li>
+</ul>
+</section>
+</section>
+<section id="live-application" class="level2">
+<h2 class="anchored" data-anchor-id="live-application">🚀 Live Application</h2>
+<p>You can interact with the live tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/DNA_purity_QC_nanodrop/">new window</a>.</p>
+<iframe src="https://danielsangarci.shinyapps.io/DNA_purity_QC_nanodrop/" width="100%" height="900px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+</iframe>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Shiny</category>
+  <category>Molecular Biology</category>
+  <category>Lab Tools</category>
+  <category>Data Management</category>
+  <guid>https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/</guid>
+  <pubDate>Sun, 24 May 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/dna_purity_qc_nanodrop.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>PCR Master Mix Calculator</title>
+  <dc:creator>Daniel Sánchez-García</dc:creator>
+  <link>https://danielsangarci.com/posts/pcr_calculator/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="the-problem-math-errors-at-the-bench" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-math-errors-at-the-bench">The Problem: Math Errors at the Bench</h2>
+<p>Setting up PCR reactions often involves repetitive and error-prone math. You might have stock solutions in <code>mM</code>, but your protocol asks for a final concentration in <code>µM</code>. You then need to scale a single 25 µL reaction for 24 samples, plus calculate a slight overage for pipetting error.</p>
+<p>A single miscalculated decimal point, a forgotten unit conversion, or failing to subtract the template volume from the final water calculation can result in failed amplification, wasted reagents, and lost time.</p>
+</section>
+<section id="the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
+<p>I developed the <strong>PCR Master Mix Calculator</strong> to take the mental gymnastics out of PCR prep. It is an R Shiny application that automatically handles the <img src="https://latex.codecogs.com/png.latex?C_1V_1%20=%20C_2V_2"> equations behind the scenes, ensuring your final concentrations are perfect and your total volumes always add up exactly.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Smart Auto-Conversion:</strong> Mix and match stock and target units (<code>mM</code> to <code>µM</code>, <code>mg/mL</code> to <code>µg/µL</code>, etc.). The app calculates the correct conversion factor automatically and blocks impossible conversions.</li>
+<li><strong>Dual Workflows:</strong> Choose whether you are building a custom reaction entirely from scratch (Buffer, MgCl2, dNTPs, Taq) or just adding primers to a commercial Master Mix (e.g., 2X or 5X).</li>
+<li><strong>Fail-Safe Alerts:</strong> The calculator dynamically determines the required nuclease-free water. If your components exceed the target reaction volume, it immediately flags a warning.</li>
+<li><strong>Lab-Book Ready:</strong> A custom “Copy” button lets you paste the generated pipetting protocol directly into Microsoft Word or a digital lab notebook with perfect table formatting, automatically highlighting which volumes belong in the bulk Master Mix tube.</li>
+</ul>
+</section>
+</section>
+<section id="live-calculator" class="level2">
+<h2 class="anchored" data-anchor-id="live-calculator">🚀 Live Calculator</h2>
+<p>You can use the tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/PCR-calculator/">new window</a>.</p>
+<iframe src="https://danielsangarci.shinyapps.io/PCR-calculator/" width="100%" height="1150px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+</iframe>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
+  author = {Sánchez-García, Daniel},
+  title = {PCR {Master} {Mix} {Calculator}},
+  date = {2026-03-12},
+  url = {https://danielsangarci.com/posts/pcr_master_mix_calculator/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas">
+Sánchez-García, Daniel. 2026. <span>“PCR Master Mix Calculator.”</span>
+March 12. <a href="https://danielsangarci.com/posts/pcr_master_mix_calculator/">https://danielsangarci.com/posts/pcr_master_mix_calculator/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>Shiny</category>
+  <category>Molecular Biology</category>
+  <category>Lab Tools</category>
+  <guid>https://danielsangarci.com/posts/pcr_calculator/</guid>
+  <pubDate>Wed, 11 Mar 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://danielsangarci.com/posts/pcr_calculator/pcr_master_mix_calculator.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>DNA Molar Pooling Calculator</title>
+  <dc:creator>Daniel Sánchez-García</dc:creator>
+  <link>https://danielsangarci.com/posts/dna_molar_pooling_calculator/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="the-problem-mass-molecules" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-mass-molecules">The Problem: Mass ≠ Molecules</h2>
+<p>In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like <strong>Next-Generation Sequencing (NGS)</strong>, <strong>Gibson Assembly</strong>, or <strong>PCR pooling</strong>, the weight of the DNA matters much less than the <strong>number of molecules</strong>.</p>
+<p>If you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have <strong>4 times more molecules</strong> of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency.</p>
+</section>
+<section id="the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
+<p>I developed the <strong>DNA Molar Pooling Calculator</strong> to solve this. It is an R Shiny application that automates the physics of DNA normalization. By calculating based on <strong>molarity (fmol)</strong> rather than mass, it ensures perfectly balanced pools regardless of fragment size.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Universal:</strong> Works for Nanopore, Illumina, PacBio, or standard cloning vectors.</li>
+<li><strong>Batch Mode:</strong> You can paste data directly from Excel (Sample Name, Conc1, Conc2…) to process entire plates at once.</li>
+<li><strong>Safety Checks:</strong> The app automatically flags samples (in red) that are too dilute to meet your target concentration.</li>
+</ul>
+</section>
+</section>
+<section id="live-calculator" class="level2">
+<h2 class="anchored" data-anchor-id="live-calculator">🚀 Live Calculator</h2>
+<p>You can use the tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/">new window</a>.</p>
+<iframe src="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/" width="100%" height="1250px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+</iframe>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
+  author = {Sánchez-García, Daniel},
+  title = {DNA {Molar} {Pooling} {Calculator}},
+  date = {2026-01-29},
+  url = {https://danielsangarci.com/posts/dna_molar_pooling_calculator/},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas">
+Sánchez-García, Daniel. 2026. <span>“DNA Molar Pooling
+Calculator.”</span> January 29. <a href="https://danielsangarci.com/posts/dna_molar_pooling_calculator/">https://danielsangarci.com/posts/dna_molar_pooling_calculator/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>Shiny</category>
+  <category>Bioinformatics</category>
+  <category>Lab Tools</category>
+  <guid>https://danielsangarci.com/posts/dna_molar_pooling_calculator/</guid>
+  <pubDate>Wed, 28 Jan 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://danielsangarci.com/posts/dna_molar_pooling_calculator/dna_molar_pooling_calculator.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Re-usable code for quick data visualization with ggplot
 </title>
@@ -1617,226 +1822,21 @@ font-style: inherit;">)</span></span></code></pre></div></div>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2023,
   author = {Sánchez-García, Daniel},
   title = {Re-Usable Code for Quick Data Visualization with `Ggplot`},
-  date = {2026-10-15},
+  date = {2023-12-21},
   url = {https://danielsangarci.netlify.app/posts/post_trial/},
   langid = {en}
 }
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas">
-Sánchez-García, Daniel. 2026. <span>“Re-Usable Code for Quick Data
-Visualization with `Ggplot`.”</span> October 15. <a href="https://danielsangarci.netlify.app/posts/post_trial/">https://danielsangarci.netlify.app/posts/post_trial/</a>.
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2023" class="csl-entry quarto-appendix-citeas">
+Sánchez-García, Daniel. 2023. <span>“Re-Usable Code for Quick Data
+Visualization with `Ggplot`.”</span> December 21. <a href="https://danielsangarci.netlify.app/posts/post_trial/">https://danielsangarci.netlify.app/posts/post_trial/</a>.
 </div></div></section></div> ]]></description>
   <category>ggplot2</category>
   <guid>https://danielsangarci.com/posts/post_trial/</guid>
-  <pubDate>Wed, 14 Oct 2026 22:32:38 GMT</pubDate>
+  <pubDate>Wed, 20 Dec 2023 23:00:00 GMT</pubDate>
   <media:content url="https://danielsangarci.com/posts/post_trial/image2.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>DataViz &amp; Script Generator: Publication-Ready Plots in Seconds</title>
-  <dc:creator>Daniel Sánchez-García</dc:creator>
-  <link>https://danielsangarci.com/posts/dataviz/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="the-problem-the-visualization-bottleneck" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-the-visualization-bottleneck">The Problem: The Visualization Bottleneck</h2>
-<p>Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.</p>
-<p>You open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same <code>ggplot2</code> boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache.</p>
-</section>
-<section id="the-solution-a-visual-interface-with-reproducible-output" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution-a-visual-interface-with-reproducible-output">The Solution: A Visual Interface with Reproducible Output</h2>
-<p>To keep data exploration frictionless without sacrificing the principles of Open Science, I built the <strong>DataViz &amp; Script Generator</strong>.</p>
-<p>This tool provides a complete, drag-and-drop GUI for <code>ggplot2</code>. It allows you to upload your raw data, manipulate parameters visually in real-time, and download your finalized, high-resolution figure. Most importantly, it bridges the gap between no-code tools and reproducible science by <strong>generating the exact R script</strong> (<code>dplyr</code> and <code>ggplot2</code>) needed to recreate your custom plot from scratch.</p>
-<section id="key-features" class="level3">
-<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
-<ul>
-<li><strong>Smart Uploads &amp; Auto-Cleaning:</strong> Drag and drop <code>.csv</code>, <code>.txt</code>, or <code>.xlsx</code> files. The app’s background engine automatically detects and corrects European comma-decimal formatting, ensuring your numeric columns don’t crash the plot.</li>
-<li><strong>Dynamic Filtering &amp; Renaming:</strong> No need to use <code>filter()</code> or <code>mutate()</code> before plotting. You can actively include or exclude specific categorical levels and rename axis labels on the fly directly from the UI.</li>
-<li><strong>Complete Aesthetic Control:</strong> Build Histograms, Density plots, Barplots, Boxplots, Violins, or Scatterplots. Customize them with professional palettes (including ColorBrewer and colorblind-friendly Viridis options), adjust opacity, and toggle standard <code>ggplot2</code> themes (minimal, classic, dark, etc.).</li>
-<li><strong>Reproducible Code Generation:</strong> As you tweak sliders and dropdowns, the app writes a clean, fully functional R script alongside your plot. Simply copy and paste the code to your local machine to guarantee long-term reproducibility.</li>
-<li><strong>Publication-Ready Export:</strong> Download your visualizations in the exact format required by scientific journals (<code>.tiff</code>, <code>.png</code>, <code>.jpg</code>), with full control over the physical dimensions (in centimeters) and resolution (up to 600 DPI).</li>
-</ul>
-</section>
-</section>
-<section id="live-application" class="level2">
-<h2 class="anchored" data-anchor-id="live-application">🚀 Live Application</h2>
-<p>Upload your dataset and start building your reproducible plot below, or open the tool in a <a href="https://danielsangarci.shinyapps.io/dataviz/">new window</a>.</p>
-<p><em>(Note: Your data is processed locally in the session and is never saved on any server).</em></p>
-<iframe src="https://danielsangarci.shinyapps.io/dataviz/" width="100%" height="950px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-</iframe>
-
-
-</section>
-
- ]]></description>
-  <category>R</category>
-  <category>Shiny</category>
-  <category>Data Visualization</category>
-  <category>Open Science</category>
-  <category>Lab Tools</category>
-  <guid>https://danielsangarci.com/posts/dataviz/</guid>
-  <pubDate>Wed, 14 Oct 2026 22:32:27 GMT</pubDate>
-  <media:content url="https://danielsangarci.com/posts/dataviz/dataviz.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>DNA Quality Control &amp; Traceability App</title>
-  <dc:creator>Daniel Sánchez-García</dc:creator>
-  <link>https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="the-problem-the-chaos-of-nanodrop-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-the-chaos-of-nanodrop-data">The Problem: The Chaos of Nanodrop Data</h2>
-<p>Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.</p>
-<p>The real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult.</p>
-</section>
-<section id="the-solution" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
-<p>I developed the <strong>DNA Quality Control &amp; Traceability App</strong> to completely automate this workflow.</p>
-<p>This R Shiny application ingests raw <code>.csv</code> or <code>.txt</code> files directly exported from your spectrophotometer, applies your custom quality thresholds, and automatically pairs initial and post-purification datasets. It provides a crystal-clear, automated diagnostic status for every single sample.</p>
-<section id="key-features" class="level3">
-<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
-<ul>
-<li><strong>Automated Quality Assessment:</strong> Set your own minimum and maximum thresholds for 260/280 and 260/230 ratios. The app instantly classifies samples into <code>APPROVED</code>, <code>PENDING PURIFICATION</code>, or <code>DISCARDED</code>.</li>
-<li><strong>Full Traceability:</strong> Track sample types, initial extraction kits (e.g., <em>Qiagen PowerSoil</em>), and the specific purification method used. The algorithm intelligently matches cleaned samples by looking for the <code>_cl</code> suffix in the Sample ID.</li>
-<li><strong>Dynamic, Visual Management:</strong> Monitor your workflow across separate, interactive data tables: a global overview, a dedicated workspace for samples needing purification, and a log of permanently discarded samples.</li>
-<li><strong>Lab-Ready Excel Export:</strong> Download a multi-sheet <code>.xlsx</code> report with a single click. It features an embedded data dictionary and automatic conditional formatting (color-coded by sample status), making it completely ready for your digital lab notebook or quality control records.</li>
-</ul>
-</section>
-</section>
-<section id="live-application" class="level2">
-<h2 class="anchored" data-anchor-id="live-application">🚀 Live Application</h2>
-<p>You can interact with the live tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/DNA_purity_QC_nanodrop/">new window</a>.</p>
-<iframe src="https://danielsangarci.shinyapps.io/DNA_purity_QC_nanodrop/" width="100%" height="900px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-</iframe>
-
-
-</section>
-
- ]]></description>
-  <category>R</category>
-  <category>Shiny</category>
-  <category>Molecular Biology</category>
-  <category>Lab Tools</category>
-  <category>Data Management</category>
-  <guid>https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/</guid>
-  <pubDate>Wed, 14 Oct 2026 22:32:27 GMT</pubDate>
-  <media:content url="https://danielsangarci.com/posts/DNA_purity_QC_nanodrop/dna_purity_qc_nanodrop.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>PCR Master Mix Calculator</title>
-  <dc:creator>Daniel Sánchez-García</dc:creator>
-  <link>https://danielsangarci.com/posts/pcr_calculator/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="the-problem-math-errors-at-the-bench" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-math-errors-at-the-bench">The Problem: Math Errors at the Bench</h2>
-<p>Setting up PCR reactions often involves repetitive and error-prone math. You might have stock solutions in <code>mM</code>, but your protocol asks for a final concentration in <code>µM</code>. You then need to scale a single 25 µL reaction for 24 samples, plus calculate a slight overage for pipetting error.</p>
-<p>A single miscalculated decimal point, a forgotten unit conversion, or failing to subtract the template volume from the final water calculation can result in failed amplification, wasted reagents, and lost time.</p>
-</section>
-<section id="the-solution" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
-<p>I developed the <strong>PCR Master Mix Calculator</strong> to take the mental gymnastics out of PCR prep. It is an R Shiny application that automatically handles the <img src="https://latex.codecogs.com/png.latex?C_1V_1%20=%20C_2V_2"> equations behind the scenes, ensuring your final concentrations are perfect and your total volumes always add up exactly.</p>
-<section id="key-features" class="level3">
-<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
-<ul>
-<li><strong>Smart Auto-Conversion:</strong> Mix and match stock and target units (<code>mM</code> to <code>µM</code>, <code>mg/mL</code> to <code>µg/µL</code>, etc.). The app calculates the correct conversion factor automatically and blocks impossible conversions.</li>
-<li><strong>Dual Workflows:</strong> Choose whether you are building a custom reaction entirely from scratch (Buffer, MgCl2, dNTPs, Taq) or just adding primers to a commercial Master Mix (e.g., 2X or 5X).</li>
-<li><strong>Fail-Safe Alerts:</strong> The calculator dynamically determines the required nuclease-free water. If your components exceed the target reaction volume, it immediately flags a warning.</li>
-<li><strong>Lab-Book Ready:</strong> A custom “Copy” button lets you paste the generated pipetting protocol directly into Microsoft Word or a digital lab notebook with perfect table formatting, automatically highlighting which volumes belong in the bulk Master Mix tube.</li>
-</ul>
-</section>
-</section>
-<section id="live-calculator" class="level2">
-<h2 class="anchored" data-anchor-id="live-calculator">🚀 Live Calculator</h2>
-<p>You can use the tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/PCR-calculator/">new window</a>.</p>
-<iframe src="https://danielsangarci.shinyapps.io/PCR-calculator/" width="100%" height="1150px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-</iframe>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
-  author = {Sánchez-García, Daniel},
-  title = {PCR {Master} {Mix} {Calculator}},
-  date = {2026-10-15},
-  url = {https://danielsangarci.com/posts/pcr_master_mix_calculator/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas">
-Sánchez-García, Daniel. 2026. <span>“PCR Master Mix Calculator.”</span>
-October 15. <a href="https://danielsangarci.com/posts/pcr_master_mix_calculator/">https://danielsangarci.com/posts/pcr_master_mix_calculator/</a>.
-</div></div></section></div> ]]></description>
-  <category>R</category>
-  <category>Shiny</category>
-  <category>Molecular Biology</category>
-  <category>Lab Tools</category>
-  <guid>https://danielsangarci.com/posts/pcr_calculator/</guid>
-  <pubDate>Wed, 14 Oct 2026 22:32:27 GMT</pubDate>
-  <media:content url="https://danielsangarci.com/posts/pcr_calculator/pcr_master_mix_calculator.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>DNA Molar Pooling Calculator</title>
-  <dc:creator>Daniel Sánchez-García</dc:creator>
-  <link>https://danielsangarci.com/posts/dna_molar_pooling_calculator/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="the-problem-mass-molecules" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-mass-molecules">The Problem: Mass ≠ Molecules</h2>
-<p>In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like <strong>Next-Generation Sequencing (NGS)</strong>, <strong>Gibson Assembly</strong>, or <strong>PCR pooling</strong>, the weight of the DNA matters much less than the <strong>number of molecules</strong>.</p>
-<p>If you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have <strong>4 times more molecules</strong> of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency.</p>
-</section>
-<section id="the-solution" class="level2">
-<h2 class="anchored" data-anchor-id="the-solution">The Solution</h2>
-<p>I developed the <strong>DNA Molar Pooling Calculator</strong> to solve this. It is an R Shiny application that automates the physics of DNA normalization. By calculating based on <strong>molarity (fmol)</strong> rather than mass, it ensures perfectly balanced pools regardless of fragment size.</p>
-<section id="key-features" class="level3">
-<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
-<ul>
-<li><strong>Universal:</strong> Works for Nanopore, Illumina, PacBio, or standard cloning vectors.</li>
-<li><strong>Batch Mode:</strong> You can paste data directly from Excel (Sample Name, Conc1, Conc2…) to process entire plates at once.</li>
-<li><strong>Safety Checks:</strong> The app automatically flags samples (in red) that are too dilute to meet your target concentration.</li>
-</ul>
-</section>
-</section>
-<section id="live-calculator" class="level2">
-<h2 class="anchored" data-anchor-id="live-calculator">🚀 Live Calculator</h2>
-<p>You can use the tool directly below, or open it in a <a href="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/">new window</a>.</p>
-<iframe src="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/" width="100%" height="1250px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-</iframe>
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
-  author = {Sánchez-García, Daniel},
-  title = {DNA {Molar} {Pooling} {Calculator}},
-  date = {2026-10-15},
-  url = {https://danielsangarci.com/posts/dna_molar_pooling_calculator/},
-  langid = {en}
-}
-</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas">
-Sánchez-García, Daniel. 2026. <span>“DNA Molar Pooling
-Calculator.”</span> October 15. <a href="https://danielsangarci.com/posts/dna_molar_pooling_calculator/">https://danielsangarci.com/posts/dna_molar_pooling_calculator/</a>.
-</div></div></section></div> ]]></description>
-  <category>R</category>
-  <category>Shiny</category>
-  <category>Bioinformatics</category>
-  <category>Lab Tools</category>
-  <guid>https://danielsangarci.com/posts/dna_molar_pooling_calculator/</guid>
-  <pubDate>Wed, 14 Oct 2026 22:32:27 GMT</pubDate>
-  <media:content url="https://danielsangarci.com/posts/dna_molar_pooling_calculator/dna_molar_pooling_calculator.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

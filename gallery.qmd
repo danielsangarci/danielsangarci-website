@@ -12,13 +12,14 @@ listing:
   categories: false
   sort-ui: false
   filter-ui: false
-  image-height: 200px
+  image-height: 220px
+  grid-columns: 4
 page-layout: full
 ---
 
-{{< fa hammer >}} Under construction...
+{{< fa hammer >}} Under construction: more photos coming soon.
 
-If you are interested in any of images from this gallery or my [instagram account](https://www.instagram.com/danielsangarci_wildlife/?hl=es), please [contact me](contact.qmd).
+Macro photography of the small creatures I meet in the field and in the lab. If you would like to use any of these images, or see more on my [{{< fa brands instagram >}} Instagram](https://www.instagram.com/danielsangarci_wildlife/?hl=es), please [contact me](contact.qmd).
 
 ::: {#galleries}
 :::
