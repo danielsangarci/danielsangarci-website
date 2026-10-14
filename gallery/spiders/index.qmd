@@ -1,4 +1,5 @@
 ---
+description-meta: "Spiders: macro photography by Daniel Sánchez-García."
 title: "Spiders"
 image: ../../img/spider2_small.jpg
 ---

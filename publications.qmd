@@ -1,4 +1,5 @@
 ---
+description-meta: "Publications by Daniel Sánchez-García on ant ecology, myrmecophilous butterflies and insect microbiomes, with citations, abstracts, data and code."
 title: "Publications"
 title-block-banner: false
 comments: false

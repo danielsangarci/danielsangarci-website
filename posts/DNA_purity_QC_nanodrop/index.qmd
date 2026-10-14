@@ -7,7 +7,7 @@ author:
 date: last-modified
 date-format: "D MMMM YYYY"
 categories: [R, Shiny, Molecular Biology, Lab Tools, Data Management]
-image: dna_purity_qc_nanodrop.png
+image: dna_purity_qc_nanodrop.jpg
 draft: false
 editor_options: 
   chunk_output_type: console

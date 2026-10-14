@@ -1,4 +1,5 @@
 ---
+description-meta: "Research lines and projects of Daniel Sánchez-García: ant communities, insect microbiomes, myrmecophilous butterflies, multi-level networks and open, low-cost lab protocols."
 title: "Research"
 listing:
  - id: research_lines

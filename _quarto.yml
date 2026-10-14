@@ -1,12 +1,17 @@
 project:
   type: website
   output-dir: docs
+  # CNAME conecta GitHub Pages con danielsangarci.com. Sin esta linea, un
+  # render completo lo borraba de docs/ y el dominio dejaba de funcionar.
+  resources:
+    - CNAME
   # Actualiza la lista de publicaciones (ORCID + OpenAlex + Crossref).
   # Consulta internet como mucho una vez al dia; sin conexion usa la copia.
   pre-render: Rscript _publications/actualizar.R
 
 website:
-  site-url: https://danielsangarci.github.io/
+  site-url: https://danielsangarci.com/
+  description: "Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities."
   title: "Daniel Sánchez-García"
   favicon: img/favicon.png
   open-graph: true
@@ -36,7 +41,7 @@ website:
       - contact.qmd
       - icon: github
         text: Report a Bug
-        href: https://github.com/danielsangarci/danielsangarci_website/issues/new
+        href: https://github.com/danielsangarci/danielsangarci-website/issues/new
   cookie-consent: true
   reader-mode: false
   google-analytics: "G-H3GD3Z7KWV"

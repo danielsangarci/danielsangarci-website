@@ -1,5 +1,8 @@
 ---
+description-meta: "Daniel Sánchez-García, ecologist and postdoctoral researcher at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities."
 title: "Daniel<br>Sánchez-García"
+title-meta: "Daniel Sánchez-García"
+pagetitle: "Ecologist at the Doñana Biological Station"
 page-layout: full
 toc: false
 comments: false

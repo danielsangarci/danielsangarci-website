@@ -1,10 +1,10 @@
 ---
 title: "Community Assembly & Multi-level Networks"
 description: "Integrating host and microbiome data to understand complex co-occurrence patterns."
-image: network_complex.png
+image: network_complex.jpg
 about:
   template: jolla
-  image: network_complex.png
+  image: network_complex.jpg
   image-width: 22em
   image-shape: rounded
 ---

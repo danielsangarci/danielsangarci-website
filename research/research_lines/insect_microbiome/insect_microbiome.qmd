@@ -1,10 +1,10 @@
 ---
 title: "Insect Microbiome: From Symbiosis to Ecosystem Services"
 description: "Exploring how microbial communities shape host fitness and ecological interactions."
-image: insect_microbiome.png
+image: insect_microbiome.jpg
 about:
   template: jolla
-  image: insect_microbiome.png
+  image: insect_microbiome.jpg
   image-width: 22em
   image-shape: rounded
 ---

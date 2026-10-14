@@ -1,4 +1,5 @@
 ---
+description-meta: "Macro photography of ants, butterflies and moths, spiders and other invertebrates by Daniel Sánchez-García."
 title: "Gallery"
 title-block-banner: false
 comments: false

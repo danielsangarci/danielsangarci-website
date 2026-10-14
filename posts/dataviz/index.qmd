@@ -7,7 +7,7 @@ author:
 date: last-modified
 date-format: "D MMMM YYYY"
 categories: [R, Shiny, Data Visualization, Open Science, Lab Tools]
-image: dataviz.png
+image: dataviz.jpg
 draft: false
 editor_options: 
   chunk_output_type: console

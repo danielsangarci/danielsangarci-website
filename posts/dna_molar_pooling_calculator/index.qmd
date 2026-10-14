@@ -9,7 +9,7 @@ date-format: "D MMMM YYYY"
 categories: [R, Shiny, Bioinformatics, Lab Tools]
 citation: 
   url: https://danielsangarci.com/posts/dna_molar_pooling_calculator/ 
-image: dna_molar_pooling_calculator.png
+image: dna_molar_pooling_calculator.jpg
 draft: false
 editor_options: 
   chunk_output_type: console

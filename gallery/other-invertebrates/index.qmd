@@ -1,4 +1,5 @@
 ---
+description-meta: "Other invertebrates: macro photography by Daniel Sánchez-García."
 title: "Other invertebrates"
 image: ../../img/bee1_small.jpg
 ---

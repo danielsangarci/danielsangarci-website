@@ -1,10 +1,10 @@
 ---
 title: "DIY Lab Protocols for Open Science"
 description: "Democratizing research through low-cost hardware and reproducible workflows."
-image: diy_lab_protocols.png
+image: diy_lab_protocols.jpg
 about:
   template: jolla
-  image: diy_lab_protocols.png
+  image: diy_lab_protocols.jpg
   image-width: 22em
   image-shape: rounded
 ---

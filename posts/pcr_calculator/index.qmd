@@ -9,7 +9,7 @@ date-format: "D MMMM YYYY"
 categories: [R, Shiny, Molecular Biology, Lab Tools]
 citation: 
   url: https://danielsangarci.com/posts/pcr_master_mix_calculator/ 
-image: pcr_master_mix_calculator.png
+image: pcr_master_mix_calculator.jpg
 draft: false
 editor_options: 
   chunk_output_type: console

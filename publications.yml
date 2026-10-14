@@ -14,26 +14,29 @@
     - https://doi.org/10.5281/zenodo.23105816
   oa: true
   metrics: true
-  abstract: 'BACKGROUND: The Argentine ant (<i>Linepithema humile</i>) is among the
-    world''s worst invasive species. In the Doñana Biological Reserve (Spain), it
-    is associated with human structures that provide the mild, moist conditions it
-    needs within the hot, dry scrubland. We evaluated a habitat-modification treatment,
-    predicting that removing this suitable habitat would eradicate the invader locally.
-    Over an 18-year period, we monitored ant communities at a treated and an untreated
-    site, at different distances from the human structures, before and after treatment,
-    and analysed how temperature and worker numbers affected encounters at baits between
-    the Argentine ant and native ants. RESULTS: Distance to the human structures shaped
-    ant communities at both sites, but only the treated site changed after treatment.
-    There, the Argentine ant decreased close to the human structure and almost disappeared
-    farther from it, whereas the endemic <i>Cataglyphis tartessica</i> and <i>C. floricola</i>
+  s2_cited: 0
+  s2_influential: 0
+  s2_url: https://www.semanticscholar.org/paper/97350af15a9adf9483deaf4805850a94a25c30f4
+  abstract: 'The Argentine ant (<i>Linepithema humile</i>) is among the world’s worst
+    invasive species. In the Doñana Biological Reserve (Spain), it is associated with
+    human structures that provide the mild, moist conditions it needs within the hot,
+    dry scrubland. We evaluated a habitat-modification treatment, predicting that
+    removing this suitable habitat would eradicate the invader locally. Over an 18-year
+    period, we monitored ant communities at a treated and an untreated site, at different
+    distances from the human structures, before and after treatment, and analysed
+    how temperature and worker numbers affected encounters at baits between the Argentine
+    ant and native ants. Distance to the human structures shaped ant communities at
+    both sites, but only the treated site changed after treatment. There, the Argentine
+    ant decreased close to the human structure and almost disappeared farther from
+    it, whereas the endemic <i>Cataglyphis tartessica</i> and <i>C. floricola</i>
     recovered, especially close to the structure. At baits, the outcome of encounters
     depended mainly on how temperature changes favoured each species relative to its
     maximum activity temperature: <i>Cataglyphis</i> spp. displaced the Argentine
     ant in the morning, as temperature increased, and the Argentine ant recovered
     the baits in the late afternoon. Numerical advantage favoured only the Argentine
-    ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic
-    ants to recover, but did not eradicate the invader, which persisted at low abundance
-    13 years after treatment. In protected areas, habitat management should be combined
+    ant. Habitat modification reduced the Argentine ant and allowed endemic ants to
+    recover, but did not eradicate the invader, which persisted at low abundance 13
+    years after treatment. In protected areas, habitat management should be combined
     with eradication, monitoring and prevention of spread.'
   bibtex: |-
     @misc{sanchezgarcia2026temperature,
@@ -269,7 +272,7 @@
       'n': 4
     - year: 2022
       'n': 1
-  s2_cited: 6
+  s2_cited: 7
   s2_influential: 0
   s2_url: https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40
   scholar: 22

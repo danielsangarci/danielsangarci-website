@@ -108,7 +108,7 @@
         }
       ],
       "en_orcid": true,
-      "s2_citas": 6,
+      "s2_citas": 7,
       "s2_influyentes": 0,
       "s2_url": "https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40"
     },
@@ -466,14 +466,17 @@
       "numero": null,
       "paginas": null,
       "editorial": "openRxiv",
-      "resumen": "BACKGROUND: The Argentine ant ( Linepithema humile ) is among the world's worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. RESULTS: Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. CONCLUSION: Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.",
+      "resumen": "The Argentine ant ( Linepithema humile ) is among the world’s worst invasive species. In the Doñana Biological Reserve (Spain), it is associated with human structures that provide the mild, moist conditions it needs within the hot, dry scrubland. We evaluated a habitat-modification treatment, predicting that removing this suitable habitat would eradicate the invader locally. Over an 18-year period, we monitored ant communities at a treated and an untreated site, at different distances from the human structures, before and after treatment, and analysed how temperature and worker numbers affected encounters at baits between the Argentine ant and native ants. Distance to the human structures shaped ant communities at both sites, but only the treated site changed after treatment. There, the Argentine ant decreased close to the human structure and almost disappeared farther from it, whereas the endemic Cataglyphis tartessica and C. floricola recovered, especially close to the structure. At baits, the outcome of encounters depended mainly on how temperature changes favoured each species relative to its maximum activity temperature: Cataglyphis spp. displaced the Argentine ant in the morning, as temperature increased, and the Argentine ant recovered the baits in the late afternoon. Numerical advantage favoured only the Argentine ant. Habitat modification reduced the Argentine ant and allowed endemic ants to recover, but did not eradicate the invader, which persisted at low abundance 13 years after treatment. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.",
       "oa": true,
       "oa_url": "https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf",
       "pdf": "https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf",
       "web": "https://doi.org/10.64898/2026.10.08.756264",
       "citas": 0,
       "citas_anio": [],
-      "en_orcid": true
+      "en_orcid": true,
+      "s2_citas": 0,
+      "s2_influyentes": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/97350af15a9adf9483deaf4805850a94a25c30f4"
     },
     {
       "doi": "10.64898/2025.12.04.692217",

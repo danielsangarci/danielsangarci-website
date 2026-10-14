@@ -5,7 +5,8 @@
 <meta name="generator" content="quarto-1.9.38">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Daniel Sánchez-García">
-<meta name="dcterms.date" content="2025-06-16">
+<meta name="dcterms.date" content="2026-10-15">
+<meta name="description" content="Code by Daniel Sánchez-García: Re-usable code for quick data visualization with ggplot.">
 <title>Re-usable code for quick data visualization with ggplot – Daniel Sánchez-García</title>
 <style>
 /* Default styles provided by pandoc.
@@ -80,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f95a0fa430df6b3258d9ac2e1c14df49.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-5b8ea9ac9b176ada442f8665be6f7d5f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-f95a0fa430df6b3258d9ac2e1c14df49.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d9942db16802992ee88225c5989bbedc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b083992532fb50e4fd66519cf946b600.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d9942db16802992ee88225c5989bbedc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -138,12 +139,12 @@ cookieconsent.run({
 <link rel="apple-touch-icon" href="../../img/favicon.png">
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Re-usable code for quick data visualization with ggplot – Daniel Sánchez-García">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://danielsangarci.github.io/posts/post_trial/image2.jpg">
+<meta property="og:description" content="Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.">
+<meta property="og:image" content="https://danielsangarci.com/posts/post_trial/image2.jpg">
 <meta property="og:site_name" content="Daniel Sánchez-García">
 <meta name="twitter:title" content="Re-usable code for quick data visualization with ggplot – Daniel Sánchez-García">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://danielsangarci.github.io/posts/post_trial/image2.jpg">
+<meta name="twitter:description" content="Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.">
+<meta name="twitter:image" content="https://danielsangarci.com/posts/post_trial/image2.jpg">
 <meta name="twitter:creator" content="@DanielSánchez-García">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -354,7 +355,7 @@ cookieconsent.run({
 <span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/danielsangarci/danielsangarci_website/issues/new"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/danielsangarci/danielsangarci-website/issues/new"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text">Report a Bug</span></a>
   </li>  
@@ -393,7 +394,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">16 June 2025</p>
+      <p class="date">15 October 2026</p>
     </div>
   </div>
   
@@ -545,16 +546,16 @@ cookieconsent.run({
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2025,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{sánchez-garcía2026,
   author = {Sánchez-García, Daniel},
   title = {Re-Usable Code for Quick Data Visualization with `Ggplot`},
-  date = {2025-06-16},
+  date = {2026-10-15},
   url = {https://danielsangarci.netlify.app/posts/post_trial/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-Sánchez-García, Daniel. 2025. <span>“Re-Usable Code for Quick Data
-Visualization with `Ggplot`.”</span> June 16. <a href="https://danielsangarci.netlify.app/posts/post_trial/">https://danielsangarci.netlify.app/posts/post_trial/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-sánchez-garcía2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+Sánchez-García, Daniel. 2026. <span>“Re-Usable Code for Quick Data
+Visualization with `Ggplot`.”</span> October 15. <a href="https://danielsangarci.netlify.app/posts/post_trial/">https://danielsangarci.netlify.app/posts/post_trial/</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -641,7 +642,7 @@ Visualization with `Ggplot`.”</span> June 16. <a href="https://danielsangarci.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/danielsangarci\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/danielsangarci\.com\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

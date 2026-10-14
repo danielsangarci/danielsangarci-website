@@ -1,1 +1,1 @@
-Sitemap: https://danielsangarci.github.io/sitemap.xml
+Sitemap: https://danielsangarci.com/sitemap.xml
