@@ -1642,7 +1642,6 @@ Visualization with `Ggplot`.”</span> October 15. <a href="https://danielsangar
 
 
 
-
 <section id="the-problem-the-visualization-bottleneck" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-the-visualization-bottleneck">The Problem: The Visualization Bottleneck</h2>
 <p>Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.</p>
@@ -1692,7 +1691,6 @@ Visualization with `Ggplot`.”</span> October 15. <a href="https://danielsangar
 
 
 
-
 <section id="the-problem-the-chaos-of-nanodrop-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-the-chaos-of-nanodrop-data">The Problem: The Chaos of Nanodrop Data</h2>
 <p>Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.</p>
@@ -1736,7 +1734,6 @@ Visualization with `Ggplot`.”</span> October 15. <a href="https://danielsangar
   <dc:creator>Daniel Sánchez-García</dc:creator>
   <link>https://danielsangarci.com/posts/pcr_calculator/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1792,7 +1789,6 @@ October 15. <a href="https://danielsangarci.com/posts/pcr_master_mix_calculator/
   <dc:creator>Daniel Sánchez-García</dc:creator>
   <link>https://danielsangarci.com/posts/dna_molar_pooling_calculator/</link>
   <description><![CDATA[ 
-
 
 
 

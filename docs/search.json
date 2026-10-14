@@ -21,165 +21,11 @@
     "text": "DanielSánchez-García\n\n    Ants, microbiome and open science\n\n    \n      About me\n    \n  \n\n  \n    Scroll\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nI am an ecologist and Postdoctoral Researcher at the Doñana Biological Station (EBD-CSIC). My work explores the hidden layers of biodiversity—specifically species interactions within ant, microbiome and mycobiome communities.\n\n\n Email  Google Scholar  instagram  Github  ORCID  Researchgate\n\n\n\n\n\n\nCurrently, I lead the PRELUDIUM project, where I investigate the role of ants as bacteria dispersal vectors and their indirect impact on plant health. While my PhD at the Museum and Institute of Zoology (Warsaw) was built on studying the multimodal adaptations (chemical, acoustic, and genetic) of social parasites, my current research focuses on species co-occurrence and host-microbiome interactions leveraging long-read sequencing technologies.\n\n\n\nI am a staunch defender of Open Science, reproducibility and “home-made” lab protocols. I believe in making high-level molecular ecology accessible by bridging the gap between benchwork and computational biology. A core part of my current technical workflow involves Oxford Nanopore sequencing and bioinformatics to streamline data processing from raw amplicon DNA reads to ecological insights.\n\n\n\n\n\nWhen not doing science you can also find me shooting macrophotography, which is a great way of getting cool images to use during your talks!\nFeel free to contact me for scientific collaboration or getting some of my photos to use in your papers/presentations."
   },
   {
-    "objectID": "posts/dna_molar_pooling_calculator/index.html",
-    "href": "posts/dna_molar_pooling_calculator/index.html",
-    "title": "DNA Molar Pooling Calculator",
+    "objectID": "posts/post_trial/index.html",
+    "href": "posts/post_trial/index.html",
+    "title": "Re-usable code for quick data visualization with ggplot\n",
     "section": "",
-    "text": "In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like Next-Generation Sequencing (NGS), Gibson Assembly, or PCR pooling, the weight of the DNA matters much less than the number of molecules.\nIf you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have 4 times more molecules of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency."
-  },
-  {
-    "objectID": "posts/dna_molar_pooling_calculator/index.html#the-problem-mass-molecules",
-    "href": "posts/dna_molar_pooling_calculator/index.html#the-problem-mass-molecules",
-    "title": "DNA Molar Pooling Calculator",
-    "section": "",
-    "text": "In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like Next-Generation Sequencing (NGS), Gibson Assembly, or PCR pooling, the weight of the DNA matters much less than the number of molecules.\nIf you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have 4 times more molecules of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency."
-  },
-  {
-    "objectID": "posts/dna_molar_pooling_calculator/index.html#the-solution",
-    "href": "posts/dna_molar_pooling_calculator/index.html#the-solution",
-    "title": "DNA Molar Pooling Calculator",
-    "section": "The Solution",
-    "text": "The Solution\nI developed the DNA Molar Pooling Calculator to solve this. It is an R Shiny application that automates the physics of DNA normalization. By calculating based on molarity (fmol) rather than mass, it ensures perfectly balanced pools regardless of fragment size.\n\nKey Features\n\nUniversal: Works for Nanopore, Illumina, PacBio, or standard cloning vectors.\nBatch Mode: You can paste data directly from Excel (Sample Name, Conc1, Conc2…) to process entire plates at once.\nSafety Checks: The app automatically flags samples (in red) that are too dilute to meet your target concentration."
-  },
-  {
-    "objectID": "posts/dna_molar_pooling_calculator/index.html#live-calculator",
-    "href": "posts/dna_molar_pooling_calculator/index.html#live-calculator",
-    "title": "DNA Molar Pooling Calculator",
-    "section": "🚀 Live Calculator",
-    "text": "🚀 Live Calculator\nYou can use the tool directly below, or open it in a new window."
-  },
-  {
-    "objectID": "posts/DNA_purity_QC_nanodrop/index.html",
-    "href": "posts/DNA_purity_QC_nanodrop/index.html",
-    "title": "DNA Quality Control & Traceability App",
-    "section": "",
-    "text": "Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.\nThe real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult."
-  },
-  {
-    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#the-problem-the-chaos-of-nanodrop-data",
-    "href": "posts/DNA_purity_QC_nanodrop/index.html#the-problem-the-chaos-of-nanodrop-data",
-    "title": "DNA Quality Control & Traceability App",
-    "section": "",
-    "text": "Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.\nThe real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult."
-  },
-  {
-    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#the-solution",
-    "href": "posts/DNA_purity_QC_nanodrop/index.html#the-solution",
-    "title": "DNA Quality Control & Traceability App",
-    "section": "The Solution",
-    "text": "The Solution\nI developed the DNA Quality Control & Traceability App to completely automate this workflow.\nThis R Shiny application ingests raw .csv or .txt files directly exported from your spectrophotometer, applies your custom quality thresholds, and automatically pairs initial and post-purification datasets. It provides a crystal-clear, automated diagnostic status for every single sample.\n\nKey Features\n\nAutomated Quality Assessment: Set your own minimum and maximum thresholds for 260/280 and 260/230 ratios. The app instantly classifies samples into APPROVED, PENDING PURIFICATION, or DISCARDED.\nFull Traceability: Track sample types, initial extraction kits (e.g., Qiagen PowerSoil), and the specific purification method used. The algorithm intelligently matches cleaned samples by looking for the _cl suffix in the Sample ID.\nDynamic, Visual Management: Monitor your workflow across separate, interactive data tables: a global overview, a dedicated workspace for samples needing purification, and a log of permanently discarded samples.\nLab-Ready Excel Export: Download a multi-sheet .xlsx report with a single click. It features an embedded data dictionary and automatic conditional formatting (color-coded by sample status), making it completely ready for your digital lab notebook or quality control records."
-  },
-  {
-    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#live-application",
-    "href": "posts/DNA_purity_QC_nanodrop/index.html#live-application",
-    "title": "DNA Quality Control & Traceability App",
-    "section": "🚀 Live Application",
-    "text": "🚀 Live Application\nYou can interact with the live tool directly below, or open it in a new window."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "danielsangarci@gmail.com\n   Doñana Biological Station (EBD - CSIC). Américo Vespucio, 26 41092 Seville (Spain)\n   Department of Conservation and Global Change"
-  },
-  {
-    "objectID": "research/past_projects/phd-thesis/phd-thesis.html",
-    "href": "research/past_projects/phd-thesis/phd-thesis.html",
-    "title": "Phengaris teleius adaptations after reintroduction",
-    "section": "",
-    "text": "Phengaris (=Maculinea) teleius is a mirmecophylus butterfly which parasite Myrmica spp. ant nests to complete its lyfe cycle. The adult butterflies lay the eggs on Saguisorba officinalis flowers, in which also the caterpillars will live and feed on during their first three weeks of life. Once they are enough developed they drop to the soil and start mimicking ant sounds and perform specific behaviours to be picked up by the ants to their nest a continue their life cycle. P. teleius caterpillars will live as ant parasites for almost one year until they completely develop and as adult butteflies leave the nest.\nThis species is considered endangered in Europe. In 1976 P. teleius got extinct from the Netherlands and in 1990 it was performed a successful reintroduction. Eighty-six butterflies were taken from a Polish population and translocated to Moerputten nature reserve. A difference of almost 30 butterfly generations between the original Polish and the reintroduced Dutch population offers a great and unique opportunity to study the local adaptations of P. teleius butterflies to their host ants and to detect ongoing co-evolution processes between parasite and host populations.\nTo get a better understanding of how reintroductions of parasites work, we are performing a multi-level comparison of source and reintroduced populations of P. teleius by studying 1) population genetics, 2) morphology of adult butterflies and 3) behavioural, chemical and acoustical adaptations of butterfly caterpillar to the Myrmica host ants."
-  },
-  {
-    "objectID": "research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
-    "href": "research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
-    "title": "Community Assembly & Multi-level Networks",
-    "section": "",
-    "text": "Understanding the rules of coexistence requires looking across different levels of biological organization. My research focuses on the assembly mechanisms of ant communities and how these patterns scale up to influence their associated microbial life.\nThe core of my current work is the study of complex co-occurrence networks. I combine data from ant community composition with microbial profiling to explore how host-level interactions (like competition or thermal filtering) dictate the structure of the microbiome. By analyzing these nested networks, I can decipher if the microbiome assembly is a direct reflection of the host’s environment or a result of complex biotic filters within the ant community.\nThe goal is to move beyond simple species lists and build a multi-level framework that predicts how global change—from urbanization to climate shifts—affects the stability of both macro and micro-ecological networks."
-  },
-  {
-    "objectID": "research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html",
-    "href": "research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html",
-    "title": "Phengaris teleius and Myrmica spp. microbiome interaction",
-    "section": "",
-    "text": "Under construction…"
-  },
-  {
-    "objectID": "research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html",
-    "href": "research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html",
-    "title": "Ants as bacteria dispersal vectors and indirect drivers of plant health",
-    "section": "",
-    "text": "Insects like ants can be considered as one of the most important bacterial dispersal vectors. Moreover, because ants are able to produce antibiotic compounds to protect themselves against pathogenic microbes, they may selectively disperse bacteria. Ants are formidable ecosystems engineers and frequently interact with various plants on which they can spread bacteria while foraging. Once bacteria have colonized the leaves, plant-segregated compounds and microbe-microbe competition shape the plant-associated bacterial community and affects the plant health. Therefore, it could be assumed that ants could selectively disperse specific bacteria communities to their foraging plants and indirectly drive the plant health status.\nThe project aims to get deeper in the role of ants in selectively dispersing bacteria species and its effect on plant health. It will fill the gap of knowledge about bacterial communities’ dispersion by insects with direct evidence of dispersal interactions at community level.\nProject Funded by a pre-doc PRELUDIUM grant from the Polish National Science Center (NCN)."
-  },
-  {
-    "objectID": "research/research_lines/insect_microbiome/insect_microbiome.html",
-    "href": "research/research_lines/insect_microbiome/insect_microbiome.html",
-    "title": "Insect Microbiome: From Symbiosis to Ecosystem Services",
-    "section": "",
-    "text": "Most insects are not solitary entities but complex holobionts. Their internal and external microbial communities—the microbiome—play a crucial role in their development, nutrition, and defense against pathogens. My research delves into these hidden partnerships to understand how they influence not only the host’s biology but also the broader ecosystem processes.\nCurrently, I am focused on characterizing the bacterial diversity of ants. By integrating high-throughput sequencing (16S rRNA for bacteria and ITS-LSU for fungi) with network analysis, I aim to unravel the ecological drivers that shape the assembly and structure of the host-associated microbiome.\nThe ultimate goal of this research line is to bridge the gap between molecular microbial ecology and field entomology. By understanding the factors that shape microbiome assembly, we can better predict how insect populations and their associated functions will respond to environmental changes and anthropogenic pressures."
-  },
-  {
-    "objectID": "research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
-    "href": "research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
-    "title": "DIY Lab Protocols for Open Science",
-    "section": "",
-    "text": "I am a strong advocate for Open and Reproducible Science. I believe that high-quality research should not be limited by expensive proprietary equipment or “black-box” analytical methods. My work in this line focuses on developing and sharing the tools necessary to make molecular ecology more accessible to the global scientific community.\n\nCore Pillars\n\nDIY Lab protocols: I design and implement “home-made” and low cost laboratory protocols.\nReproducible Workflows: Transparency is at the heart of my lab work. My protocols can be found in public protocol repositories or my website. Reach me out if you interested in it!\n\n\n\nDIY from Dani\nI have developed and optimized several open-access protocols to streamline molecular workflows:\n\nCustom Insect Microbiome DNA Extraction: Tailored protocols designed to maximize yield from low-biomass samples (e.g., individual ants) while minimizing the presence of PCR inhibitors common in insect tissues.\nOptimized SPRI Bead Workflows: Precise protocols for DNA size selection using SPRI (Solid Phase Reversible Immobilization) technology, offering a cost-effective alternative to commercial kits without sacrificing quality."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "research.html#research-lines",
-    "href": "research.html#research-lines",
-    "title": "Research",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "research.html#current-projects",
-    "href": "research.html#current-projects",
-    "title": "Research",
-    "section": "Current projects",
-    "text": "Current projects\n\n\n\n\n\n\n\n\n\n\nPhengaris teleius and Myrmica spp. microbiome interaction\n\n\n\n\n\n\n\n\n\n\n\n\nAnts as bacteria dispersal vectors and indirect drivers of plant health\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "research.html#past-projects",
-    "href": "research.html#past-projects",
-    "title": "Research",
-    "section": "Past projects",
-    "text": "Past projects\n\n\n\n\n\n\n\n\n\n\nPhengaris teleius adaptations after reintroduction\n\n\n\n\n\n\n\n\n\n\n\n\nAnt community structuring and invasive species in Doñana National Park\n\n\n\n\n\n\n\n\n\n\n\n\nUrban heat island effect on Lasius niger activity\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/dataviz/index.html",
-    "href": "posts/dataviz/index.html",
-    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
-    "section": "",
-    "text": "Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.\nYou open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same ggplot2 boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache."
-  },
-  {
-    "objectID": "posts/dataviz/index.html#the-problem-the-visualization-bottleneck",
-    "href": "posts/dataviz/index.html#the-problem-the-visualization-bottleneck",
-    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
-    "section": "",
-    "text": "Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.\nYou open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same ggplot2 boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache."
-  },
-  {
-    "objectID": "posts/dataviz/index.html#the-solution-a-visual-interface-with-reproducible-output",
-    "href": "posts/dataviz/index.html#the-solution-a-visual-interface-with-reproducible-output",
-    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
-    "section": "The Solution: A Visual Interface with Reproducible Output",
-    "text": "The Solution: A Visual Interface with Reproducible Output\nTo keep data exploration frictionless without sacrificing the principles of Open Science, I built the DataViz & Script Generator.\nThis tool provides a complete, drag-and-drop GUI for ggplot2. It allows you to upload your raw data, manipulate parameters visually in real-time, and download your finalized, high-resolution figure. Most importantly, it bridges the gap between no-code tools and reproducible science by generating the exact R script (dplyr and ggplot2) needed to recreate your custom plot from scratch.\n\nKey Features\n\nSmart Uploads & Auto-Cleaning: Drag and drop .csv, .txt, or .xlsx files. The app’s background engine automatically detects and corrects European comma-decimal formatting, ensuring your numeric columns don’t crash the plot.\nDynamic Filtering & Renaming: No need to use filter() or mutate() before plotting. You can actively include or exclude specific categorical levels and rename axis labels on the fly directly from the UI.\nComplete Aesthetic Control: Build Histograms, Density plots, Barplots, Boxplots, Violins, or Scatterplots. Customize them with professional palettes (including ColorBrewer and colorblind-friendly Viridis options), adjust opacity, and toggle standard ggplot2 themes (minimal, classic, dark, etc.).\nReproducible Code Generation: As you tweak sliders and dropdowns, the app writes a clean, fully functional R script alongside your plot. Simply copy and paste the code to your local machine to guarantee long-term reproducibility.\nPublication-Ready Export: Download your visualizations in the exact format required by scientific journals (.tiff, .png, .jpg), with full control over the physical dimensions (in centimeters) and resolution (up to 600 DPI)."
-  },
-  {
-    "objectID": "posts/dataviz/index.html#live-application",
-    "href": "posts/dataviz/index.html#live-application",
-    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
-    "section": "🚀 Live Application",
-    "text": "🚀 Live Application\nUpload your dataset and start building your reproducible plot below, or open the tool in a new window.\n(Note: Your data is processed locally in the session and is never saved on any server)."
+    "text": "Visualizing data is an important part of communicating results, but it can turn into a tricky coding process when you need to plot your data in a very specific way. Not even talking if you expect having graphs with a similar looking along all your results.\nThis is the quick way I use to plot my data to get a consistent data visualization for all my related results.\nFirst of all, I start by specifying the common settings I want for the aesthetics of all my graphs. This first bunch of setting specify font, line and dot size.\n\ntext.size &lt;- 8\ntitle.size &lt;- 9\nstrip.size &lt;- 9\npoint.size &lt;- 1\nline.size &lt;- 0.3\ndot.size &lt;- 1\n\nThe second bunch of objects specify different color palettes for graphs with different amount of groups (from 1 to 6). I designed this palette with complementary colors following the recommendations from Lisa Charlotte Muth in “How to pick more beautiful colors for your data visualizations”. If you design your own palettes don`t hesitate to share with me :)\n\ncolor1 &lt;- \"#2C6594\"\ncolor2 &lt;- \"#239081\"\ncolor3 &lt;- \"#2AAA51\"\ncolor4 &lt;- \"#E69C38\"\ncolor5 &lt;- \"#E67E38\"\ncolor6 &lt;- \"#E64C38\"\ncolor7 &lt;- \"gray90\"\n\npalette1 &lt;- c(color1)\npalette2 &lt;- c(color1, color4)\npalette3 &lt;- c(color1, color4, color7)\npalette4 &lt;- c(color1, color2, color4, color5)\npalette5 &lt;- c(color1, color2, color4, color5, color7)\npalette6 &lt;- c(color1, color2, color3, color4, color5, color6)\n\nThis settings will be just created once at the beginning of you script, and will be applied to as many graphs as you create getting a consistent data visualization.\nNow that the common settings have been already specified we can focus on the data we want to plot. I will use the public dataset iris for this example. I start creating three objects, one for the dataset and two more for the X and Y variables. These are the only three objects that need to be modified to adapt the code to different datasets.\n\nlibrary(datasets)\ndata(iris)\n\ndf &lt;- iris\nvariabley &lt;- df$Sepal.Length\nvariablex &lt;- df$Species\n\nAnd… here we go a custom ggplot code to plot your data in a consistent way with your favourite settings in just a minute. The code include all settings previously specified in our objects to easily change several values with a single modification.\n\nlibrary(ggplot2)\nplot1 &lt;- ggplot(data=df, aes(x=variablex, y=variabley, fill = variablex))+\n  geom_boxplot(notch=T)+\n  scale_x_discrete(name = \"Variable X\")+\n  scale_y_continuous(name = \"Variable Y\", limits = c(min(variabley),max(variabley)*1.03))+\n  scale_fill_manual(name = \"Variable X\", values = palette3)+\n  ggtitle(\"a)\")+\n  theme(axis.title.x = element_text(size=title.size, color = 'black', margin=margin(t=6, r=0, b=0, l=0)),\n        axis.title.y = element_text(size=title.size, color = 'black', margin=margin(t=0, r=6, b=0, l=0)),\n        axis.text.x = element_text(size=text.size, color = 'black'),\n        axis.text.y = element_text(size=text.size, colour = 'black'),\n        axis.line=element_line(size=line.size, colour='black'),\n        axis.ticks.x = element_line(),\n        axis.ticks.y = element_line(),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth =  line.size, linetype = 'dotted', color = \"grey50\"),\n        panel.grid.minor = element_blank(),\n        strip.text.x = element_text(size = strip.size),\n        strip.background = element_blank(),\n        panel.border = element_rect(fill = NA, size = line.size),\n        panel.background = element_blank(),\n        legend.title = element_text(size = title.size, margin=margin(t=0, r=0, b=0, l=0)),\n        legend.text = element_text(size = text.size),\n        legend.position=\"none\",\n        legend.key.size = unit(0.2, \"in\"),\n        legend.margin=unit(c(0.1,0.1,0.1,0.1),\"cm\"),\n        plot.title = element_text(size = title.size, face = \"plain\", hjust = -0.05, vjust = 0),\n        plot.margin=unit(c(0.1,0.1,0.1,0.1), \"cm\"))\nplot1\n\n\n\n\n\n\n\nIf you want a graph different than a boxplot just substitute geom_boxplot() by geom_bar() for a barplot or geom_point() for a scatterplot. You can easily check all different options in the ggplot2 Cheatsheet.\nLooking forward to hearing your ideas on how to enhance the code for a more efficient data visualization. Don’t hesitate to get in touch with me!\nYou can find here the whole code in a single code block here.\n# SETTINGS FOR SIZE\ntext.size &lt;- 8\ntitle.size &lt;- 9\nstrip.size &lt;- 9\npoint.size &lt;- 1\nline.size &lt;- 0.3\ndot.size &lt;- 1\n\n#PALETTES\ncolor1 &lt;- \"#2C6594\"\ncolor2 &lt;- \"#239081\"\ncolor3 &lt;- \"#2AAA51\"\ncolor4 &lt;- \"#E69C38\"\ncolor5 &lt;- \"#E67E38\"\ncolor6 &lt;- \"#E64C38\"\ncolor7 &lt;- \"gray90\"\n\npalette1 &lt;- c(color1)\npalette2 &lt;- c(color1, color4)\npalette3 &lt;- c(color1, color4, color7)\npalette4 &lt;- c(color1, color2, color4, color5)\npalette5 &lt;- c(color1, color2, color4, color5, color7)\npalette6 &lt;- c(color1, color2, color3, color4, color5, color6)\n\n#DATA\nlibrary(datasets)\ndata(iris)\n\ndf &lt;- iris\nvariabley &lt;- df$Sepal.Length\nvariablex &lt;- df$Species\n\n#PLOT CODE\nlibrary(ggplot2)\nplot1 &lt;- ggplot(data=df, aes(x=variablex, y=variabley, fill = variablex))+\n  geom_boxplot(notch=T)+\n  scale_x_discrete(name = \"Variable X\")+\n  scale_y_continuous(name = \"Variable Y\", limits = c(min(variabley),max(variabley)*1.03))+\n  scale_fill_manual(name = \"Variable X\", values = palette3)+\n  ggtitle(\"a)\")+\n  theme(axis.title.x = element_text(size=title.size, color = 'black', margin=margin(t=6, r=0, b=0, l=0)),\n        axis.title.y = element_text(size=title.size, color = 'black', margin=margin(t=0, r=6, b=0, l=0)),\n        axis.text.x = element_text(size=text.size, color = 'black'),\n        axis.text.y = element_text(size=text.size, colour = 'black'),\n        axis.line=element_line(size=line.size, colour='black'),\n        axis.ticks.x = element_line(),\n        axis.ticks.y = element_line(),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth =  line.size, linetype = 'dotted', color = \"grey50\"),\n        panel.grid.minor = element_blank(),\n        strip.text.x = element_text(size = strip.size),\n        strip.background = element_blank(),\n        panel.border = element_rect(fill = NA, size = line.size),\n        panel.background = element_blank(),\n        legend.title = element_text(size = title.size, margin=margin(t=0, r=0, b=0, l=0)),\n        legend.text = element_text(size = text.size),\n        legend.position=\"none\",\n        legend.key.size = unit(0.2, \"in\"),\n        legend.margin=unit(c(0.1,0.1,0.1,0.1),\"cm\"),\n        plot.title = element_text(size = title.size, face = \"plain\", hjust = -0.03, vjust = 0),\n        plot.margin=unit(c(0.1,0.1,0.1,0.1), \"cm\"))\n\n\n\nCitationBibTeX citation:@online{sánchez-garcía2026,\n  author = {Sánchez-García, Daniel},\n  title = {Re-Usable Code for Quick Data Visualization with `Ggplot`},\n  date = {2026-10-15},\n  url = {https://danielsangarci.netlify.app/posts/post_trial/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSánchez-García, Daniel. 2026. “Re-Usable Code for Quick Data\nVisualization with `Ggplot`.” October 15. https://danielsangarci.netlify.app/posts/post_trial/."
   },
   {
     "objectID": "posts/pcr_calculator/index.html",
@@ -210,11 +56,165 @@
     "text": "🚀 Live Calculator\nYou can use the tool directly below, or open it in a new window."
   },
   {
-    "objectID": "posts/post_trial/index.html",
-    "href": "posts/post_trial/index.html",
-    "title": "Re-usable code for quick data visualization with ggplot\n",
+    "objectID": "posts/dataviz/index.html",
+    "href": "posts/dataviz/index.html",
+    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
     "section": "",
-    "text": "Visualizing data is an important part of communicating results, but it can turn into a tricky coding process when you need to plot your data in a very specific way. Not even talking if you expect having graphs with a similar looking along all your results.\nThis is the quick way I use to plot my data to get a consistent data visualization for all my related results.\nFirst of all, I start by specifying the common settings I want for the aesthetics of all my graphs. This first bunch of setting specify font, line and dot size.\n\ntext.size &lt;- 8\ntitle.size &lt;- 9\nstrip.size &lt;- 9\npoint.size &lt;- 1\nline.size &lt;- 0.3\ndot.size &lt;- 1\n\nThe second bunch of objects specify different color palettes for graphs with different amount of groups (from 1 to 6). I designed this palette with complementary colors following the recommendations from Lisa Charlotte Muth in “How to pick more beautiful colors for your data visualizations”. If you design your own palettes don`t hesitate to share with me :)\n\ncolor1 &lt;- \"#2C6594\"\ncolor2 &lt;- \"#239081\"\ncolor3 &lt;- \"#2AAA51\"\ncolor4 &lt;- \"#E69C38\"\ncolor5 &lt;- \"#E67E38\"\ncolor6 &lt;- \"#E64C38\"\ncolor7 &lt;- \"gray90\"\n\npalette1 &lt;- c(color1)\npalette2 &lt;- c(color1, color4)\npalette3 &lt;- c(color1, color4, color7)\npalette4 &lt;- c(color1, color2, color4, color5)\npalette5 &lt;- c(color1, color2, color4, color5, color7)\npalette6 &lt;- c(color1, color2, color3, color4, color5, color6)\n\nThis settings will be just created once at the beginning of you script, and will be applied to as many graphs as you create getting a consistent data visualization.\nNow that the common settings have been already specified we can focus on the data we want to plot. I will use the public dataset iris for this example. I start creating three objects, one for the dataset and two more for the X and Y variables. These are the only three objects that need to be modified to adapt the code to different datasets.\n\nlibrary(datasets)\ndata(iris)\n\ndf &lt;- iris\nvariabley &lt;- df$Sepal.Length\nvariablex &lt;- df$Species\n\nAnd… here we go a custom ggplot code to plot your data in a consistent way with your favourite settings in just a minute. The code include all settings previously specified in our objects to easily change several values with a single modification.\n\nlibrary(ggplot2)\nplot1 &lt;- ggplot(data=df, aes(x=variablex, y=variabley, fill = variablex))+\n  geom_boxplot(notch=T)+\n  scale_x_discrete(name = \"Variable X\")+\n  scale_y_continuous(name = \"Variable Y\", limits = c(min(variabley),max(variabley)*1.03))+\n  scale_fill_manual(name = \"Variable X\", values = palette3)+\n  ggtitle(\"a)\")+\n  theme(axis.title.x = element_text(size=title.size, color = 'black', margin=margin(t=6, r=0, b=0, l=0)),\n        axis.title.y = element_text(size=title.size, color = 'black', margin=margin(t=0, r=6, b=0, l=0)),\n        axis.text.x = element_text(size=text.size, color = 'black'),\n        axis.text.y = element_text(size=text.size, colour = 'black'),\n        axis.line=element_line(size=line.size, colour='black'),\n        axis.ticks.x = element_line(),\n        axis.ticks.y = element_line(),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth =  line.size, linetype = 'dotted', color = \"grey50\"),\n        panel.grid.minor = element_blank(),\n        strip.text.x = element_text(size = strip.size),\n        strip.background = element_blank(),\n        panel.border = element_rect(fill = NA, size = line.size),\n        panel.background = element_blank(),\n        legend.title = element_text(size = title.size, margin=margin(t=0, r=0, b=0, l=0)),\n        legend.text = element_text(size = text.size),\n        legend.position=\"none\",\n        legend.key.size = unit(0.2, \"in\"),\n        legend.margin=unit(c(0.1,0.1,0.1,0.1),\"cm\"),\n        plot.title = element_text(size = title.size, face = \"plain\", hjust = -0.05, vjust = 0),\n        plot.margin=unit(c(0.1,0.1,0.1,0.1), \"cm\"))\nplot1\n\n\n\n\n\n\n\nIf you want a graph different than a boxplot just substitute geom_boxplot() by geom_bar() for a barplot or geom_point() for a scatterplot. You can easily check all different options in the ggplot2 Cheatsheet.\nLooking forward to hearing your ideas on how to enhance the code for a more efficient data visualization. Don’t hesitate to get in touch with me!\nYou can find here the whole code in a single code block here.\n# SETTINGS FOR SIZE\ntext.size &lt;- 8\ntitle.size &lt;- 9\nstrip.size &lt;- 9\npoint.size &lt;- 1\nline.size &lt;- 0.3\ndot.size &lt;- 1\n\n#PALETTES\ncolor1 &lt;- \"#2C6594\"\ncolor2 &lt;- \"#239081\"\ncolor3 &lt;- \"#2AAA51\"\ncolor4 &lt;- \"#E69C38\"\ncolor5 &lt;- \"#E67E38\"\ncolor6 &lt;- \"#E64C38\"\ncolor7 &lt;- \"gray90\"\n\npalette1 &lt;- c(color1)\npalette2 &lt;- c(color1, color4)\npalette3 &lt;- c(color1, color4, color7)\npalette4 &lt;- c(color1, color2, color4, color5)\npalette5 &lt;- c(color1, color2, color4, color5, color7)\npalette6 &lt;- c(color1, color2, color3, color4, color5, color6)\n\n#DATA\nlibrary(datasets)\ndata(iris)\n\ndf &lt;- iris\nvariabley &lt;- df$Sepal.Length\nvariablex &lt;- df$Species\n\n#PLOT CODE\nlibrary(ggplot2)\nplot1 &lt;- ggplot(data=df, aes(x=variablex, y=variabley, fill = variablex))+\n  geom_boxplot(notch=T)+\n  scale_x_discrete(name = \"Variable X\")+\n  scale_y_continuous(name = \"Variable Y\", limits = c(min(variabley),max(variabley)*1.03))+\n  scale_fill_manual(name = \"Variable X\", values = palette3)+\n  ggtitle(\"a)\")+\n  theme(axis.title.x = element_text(size=title.size, color = 'black', margin=margin(t=6, r=0, b=0, l=0)),\n        axis.title.y = element_text(size=title.size, color = 'black', margin=margin(t=0, r=6, b=0, l=0)),\n        axis.text.x = element_text(size=text.size, color = 'black'),\n        axis.text.y = element_text(size=text.size, colour = 'black'),\n        axis.line=element_line(size=line.size, colour='black'),\n        axis.ticks.x = element_line(),\n        axis.ticks.y = element_line(),\n        panel.grid.major.x = element_blank(),\n        panel.grid.major.y = element_line(linewidth =  line.size, linetype = 'dotted', color = \"grey50\"),\n        panel.grid.minor = element_blank(),\n        strip.text.x = element_text(size = strip.size),\n        strip.background = element_blank(),\n        panel.border = element_rect(fill = NA, size = line.size),\n        panel.background = element_blank(),\n        legend.title = element_text(size = title.size, margin=margin(t=0, r=0, b=0, l=0)),\n        legend.text = element_text(size = text.size),\n        legend.position=\"none\",\n        legend.key.size = unit(0.2, \"in\"),\n        legend.margin=unit(c(0.1,0.1,0.1,0.1),\"cm\"),\n        plot.title = element_text(size = title.size, face = \"plain\", hjust = -0.03, vjust = 0),\n        plot.margin=unit(c(0.1,0.1,0.1,0.1), \"cm\"))\n\n\n\nCitationBibTeX citation:@online{sánchez-garcía2026,\n  author = {Sánchez-García, Daniel},\n  title = {Re-Usable Code for Quick Data Visualization with `Ggplot`},\n  date = {2026-10-15},\n  url = {https://danielsangarci.netlify.app/posts/post_trial/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSánchez-García, Daniel. 2026. “Re-Usable Code for Quick Data\nVisualization with `Ggplot`.” October 15. https://danielsangarci.netlify.app/posts/post_trial/."
+    "text": "Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.\nYou open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same ggplot2 boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache."
+  },
+  {
+    "objectID": "posts/dataviz/index.html#the-problem-the-visualization-bottleneck",
+    "href": "posts/dataviz/index.html#the-problem-the-visualization-bottleneck",
+    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
+    "section": "",
+    "text": "Whether you are analyzing complex behavioral metrics from ant colonies or running quick checks on molecular data, data exploration shouldn’t be a bottleneck. However, rendering a high-quality exploratory plot usually involves a lot of repetitive coding.\nYou open RStudio, import your data, realize the decimal separators are formatted incorrectly, and start writing the same ggplot2 boilerplate. By the time you filter out specific outliers, map the right color palettes, and adjust the axis text sizes to make it legible, you’ve spent more time coding than actually analyzing the biological trends. And if you don’t save the script perfectly, reproducing that exact aesthetic for a manuscript later becomes a headache."
+  },
+  {
+    "objectID": "posts/dataviz/index.html#the-solution-a-visual-interface-with-reproducible-output",
+    "href": "posts/dataviz/index.html#the-solution-a-visual-interface-with-reproducible-output",
+    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
+    "section": "The Solution: A Visual Interface with Reproducible Output",
+    "text": "The Solution: A Visual Interface with Reproducible Output\nTo keep data exploration frictionless without sacrificing the principles of Open Science, I built the DataViz & Script Generator.\nThis tool provides a complete, drag-and-drop GUI for ggplot2. It allows you to upload your raw data, manipulate parameters visually in real-time, and download your finalized, high-resolution figure. Most importantly, it bridges the gap between no-code tools and reproducible science by generating the exact R script (dplyr and ggplot2) needed to recreate your custom plot from scratch.\n\nKey Features\n\nSmart Uploads & Auto-Cleaning: Drag and drop .csv, .txt, or .xlsx files. The app’s background engine automatically detects and corrects European comma-decimal formatting, ensuring your numeric columns don’t crash the plot.\nDynamic Filtering & Renaming: No need to use filter() or mutate() before plotting. You can actively include or exclude specific categorical levels and rename axis labels on the fly directly from the UI.\nComplete Aesthetic Control: Build Histograms, Density plots, Barplots, Boxplots, Violins, or Scatterplots. Customize them with professional palettes (including ColorBrewer and colorblind-friendly Viridis options), adjust opacity, and toggle standard ggplot2 themes (minimal, classic, dark, etc.).\nReproducible Code Generation: As you tweak sliders and dropdowns, the app writes a clean, fully functional R script alongside your plot. Simply copy and paste the code to your local machine to guarantee long-term reproducibility.\nPublication-Ready Export: Download your visualizations in the exact format required by scientific journals (.tiff, .png, .jpg), with full control over the physical dimensions (in centimeters) and resolution (up to 600 DPI)."
+  },
+  {
+    "objectID": "posts/dataviz/index.html#live-application",
+    "href": "posts/dataviz/index.html#live-application",
+    "title": "DataViz & Script Generator: Publication-Ready Plots in Seconds",
+    "section": "🚀 Live Application",
+    "text": "🚀 Live Application\nUpload your dataset and start building your reproducible plot below, or open the tool in a new window.\n(Note: Your data is processed locally in the session and is never saved on any server)."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "research.html#research-lines",
+    "href": "research.html#research-lines",
+    "title": "Research",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "research.html#current-projects",
+    "href": "research.html#current-projects",
+    "title": "Research",
+    "section": "Current projects",
+    "text": "Current projects\n\n\n\n\n\n\n\n\n\n\nPhengaris teleius and Myrmica spp. microbiome interaction\n\n\n\n\n\n\n\n\n\n\n\n\nAnts as bacteria dispersal vectors and indirect drivers of plant health\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research.html#past-projects",
+    "href": "research.html#past-projects",
+    "title": "Research",
+    "section": "Past projects",
+    "text": "Past projects\n\n\n\n\n\n\n\n\n\n\nPhengaris teleius adaptations after reintroduction\n\n\n\n\n\n\n\n\n\n\n\n\nAnt community structuring and invasive species in Doñana National Park\n\n\n\n\n\n\n\n\n\n\n\n\nUrban heat island effect on Lasius niger activity\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
+    "href": "research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
+    "title": "DIY Lab Protocols for Open Science",
+    "section": "",
+    "text": "I am a strong advocate for Open and Reproducible Science. I believe that high-quality research should not be limited by expensive proprietary equipment or “black-box” analytical methods. My work in this line focuses on developing and sharing the tools necessary to make molecular ecology more accessible to the global scientific community.\n\nCore Pillars\n\nDIY Lab protocols: I design and implement “home-made” and low cost laboratory protocols.\nReproducible Workflows: Transparency is at the heart of my lab work. My protocols can be found in public protocol repositories or my website. Reach me out if you interested in it!\n\n\n\nDIY from Dani\nI have developed and optimized several open-access protocols to streamline molecular workflows:\n\nCustom Insect Microbiome DNA Extraction: Tailored protocols designed to maximize yield from low-biomass samples (e.g., individual ants) while minimizing the presence of PCR inhibitors common in insect tissues.\nOptimized SPRI Bead Workflows: Precise protocols for DNA size selection using SPRI (Solid Phase Reversible Immobilization) technology, offering a cost-effective alternative to commercial kits without sacrificing quality."
+  },
+  {
+    "objectID": "research/research_lines/insect_microbiome/insect_microbiome.html",
+    "href": "research/research_lines/insect_microbiome/insect_microbiome.html",
+    "title": "Insect Microbiome: From Symbiosis to Ecosystem Services",
+    "section": "",
+    "text": "Most insects are not solitary entities but complex holobionts. Their internal and external microbial communities—the microbiome—play a crucial role in their development, nutrition, and defense against pathogens. My research delves into these hidden partnerships to understand how they influence not only the host’s biology but also the broader ecosystem processes.\nCurrently, I am focused on characterizing the bacterial diversity of ants. By integrating high-throughput sequencing (16S rRNA for bacteria and ITS-LSU for fungi) with network analysis, I aim to unravel the ecological drivers that shape the assembly and structure of the host-associated microbiome.\nThe ultimate goal of this research line is to bridge the gap between molecular microbial ecology and field entomology. By understanding the factors that shape microbiome assembly, we can better predict how insect populations and their associated functions will respond to environmental changes and anthropogenic pressures."
+  },
+  {
+    "objectID": "research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html",
+    "href": "research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html",
+    "title": "Ants as bacteria dispersal vectors and indirect drivers of plant health",
+    "section": "",
+    "text": "Insects like ants can be considered as one of the most important bacterial dispersal vectors. Moreover, because ants are able to produce antibiotic compounds to protect themselves against pathogenic microbes, they may selectively disperse bacteria. Ants are formidable ecosystems engineers and frequently interact with various plants on which they can spread bacteria while foraging. Once bacteria have colonized the leaves, plant-segregated compounds and microbe-microbe competition shape the plant-associated bacterial community and affects the plant health. Therefore, it could be assumed that ants could selectively disperse specific bacteria communities to their foraging plants and indirectly drive the plant health status.\nThe project aims to get deeper in the role of ants in selectively dispersing bacteria species and its effect on plant health. It will fill the gap of knowledge about bacterial communities’ dispersion by insects with direct evidence of dispersal interactions at community level.\nProject Funded by a pre-doc PRELUDIUM grant from the Polish National Science Center (NCN)."
+  },
+  {
+    "objectID": "research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html",
+    "href": "research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html",
+    "title": "Phengaris teleius and Myrmica spp. microbiome interaction",
+    "section": "",
+    "text": "Under construction…"
+  },
+  {
+    "objectID": "research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
+    "href": "research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
+    "title": "Community Assembly & Multi-level Networks",
+    "section": "",
+    "text": "Understanding the rules of coexistence requires looking across different levels of biological organization. My research focuses on the assembly mechanisms of ant communities and how these patterns scale up to influence their associated microbial life.\nThe core of my current work is the study of complex co-occurrence networks. I combine data from ant community composition with microbial profiling to explore how host-level interactions (like competition or thermal filtering) dictate the structure of the microbiome. By analyzing these nested networks, I can decipher if the microbiome assembly is a direct reflection of the host’s environment or a result of complex biotic filters within the ant community.\nThe goal is to move beyond simple species lists and build a multi-level framework that predicts how global change—from urbanization to climate shifts—affects the stability of both macro and micro-ecological networks."
+  },
+  {
+    "objectID": "research/past_projects/phd-thesis/phd-thesis.html",
+    "href": "research/past_projects/phd-thesis/phd-thesis.html",
+    "title": "Phengaris teleius adaptations after reintroduction",
+    "section": "",
+    "text": "Phengaris (=Maculinea) teleius is a mirmecophylus butterfly which parasite Myrmica spp. ant nests to complete its lyfe cycle. The adult butterflies lay the eggs on Saguisorba officinalis flowers, in which also the caterpillars will live and feed on during their first three weeks of life. Once they are enough developed they drop to the soil and start mimicking ant sounds and perform specific behaviours to be picked up by the ants to their nest a continue their life cycle. P. teleius caterpillars will live as ant parasites for almost one year until they completely develop and as adult butteflies leave the nest.\nThis species is considered endangered in Europe. In 1976 P. teleius got extinct from the Netherlands and in 1990 it was performed a successful reintroduction. Eighty-six butterflies were taken from a Polish population and translocated to Moerputten nature reserve. A difference of almost 30 butterfly generations between the original Polish and the reintroduced Dutch population offers a great and unique opportunity to study the local adaptations of P. teleius butterflies to their host ants and to detect ongoing co-evolution processes between parasite and host populations.\nTo get a better understanding of how reintroductions of parasites work, we are performing a multi-level comparison of source and reintroduced populations of P. teleius by studying 1) population genetics, 2) morphology of adult butterflies and 3) behavioural, chemical and acoustical adaptations of butterfly caterpillar to the Myrmica host ants."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "danielsangarci@gmail.com\n   Doñana Biological Station (EBD - CSIC). Américo Vespucio, 26 41092 Seville (Spain)\n   Department of Conservation and Global Change"
+  },
+  {
+    "objectID": "posts/DNA_purity_QC_nanodrop/index.html",
+    "href": "posts/DNA_purity_QC_nanodrop/index.html",
+    "title": "DNA Quality Control & Traceability App",
+    "section": "",
+    "text": "Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.\nThe real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult."
+  },
+  {
+    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#the-problem-the-chaos-of-nanodrop-data",
+    "href": "posts/DNA_purity_QC_nanodrop/index.html#the-problem-the-chaos-of-nanodrop-data",
+    "title": "DNA Quality Control & Traceability App",
+    "section": "",
+    "text": "Evaluating DNA purity after extraction can quickly become a logistical headache. You run dozens of samples on the Nanodrop, copy and paste the raw data into Excel, and then manually review the 260/280 and 260/230 ratios to decide which samples require cleanup.\nThe real trouble begins during phase 2: once you apply a purification method (such as SPRI beads or a Zymo cleanup kit), you must re-quantify the samples. Manually cross-referencing and pairing the new data with the initial readings to determine whether a sample has been successfully rescued or must be permanently discarded is a time-consuming, error-prone process. Furthermore, maintaining flawless traceability of extraction kits and purification methods across multiple batches is incredibly difficult."
+  },
+  {
+    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#the-solution",
+    "href": "posts/DNA_purity_QC_nanodrop/index.html#the-solution",
+    "title": "DNA Quality Control & Traceability App",
+    "section": "The Solution",
+    "text": "The Solution\nI developed the DNA Quality Control & Traceability App to completely automate this workflow.\nThis R Shiny application ingests raw .csv or .txt files directly exported from your spectrophotometer, applies your custom quality thresholds, and automatically pairs initial and post-purification datasets. It provides a crystal-clear, automated diagnostic status for every single sample.\n\nKey Features\n\nAutomated Quality Assessment: Set your own minimum and maximum thresholds for 260/280 and 260/230 ratios. The app instantly classifies samples into APPROVED, PENDING PURIFICATION, or DISCARDED.\nFull Traceability: Track sample types, initial extraction kits (e.g., Qiagen PowerSoil), and the specific purification method used. The algorithm intelligently matches cleaned samples by looking for the _cl suffix in the Sample ID.\nDynamic, Visual Management: Monitor your workflow across separate, interactive data tables: a global overview, a dedicated workspace for samples needing purification, and a log of permanently discarded samples.\nLab-Ready Excel Export: Download a multi-sheet .xlsx report with a single click. It features an embedded data dictionary and automatic conditional formatting (color-coded by sample status), making it completely ready for your digital lab notebook or quality control records."
+  },
+  {
+    "objectID": "posts/DNA_purity_QC_nanodrop/index.html#live-application",
+    "href": "posts/DNA_purity_QC_nanodrop/index.html#live-application",
+    "title": "DNA Quality Control & Traceability App",
+    "section": "🚀 Live Application",
+    "text": "🚀 Live Application\nYou can interact with the live tool directly below, or open it in a new window."
+  },
+  {
+    "objectID": "posts/dna_molar_pooling_calculator/index.html",
+    "href": "posts/dna_molar_pooling_calculator/index.html",
+    "title": "DNA Molar Pooling Calculator",
+    "section": "",
+    "text": "In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like Next-Generation Sequencing (NGS), Gibson Assembly, or PCR pooling, the weight of the DNA matters much less than the number of molecules.\nIf you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have 4 times more molecules of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency."
+  },
+  {
+    "objectID": "posts/dna_molar_pooling_calculator/index.html#the-problem-mass-molecules",
+    "href": "posts/dna_molar_pooling_calculator/index.html#the-problem-mass-molecules",
+    "title": "DNA Molar Pooling Calculator",
+    "section": "",
+    "text": "In the laboratory, we are often taught to quantify DNA in nanograms (ng). However, for biological reactions like Next-Generation Sequencing (NGS), Gibson Assembly, or PCR pooling, the weight of the DNA matters much less than the number of molecules.\nIf you mix a 500bp amplicon and a 2000bp amplicon at the same mass (e.g., 50ng each), you actually have 4 times more molecules of the small fragment. This imbalance can ruin sequencing libraries or lower cloning efficiency."
+  },
+  {
+    "objectID": "posts/dna_molar_pooling_calculator/index.html#the-solution",
+    "href": "posts/dna_molar_pooling_calculator/index.html#the-solution",
+    "title": "DNA Molar Pooling Calculator",
+    "section": "The Solution",
+    "text": "The Solution\nI developed the DNA Molar Pooling Calculator to solve this. It is an R Shiny application that automates the physics of DNA normalization. By calculating based on molarity (fmol) rather than mass, it ensures perfectly balanced pools regardless of fragment size.\n\nKey Features\n\nUniversal: Works for Nanopore, Illumina, PacBio, or standard cloning vectors.\nBatch Mode: You can paste data directly from Excel (Sample Name, Conc1, Conc2…) to process entire plates at once.\nSafety Checks: The app automatically flags samples (in red) that are too dilute to meet your target concentration."
+  },
+  {
+    "objectID": "posts/dna_molar_pooling_calculator/index.html#live-calculator",
+    "href": "posts/dna_molar_pooling_calculator/index.html#live-calculator",
+    "title": "DNA Molar Pooling Calculator",
+    "section": "🚀 Live Calculator",
+    "text": "🚀 Live Calculator\nYou can use the tool directly below, or open it in a new window."
   },
   {
     "objectID": "gallery.html",

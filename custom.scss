@@ -1857,3 +1857,48 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
   .pubs-resumen { grid-template-columns: minmax(0, 1fr); padding: 1.2rem 1.1rem 1rem; }
   .pubs-cifra dd { font-size: 1.7rem; }
 }
+
+// ---------------------------------------------------------------------
+//  Pagina 404 (404.qmd)
+// ---------------------------------------------------------------------
+.page-404 {
+  max-width: 34rem;
+  margin: 3rem auto 4rem;
+  text-align: center;
+  h2 { margin: 0.4rem auto 0.8rem; border: 0; font-size: 1.6rem; text-align: center; }
+  p { color: $gray-600; }
+}
+.page-404__logo {
+  width: 5.5rem;
+  height: auto;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  animation: page404Vagar 6s ease-in-out infinite;
+}
+.page-404__codigo {
+  display: block;
+  font-family: $headings-font-family;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $primary;
+}
+.page-404__enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+  p { display: contents; }
+  .btn { border-radius: $border-radius-pill; font-size: 0.8rem; padding: 0.4rem 1.1rem; }
+}
+// la hormiga "busca" el rastro: un vaiven suave
+@keyframes page404Vagar {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-6px) rotate(-6deg); }
+  75% { transform: translateX(6px) rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-404__logo { animation: none; }
+}

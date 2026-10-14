@@ -15,9 +15,8 @@ website:
   title: "Daniel Sánchez-García"
   favicon: img/favicon.png
   open-graph: true
-  twitter-card: 
+  twitter-card:
     card-style: summary_large_image
-    creator: "@DanielSánchez-García"
   navbar:
     background: "#DCE6EF"
     foreground: dark
@@ -57,9 +56,9 @@ website:
   
 format:
   html:
-    theme: 
-      light: [cosmo, custom.scss]
-      dark: [cosmo, custom.scss]
+    # Un solo tema: la web no tiene modo oscuro (antes habia un boton de
+    # cambio de tema que no hacia nada, porque los dos temas eran iguales)
+    theme: [cosmo, custom.scss]
     fontsize: 1.2em
     linestretch: 1.7
     css: styles.css

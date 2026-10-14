@@ -1,0 +1,26 @@
+---
+pagetitle: "Page not found"
+description-meta: "This page does not exist on danielsangarci.com."
+title-block-banner: false
+toc: false
+comments: false
+search: false
+# GitHub Pages sirve esta pagina para cualquier direccion que no exista.
+# Quarto pone sus enlaces en absoluto (empiezan por /), asi que funcionan
+# desde cualquier ruta.
+---
+
+::: page-404
+![](img/logo-ant-network.svg){.page-404__logo fig-alt=""}
+
+[404]{.page-404__codigo}
+
+This ant lost the pheromone trail
+---------------------------------
+
+The page you are looking for doesn't exist or has moved. Try one of these instead:
+
+::: page-404__enlaces
+[Home](index.qmd){.btn .btn-primary} [Research](research.qmd){.btn .btn-outline-primary} [Publications](publications.qmd){.btn .btn-outline-primary} [Contact](contact.qmd){.btn .btn-outline-primary}
+:::
+:::
