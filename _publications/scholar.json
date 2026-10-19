@@ -1,5 +1,5 @@
 {
-  "total": 89,
+  "total": 90,
   "h": 5,
   "por_anio": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "anio": 2026,
-      "n": 27
+      "n": 28
     }
   ],
   "articulos": [
@@ -90,13 +90,13 @@
       "citas": 2
     },
     {
-      "titulo": "Temperature and management reduce the abundance of the invasive Argentine ant (Linepithema humile)",
-      "anio": 2026,
-      "citas": 0
-    },
-    {
       "titulo": "Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling",
       "anio": 2025,
+      "citas": 1
+    },
+    {
+      "titulo": "Temperature and management reduce the abundance of the invasive Argentine ant (Linepithema humile)",
+      "anio": 2026,
       "citas": 0
     },
     {

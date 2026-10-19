@@ -46,7 +46,7 @@
       howpublished = {bioRxiv},
       doi = {10.64898/2026.10.08.756264}
     }
-  scholar_total: 89
+  scholar_total: 90
   scholar_h: 5
   scholar_by_year:
     - year: 2016
@@ -68,7 +68,7 @@
     - year: 2025
       'n': 19
     - year: 2026
-      'n': 27
+      'n': 28
 - type: article
   type_label: Journal article
   year: 2026
@@ -85,6 +85,11 @@
     - https://doi.org/10.5281/zenodo.17809129
   oa: true
   metrics: true
+  cited: 1
+  cites_by_year:
+    - year: 2026
+      'n': 1
+  scholar: 1
   abstract: Litter ant communities constitute an important component of biodiversity
     in tropical regions. They are currently used in several ecosystem management programmes
     to assess forest health. The aim of this study was to uncover the ant diversity

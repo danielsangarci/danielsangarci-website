@@ -165,6 +165,47 @@
       "s2_url": "https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9"
     },
     {
+      "doi": "10.3897/afrinvertebr.67.180461",
+      "tipo": "article",
+      "openalex": "https://openalex.org/W4417117108",
+      "preprint_de": null,
+      "anio": 2026,
+      "fecha": "2026-05-11",
+      "titulo": "Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling",
+      "autores": [
+        "Ambakina, H.",
+        "Gómez, K.",
+        "Monzenga, J.-C.",
+        "Sánchez-García, D.",
+        "Dekoninck, W."
+      ],
+      "autores_bib": [
+        "Ambakina, Hervé",
+        "Gómez, Kiko",
+        "Monzenga, Jean-Claude",
+        "Sánchez-García, Daniel",
+        "Dekoninck, Wouter"
+      ],
+      "revista": "African Invertebrates",
+      "volumen": "67",
+      "numero": "1",
+      "paginas": "65-91",
+      "editorial": "Pensoft Publishers",
+      "resumen": "Litter ant communities constitute an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow land, secondary forest and primary forest) in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These habitats were sampled at six localities using pitfall traps and Winkler extractions. In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded in the Yangambi Biosphere Reserve. Ant diversity increased significantly along the successional gradient, being lowest in fallow land, intermediate in secondary forest, and highest in primary forest. Sixty ant species were shared across all three habitats, while each habitat supported a distinct assemblage of species. Primary forests contained the greatest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, recording nearly 50% greater species richness. However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve likely remains unrecorded, and additional sampling methods (like arboreal traps, net sweeping and baiting) could provide a more complete picture of its biodiversity.",
+      "oa": true,
+      "oa_url": "https://doi.org/10.3897/afrinvertebr.67.180461",
+      "pdf": null,
+      "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
+      "citas": 1,
+      "citas_anio": [
+        {
+          "anio": 2026,
+          "n": 1
+        }
+      ],
+      "en_orcid": true
+    },
+    {
       "doi": "10.6084/m9.figshare.23507211",
       "tipo": "dataset",
       "openalex": "https://openalex.org/W4394216054",
@@ -294,42 +335,6 @@
       "s2_citas": 0,
       "s2_influyentes": 0,
       "s2_url": "https://www.semanticscholar.org/paper/66eaacfb483a7ea8b508c2ebd42b55cc77a08114"
-    },
-    {
-      "doi": "10.3897/afrinvertebr.67.180461",
-      "tipo": "article",
-      "openalex": "https://openalex.org/W4417117108",
-      "preprint_de": null,
-      "anio": 2026,
-      "fecha": "2026-05-11",
-      "titulo": "Uncovering ant diversity across forest successional stages in the Yangambi Biosphere Reserve (DRC): Insights from Winkler and pitfall trap sampling",
-      "autores": [
-        "Ambakina, H.",
-        "Gómez, K.",
-        "Monzenga, J.-C.",
-        "Sánchez-García, D.",
-        "Dekoninck, W."
-      ],
-      "autores_bib": [
-        "Ambakina, Hervé",
-        "Gómez, Kiko",
-        "Monzenga, Jean-Claude",
-        "Sánchez-García, Daniel",
-        "Dekoninck, Wouter"
-      ],
-      "revista": "African Invertebrates",
-      "volumen": "67",
-      "numero": "1",
-      "paginas": "65-91",
-      "editorial": "Pensoft Publishers",
-      "resumen": "Litter ant communities constitute an important component of biodiversity in tropical regions. They are currently used in several ecosystem management programmes to assess forest health. The aim of this study was to uncover the ant diversity across forest successional stages (fallow land, secondary forest and primary forest) in the Yangambi Biosphere Reserve, the Democratic Republic of the Congo. These habitats were sampled at six localities using pitfall traps and Winkler extractions. In total, 190 ant species belonging to 50 genera and eight subfamilies were recorded in the Yangambi Biosphere Reserve. Ant diversity increased significantly along the successional gradient, being lowest in fallow land, intermediate in secondary forest, and highest in primary forest. Sixty ant species were shared across all three habitats, while each habitat supported a distinct assemblage of species. Primary forests contained the greatest number of exclusive species, followed by secondary forests and fallow land. Winkler extractors captured substantially more ant species than pitfall traps, recording nearly 50% greater species richness. However, a significant portion of the ant fauna in the Yangambi Biosphere Reserve likely remains unrecorded, and additional sampling methods (like arboreal traps, net sweeping and baiting) could provide a more complete picture of its biodiversity.",
-      "oa": true,
-      "oa_url": "https://doi.org/10.3897/afrinvertebr.67.180461",
-      "pdf": null,
-      "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
-      "citas": 0,
-      "citas_anio": [],
-      "en_orcid": true
     },
     {
       "doi": "10.5281/zenodo.17791047",
@@ -510,8 +515,13 @@
       "oa_url": "https://doi.org/10.3897/afrinvertebr.67.180461",
       "pdf": null,
       "web": "https://doi.org/10.3897/afrinvertebr.67.180461",
-      "citas": 0,
-      "citas_anio": [],
+      "citas": 1,
+      "citas_anio": [
+        {
+          "anio": 2026,
+          "n": 1
+        }
+      ],
       "en_orcid": true,
       "s2_citas": 0,
       "s2_influyentes": 0,
