@@ -1,5 +1,5 @@
 {
-  "total": 90,
+  "total": 91,
   "h": 5,
   "por_anio": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "anio": 2026,
-      "n": 28
+      "n": 29
     }
   ],
   "articulos": [
@@ -70,14 +70,14 @@
       "citas": 6
     },
     {
-      "titulo": "Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)",
-      "anio": 2019,
+      "titulo": "Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades …",
+      "anio": 2024,
       "citas": 4
     },
     {
-      "titulo": "Temporal and spatial variation of morphological traits and genetic structure in Phengaris teleius myrmecophilous butterflies following habitat and climate changes three decades …",
-      "anio": 2024,
-      "citas": 3
+      "titulo": "Lasius piliferus Seifert, 1992: descripción de la reina y actualización de su distribución ibérica (Hymenoptera: Formicidae)",
+      "anio": 2019,
+      "citas": 4
     },
     {
       "titulo": "Una nueva especie parásita social para la península ibérica. Bothriomyrmex communista Santschi, 1919 (Hymenoptera: Formicidae) en España.",

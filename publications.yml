@@ -46,7 +46,7 @@
       howpublished = {bioRxiv},
       doi = {10.64898/2026.10.08.756264}
     }
-  scholar_total: 90
+  scholar_total: 91
   scholar_h: 5
   scholar_by_year:
     - year: 2016
@@ -68,7 +68,7 @@
     - year: 2025
       'n': 19
     - year: 2026
-      'n': 28
+      'n': 29
 - type: article
   type_label: Journal article
   year: 2026
@@ -186,7 +186,7 @@
   s2_cited: 3
   s2_influential: 0
   s2_url: https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9
-  scholar: 3
+  scholar: 4
   abstract: A successful reintroduction of <i>Phengaris teleius</i> performed in the
     Netherlands by translocating 86 individuals from a Polish metapopulation in 1990
     represents a unique opportunity to study changes in butterflies from a source
