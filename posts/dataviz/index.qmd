@@ -39,6 +39,15 @@ Upload your dataset and start building your reproducible plot below, or open the
 
 *(Note: Your data is processed locally in the session and is never saved on any server).*
 
-<iframe src="https://danielsangarci.shinyapps.io/dataviz/" width="100%" height="950px" style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-
-</iframe>
+```{=html}
+<!-- La app solo se carga al pulsar el boton: asi no se despierta en
+     shinyapps.io con cada visita (ahorra horas del plan gratuito y la
+     pagina carga al instante). El script esta en posts/_app-lanzador.html. -->
+<div class="app-lanzador" data-src="https://danielsangarci.shinyapps.io/dataviz/" data-height="950px">
+  <img class="app-lanzador__fondo" src="dataviz.jpg" alt="">
+  <div class="app-lanzador__capa">
+    <button type="button" class="btn btn-primary app-lanzador__boton"><i class="bi bi-play-fill" aria-hidden="true"></i> Launch app</button>
+    <p class="app-lanzador__nota">The app may take a few seconds to start.</p>
+  </div>
+</div>
+```

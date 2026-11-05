@@ -1,17 +1,31 @@
 ---
 description-meta: "Research project by Daniel Sánchez-García: Phengaris teleius adaptations after reintroduction."
 title: "*Phengaris teleius* adaptations after reintroduction"
-description: " "
+description: "Genetic, morphological and behavioural change in a butterfly three decades after its reintroduction."
 image: macu1_small.jpg
 about:
   template: jolla
   image: macu1_small.jpg
   image-width: 22em
   image-shape: rounded
+# "Related publications": trabajos con `projects: [phd-thesis]` en
+# _publications/manual.yml. Se actualiza solo con la lista de publicaciones.
+listing:
+  id: relacionadas
+  contents: ../../../publications.yml
+  template: ../../../_publications/relacionadas.ejs
+  include:
+    projects: "phd-thesis"
+  sort: false
 ---
 
-*Phengaris* (=*Maculinea*) *teleius* is a mirmecophylus butterfly which parasite *Myrmica* spp. ant nests to complete its lyfe cycle. The adult butterflies lay the eggs on *Saguisorba officinalis* flowers, in which also the caterpillars will live and feed on during their first three weeks of life. Once they are enough developed they drop to the soil and start mimicking ant sounds and perform specific behaviours to be picked up by the ants to their nest a continue their life cycle. *P. teleius* caterpillars will live as ant parasites for almost one year until they completely develop and as adult butteflies leave the nest.
+*Phengaris* (=*Maculinea*) *teleius* is a myrmecophilous butterfly that parasitises *Myrmica* spp. ant nests to complete its life cycle. The adult butterflies lay their eggs on *Sanguisorba officinalis* flowers, where the caterpillars live and feed during their first three weeks of life. Once they are developed enough, they drop to the ground and start mimicking ant sounds and performing specific behaviours to be carried by the ants into their nest, where they continue their life cycle. *P. teleius* caterpillars will live as ant parasites for almost one year until they complete their development and leave the nest as adult butterflies.
 
-This species is considered endangered in Europe. In 1976 *P. teleius* got extinct from the Netherlands and in 1990 it was performed a successful reintroduction. Eighty-six butterflies were taken from a Polish population and translocated to Moerputten nature reserve. A difference of almost 30 butterfly generations between the original Polish and the reintroduced Dutch population offers a great and unique opportunity to study the local adaptations of *P. teleius* butterflies to their host ants and to detect ongoing co-evolution processes between parasite and host populations.
+This species is considered endangered in Europe. In 1976 *P. teleius* went extinct in the Netherlands, and in 1990 it was successfully reintroduced. Eighty-six butterflies were taken from a Polish population and translocated to the Moerputten nature reserve. A difference of almost 30 butterfly generations between the original Polish and the reintroduced Dutch population offers a great and unique opportunity to study the local adaptations of *P. teleius* butterflies to their host ants and to detect ongoing co-evolution processes between parasite and host populations.
 
-To get a better understanding of how reintroductions of parasites work, we are performing a multi-level comparison of source and reintroduced populations of *P. teleius* by studying 1) population genetics, 2) morphology of adult butterflies and 3) behavioural, chemical and acoustical adaptations of butterfly caterpillar to the *Myrmica* host ants.
+To get a better understanding of how reintroductions of parasites work, we performed a multi-level comparison of source and reintroduced populations of *P. teleius* by studying 1) population genetics, 2) morphology of adult butterflies and 3) behavioural, chemical and acoustical adaptations of the butterfly caterpillars to their *Myrmica* host ants.
+
+## Related publications
+
+::: {#relacionadas}
+:::

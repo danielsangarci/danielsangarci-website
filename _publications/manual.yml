@@ -30,6 +30,9 @@
 #        scholar:   numero de citas en Google Scholar (a mano: Google
 #                   Scholar no se puede consultar de forma automatica)
 #        hide:      true para que no salga en la web
+#        projects:  proyectos de Research donde aparece en "Related
+#                   publications", con el nombre de su carpeta, p. ej.
+#                   [phd-thesis] o [ant-community-ecology-donana]
 #
 #      Solo para un preprint o un dataset (con SU DOI como clave):
 #        link_to:   DOI del articulo al que pertenece. Sirve cuando el
@@ -39,7 +42,7 @@
 #   2. `extra`: trabajos SIN DOI o que no estan en ORCID.
 #      Campos: type (article | chapter | preprint | book), year,
 #      authors (lista "Apellido, I."), title, venue, volume, issue,
-#      pages, editors, publisher, url, pdf, scholar. Las especies van
+#      pages, editors, publisher, url, pdf, scholar, projects. Las especies van
 #      en *cursiva*.
 #
 #   3. `options`: ajustes de la pagina.
@@ -64,7 +67,16 @@ italics: []
 no_italics: []
 
 ajustes:
+  "10.1371/journal.pone.0267547":
+    projects: [ant-community-ecology-donana]
+  "10.64898/2026.10.08.756264":
+    projects: [ant-community-ecology-donana]
+  "10.1016/j.scitotenv.2024.170157":
+    projects: [urban-heat-island-lasius]
+  "10.64898/2025.12.02.691951":
+    projects: [phd-thesis]
   "10.1016/j.gecco.2024.e03104":
+    projects: [phd-thesis]
     pdf: "https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf"
   "10.3897/afrinvertebr.67.180461":
     pdf: "https://africaninvertebrates.pensoft.net/article/180461/download/pdf/1635810"
@@ -78,6 +90,7 @@ extra:
     venue: "Especies exóticas invasoras: Cátedra de parques nacionales"
     pages: "249–262"
     publisher: "Editorial Universidad de Alcalá"
+    projects: [ant-community-ecology-donana]
     url: "https://www.miteco.gob.es/fr/ceneam/recursos/pag-web/especies-exoticas-invasoras-parques-nacionales.html"
 
   - type: article

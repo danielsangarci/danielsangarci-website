@@ -1,7 +1,7 @@
 ---
 description-meta: "Research project by Daniel Sánchez-García: Phengaris teleius and Myrmica spp. microbiome interaction."
 title: "*Phengaris teleius* and *Myrmica* spp. microbiome interaction"
-description: " "
+description: "How the microbiomes of a social-parasite butterfly and its *Myrmica* host ants interact."
 image: macu2_small.jpg
 about:
   template: jolla

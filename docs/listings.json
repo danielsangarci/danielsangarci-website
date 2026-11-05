@@ -7,14 +7,26 @@
     "listing": "/research.html",
     "items": [
       "/research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
-      "/research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
       "/research/research_lines/insect_microbiome/insect_microbiome.html",
+      "/research/research_lines/diy_lab_protocols/diy_lab_protocols.html",
       "/research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html",
       "/research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html",
       "/research/past_projects/phd-thesis/phd-thesis.html",
       "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
       "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html"
     ]
+  },
+  {
+    "listing": "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/phd-thesis/phd-thesis.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
+    "items": []
   },
   {
     "listing": "/gallery.html",
@@ -31,8 +43,7 @@
       "/posts/dataviz/index.html",
       "/posts/DNA_purity_QC_nanodrop/index.html",
       "/posts/pcr_calculator/index.html",
-      "/posts/dna_molar_pooling_calculator/index.html",
-      "/posts/post_trial/index.html"
+      "/posts/dna_molar_pooling_calculator/index.html"
     ]
   }
 ]

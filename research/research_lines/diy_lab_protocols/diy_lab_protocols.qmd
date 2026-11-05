@@ -1,4 +1,5 @@
 ---
+order: 3
 title: "DIY Lab Protocols for Open Science"
 description: "Democratizing research through low-cost hardware and reproducible workflows."
 image: diy_lab_protocols.jpg
@@ -14,7 +15,7 @@ I am a strong advocate for **Open and Reproducible Science**. I believe that hig
 ### Core Pillars
 
 1.  **DIY Lab protocols:** I design and implement **"home-made" and low cost laboratory protocols**.
-2.  **Reproducible Workflows:** Transparency is at the heart of my lab work. My protocols can be found in public protocol repositories or my website. Reach me out if you interested in it!
+2.  **Reproducible Workflows:** Transparency is at the heart of my lab work. My protocols are available in public protocol repositories and on this website. Reach out to me if you are interested!
 
 ### DIY from Dani
 

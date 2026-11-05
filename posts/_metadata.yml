@@ -25,6 +25,8 @@ comments:
 
 format:
   html:
+    # Boton "Launch app" de las herramientas de Shiny
+    include-after-body: _app-lanzador.html
     highlight-style: arrow
     code-copy: true
     code-line-numbers: false

@@ -4,9 +4,10 @@ title: "Research"
 listing:
  - id: research_lines
    contents: "research/research_lines/*/*.qmd"
-   sort: "title asc"
+   # Orden fijo con el campo `order` de cada linea (1, 2, 3...)
+   sort: "order asc"
    type: grid
-   fields: [title, image]
+   fields: [image, title, description]
    categories: false
    sort-ui: false
    filter-ui: false
@@ -15,7 +16,7 @@ listing:
    contents: "research/current_projects/*/*.qmd"
    sort: "title asc"
    type: grid
-   fields: [title, image]
+   fields: [image, title, description]
    categories: false
    sort-ui: false
    filter-ui: false
@@ -24,7 +25,7 @@ listing:
    contents: "research/past_projects/*/*.qmd"
    sort: "title asc"
    type: grid
-   fields: [title, image]
+   fields: [image, title, description]
    categories: false
    sort-ui: false
    filter-ui: false

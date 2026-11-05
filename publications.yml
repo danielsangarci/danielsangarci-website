@@ -12,6 +12,8 @@
   pdf: https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf
   data:
     - https://doi.org/10.5281/zenodo.23105816
+  projects:
+    - ant-community-ecology-donana
   oa: true
   metrics: true
   s2_cited: 0
@@ -130,6 +132,8 @@
   doi: 10.64898/2025.12.02.691951
   data:
     - https://doi.org/10.5281/zenodo.17791047
+  projects:
+    - phd-thesis
   oa: true
   metrics: true
   s2_cited: 0
@@ -175,6 +179,8 @@
   doi: 10.1016/j.gecco.2024.e03104
   pdf: https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf
   preprint: https://doi.org/10.2139/ssrn.4779205
+  projects:
+    - phd-thesis
   oa: true
   metrics: true
   cited: 3
@@ -233,6 +239,8 @@
   preprint: https://doi.org/10.2139/ssrn.4610852
   data:
     - https://doi.org/10.6084/m9.figshare.23507211
+  projects:
+    - urban-heat-island-lasius
   oa: true
   metrics: true
   cited: 19
@@ -267,6 +275,8 @@
   venue: <i>PLOS ONE</i>, 17(4), e0267547
   doi: 10.1371/journal.pone.0267547
   pdf: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable
+  projects:
+    - ant-community-ecology-donana
   oa: true
   metrics: true
   cited: 8
@@ -321,6 +331,8 @@
     Sergio, F., Reyes-López, J. L., Álvarez Blanco, P., and Cerdá Sureda, X.
   venue: 'In J. Junoy (Ed.), <i>Especies exóticas invasoras: Cátedra de parques nacionales</i>
     (pp. 249–262). Editorial Universidad de Alcalá'
+  projects:
+    - ant-community-ecology-donana
   metrics: true
   scholar: 2
   bibtex: |-

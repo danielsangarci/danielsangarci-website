@@ -11,7 +11,7 @@ categories: [ggplot2] # self-defined categories
 citation: 
   url: https://danielsangarci.netlify.app/posts/post_trial/ 
 image: image2.jpg
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: true # oculto: era un post de prueba. Pon false para que vuelva a salir
 editor_options: 
   chunk_output_type: console
 ---

@@ -1314,7 +1314,7 @@ a.lightbox {
     display: flex;
     flex-wrap: wrap;
     row-gap: 0.6rem;
-    column-gap: 0.5rem;
+    column-gap: 0.35rem;
     margin: 0;
   }
 
@@ -1324,12 +1324,14 @@ a.lightbox {
     gap: 0.45rem;
     border: 1px solid $dsg-hairline;
     border-radius: $border-radius-pill;
-    padding: 0.4rem 1rem;
+    // Compactas para que las seis quepan en una linea junto a la foto
+    padding: 0.32rem 0.62rem;
     background-color: $white;
     color: $gray-700;
     font-family: $headings-font-family;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
     line-height: 1.4;
     text-decoration: none;
     box-shadow: $box-shadow-sm;
@@ -2049,3 +2051,205 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
   .cv-charlas li { padding-left: 0; padding-top: 2rem; }
   .cv-tipo { top: 0.7rem; }
 }
+
+
+// ---------------------------------------------------------------------
+//  Tarjetas de la portada: cabecera (icono + titulo), enlace y fotos
+// ---------------------------------------------------------------------
+.home-card__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+  p { margin: 0; }
+  h3 {
+    margin: 0;
+    border: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+}
+.home-card .home-card__enlace {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-family: $headings-font-family;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: $primary;
+  text-decoration: none;
+  transition: $dsg-ease;
+  &:hover { color: $dsg-ink; transform: translateX(3px); text-decoration: none; }
+}
+.home-card__fotos {
+  margin: 1.1rem 0 0.9rem;
+  p {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin: 0;
+  }
+  a { display: block; overflow: hidden; border-radius: 0.6rem; }
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: $dsg-ease;
+  }
+  a:hover img { transform: scale(1.05); }
+}
+@media (max-width: 575.98px) {
+  .home-card__fotos p { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+// ---------------------------------------------------------------------
+//  Herramientas de Shiny: la app se carga al pulsar "Launch app"
+// ---------------------------------------------------------------------
+.app-lanzador {
+  position: relative;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  border: 1px solid $dsg-hairline;
+  border-radius: 10px;
+  background-color: $dsg-ink;
+  aspect-ratio: 16 / 9;
+}
+.app-lanzador__fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  filter: blur(1px);
+}
+.app-lanzador__capa {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+.app-lanzador__boton {
+  border-radius: $border-radius-pill;
+  padding: 0.6rem 1.5rem;
+  font-family: $headings-font-family;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: $dsg-ease;
+  .bi { margin-right: 0.2rem; }
+  &:hover { transform: translateY(-2px); }
+}
+.app-lanzador__nota { margin: 0; font-size: 0.78rem; color: rgba(255, 255, 255, 0.85); }
+.app-lanzador__marco {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  border: 1px solid $dsg-hairline;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+// ---------------------------------------------------------------------
+//  "Related publications" en los proyectos de Research
+// ---------------------------------------------------------------------
+.pubs--relacionadas {
+  margin-top: 0.5rem;
+  .pub + .pub { padding-top: 1.3rem; }
+  .pub { padding-bottom: 1.3rem; }
+}
+.pub__anio {
+  font-family: $headings-font-family;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: $gray-500;
+}
+
+// ---------------------------------------------------------------------
+//  Pagina de contacto
+// ---------------------------------------------------------------------
+.contacto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+.contacto__tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 1.5rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.9rem;
+  background-color: #ffffff;
+}
+.contacto__dato {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  align-items: start;
+  > p { margin: 0; grid-column: 2; font-size: 0.9rem; color: $gray-700; overflow-wrap: anywhere; }
+  > p:first-child { grid-column: 1; grid-row: 1 / span 2; }
+}
+.contacto__etiqueta {
+  font-family: $headings-font-family;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $primary;
+}
+.contacto__mapa {
+  overflow: hidden;
+  min-height: 22rem;
+  border: 1px solid $dsg-hairline;
+  border-radius: 0.9rem;
+  .leaflet, .html-widget { height: 100% !important; min-height: 22rem; width: 100% !important; }
+  .cell, .cell-output-display { height: 100%; margin: 0; }
+  // Teselas de OpenStreetMap en gris claro; el marcador queda en azul
+  .leaflet-tile-pane { filter: grayscale(1) brightness(1.06) contrast(0.92); }
+}
+@media (max-width: 767.98px) {
+  .contacto { grid-template-columns: minmax(0, 1fr); }
+}
+
+// Paginas de Research (plantilla "jolla"): la plantilla centra todo.
+// Titulo y subtitulo centrados, pero los parrafos alineados a la izquierda
+// en una columna de lectura comoda.
+.quarto-about-jolla {
+  .quarto-title-block,
+  .quarto-title-block .title,
+  .quarto-title-block .description,
+  .quarto-title-block p {
+    text-align: center;
+  }
+  .quarto-title-block .description p,
+  .quarto-title-block > div:not(.quarto-title) {
+    max-width: 36rem;
+    margin: 0.4rem auto 0;
+    font-size: 1.02rem;
+    color: $gray-600;
+  }
+  #quarto-document-content > p,
+  #quarto-document-content > ul,
+  #quarto-document-content > ol,
+  #quarto-document-content > h2,
+  #quarto-document-content > h3,
+  #quarto-document-content > div[id] {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+}
+
+// Enlaces de las tarjetas de la portada alineados abajo
+.home-card { display: flex; flex-direction: column; }
+.home-card > p:has(.home-card__enlace) { margin-top: auto; padding-top: 0.4rem; }
+// La imagen de cabecera de "jolla" tiene ancho fijo (22em): en el movil se salia
+.quarto-about-jolla .about-image { max-width: 100%; height: auto; }

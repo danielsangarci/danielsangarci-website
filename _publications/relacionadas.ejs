@@ -1,0 +1,33 @@
+<%
+// Version compacta de la lista de publicaciones, para el bloque "Related
+// publications" de cada proyecto de Research. Que trabajos salen lo decide
+// el campo `projects` (en _publications/manual.yml) y el filtro `include`
+// del listado en la pagina del proyecto. Mismas etiquetas que
+// publications.ejs: la etiqueta con guion escapa, la de igual no.
+%>
+```{=html}
+<div class="pubs pubs--relacionadas">
+  <ol class="pubs-lista">
+    <% for (const it of items) { %>
+    <li class="pub" data-type="<%- it.type %>">
+      <div class="pub__etiquetas">
+        <span class="pub-badge pub-badge--<%- it.type %>"><%- it.type_label %></span>
+        <span class="pub__anio"><%- it.year %></span>
+      </div>
+      <h3 class="pub__titulo"><a href="<%- it.url %>"><%= it.title %></a></h3>
+      <p class="pub__autores"><%= it.authors %></p>
+      <p class="pub__revista"><%= it.venue %></p>
+      <div class="pub__acciones">
+        <% if (it.doi) { %><a class="pub-btn" href="https://doi.org/<%- it.doi %>"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a><% } %>
+        <% if (!it.doi && it.url && it.url !== it.pdf) { %><a class="pub-btn" href="<%- it.url %>"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Link</a><% } %>
+        <% if (it.free) { %><a class="pub-btn" href="<%- it.free %>"><i class="bi bi-unlock" aria-hidden="true"></i>Free copy</a><% } %>
+        <% if (it.pdf) { %><a class="pub-btn" href="<%- it.pdf %>"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a><% } %>
+        <% if (it.preprint) { %><a class="pub-btn" href="<%- it.preprint %>"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a><% } %>
+        <% (it.data || []).forEach((url, k) => { %><a class="pub-btn" href="<%- url %>"><i class="bi bi-database" aria-hidden="true"></i>Data<%- it.data.length > 1 ? " " + (k + 1) : "" %></a><% }) %>
+        <% if (it.code) { %><a class="pub-btn" href="<%- it.code %>"><i class="bi bi-code-slash" aria-hidden="true"></i>Code</a><% } %>
+      </div>
+    </li>
+    <% } %>
+  </ol>
+</div>
+```

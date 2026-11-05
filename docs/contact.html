@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -43,10 +46,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bfba3963591aab962f1ce9192a039ecf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-33e0db5b0b021872ac5f1546bf6ad061.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -123,10 +126,8 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Contact – Daniel Sánchez-García">
-<meta property="og:description" content="Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.">
 <meta property="og:site_name" content="Daniel Sánchez-García">
 <meta name="twitter:title" content="Contact – Daniel Sánchez-García">
-<meta name="twitter:description" content="Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -219,13 +220,36 @@ cookieconsent.run({
 </header>
 
 
-<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp; <a href="mailto:danielsangarci@gmail.com">danielsangarci@gmail.com</a></p>
-<p><i class="fa-solid fa-location-dot" aria-label="location-dot"></i> &nbsp; Doñana Biological Station (EBD - CSIC). Américo Vespucio, 26 41092 Seville (Spain)</p>
-<p><i class="fa-solid fa-people-group" aria-label="people-group"></i> &nbsp; Department of Conservation and Global Change</p>
+<div class="contacto">
+<div class="contacto__tarjeta">
+<div class="contacto__dato">
+<p><span class="card-icon"><i class="fa-solid fa-envelope" aria-label="envelope"></i></span></p>
+<p><span class="contacto__etiqueta">Email</span></p>
+<p><a href="mailto:danielsangarci@gmail.com">danielsangarci@gmail.com</a></p>
+</div>
+<div class="contacto__dato">
+<p><span class="card-icon"><i class="fa-solid fa-location-dot" aria-label="location-dot"></i></span></p>
+<p><span class="contacto__etiqueta">Address</span></p>
+<p>Doñana Biological Station (EBD-CSIC)<br>Américo Vespucio 26, 41092 Seville, Spain</p>
+</div>
+<div class="contacto__dato">
+<p><span class="card-icon"><i class="fa-solid fa-people-group" aria-label="people-group"></i></span></p>
+<p><span class="contacto__etiqueta">Department</span></p>
+<p>Conservation Biology and Global Change</p>
+</div>
+<div class="contacto__dato">
+<p><span class="card-icon"><i class="fa-solid fa-share-nodes" aria-label="share-nodes"></i></span></p>
+<p><span class="contacto__etiqueta">Elsewhere</span></p>
+<p><a href="https://scholar.google.com/citations?user=5EQSDqwAAAAJ&amp;hl=en">Google Scholar</a> · <a href="https://orcid.org/0000-0002-0710-6292">ORCID</a> · <a href="https://github.com/danielsangarci">GitHub</a> · <a href="https://www.instagram.com/danielsangarci_wildlife/">Instagram</a></p>
+</div>
+</div>
+<div class="contacto__mapa">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-e9a7c9cb085ba75b9ee4" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-e9a7c9cb085ba75b9ee4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[37.411987,-6.0059,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[37.411987,37.411987],"lng":[-6.0059,-6.0059]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-78a79df94a2fe7a995ed" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-78a79df94a2fe7a995ed">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"scrollWheelZoom":false},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[37.411987,-6.0059,9,null,null,{"interactive":true,"className":"","stroke":true,"color":"#ffffff","weight":3,"opacity":0.5,"fill":true,"fillColor":"#2a6292","fillOpacity":1},null,null,"Doñana Biological Station (EBD-CSIC)",null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[37.411987,-6.0059],15,[]],"limits":{"lat":[37.411987,37.411987],"lng":[-6.0059,-6.0059]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </div>
 </div>
 

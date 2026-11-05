@@ -1,4 +1,5 @@
 ---
+order: 2
 title: "Insect Microbiome: From Symbiosis to Ecosystem Services"
 description: "Exploring how microbial communities shape host fitness and ecological interactions."
 image: insect_microbiome.jpg

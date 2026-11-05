@@ -479,32 +479,54 @@ I am an ecologist and Postdoctoral Researcher at the Doñana Biological Station 
 :::
 
 ::: social-pills
-[{{< fa envelope >}} Email](contact.qmd) [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?user=5EQSDqwAAAAJ&hl=es) [{{< fa brands instagram >}} instagram](https://www.instagram.com/danielsangarci_wildlife/?hl=es) [{{< fa brands github >}} Github](https://github.com/danielsangarci?tab=repositories) [{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0002-0710-6292) [{{< fa brands researchgate >}} Researchgate](https://www.researchgate.net/profile/Daniel-Sanchez-Garcia/research)
+[{{< fa envelope >}} Email](contact.qmd) [{{< ai google-scholar >}} Google Scholar](https://scholar.google.com/citations?user=5EQSDqwAAAAJ&hl=es) [{{< fa brands instagram >}} Instagram](https://www.instagram.com/danielsangarci_wildlife/?hl=es) [{{< fa brands github >}} Github](https://github.com/danielsangarci?tab=repositories) [{{< fa brands orcid >}} ORCID](https://orcid.org/0000-0002-0710-6292) [{{< fa brands researchgate >}} Researchgate](https://www.researchgate.net/profile/Daniel-Sanchez-Garcia/research)
 :::
 :::::
 :::::::
 
 ::::: {.grid .my-5}
 ::: {.g-col-12 .g-col-md-6 .card .home-card .p-4 .animate-fade-up .delay-1}
+::: home-card__cabecera
 [{{< fa dna >}}]{.card-icon}
 
+### Research
+:::
+
 Currently, I lead the PRELUDIUM [project](research/current_projects/ant-plant-bacteria/ant-plant-bacteria.qmd), where I investigate the role of ants as bacteria dispersal vectors and their indirect impact on plant health. While my [PhD](research/past_projects/phd-thesis/phd-thesis.qmd) at the Museum and Institute of Zoology (Warsaw) was built on studying the multimodal adaptations (chemical, acoustic, and genetic) of social parasites, my current research focuses on species co-occurrence and host-microbiome interactions leveraging long-read sequencing technologies.
+
+[Explore my research →](research.qmd){.home-card__enlace}
 :::
 
 ::: {.g-col-12 .g-col-md-6 .card .home-card .p-4 .animate-fade-up .delay-2}
+::: home-card__cabecera
 [{{< fa microscope >}}]{.card-icon}
 
+### Open Science
+:::
+
 I am a staunch defender of Open Science, reproducibility and "home-made" lab protocols. I believe in making high-level molecular ecology accessible by bridging the gap between benchwork and computational biology. A core part of my current technical workflow involves **Oxford Nanopore sequencing and bioinformatics** to streamline data processing from raw amplicon DNA reads to ecological insights.
+
+[See my tools →](posts.qmd){.home-card__enlace}
 :::
 :::::
 
 :::: {.grid .mb-5}
 ::: {.g-col-12 .card .home-card .p-4 .animate-fade-up .delay-3}
+::: home-card__cabecera
 [{{< fa camera >}}]{.card-icon}
+
+### Photography
+:::
 
 When not doing science you can also find me shooting macrophotography, which is a great way of getting cool images to use during your talks!
 
 Feel free to [contact me](contact.qmd) for scientific collaboration or getting some of my [photos](https://www.instagram.com/danielsangarci_wildlife/?hl=es) to use in your papers/presentations.
+
+::: home-card__fotos
+[![Ants](img/messor_structor_small.jpg){fig-alt="Messor structor ant"}](gallery/ants/index.qmd) [![Butterflies & moths](img/macu1_small.jpg){fig-alt="Phengaris butterflies"}](gallery/butterflies-moths/index.qmd) [![Other invertebrates](img/bee1_small.jpg){fig-alt="Bee"}](gallery/other-invertebrates/index.qmd) [![Spiders](img/spider2_small.jpg){fig-alt="Spider"}](gallery/spiders/index.qmd)
+:::
+
+[Visit the gallery →](gallery.qmd){.home-card__enlace}
 :::
 ::::
 

@@ -5,15 +5,52 @@ title-block-banner: false
 comments: false
 ---
 
-{{< fa envelope >}}   [danielsangarci\@gmail.com](mailto:danielsangarci@gmail.com)
+::: contacto
+::: contacto__tarjeta
+::: contacto__dato
+[{{< fa envelope >}}]{.card-icon}
 
-{{< fa location-dot >}}   Doñana Biological Station (EBD - CSIC). Américo Vespucio, 26 41092 Seville (Spain)
+[Email]{.contacto__etiqueta}
 
-{{< fa people-group >}}   Department of Conservation and Global Change
+[danielsangarci\@gmail.com](mailto:danielsangarci@gmail.com)
+:::
 
+::: contacto__dato
+[{{< fa location-dot >}}]{.card-icon}
+
+[Address]{.contacto__etiqueta}
+
+Doñana Biological Station (EBD-CSIC)<br>Américo Vespucio 26, 41092 Seville, Spain
+:::
+
+::: contacto__dato
+[{{< fa people-group >}}]{.card-icon}
+
+[Department]{.contacto__etiqueta}
+
+Conservation Biology and Global Change
+:::
+
+::: contacto__dato
+[{{< fa share-nodes >}}]{.card-icon}
+
+[Elsewhere]{.contacto__etiqueta}
+
+[Google Scholar](https://scholar.google.com/citations?user=5EQSDqwAAAAJ&hl=en) · [ORCID](https://orcid.org/0000-0002-0710-6292) · [GitHub](https://github.com/danielsangarci) · [Instagram](https://www.instagram.com/danielsangarci_wildlife/)
+:::
+:::
+
+::: contacto__mapa
 ```{r, echo=FALSE, warning=FALSE}
+# Mapa de OpenStreetMap (no pide clave); custom.scss lo pasa a gris claro
+# para que combine con la paleta de la web
 library(leaflet)
-leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=-6.005900, lat=37.411987)
+leaflet(options = leafletOptions(scrollWheelZoom = FALSE)) |>
+  addTiles() |>
+  setView(lng = -6.0059, lat = 37.411987, zoom = 15) |>
+  addCircleMarkers(lng = -6.0059, lat = 37.411987, radius = 9,
+                   color = "#ffffff", weight = 3, fillColor = "#2a6292",
+                   fillOpacity = 1, popup = "Doñana Biological Station (EBD-CSIC)")
 ```
+:::
+:::

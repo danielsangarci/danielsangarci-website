@@ -1,0 +1,15 @@
+<script>
+// Sustituye cada .app-lanzador por la app de Shiny cuando se pulsa su boton
+document.addEventListener('click', function (ev) {
+  var boton = ev.target.closest('.app-lanzador__boton');
+  if (!boton) return;
+  var caja = boton.closest('.app-lanzador');
+  var marco = document.createElement('iframe');
+  marco.src = caja.dataset.src;
+  marco.title = 'Interactive app';
+  marco.className = 'app-lanzador__marco';
+  marco.style.height = caja.dataset.height || '900px';
+  marco.setAttribute('allow', 'clipboard-write');
+  caja.replaceWith(marco);
+});
+</script>

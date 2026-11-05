@@ -1,11 +1,31 @@
 ---
 description-meta: "Research project by Daniel Sánchez-García: Ant community structuring and invasive species in Doñana National Park."
 title: "Ant community structuring and invasive species in Doñana National Park"
-description: " "
+description: "Temperature, competition and the invasive Argentine ant in the ant communities of Doñana."
 image: messor_structor_small.jpg
 about:
   template: jolla
   image: messor_structor_small.jpg
   image-width: 22em
   image-shape: rounded
+# "Related publications": trabajos con `projects: [ant-community-ecology-donana]` en
+# _publications/manual.yml. Se actualiza solo con la lista de publicaciones.
+listing:
+  id: relacionadas
+  contents: ../../../publications.yml
+  template: ../../../_publications/relacionadas.ejs
+  include:
+    projects: "ant-community-ecology-donana"
+  sort: false
 ---
+
+Temperature and competition are two of the main forces that shape ant communities. In the Doñana Biological Reserve (southern Spain), I studied how they interact in three habitats with very different vegetation (savin forest, pine forest and dry scrubland), measuring temperature during the encounters between species at baits. To separate the effect of temperature from that of numerical dominance, we developed a **thermal competition index**: who wins an encounter depends on how many workers each species brings, and on how well each species copes with the temperature at that moment.
+
+The same approach helps to understand biological invasions. The **Argentine ant** (*Linepithema humile*), one of the world's worst invasive species, survives in Doñana's hot, dry scrubland thanks to the mild, moist conditions around human structures. Over 18 years we followed a habitat-modification treatment designed to remove those conditions: the invader declined and native *Cataglyphis* ants recovered, but it was not eradicated. In protected areas, habitat management should be combined with eradication, monitoring and prevention of spread.
+
+This work was carried out with Xim Cerdá and Elena Angulo at the Doñana Biological Station (EBD-CSIC).
+
+## Related publications
+
+::: {#relacionadas}
+:::

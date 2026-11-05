@@ -35,9 +35,15 @@ I developed the **DNA Molar Pooling Calculator** to solve this. It is an R Shiny
 
 You can use the tool directly below, or open it in a [new window](https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/).
 
-<iframe 
-  src="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/"
-  width="100%" 
-  height="1250px" 
-  style="border: 1px solid #dee2e6; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
-</iframe>
+```{=html}
+<!-- La app solo se carga al pulsar el boton: asi no se despierta en
+     shinyapps.io con cada visita (ahorra horas del plan gratuito y la
+     pagina carga al instante). El script esta en posts/_app-lanzador.html. -->
+<div class="app-lanzador" data-src="https://danielsangarci.shinyapps.io/dna-molar-pooling-calculator/" data-height="1250px">
+  <img class="app-lanzador__fondo" src="dna_molar_pooling_calculator.jpg" alt="">
+  <div class="app-lanzador__capa">
+    <button type="button" class="btn btn-primary app-lanzador__boton"><i class="bi bi-play-fill" aria-hidden="true"></i> Launch app</button>
+    <p class="app-lanzador__nota">The app may take a few seconds to start.</p>
+  </div>
+</div>
+```

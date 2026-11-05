@@ -662,6 +662,8 @@ formatear <- function(e) {
     data       = if (length(datos)) as.list(datos),
     code       = aj$code,
     note       = if (!is.null(aj$note)) html_seguro(cursivas(aj$note)),
+    # Proyectos de Research en los que sale como "Related publications"
+    projects   = if (length(aj$projects %||% e$projects)) as.list(unlist(aj$projects %||% e$projects)),
     oa         = if (isTRUE(e$oa)) TRUE,
     # Metricas (se apagan todas con `options: citations: false`)
     metrics    = if (!isFALSE(opciones$citations)) TRUE,
@@ -690,7 +692,7 @@ extra <- lapply(manual$extra %||% list(), function(x) list(
   autores = as.list(x$authors), revista = x$venue,
   volumen = x$volume, numero = x$issue, paginas = x$pages,
   editores = x$editors, editorial = x$publisher,
-  url = x$url, pdf = x$pdf, doi = x$doi, scholar = x$scholar, manual = TRUE
+  url = x$url, pdf = x$pdf, doi = x$doi, scholar = x$scholar, projects = x$projects, manual = TRUE
 ))
 
 items <- Filter(Negate(is.null), lapply(c(entradas, extra), formatear))

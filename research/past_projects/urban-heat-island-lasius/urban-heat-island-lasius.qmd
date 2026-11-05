@@ -1,11 +1,29 @@
 ---
 description-meta: "Research project by Daniel Sánchez-García: Urban heat island effect on Lasius niger activity."
 title: "Urban heat island effect on *Lasius niger* activity"
-description: " "
+description: "How urban heat and other abiotic stressors shape the activity and growth of the black garden ant."
 image: lasius_grandis_small.jpg
 about:
   template: jolla
   image: lasius_grandis_small.jpg
   image-width: 22em
   image-shape: rounded
+# "Related publications": trabajos con `projects: [urban-heat-island-lasius]` en
+# _publications/manual.yml. Se actualiza solo con la lista de publicaciones.
+listing:
+  id: relacionadas
+  contents: ../../../publications.yml
+  template: ../../../_publications/relacionadas.ejs
+  include:
+    projects: "urban-heat-island-lasius"
+  sort: false
 ---
+
+Cities are warmer and brighter than the countryside around them. Together with colleagues from several European institutions, we studied how two of these urban stressors, **night warming** linked to urban heat islands and **artificial light at night**, change the behaviour of the black garden ant *Lasius niger*, one of the most common ants in European cities.
+
+Combining nocturnal field observations with laboratory experiments, we found that urban populations were generally more active at night than rural ones. In the laboratory, rural ants moved more than urban ants under identical conditions, and high temperatures shortened brood development and increased worker mortality, more strongly in rural colonies. These stressors can favour the establishment and spread of synanthropic ants, including invasive species, and contribute to the biotic homogenization of urban ecosystems.
+
+## Related publications
+
+::: {#relacionadas}
+:::
