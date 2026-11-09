@@ -189,7 +189,7 @@
       'n': 2
     - year: 2024
       'n': 1
-  s2_cited: 3
+  s2_cited: 4
   s2_influential: 0
   s2_url: https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9
   scholar: 4
@@ -243,12 +243,12 @@
     - urban-heat-island-lasius
   oa: true
   metrics: true
-  cited: 19
+  cited: 20
   cites_by_year:
     - year: 2026
       'n': 14
     - year: 2025
-      'n': 3
+      'n': 4
     - year: 2024
       'n': 2
   s2_cited: 15
@@ -279,14 +279,16 @@
     - ant-community-ecology-donana
   oa: true
   metrics: true
-  cited: 8
+  cited: 12
   cites_by_year:
     - year: 2026
-      'n': 3
+      'n': 5
     - year: 2025
       'n': 4
-    - year: 2022
+    - year: 2024
       'n': 1
+    - year: 2022
+      'n': 2
   s2_cited: 7
   s2_influential: 0
   s2_url: https://www.semanticscholar.org/paper/89b6fccf380856b2b34b2b1312c7e559f449cd40

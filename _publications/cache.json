@@ -44,7 +44,7 @@
       "oa_url": "https://doi.org/10.2139/ssrn.4610852",
       "pdf": null,
       "web": "https://doi.org/10.1016/j.scitotenv.2024.170157",
-      "citas": 19,
+      "citas": 20,
       "citas_anio": [
         {
           "anio": 2026,
@@ -52,7 +52,7 @@
         },
         {
           "anio": 2025,
-          "n": 3
+          "n": 4
         },
         {
           "anio": 2024,
@@ -92,19 +92,23 @@
       "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable",
       "pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable",
       "web": "https://doi.org/10.1371/journal.pone.0267547",
-      "citas": 8,
+      "citas": 12,
       "citas_anio": [
         {
           "anio": 2026,
-          "n": 3
+          "n": 5
         },
         {
           "anio": 2025,
           "n": 4
         },
         {
-          "anio": 2022,
+          "anio": 2024,
           "n": 1
+        },
+        {
+          "anio": 2022,
+          "n": 2
         }
       ],
       "en_orcid": true,
@@ -160,7 +164,7 @@
         }
       ],
       "en_orcid": true,
-      "s2_citas": 3,
+      "s2_citas": 4,
       "s2_influyentes": 0,
       "s2_url": "https://www.semanticscholar.org/paper/5a0abd7493a42f30c35e43573a32a6196757a3a9"
     },
@@ -250,46 +254,6 @@
       "en_orcid": false
     },
     {
-      "doi": "10.2139/ssrn.4779205",
-      "tipo": "preprint",
-      "openalex": "https://openalex.org/W4395097425",
-      "preprint_de": null,
-      "anio": 2024,
-      "fecha": "2024-01-01",
-      "titulo": "Temporal and Spatial Variation of Morphological Traits and Genetic Structure in Phengaris Teleius Myrmecophilous Butterflies Following Habitat Changes Three Decades after Reintroduction",
-      "autores": [
-        "Sánchez-García, D.",
-        "Wynhoff, I.",
-        "Kajzer-Bonk, J.",
-        "Sztencel-Jabłonka, A.",
-        "Nowicki, P.",
-        "Casacci, L. P.",
-        "Witek, M."
-      ],
-      "autores_bib": [
-        "Sánchez-García, Daniel",
-        "Wynhoff, Irma",
-        "Kajzer-Bonk, Joanna",
-        "Sztencel-Jabłonka, Anna",
-        "Nowicki, Piotr",
-        "Casacci, Luca Pietro",
-        "Witek, Magdalena"
-      ],
-      "revista": "SSRN Electronic Journal",
-      "volumen": null,
-      "numero": null,
-      "paginas": null,
-      "editorial": "Elsevier BV",
-      "resumen": null,
-      "oa": true,
-      "oa_url": "https://doi.org/10.2139/ssrn.4779205",
-      "pdf": null,
-      "web": "https://doi.org/10.2139/ssrn.4779205",
-      "citas": 0,
-      "citas_anio": [],
-      "en_orcid": false
-    },
-    {
       "doi": "10.64898/2025.12.02.691951",
       "tipo": "preprint",
       "openalex": "https://openalex.org/W4417116700",
@@ -371,7 +335,7 @@
       "numero": null,
       "paginas": null,
       "editorial": null,
-      "resumen": "Data and code supporting the study of coevolution between the social parasitic butterfly Phengaris teleius and its host ant Myrmica scabrinodis in a natural and reintroduced populations. The dataset consists of four files: 'chc.csv' contains cuticular hydrocarbon profiles; 'vibroacoustics.csv' includes acoustic signal parameters; 'playback.csv' contains data from acoustic playback experiments; and 'behaviour.csv' contains behavioural data, adoption and survival rates from behavioral assays.",
+      "resumen": "Data and code supporting the study \"Divergence of multimodal mimicry in a reintroduced social parasite of ants\", on the coevolution between the social parasitic butterfly Phengaris teleius and its host ant Myrmica scabrinodis in a natural (Poland) and a reintroduced (the Netherlands) population. The data folder contains four files: chc.csv (cuticular hydrocarbon profiles of caterpillars and ants before and after adoption), vibroacoustics.csv (acoustic parameters of the signals of caterpillars, ant queens and ant workers), playback.csv (ant responses in the playback experiments) and behaviour.csv (ant behaviour towards caterpillars, adoption and survival in the behavioral assays). The metadata folder describes every variable and its units (open index_metadata.html in a web browser for an overview). The scripts folder contains analysis_code.R, which reproduces the analyses, figures and tables of the manuscript, and the renv.lock file records the package versions used. Data are released under CC BY 4.0 and code under the MIT licence. Changes in version 1.2:- behaviour.csv: unused records from a 2018 pilot were removed; the totals of positive behaviors of one sub-colony were corrected to match the sum of grooming, licking and picking up; and the CHC flag and survival time of one caterpillar were made consistent across its rows.- Metadata: the unit of the root-mean-square amplitude (RMS) is now given in Pa, and the description of survival_days states that non-adopted caterpillars were assigned zero days.- Code: individuals are now coded uniquely in the mixed models of vibroacoustic parameters, the standard deviation of the frequency spectrum is analysed as a seventh parameter, and the script now also builds the NMDS ordinations, the figures and the supplementary tables.",
       "oa": true,
       "oa_url": "http://hdl.handle.net/10261/424794",
       "pdf": null,
@@ -526,6 +490,46 @@
       "s2_citas": 1,
       "s2_influyentes": 0,
       "s2_url": "https://www.semanticscholar.org/paper/ed1c82aee3f35d03614a5b45dab258033fd98a3f"
+    },
+    {
+      "doi": "10.2139/ssrn.4779205",
+      "tipo": "preprint",
+      "openalex": "https://openalex.org/W4395097425",
+      "preprint_de": null,
+      "anio": 2024,
+      "fecha": "2024-01-01",
+      "titulo": "Temporal and Spatial Variation of Morphological Traits and Genetic Structure in Phengaris Teleius Myrmecophilous Butterflies Following Habitat Changes Three Decades after Reintroduction",
+      "autores": [
+        "Sánchez-García, D.",
+        "Wynhoff, I.",
+        "Kajzer-Bonk, J.",
+        "Sztencel-Jabłonka, A.",
+        "Nowicki, P.",
+        "Casacci, L. P.",
+        "Witek, M."
+      ],
+      "autores_bib": [
+        "Sánchez-García, Daniel",
+        "Wynhoff, Irma",
+        "Kajzer-Bonk, Joanna",
+        "Sztencel-Jabłonka, Anna",
+        "Nowicki, Piotr",
+        "Casacci, Luca Pietro",
+        "Witek, Magdalena"
+      ],
+      "revista": "SSRN Electronic Journal",
+      "volumen": null,
+      "numero": null,
+      "paginas": null,
+      "editorial": "Elsevier BV",
+      "resumen": null,
+      "oa": true,
+      "oa_url": "https://doi.org/10.2139/ssrn.4779205",
+      "pdf": null,
+      "web": "https://doi.org/10.2139/ssrn.4779205",
+      "citas": 0,
+      "citas_anio": [],
+      "en_orcid": false
     },
     {
       "doi": "10.2139/ssrn.4610852",
