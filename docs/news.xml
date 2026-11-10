@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Daniel Sánchez-García</title>
+<link>https://danielsangarci.com/news.html</link>
+<atom:link href="https://danielsangarci.com/news.xml" rel="self" type="application/rss+xml"/>
+<description>Daniel Sánchez-García, ecologist at the Doñana Biological Station (EBD-CSIC), studying species interactions in ant, microbiome and mycobiome communities.</description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Tue, 10 Nov 2026 12:18:51 GMT</lastBuildDate>
+</channel>
+</rss>

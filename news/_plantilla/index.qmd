@@ -1,0 +1,26 @@
+---
+# =====================================================================
+#  PLANTILLA DE NOTICIA LARGA
+#  1. Copia esta carpeta y renombrala con la fecha y un nombre corto,
+#     SIN guion bajo delante, p. ej. news/2026-11-fieldwork-donana/
+#     (las carpetas que empiezan por _ no se publican).
+#  2. Rellena los campos de abajo y escribe el texto.
+#  3. Pon las fotos en la misma carpeta (unos 1200 px de ancho).
+#  4. Enlazala desde la columna de noticias de index.qmd:
+#     - [Nov 2026]{.news-date} [Fieldwork in Doñana](news/2026-11-fieldwork-donana/index.qmd) has started.
+#  La pagina de archivo (news.qmd) la lista sola, la mas reciente arriba.
+# =====================================================================
+title: "Title of the news"
+date: 2026-11-15
+# Una frase: sale en el archivo de noticias y al compartir el enlace
+description: "One sentence that sums up the news."
+# Opcional: foto para el archivo y para la vista previa en redes sociales
+# image: portada.jpg
+---
+
+First paragraph of the news. Write as much as you need here: unlike the
+homepage column, this page has room for long text.
+
+![Caption shown under the photo](foto1.jpg){fig-alt="Short description of the photo for screen readers"}
+
+More text, [links](https://example.org) and as many photos as you want.

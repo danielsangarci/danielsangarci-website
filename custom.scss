@@ -2543,3 +2543,30 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 //  rejilla de tarjetas y el del <main>, que sumaban otros ~77 px.
 // ---------------------------------------------------------------------
 #quarto-document-content:has(> .home) { margin-bottom: 0; }
+
+// ---------------------------------------------------------------------
+//  Noticias con imagen (columna de la portada) y noticias largas (news/)
+// ---------------------------------------------------------------------
+.home-noticias .news-list li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  margin-top: 0.6rem;
+  border-radius: 0.55rem;
+}
+// Pie de cada noticia larga: volver al archivo o a la portada
+.noticia-volver {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  max-width: 46rem;
+  margin: 2.5rem auto 1rem;
+  padding: 1.2rem 1rem 0;
+  border-top: 1px solid $dsg-hairline;
+  font-family: $headings-font-family;
+  font-size: 0.8rem;
+  font-weight: 600;
+  a { text-decoration: none; }
+}

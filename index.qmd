@@ -724,7 +724,12 @@ Feel free to [contact me](contact.qmd) for scientific collaboration or getting s
 
 <!-- Noticias: todas, la mas reciente arriba. La fecha va en [ ]{.news-date}.
      Si una noticia tiene enlace, toda ella se puede pulsar y lleva al
-     primero (por ejemplo, al DOI de la publicacion). -->
+     primero (por ejemplo, al DOI de la publicacion).
+     - Con imagen: al final de la linea, ![Descripcion](img/news/foto.jpg)
+       (foto pequena, unos 600 px de ancho, guardada en img/news/).
+     - Noticia larga: copia la carpeta news/_plantilla (ver instrucciones
+       dentro) y aqui deja solo una frase que la enlace. Todas las noticias
+       largas salen solas en la pagina news.qmd (archivo de noticias). -->
 :::::::::::: {.home-noticias .animate-fade-up .delay-2}
 [{{< fa bullhorn >}} News]{.about-news__titulo}
 

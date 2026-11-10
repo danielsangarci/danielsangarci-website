@@ -1,0 +1,14 @@
+# Opciones comunes a todas las noticias largas de esta carpeta.
+# Cada noticia va en su propia carpeta (news/2026-11-titulo/index.qmd) con
+# sus fotos al lado. Para empezar una, copia la carpeta _plantilla.
+
+title-block-banner: false
+toc: false
+page-layout: article
+date-format: "D MMMM YYYY"
+comments: false
+
+format:
+  html:
+    # Enlaces al archivo de noticias y a la portada al final de cada noticia
+    include-after-body: _volver.html

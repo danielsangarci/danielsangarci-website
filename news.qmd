@@ -1,0 +1,23 @@
+---
+title: "News"
+description-meta: "News from Daniel Sánchez-García: fieldwork, new papers, talks and lab life at the Doñana Biological Station."
+# Lista sola las noticias largas de la carpeta news/ (una carpeta por
+# noticia). Las carpetas que empiezan por _ (como la plantilla) no salen.
+listing:
+  contents: news
+  type: default
+  fields: [date, title, description, image]
+  image-height: 125px
+  date-format: "D MMMM YYYY"
+  sort: "date desc"
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+title-block-banner: false
+language:
+  listing-page-no-matches: "Longer news stories will appear here soon. Meanwhile, see the latest updates on the home page."
+---
+::: pagina-intro
+Longer stories about fieldwork, new papers, talks and life in the lab. For quick updates, see the news column on the [home page](index.qmd).
+:::
