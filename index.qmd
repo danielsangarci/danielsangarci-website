@@ -676,7 +676,7 @@ I am an ecologist and Postdoctoral Researcher at the Doñana Biological Station 
 :::::
 :::::::
 
-::::: {.grid .mt-4 .mb-5}
+::::: {.grid .mt-4}
 ::: {.g-col-12 .g-col-md-6 .card .home-card .p-4 .animate-fade-up .delay-1}
 ::: home-card__cabecera
 [{{< fa dna >}}]{.card-icon}
