@@ -700,9 +700,7 @@ I am a staunch defender of Open Science, reproducibility and "home-made" lab pro
 
 [See my tools →](posts.qmd){.home-card__enlace}
 :::
-:::::
 
-:::: {.grid .mb-5}
 ::: {.g-col-12 .card .home-card .p-4 .animate-fade-up .delay-3}
 ::: home-card__cabecera
 [{{< fa camera >}}]{.card-icon}
@@ -720,7 +718,7 @@ Feel free to [contact me](contact.qmd) for scientific collaboration or getting s
 
 [Visit the gallery →](gallery.qmd){.home-card__enlace}
 :::
-::::
+:::::
 
 ::::::::::::
 
