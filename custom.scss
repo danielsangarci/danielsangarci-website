@@ -1406,6 +1406,18 @@ a.lightbox {
   }
 }
 
+// Movil y tablet: menos aire entre el hero y la foto, y entre la foto y el
+// texto (las utilidades pt-5 y mt-4 de Bootstrap llevan !important)
+@media (max-width: 991.98px) {
+  #about {
+    margin-top: 0.4rem !important;
+    padding-top: 2.6rem !important;
+    row-gap: 2.2rem;
+  }
+  #about .about-photo > p,
+  #about .about-photo figure { margin-bottom: 0; }
+}
+
 // Escritorio: texto junto a la foto
 @media (min-width: 992px) {
   .about-text {
