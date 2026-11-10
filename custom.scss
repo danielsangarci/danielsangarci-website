@@ -2434,7 +2434,29 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 .hero-full .hero-cta { --hero-cta-luz: #{$dsg-accent}; }
 .hero-full .hero-cta:hover,
 .hero-full .hero-cta:focus-visible { background-color: $primary; color: #ffffff; }
-.navbar .nav-link.active { box-shadow: inset 0 -2px 0 $dsg-accent; }
+// Seccion activa del menu: texto en marino y un punto coral diminuto
+// debajo, en lugar de una raya (con el borde redondeado se curvaba)
+.navbar .nav-link.active {
+  position: relative;
+  color: $primary;
+  box-shadow: none;
+  background-color: transparent;
+}
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.1rem;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background-color: $dsg-accent;
+}
+// En el menu desplegable del movil el punto sobra
+@media (max-width: 991.98px) {
+  .navbar .nav-link.active::after { display: none; }
+}
 .card-icon { background-color: $dsg-accent-soft; color: $dsg-accent-dark; }
 .home-noticias .news-list li:has(a)::after { color: $dsg-accent; }
 .about-news__titulo .svg-inline--fa,
