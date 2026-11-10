@@ -1,9 +1,13 @@
 # Practicas.
 # Campos: title, org, unit (opcional), city, country, start, end,
 #         description, description_web, short, web
+# Traducciones: el mismo campo con _es (title_es, org_es, description_es...).
 - title: Scientific assistant
+  title_es: Asistente científico
   org: Valencian Institute of Agricultural Research (IVIA)
+  org_es: Instituto Valenciano de Investigaciones Agrarias (IVIA)
   unit: Department of Entomology
+  unit_es: Departamento de Entomología
   city: Valencia
   country: Spain
   start: 2016-02
@@ -13,13 +17,20 @@
     control applied study about the effect of the presence of the ant *Lasius
     grandis* on the behaviour of the parasitoid wasp *Anagyrus pseudococci* on
     mealybug colonies of *Planococcus citri* (pest of citrus).
+  description_es: >-
+    Prácticas con el investigador Alejandro Tena en un estudio aplicado de
+    control biológico sobre el efecto de la hormiga *Lasius grandis* en el
+    comportamiento del parasitoide *Anagyrus pseudococci* en colonias del
+    cotonet *Planococcus citri* (plaga de los cítricos).
   description_web: >-
     With Alejandro Tena: effect of the ant *Lasius grandis* on the behaviour of
     the parasitoid wasp *Anagyrus pseudococci* in mealybug colonies of
     *Planococcus citri*, a citrus pest.
 
 - title: Environmental manager
+  title_es: Gestor ambiental
   org: Agricultural, Stockbreeding and Environmental Public Service, Government of Aragón
+  org_es: Servicio Provincial de Agricultura, Ganadería y Medio Ambiente, Gobierno de Aragón
   city: Teruel
   country: Spain
   start: 2015-07
@@ -31,6 +42,12 @@
     monitoring of deer population dynamic for its management and conservation
     in the National Hunting Reserve "Montes Universales"; management and
     translocation of native plant species.
+  description_es: >-
+    Prácticas con el técnico de medio ambiente José Manuel González: informes de
+    impacto ambiental; seguimiento de las poblaciones de peces de río para su
+    gestión y conservación mediante pesca eléctrica; seguimiento de las
+    poblaciones de ciervo en la Reserva Nacional de Caza "Montes Universales";
+    y manejo y translocación de especies vegetales autóctonas.
   description_web: >-
     Environmental impact reports, monitoring of river fish and deer populations
     in the Montes Universales National Hunting Reserve, and translocation of

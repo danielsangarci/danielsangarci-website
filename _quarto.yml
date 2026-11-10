@@ -5,6 +5,10 @@ project:
   # render completo lo borraba de docs/ y el dominio dejaba de funcionar.
   resources:
     - CNAME
+    # CV resumido, que la web no enlaza (lo genera _cv/pdf/render_cv.R).
+    # Sin esto, un render completo lo borraria de docs/. Los CV en espanol
+    # no se publican.
+    - cv-short.pdf
   # Actualiza la lista de publicaciones (ORCID + OpenAlex + Crossref).
   # Consulta internet como mucho una vez al dia; sin conexion usa la copia.
   pre-render: Rscript _publications/actualizar.R

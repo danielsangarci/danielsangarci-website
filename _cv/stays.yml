@@ -1,9 +1,12 @@
 # Estancias de investigacion.
 # Campos: host, org, unit, city, country, start, end (opcional si es un solo mes),
 #         description, description_web, coords, short, web
+# Traducciones: el mismo campo con _es (org_es, unit_es, description_es...).
 - host: Prof. Luca Pietro Casacci
   org: University of Turin
+  org_es: Universidad de Turín
   unit: Department of Life Sciences and Systems Biology
+  unit_es: Departamento de Ciencias de la Vida y Biología de Sistemas
   city: Turin
   country: Italy
   start: 2021-10
@@ -12,13 +15,19 @@
     I received training in recording insect vibroacoustic signals, sonogram
     analysis and performing behavioral assays, which enhanced my skills in
     experimental design and data interpretation.
+  description_es: >-
+    Formación en el registro de señales vibroacústicas de insectos, el análisis
+    de sonogramas y la realización de ensayos de comportamiento, que reforzó mis
+    habilidades de diseño experimental e interpretación de datos.
   description_web: >-
     Recording of insect vibroacoustic signals, sonogram analysis and behavioural
     assays.
 
 - host: Prof. Patrizia d'Ettorre
   org: Sorbonne Paris North University
+  org_es: Universidad Sorbona París Norte
   unit: Laboratory of Experimental and Comparative Ethology
+  unit_es: Laboratorio de Etología Experimental y Comparada
   city: Paris
   country: France
   start: 2020-01
@@ -28,6 +37,10 @@
     I received training in GC-MS analysis of cuticular hydrocarbons and
     bioinformatics workflows, which deepened my understanding of chemical
     communication in social insects and enhanced my analytical skills.
+  description_es: >-
+    Formación en el análisis de hidrocarburos cuticulares por GC-MS y en flujos
+    de trabajo bioinformáticos, que amplió mi conocimiento de la comunicación
+    química en insectos sociales y mis habilidades analíticas.
   description_web: >-
     GC-MS analysis of cuticular hydrocarbons and bioinformatics workflows for
     chemical communication in social insects.

@@ -1,0 +1,76 @@
+# Textos fijos del PDF en cada idioma: titulos de seccion, frases, etiquetas.
+# Para anadir un idioma nuevo, anade su clave (p. ej. fr:) a cada texto.
+# {n}, {scholar} y {web} se sustituyen al generar el PDF.
+
+# Titulos de seccion
+journey:          {en: My journey,                 es: Mi trayectoria}
+experience:       {en: Professional experience,    es: Experiencia profesional}
+education:        {en: Education,                  es: Formación académica}
+stays:            {en: Research stays,             es: Estancias de investigación}
+internships:      {en: Internships,                es: Prácticas}
+publications:     {en: Publications,               es: Publicaciones}
+conferences:      {en: Conference talks and posters, es: Comunicaciones en congresos}
+funding:          {en: Funding,                    es: Financiación}
+awards:           {en: Awards,                     es: Premios}
+organization:     {en: Organization of Conferences and Scientific Events, es: Organización de congresos y eventos científicos}
+reviews:          {en: Reviews,                    es: Revisión de artículos}
+workshops:        {en: Workshops,                  es: Talleres de trabajo}
+courses:          {en: Courses,                    es: Cursos}
+memberships:      {en: Memberships,                es: Sociedades científicas}
+skills:           {en: Skills,                     es: Habilidades}
+technical_skills: {en: Technical skills,           es: Habilidades técnicas}
+languages:        {en: Languages,                  es: Idiomas}
+references:       {en: References,                 es: Referencias}
+
+# Frases
+publications_full:  {en: "Also in [*my Google Scholar profile*]({scholar}) and available to download from [*my Website*]({web}).",
+                     es: "También en [*mi perfil de Google Scholar*]({scholar}) y disponibles para descargar en [*mi web*]({web})."}
+publications_short: {en: "Note: Showing only the {n} most recent publications. For a complete list of peer-reviewed publications and manuscripts, please refer to my [*Google Scholar profile*]({scholar}) or [*personal website*]({web}).",
+                     es: "Nota: solo se muestran las {n} publicaciones más recientes. La lista completa de publicaciones y manuscritos está en mi [*perfil de Google Scholar*]({scholar}) o en mi [*web*]({web})."}
+conferences_short:  {en: "I have presented my research as oral talks and posters in **{n}** national and international conferences. For a list of presentations, [*click here*]({web}) to download my full cv.",
+                     es: "He presentado mi investigación en **{n}** comunicaciones orales y pósteres en congresos nacionales e internacionales. La lista completa está en mi [*CV completo*]({web})."}
+reviews_intro:      {en: "Manuscripts reviewed for:", es: "Revisor de manuscritos para:"}
+references_request: {en: References available on request., es: Referencias disponibles a petición.}
+languages_note:     {en: "Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+                     es: "Marco Común Europeo de Referencia para las Lenguas: A1/A2: usuario básico. B1/B2: usuario independiente. C1/C2: usuario competente"}
+
+# Palabras sueltas
+present:   {en: present,      es: actualidad}
+since:     {en: since,        es: desde}
+at_the:    {en: at the,       es: en el}
+in:        {en: in,           es: en}
+talk:      {en: Talk,         es: Comunicación oral}
+poster:    {en: Poster,       es: Póster}
+invited:   {en: Invited talk, es: Conferencia invitada}
+native:    {en: Native,       es: Nativo}
+skill:     {en: Skill,        es: Destreza}
+reading:   {en: Reading,      es: Lectura}
+writing:   {en: Writing,      es: Escritura}
+listening: {en: Listening,    es: Comprensión auditiva}
+speaking:  {en: Speaking,     es: Expresión oral}
+
+# Nombres de ciudades y paises que cambian en cada idioma. Se aplican solos a
+# los campos city y country (y a los congresos). Si un sitio no esta aqui, se
+# deja como esta, o puedes escribir city_es / country_es en la entrada.
+places:
+  es:
+    Spain: España
+    Poland: Polonia
+    Italy: Italia
+    France: Francia
+    England: Inglaterra
+    United Kingdom: Reino Unido
+    Germany: Alemania
+    Belgium: Bélgica
+    Netherlands: Países Bajos
+    Morocco: Marruecos
+    Seville: Sevilla
+    Warsaw: Varsovia
+    Turin: Turín
+    Paris: París
+
+# Meses (abreviados, para los periodos) y completos (para la fecha del pie)
+months:      {en: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec],
+              es: [Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]}
+months_full: {en: [January, February, March, April, May, June, July, August, September, October, November, December],
+              es: [Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]}

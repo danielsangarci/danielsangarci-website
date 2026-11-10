@@ -1,12 +1,15 @@
 # Sociedades cientificas.
 # Campos: name, full_name (opcional), role (opcional), url (opcional), since,
 #         short, web
+# Traducciones: name_es, full_name_es, role_es.
 - name: SORTEE
   full_name: Society for Open, Reliable, and Transparent Ecology and Evolutionary Biology
   url: https://www.sortee.org/
   since: 2025
 
 - name: Iberian Association of Myrmecology
+  name_es: Asociación Ibérica de Mirmecología
   role: member of the Governing Board
+  role_es: miembro de la Junta Directiva
   url: https://mirmiberica.org/
   since: 2012

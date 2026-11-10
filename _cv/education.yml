@@ -2,8 +2,11 @@
 # Campos: title, org, unit (opcional), city, country, start, end,
 #         description, description_web, coords, map_icon, short, web
 # map_icon: icono en el mapa (dot, university, flask, person). Por defecto, dot.
+# Traducciones: el mismo campo con _es (title_es, org_es, description_es...).
 - title: PhD in Biology
+  title_es: Doctorado en Biología
   org: Museum and Institute of Zoology, Polish Academy of Sciences
+  org_es: Museo e Instituto de Zoología, Academia Polaca de Ciencias
   city: Warsaw
   country: Poland
   start: 2019-10
@@ -16,6 +19,13 @@
     1) population genetics, 2) morphology of adult butterflies and
     3) behavioural, chemical and acoustical adaptations of butterfly
     caterpillar to the *Myrmica* host ants.
+  description_es: >-
+    Tesis doctoral: para entender mejor cómo funcionan las reintroducciones de
+    parásitos, comparamos a varios niveles poblaciones de origen y
+    reintroducidas de *Phengaris teleius*, estudiando 1) la genética de
+    poblaciones, 2) la morfología de las mariposas adultas y 3) las adaptaciones
+    conductuales, químicas y acústicas de las orugas a sus hormigas
+    hospedadoras del género *Myrmica*.
   description_web: >-
     How do reintroductions of parasites work? A multi-level comparison of source
     and reintroduced populations of *Phengaris teleius*: population genetics,
@@ -23,6 +33,7 @@
     the caterpillars to their *Myrmica* host ants.
 
 - title: MSc in Biodiversity and Conservation Biology
+  title_es: Máster en Biodiversidad y Biología de la Conservación
   org: Universidad Pablo de Olavide
   city: Seville
   country: Spain
@@ -36,6 +47,13 @@
     habitats, applying different ecological perspectives. Taxonomic and
     functional diversity were studied, and a new index was developed to study
     the direct effect of temperature over the interspecific competition.
+  description_es: >-
+    Trabajo Fin de Máster (calificación: 9,8/10, Matrícula de Honor): estudio
+    del efecto de la temperatura sobre las comunidades de hormigas de distintos
+    hábitats desde diferentes perspectivas ecológicas. Se analizaron la
+    diversidad taxonómica y funcional, y se desarrolló un nuevo índice para
+    medir el efecto directo de la temperatura sobre la competencia
+    interespecífica.
   description_web: >-
     Thesis graded 9.8/10, with honours. The effect of temperature on ant
     assemblages from different habitats, through taxonomic and functional
@@ -43,6 +61,7 @@
     interspecific competition.
 
 - title: BSc in Biology
+  title_es: Grado en Biología
   org: Universitat de València
   city: Valencia
   country: Spain
@@ -56,6 +75,13 @@
     studying variables like ground temperature, nest density and stone density;
     2) study the patching effect of *Juniperus sabina* over ant activity and
     nesting areas.
+  description_es: >-
+    Trabajo Fin de Grado (calificación: 9,5/10): estudio de las comunidades de
+    hormigas de la Sierra de Javalambre. Objetivos: 1) analizar la distribución
+    de las especies a lo largo del gradiente altitudinal, con variables como la
+    temperatura del suelo, la densidad de nidos y la densidad de piedras; y
+    2) estudiar el efecto de los parches de *Juniperus sabina* sobre la
+    actividad y la nidificación de las hormigas.
   description_web: >-
     Thesis graded 9.5/10. Ant communities of the Sierra de Javalambre: species
     distribution along an altitudinal gradient, and the patching effect of

@@ -1,9 +1,13 @@
 # Puestos de trabajo.
 # Campos: title, org, unit (opcional), city, country, start, end,
 #         description, description_web, coords, short, web
+# Traducciones: el mismo campo con _es (title_es, org_es, description_es...).
 - title: Postdoctoral Researcher
+  title_es: Investigador postdoctoral
   org: Doñana Biological Station (EBD-CSIC)
+  org_es: Estación Biológica de Doñana (EBD-CSIC)
   unit: Department of Conservation Biology and Global Change
+  unit_es: Departamento de Biología de la Conservación y Cambio Global
   city: Seville
   country: Spain
   start: 2025-01
@@ -11,8 +15,11 @@
   coords: [37.40, -5.98]
 
 - title: Specialist in ant species identification
+  title_es: Especialista en identificación de especies de hormigas
   org: Doñana Biological Station (EBD-CSIC)
+  org_es: Estación Biológica de Doñana (EBD-CSIC)
   unit: Department of Conservation Biology and Global Change
+  unit_es: Departamento de Biología de la Conservación y Cambio Global
   city: Seville
   country: Spain
   start: 2024-05
@@ -21,6 +28,10 @@
     Identification of ant species from pitfall trap samples from Spain, France,
     Belgium and the Netherlands, contributing to ecological research and
     biodiversity assessments through taxonomic expertise.
+  description_es: >-
+    Identificación de especies de hormigas en muestras de trampas de caída de
+    España, Francia, Bélgica y Países Bajos, como apoyo taxonómico a la
+    investigación ecológica y a la evaluación de la biodiversidad.
   description_web: >-
     Identification of ant species from pitfall-trap samples from Spain, France,
     Belgium and the Netherlands, for ecological research and biodiversity

@@ -1,13 +1,18 @@
 # Servicio a la comunidad cientifica.
+# Traducciones: el mismo campo con _es (role_es, event_es, description_es...).
 
 # Organizacion de congresos y eventos.
 # Campos: event, role, date, short, web
 organization:
   - event: XVI International Conference of Myrmecology, Taxomara 2021
+    event_es: XVI Congreso Internacional de Mirmecología, Taxomara 2021
     role: Organizing Committee and Scientific Committee
+    role_es: Comité Organizador y Comité Científico
     date: 2021
   - event: XV International Conference of Myrmecology, Taxomara 2020
+    event_es: XV Congreso Internacional de Mirmecología, Taxomara 2020
     role: Organizing Committee and Scientific Committee
+    role_es: Comité Organizador y Comité Científico
     date: 2020
 
 # Revisiones de manuscritos: revista y numero de revisiones.
@@ -22,9 +27,11 @@ reviews:
     count: 1
 
 # Workshops y grupos de trabajo.
-# Campos: title, description, date, short, web
+# Campos: title, role, description, date, short, web
 workshops:
   - title: InvaPact III
     description: analysis of the ecological effects of biological invasions
+    description_es: análisis de los efectos ecológicos de las invasiones biológicas
     role: Invited participant
+    role_es: Participante invitado
     date: 2025

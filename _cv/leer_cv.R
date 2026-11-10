@@ -88,6 +88,89 @@ cv_leer <- function(dir = "_cv") {
 `%||%` <- function(a, b) if (.cv_vacio(a)) b else a
 
 # ---------------------------------------------------------------------------
+# Idiomas
+# ---------------------------------------------------------------------------
+# Los datos se escriben en ingles. La traduccion de un campo va en el mismo
+# sitio con el sufijo del idioma: title_es, description_es, city_es...
+# Si falta, se usa el texto en ingles. Los textos fijos (titulos de seccion,
+# meses...) estan en _cv/textos.yml.
+
+.cv_env <- new.env()
+.cv_env$lang <- "en"
+.cv_env$textos <- NULL
+
+# Campos que deberian estar traducidos: si falta su version (p. ej.
+# description_es), cv_traducir() avisa. El resto (ciudades, instituciones,
+# titulos de congresos y cursos...) se traduce solo si lo escribes.
+.cv_traducibles <- list(
+  profile      = c("position", "address"),
+  experience   = c("title", "description"),
+  education    = c("title", "description"),
+  stays        = c("description"),
+  internships  = c("title", "description"),
+  funding      = c("name", "project"),
+  awards       = c("title", "context"),
+  organization = c("role"),
+  workshops    = c("role", "description"),
+  memberships  = c("role"),
+  references   = c("role"),
+  skills       = c("group", "language")
+)
+
+# Devuelve el CV en el idioma `lang` y lo deja como idioma de trabajo para
+# fechas y textos fijos. Avisa de las traducciones que faltan.
+cv_traducir <- function(cv, lang = "en", dir = "_cv") {
+  .cv_env$lang <- lang
+  .cv_env$textos <- yaml::read_yaml(file.path(dir, "textos.yml"))
+  if (lang == "en") return(cv)
+
+  sufijo <- paste0("_", lang)
+  faltan <- character()
+  traducir <- function(x, seccion, donde) {
+    if (!is.list(x)) return(x)
+    nombres <- names(x)
+    if (is.null(nombres)) {
+      return(lapply(seq_along(x), function(i) traducir(x[[i]], seccion, donde)))
+    }
+    etiqueta <- x$title %||% x$name %||% x$host %||% x$event %||% x$group %||% x$language %||% ""
+    for (campo in nombres[!grepl("_[a-z]{2}$", nombres)]) {
+      traduccion <- x[[paste0(campo, sufijo)]]
+      # Ciudades y paises: si no hay city_es / country_es, se buscan en la
+      # lista `places` de textos.yml (Seville -> Sevilla, Poland -> Polonia...)
+      if (.cv_vacio(traduccion) && campo %in% c("city", "country") && is.character(x[[campo]])) {
+        traduccion <- .cv_env$textos$places[[lang]][[x[[campo]]]]
+      }
+      if (!.cv_vacio(traduccion)) {
+        x[[campo]] <- traduccion
+      } else if (campo %in% .cv_traducibles[[seccion]] && is.character(x[[campo]])) {
+        faltan <<- c(faltan, sprintf("%s: \"%s\" sin %s%s", seccion,
+                                     substr(etiqueta, 1, 40), campo, sufijo))
+      }
+      x[[campo]] <- traducir(x[[campo]], seccion, donde)
+    }
+    x
+  }
+  for (seccion in names(cv)) cv[[seccion]] <- traducir(cv[[seccion]], seccion, seccion)
+
+  if (length(faltan)) {
+    message("CV (", lang, "): faltan ", length(faltan), " traducciones; se usa el ingles en:\n  ",
+            paste(faltan, collapse = "\n  "))
+  }
+  cv
+}
+
+# Texto fijo de textos.yml en el idioma de trabajo. Los {marcadores} se
+# sustituyen por los argumentos: cv_texto("publications_short", n = 5)
+cv_texto <- function(clave, ...) {
+  textos <- .cv_env$textos[[clave]]
+  if (is.null(textos)) stop("CV: falta '", clave, "' en _cv/textos.yml", call. = FALSE)
+  x <- textos[[.cv_env$lang]] %||% textos[["en"]]
+  valores <- list(...)
+  for (n in names(valores)) x <- gsub(paste0("{", n, "}"), valores[[n]], x, fixed = TRUE)
+  x
+}
+
+# ---------------------------------------------------------------------------
 # Seleccion y orden
 # ---------------------------------------------------------------------------
 
@@ -127,10 +210,18 @@ cv_seccion <- function(cv, seccion, version = "full") {
 
 .cv_fecha_txt <- function(x) {
   x <- as.character(x)
-  if (x == "present") return("present")
+  hay_textos <- !is.null(.cv_env$textos)
+  if (x == "present") return(if (hay_textos) cv_texto("present") else "present")
   partes <- strsplit(x, "-")[[1]]
   if (length(partes) == 1) return(partes[1])
-  paste(month.abb[as.integer(partes[2])], partes[1])
+  meses <- if (hay_textos) cv_texto("months") else month.abb
+  paste(meses[as.integer(partes[2])], partes[1])
+}
+
+# Fecha de hoy para el pie del PDF: "November 2026", "Noviembre 2026"
+cv_fecha_hoy <- function() {
+  hoy <- as.POSIXlt(Sys.Date())
+  paste(cv_texto("months_full")[hoy$mon + 1], hoy$year + 1900)
 }
 
 # "Jan 2025 – present", "May 2024 – Jun 2024", "Oct 2021", "2022 – 2025"
@@ -207,7 +298,7 @@ cv_bib_publicaciones <- function(publicaciones_yml, salida) {
 # Congresos: se escriben como @article para que salgan como
 # "Autores (año). Titulo. Congreso, Ciudad, Pais (Talk)."
 cv_bib_congresos <- function(congresos, salida) {
-  etiqueta <- c(talk = "Talk", poster = "Poster", invited = "Invited talk")
+  etiqueta <- vapply(c(talk = "talk", poster = "poster", invited = "invited"), cv_texto, "")
   bib <- vapply(seq_along(congresos), function(i) {
     e <- congresos[[i]]
     autores <- paste(trimws(strsplit(e$authors, ";")[[1]]), collapse = " and ")

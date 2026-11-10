@@ -1,13 +1,19 @@
 # Proyectos y becas.
 # Campos: name, code, funder, funder_short, country, project, role (opcional),
 #         start, end, amount, short, web
+# Traducciones: el mismo campo con _es (name_es, project_es...).
 - name: PRELUDIUM grant
+  name_es: Proyecto PRELUDIUM
   code: 2021/41/N/NZ8/04360
   funder: National Science Centre
+  funder_es: Centro Nacional de Ciencia
   funder_short: NCN
   country: Poland
   project: "Bacteria – ant – plant interaction: the effect of ants as bacteria dispersal vectors and indirect drivers of plant health."
+  project_es: "Interacción bacterias – hormigas – plantas: las hormigas como vectores de dispersión de bacterias e impulsoras indirectas de la salud de las plantas."
   role: Principal investigator
+  role_es: Investigador principal
   start: 2022
   end: 2025
   amount: 202,001 PLN (≈ 46,000 €)
+  amount_es: 202.001 PLN (≈ 46.000 €)

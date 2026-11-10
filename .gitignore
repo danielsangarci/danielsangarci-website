@@ -14,3 +14,9 @@ _cv/pdf/*.log
 _cv/pdf/*.tex
 _cv/pdf/*.bib
 _cv/pdf/*_files/
+
+# CV en espanol: solo para enviar, no se publica en la web ni en GitHub
+/cv-es.pdf
+/cv-short-es.pdf
+docs/cv-es.pdf
+docs/cv-short-es.pdf

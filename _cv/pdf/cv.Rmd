@@ -1,7 +1,7 @@
 ---
 # Plantilla del CV en PDF. No lleva datos: todo sale de los archivos .yml de
 # la carpeta _cv/. Se compila con _cv/pdf/render_cv.R.
-name: "`r source('../leer_cv.R'); cv <- cv_leer('..'); cv$profile$name`"
+name: "`r source('../leer_cv.R'); cv <- cv_traducir(cv_leer('..'), params$lang, '..'); cv$profile$name`"
 position: "`r cv$profile$position`"
 address: "`r cv$profile$address`"
 profilepic: "`r cv$profile$photo`"
@@ -12,10 +12,13 @@ twitter: "`r cv$profile$twitter`"
 github: "`r cv$profile$github`"
 orcid: "`r cv$profile$orcid`"
 headcolor: 009ACD
-date: "`r {Sys.setlocale('LC_TIME', 'C'); format(Sys.time(), '%B %Y')}`"
+date: "`r cv_fecha_hoy()`"
+# Idioma de las referencias (APA en espanol: "y" en vez de "&", "En"...)
+lang: "`r if (params$lang == 'es') 'es-ES' else 'en-US'`"
 csl: apa-cv.csl
 params:
-  short: FALSE
+  short: FALSE   # TRUE: CV resumido
+  lang: en       # en | es
 output:
   vitae::awesomecv:
     pandoc_args: ["--lua-filter=lua/strong.lua"]
@@ -40,12 +43,6 @@ library(dplyr)
 library(kableExtra)
 
 version <- if (params$short) "short" else "full"
-
-# Tabla con los campos que usa vitae a partir de una lista de entradas
-tabla <- function(entradas, ...) {
-  if (!length(entradas)) return(tibble::tibble())
-  dplyr::bind_rows(lapply(entradas, function(e) tibble::tibble(...)))
-}
 
 # Entradas detalladas (puesto, lugar, fecha y descripcion). Cada entrada va en
 # su propio bloque: con todas en uno, awesome-cv.cls monta el titulo de una
@@ -73,7 +70,7 @@ breves <- function(entradas, what, when, with = NULL) {
 }
 ```
 
-`r if(!params$short) "# \\faIcon{plane} My journey"`
+`r if(!params$short) paste("# \\faIcon{plane}", cv_texto("journey"))`
 
 ```{r edu_plot, fig.align='center', fig.width=7, fig.asp=0.5, dpi=300, fig.showtext=TRUE, eval=!params$short, dev='cairo_pdf'}
 library(ggplot2)
@@ -187,35 +184,33 @@ ggplot() +
   theme(plot.margin = margin(0, 0, 0, 0, "cm"))
 ```
 
-# \faIcon{briefcase} Professional experience
+# \faIcon{briefcase} `r cv_texto("experience")`
 
 ```{r experience}
 detalladas("experience")
 ```
 
-# \faIcon{university} Education
+# \faIcon{university} `r cv_texto("education")`
 
 ```{r education}
 detalladas("education")
 ```
 
-# \faIcon{flask} Research stays
+# \faIcon{flask} `r cv_texto("stays")`
 
 ```{r stays}
 detalladas("stays", que = function(e) e$host)
 ```
 
-# \faIcon{shapes} Internships
+# \faIcon{shapes} `r cv_texto("internships")`
 
 ```{r internships}
 detalladas("internships")
 ```
 
-# \faIcon{file} Publications
+# \faIcon{file} `r cv_texto("publications")`
 
-`r if(!params$short) sprintf("Also in [*my Google Scholar profile*](%s) and available to download from [*my Website*](https://%s/publications.html).", cv$profile$scholar, cv$profile$www)`
-
-`r if(params$short) sprintf("Note: Showing only the 5 most recent publications. For a complete list of peer-reviewed publications and manuscripts, please refer to my [*Google Scholar profile*](%s) or [*personal website*](https://%s/publications.html).", cv$profile$scholar, cv$profile$www)`
+`r web_pubs <- sprintf("https://%s/publications.html", cv$profile$www); cv_texto(if (params$short) "publications_short" else "publications_full", n = 5, scholar = cv$profile$scholar, web = web_pubs)`
 
 ```{r publications}
 # Las publicaciones salen de publications.yml (la misma lista de la web,
@@ -228,21 +223,21 @@ if (params$short) slice(pubs, 1:5) else pubs
 
 \smallskip
 
-# \faIcon{comments} Conference talks and posters
+# \faIcon{comments} `r cv_texto("conferences")`
 
 ```{r conferences-bib}
 congresos <- cv_seccion(cv, "conferences", version)
 cv_bib_congresos(congresos, "congresos.bib")
 ```
 
-`r if(params$short) sprintf("I have presented my research as oral talks and posters in **%d** national and international conferences. For a list of presentations, [*click here*](https://%s/cv.pdf) to download my full cv.", length(congresos), cv$profile$www)`
+`r if(params$short) cv_texto("conferences_short", n = length(congresos), web = sprintf("https://%s/%s", cv$profile$www, if (params$lang == "en") "cv.pdf" else paste0("cv-", params$lang, ".pdf")))`
 
 ```{r conferences, eval=!params$short}
 bibliography_entries("congresos.bib") |>
   arrange(desc(issued))
 ```
 
-# \faIcon{hand-holding-usd} Funding
+# \faIcon{hand-holding-usd} `r cv_texto("funding")`
 
 ```{r funding}
 breves(cv_seccion(cv, "funding", version),
@@ -252,15 +247,15 @@ breves(cv_seccion(cv, "funding", version),
        with = function(e) cv_md_latex(e$amount %||% ""))
 ```
 
-# \faIcon{medal} Awards
+# \faIcon{medal} `r cv_texto("awards")`
 
 ```{r awards}
 breves(cv_seccion(cv, "awards", version),
-       what = function(e) cv_md_latex(paste0(e$title, if (!is.null(e$context)) paste(" at the", e$context))),
+       what = function(e) cv_md_latex(paste0(e$title, if (!is.null(e$context)) paste("", cv_texto("at_the"), e$context))),
        when = function(e) cv_periodo(e$date))
 ```
 
-`r if(!params$short && length(cv$organization)) "# \\faIcon{calendar} Organization of Conferences and Scientific Events"`
+`r if(!params$short && length(cv$organization)) paste("# \\faIcon{calendar}", cv_texto("organization"))`
 
 ```{r organization, eval=!params$short}
 breves(cv_seccion(cv, "organization", version),
@@ -269,23 +264,23 @@ breves(cv_seccion(cv, "organization", version),
        with = function(e) cv_md_latex(e$role))
 ```
 
-# \faIcon{eye} Reviews
+# \faIcon{eye} `r cv_texto("reviews")`
 
 ```{r reviews, results='asis'}
-cat("Manuscripts reviewed for:",
+cat(cv_texto("reviews_intro"),
     paste(vapply(cv$reviews, function(r) sprintf("%s (%s)", r$journal, r$count), ""), collapse = ", "))
 ```
 
-`r if(!params$short && length(cv$workshops)) "# \\faIcon{users-cog} Workshops"`
+`r if(!params$short && length(cv$workshops)) paste("# \\faIcon{users-cog}", cv_texto("workshops"))`
 
 ```{r workshops, eval=!params$short}
 breves(cv_seccion(cv, "workshops", version),
-       what = function(e) cv_md_latex(paste0(paste(c(e$role, e$title), collapse = " in "),
+       what = function(e) cv_md_latex(paste0(paste(c(e$role, e$title), collapse = paste0(" ", cv_texto("in"), " ")),
                                              if (!is.null(e$description)) paste0(": ", e$description))),
        when = function(e) cv_periodo(e$date))
 ```
 
-# \faIcon{book-open} Courses
+# \faIcon{book-open} `r cv_texto("courses")`
 
 ```{r courses}
 breves(cv_seccion(cv, "courses", version),
@@ -293,23 +288,23 @@ breves(cv_seccion(cv, "courses", version),
        when = function(e) cv_periodo(e$date))
 ```
 
-`r if(!params$short) "# \\faIcon{users} Memberships"`
+`r if(!params$short) paste("# \\faIcon{users}", cv_texto("memberships"))`
 
 ```{r memberships, eval=!params$short}
 breves(cv_seccion(cv, "memberships", version),
        what = function(e) paste0(cv_md_latex(paste(c(e$name, e$full_name), collapse = " - ")),
                                  if (!is.null(e$role)) paste0(" (", cv_md_latex(e$role), ")"),
                                  if (!is.null(e$url)) sprintf(" \\href{%s}{\\tiny{\\faIcon{link}}}", e$url)),
-       when = function(e) paste("since", e$since))
+       when = function(e) paste(cv_texto("since"), e$since))
 ```
 
 `r if(!params$short) "\\needspace{7cm}"`
 
-`r if(!params$short) "# \\faIcon{brain} Skills"`
+`r if(!params$short) paste("# \\faIcon{brain}", cv_texto("skills"))`
 
 `r if(!params$short) "\\smallskip"`
 
-`r if(!params$short) "## \\faIcon{cogs} Technical skills"`
+`r if(!params$short) paste("## \\faIcon{cogs}", cv_texto("technical_skills"))`
 
 ```{r techtable, eval=!params$short, results='markup'}
 grupos <- cv$skills$technical
@@ -328,14 +323,16 @@ fila |>
 
 `r if(!params$short) "\\smallskip"`
 
-`r if(!params$short) "## \\faIcon{language} Languages"`
+`r if(!params$short) paste("## \\faIcon{language}", cv_texto("languages"))`
 
 ```{r languages, eval=!params$short, results='markup'}
 destrezas <- c("reading", "writing", "listening", "speaking")
 idiomas <- cv$skills$languages
-tabla_idiomas <- data.frame(Skill = tools::toTitleCase(destrezas))
+tabla_idiomas <- data.frame(unname(vapply(destrezas, cv_texto, "")))
+names(tabla_idiomas) <- cv_texto("skill")
 for (l in idiomas) {
   niveles <- vapply(destrezas, function(d) as.character(l[[d]] %||% l$level), "")
+  niveles[tolower(niveles) == "native"] <- cv_texto("native")
   color <- if (tolower(l$level) == "native") "#005c7b" else "#009acd"
   tabla_idiomas[[l$language]] <- cell_spec(niveles, "latex", color = color)
 }
@@ -345,18 +342,18 @@ tabla_idiomas |>
   footnote(
     footnote_as_chunk = TRUE,
     general_title = " ",
-    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    general = paste("\\\\tiny", cv_texto("languages_note")),
     escape = FALSE
   ) |>
   column_spec(column = seq_len(ncol(tabla_idiomas)), width = "2.4cm")
 ```
 
-`r if(!params$short) "# \\faIcon{comment} References"`
+`r if(!params$short) paste("# \\faIcon{comment}", cv_texto("references"))`
 
 ```{r references, eval=!params$short, results='asis'}
 correos <- cv$private$emails
 if (is.null(correos)) {
-  cat("References available on request.\n")
+  cat(cv_texto("references_request"), "\n")
 } else {
   for (r in cv$references) {
     cat(sprintf("-   %s: **%s**, %s  \n", r$role, r$name, r$org))
