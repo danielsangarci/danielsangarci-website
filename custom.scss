@@ -1013,6 +1013,13 @@ main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc
   padding-left: 0.3rem;
   padding-right: 0.3rem;
 }
+// Con sitio de sobra, las secciones del menu se separan un poco mas
+@media (min-width: 1200px) {
+  .navbar .navbar-nav .nav-link { padding-left: 0.55rem; padding-right: 0.55rem; }
+}
+@media (min-width: 1400px) {
+  .navbar .navbar-nav .nav-link { padding-left: 0.75rem; padding-right: 0.75rem; }
+}
 
 .navbar .nav-link {
   border-radius: $border-radius-pill;
