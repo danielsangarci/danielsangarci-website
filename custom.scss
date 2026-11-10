@@ -24,9 +24,10 @@ $headings-font-family: "Montserrat", "Inter", -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, sans-serif !default;
 
 // ---------------------------------------------------------------------
-//  2. Paleta: solo tonos de azul. Marino (#234877, enlaces y botones),
-//     azul medio (#4F7CB5) y cielo (#93B0D4) para detalles, sobre un fondo
-//     casi blanco y la barra de menu en un azul muy claro (#DDE5F1).
+//  2. Paleta: tonos de azul (marino #234877 en enlaces y botones, azul
+//     medio #4F7CB5 y cielo #93B0D4 en detalles) con un acento coral
+//     (#E07A5F) en pequenas dosis, sobre un fondo casi blanco y la barra
+//     de menu en un azul muy claro (#DDE5F1).
 //     El azul anterior era #2A6292.
 //     #88A7C2 sigue vivo en el resplandor del hero, las citas y btn-secondary.
 // ---------------------------------------------------------------------
@@ -52,11 +53,11 @@ $dark:      $gray-900;
 
 // Tinte de acento para fondos suaves y estados hover
 $dsg-ink:          #14213d;
-// Acento: azul medio, solo decorativo (barritas, puntos, iconos, subrayados).
+// Acento coral: solo decorativo (barritas, puntos, iconos, subrayados).
 // El texto va siempre en azul marino o gris, que se leen mejor.
-$dsg-accent:       #4f7cb5;   // azul medio
-$dsg-accent-soft:  #e8eef7;   // azul palido (fondos suaves)
-$dsg-accent-dark:  #234877;   // iconos y etiquetas sobre fondo suave              // "tinta" para titulares
+$dsg-accent:       #e07a5f;   // coral
+$dsg-accent-soft:  #fbebe6;   // coral palido (fondos suaves)
+$dsg-accent-dark:  #a8452b;   // coral oscuro (iconos sobre fondo suave)   // iconos y etiquetas sobre fondo suave              // "tinta" para titulares
 $dsg-primary-soft: rgba(35, 72, 119, 0.08);
 $dsg-hairline:     rgba(20, 33, 61, 0.08); // bordes sutiles
 
@@ -2419,7 +2420,7 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 
 
 // ---------------------------------------------------------------------
-//  Acento azul: detalles en hero, portada, menu y Publications
+//  Acento coral: detalles en hero, portada, menu y Publications
 // ---------------------------------------------------------------------
 .hero-full__title::after {
   content: "";
@@ -2428,12 +2429,12 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
   height: 5px;
   margin: 1rem auto 0;
   border-radius: 5px;
-  background: linear-gradient(90deg, $primary, #93b0d4);
+  background: $dsg-accent;
 }
 .hero-full .hero-cta { --hero-cta-luz: #{$dsg-accent}; }
 .hero-full .hero-cta:hover,
 .hero-full .hero-cta:focus-visible { background-color: $primary; color: #ffffff; }
-.navbar .nav-link.active { box-shadow: inset 0 -2px 0 $primary; }
+.navbar .nav-link.active { box-shadow: inset 0 -2px 0 $dsg-accent; }
 .card-icon { background-color: $dsg-accent-soft; color: $dsg-accent-dark; }
 .home-noticias .news-list li:has(a)::after { color: $dsg-accent; }
 .about-news__titulo .svg-inline--fa,
@@ -2457,7 +2458,7 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 //  Pie de pagina: licencia | accesos rapidos | redes
 // ---------------------------------------------------------------------
 .nav-footer {
-  border-top: 3px solid $primary;
+  border-top: 3px solid $dsg-accent;
   .nav-footer-center .nav-link,
   .nav-footer-center a { font-weight: 600; font-size: 0.8rem; color: $dsg-ink; }
   .nav-footer-right .nav-link,

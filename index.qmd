@@ -143,14 +143,14 @@ comments: false
   var ancho = 0, alto = 0, lazo = null, enPantalla = true, t0 = performance.now();
   var activo = null;
 
-  // Tonos de azul del sitio
+  // Tonos de azul del sitio; las hormigas en el coral del acento
   var COL = {
-    ant:       { c: [35, 72, 119] },    // marino
+    ant:       { c: [224, 122, 95] },   // coral
     bacterium: { c: [79, 124, 181] },   // azul medio
     fungus:    { c: [147, 176, 212] },  // azul cielo
     butterfly: { c: [35, 72, 119] }
   };
-  var RESALTE = [46, 109, 180];         // azul vivo de los destellos
+  var RESALTE = [224, 122, 95];         // coral de los destellos
   var LINEA = [79, 124, 181];
   var ESPECIES = [
     ['Lasius niger','ant'], ['Lasius grandis','ant'], ['Messor structor','ant'],
