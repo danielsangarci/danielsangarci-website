@@ -1411,8 +1411,10 @@ a.lightbox {
 @media (max-width: 991.98px) {
   #about {
     margin-top: 0 !important;
-    padding-top: 40px !important;   // hero → foto
-    row-gap: 30px;                  // foto → texto
+    // Proporcional al ancho de pantalla: 40 px y 30 px en un movil de
+    // 375 px, y crece o mengua con la pantalla dentro de unos limites
+    padding-top: clamp(28px, 10.67vw, 72px) !important;   // hero → foto
+    row-gap: clamp(20px, 8vw, 52px);                      // foto → texto
   }
   #about .about-photo > p,
   #about .about-photo figure { margin-bottom: 0; }
