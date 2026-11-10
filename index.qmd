@@ -516,6 +516,12 @@ comments: false
     var hueco = parseFloat(getComputedStyle(seccion).scrollMarginTop) || 0;
     var y = Math.max(0, seccion.getBoundingClientRect().top +
                         window.pageYOffset - hueco);
+    // Al bajar, la barra de menu se esconde (headroom) y su hueco dejaba
+    // ver el final del hero: nunca se para antes de que el hero salga entero
+    var hero = document.querySelector('.hero-full');
+    if (hero && seccion.compareDocumentPosition(hero) & Node.DOCUMENT_POSITION_PRECEDING) {
+      y = Math.max(y, hero.getBoundingClientRect().bottom + window.pageYOffset);
+    }
     if (Math.abs(y - window.pageYOffset) > 1) window.scrollTo(0, y);
   }
 
@@ -556,6 +562,13 @@ comments: false
     // mismo hueco que usa el salto normal del navegador
     var margen = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
     var tope = el.getBoundingClientRect().top + window.pageYOffset - margen;
+    // Al bajar, la barra de menu se esconde (headroom) y el hueco que se le
+    // reservaba dejaba ver el final del hero, sobre todo en movil: la
+    // bajada nunca se para antes de que el hero haya salido entero
+    var hero = document.querySelector('.hero-full');
+    if (hero && el.compareDocumentPosition(hero) & Node.DOCUMENT_POSITION_PRECEDING) {
+      tope = Math.max(tope, hero.getBoundingClientRect().bottom + window.pageYOffset);
+    }
     var maximo = document.documentElement.scrollHeight - window.innerHeight;
     return Math.max(0, Math.min(tope, maximo));
   }
@@ -606,7 +619,7 @@ comments: false
     ev.preventDefault();
 
     if (reduce.matches) {
-      destinoEl.scrollIntoView();
+      window.scrollTo(0, destino(destinoEl));
     } else {
       bajar(destinoEl);
     }
