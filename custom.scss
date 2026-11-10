@@ -1410,9 +1410,9 @@ a.lightbox {
 // texto (las utilidades pt-5 y mt-4 de Bootstrap llevan !important)
 @media (max-width: 991.98px) {
   #about {
-    margin-top: 0.4rem !important;
-    padding-top: 2rem !important;
-    row-gap: 1.7rem;
+    margin-top: 0 !important;
+    padding-top: 40px !important;   // hero → foto
+    row-gap: 30px;                  // foto → texto
   }
   #about .about-photo > p,
   #about .about-photo figure { margin-bottom: 0; }
