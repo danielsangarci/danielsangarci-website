@@ -1,0 +1,20 @@
+# Habilidades tecnicas: cada grupo es una columna de la tabla del PDF.
+# En la web salen todas juntas.
+technical:
+  - group: Coding languages
+    items: [R]
+  - group: R packages and tools
+    items: [R Markdown / Quarto, ggplot2, vegan, geomorph]
+  - group: Other
+    items: [GC-MS, Morphometrics, Network analysis, Population genetics, Ant taxonomy, Oxford Nanopore sequencing, Macro photography]
+
+# Idiomas. level: Native o nivel del Marco Comun Europeo (A1-C2).
+# Si un nivel cambia segun la destreza, usa reading/writing/listening/speaking.
+# label (opcional): como se describe el nivel en la web, p. ej. "B2 (fluent)".
+# Sin label, se usa el nombre habitual del nivel (B2 = upper intermediate).
+languages:
+  - language: Spanish
+    level: Native
+  - language: English
+    level: B2
+    label: fluent

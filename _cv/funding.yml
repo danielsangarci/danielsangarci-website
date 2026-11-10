@@ -1,0 +1,13 @@
+# Proyectos y becas.
+# Campos: name, code, funder, funder_short, country, project, role (opcional),
+#         start, end, amount, short, web
+- name: PRELUDIUM grant
+  code: 2021/41/N/NZ8/04360
+  funder: National Science Centre
+  funder_short: NCN
+  country: Poland
+  project: "Bacteria – ant – plant interaction: the effect of ants as bacteria dispersal vectors and indirect drivers of plant health."
+  role: Principal investigator
+  start: 2022
+  end: 2025
+  amount: 202,001 PLN (≈ 46,000 €)

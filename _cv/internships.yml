@@ -1,0 +1,37 @@
+# Practicas.
+# Campos: title, org, unit (opcional), city, country, start, end,
+#         description, description_web, short, web
+- title: Scientific assistant
+  org: Valencian Institute of Agricultural Research (IVIA)
+  unit: Department of Entomology
+  city: Valencia
+  country: Spain
+  start: 2016-02
+  end: 2016-05
+  description: >-
+    Internship with the researcher Alejandro Tena working on a biological
+    control applied study about the effect of the presence of the ant *Lasius
+    grandis* on the behaviour of the parasitoid wasp *Anagyrus pseudococci* on
+    mealybug colonies of *Planococcus citri* (pest of citrus).
+  description_web: >-
+    With Alejandro Tena: effect of the ant *Lasius grandis* on the behaviour of
+    the parasitoid wasp *Anagyrus pseudococci* in mealybug colonies of
+    *Planococcus citri*, a citrus pest.
+
+- title: Environmental manager
+  org: Agricultural, Stockbreeding and Environmental Public Service, Government of Aragón
+  city: Teruel
+  country: Spain
+  start: 2015-07
+  end: 2015-09
+  description: >-
+    Internship with the environmental manager José Manuel González working on
+    environmental impact reports; monitoring of fish river population dynamic
+    for its management and conservation using electric fishing techniques;
+    monitoring of deer population dynamic for its management and conservation
+    in the National Hunting Reserve "Montes Universales"; management and
+    translocation of native plant species.
+  description_web: >-
+    Environmental impact reports, monitoring of river fish and deer populations
+    in the Montes Universales National Hunting Reserve, and translocation of
+    native plants.

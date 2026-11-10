@@ -1,0 +1,18 @@
+# Referencias. Los correos van en private.yml (no se publican).
+# Campos: name, role (para que te conocen), org (PDF), org_short (web)
+- name: Dra. Elena Angulo
+  role: Postdoc
+  org: Doñana Biological Station - CSIC, Seville (Spain)
+  org_short: EBD-CSIC
+- name: Dra. Magdalena Witek
+  role: PhD thesis
+  org: Museum and Institute of Zoology, PAS, Warsaw (Poland)
+  org_short: MIIZ-PAS
+- name: Dr. Xim Cerdá
+  role: Master's thesis
+  org: Doñana Biological Station - CSIC, Seville (Spain)
+  org_short: EBD-CSIC
+- name: Prof. Dr. Ximo Baixeras
+  role: Bachelor's thesis
+  org: University of Valencia, Valencia (Spain)
+  org_short: Universitat de València

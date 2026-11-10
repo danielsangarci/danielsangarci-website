@@ -1,0 +1,30 @@
+# Servicio a la comunidad cientifica.
+
+# Organizacion de congresos y eventos.
+# Campos: event, role, date, short, web
+organization:
+  - event: XVI International Conference of Myrmecology, Taxomara 2021
+    role: Organizing Committee and Scientific Committee
+    date: 2021
+  - event: XV International Conference of Myrmecology, Taxomara 2020
+    role: Organizing Committee and Scientific Committee
+    date: 2020
+
+# Revisiones de manuscritos: revista y numero de revisiones.
+reviews:
+  - journal: Applied and Environmental Microbiology
+    count: 1
+  - journal: Insect Conservation and Diversity
+    count: 2
+  - journal: Arthropod-Plant Interactions
+    count: 1
+  - journal: Polish Journal of Ecology
+    count: 1
+
+# Workshops y grupos de trabajo.
+# Campos: title, description, date, short, web
+workshops:
+  - title: InvaPact III
+    description: analysis of the ecological effects of biological invasions
+    role: Invited participant
+    date: 2025

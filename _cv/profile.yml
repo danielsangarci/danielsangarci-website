@@ -1,0 +1,23 @@
+# Datos personales y de contacto (cabecera del PDF).
+# El telefono va en private.yml, que no se sube a GitHub.
+name: Daniel Sánchez-García
+position: PhD in Biology
+address: "Doñana Biological Station - EBD-CSIC - Seville (Spain)"
+email: danielsangarci@gmail.com
+www: danielsangarci.com
+twitter: danielsangarci
+github: danielsangarci
+orcid: 0000-0002-0710-6292
+scholar: https://scholar.google.com/citations?hl=en
+photo: dani.jpg
+
+# Texto de la cabecera de la pagina CV de la web
+summary_web: >-
+  **Postdoctoral Researcher** at the Doñana Biological Station (EBD-CSIC),
+  Seville, Spain. PhD in Biology (Museum and Institute of Zoology, Warsaw).
+  I study species interactions in ant, microbiome and mycobiome communities.
+
+# Punto de partida del mapa "My journey"
+origin:
+  label: Teruel
+  coords: [40.345688, -1.106435]

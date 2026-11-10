@@ -1,0 +1,62 @@
+# Estudios.
+# Campos: title, org, unit (opcional), city, country, start, end,
+#         description, description_web, coords, map_icon, short, web
+# map_icon: icono en el mapa (dot, university, flask, person). Por defecto, dot.
+- title: PhD in Biology
+  org: Museum and Institute of Zoology, Polish Academy of Sciences
+  city: Warsaw
+  country: Poland
+  start: 2019-10
+  end: 2024-09
+  coords: [52.26, 21.02]
+  description: >-
+    PhD Thesis: The project aimed to get a better understanding of how
+    reintroductions of parasites work, we performed a multi-level comparison of
+    source and reintroduced populations of *Phengaris teleius* by studying
+    1) population genetics, 2) morphology of adult butterflies and
+    3) behavioural, chemical and acoustical adaptations of butterfly
+    caterpillar to the *Myrmica* host ants.
+  description_web: >-
+    How do reintroductions of parasites work? A multi-level comparison of source
+    and reintroduced populations of *Phengaris teleius*: population genetics,
+    adult morphology, and the behavioural, chemical and acoustic adaptations of
+    the caterpillars to their *Myrmica* host ants.
+
+- title: MSc in Biodiversity and Conservation Biology
+  org: Universidad Pablo de Olavide
+  city: Seville
+  country: Spain
+  start: 2017-10
+  end: 2018-07
+  coords: [37.40, -5.98]
+  map_icon: university
+  description: >-
+    MSc Thesis (Thesis grade: 9.8/10 - Honors with Distinction): The work aimed
+    to study the effect of temperature over ant assemblages from different
+    habitats, applying different ecological perspectives. Taxonomic and
+    functional diversity were studied, and a new index was developed to study
+    the direct effect of temperature over the interspecific competition.
+  description_web: >-
+    Thesis graded 9.8/10, with honours. The effect of temperature on ant
+    assemblages from different habitats, through taxonomic and functional
+    diversity, and a new index for the direct effect of temperature on
+    interspecific competition.
+
+- title: BSc in Biology
+  org: Universitat de València
+  city: Valencia
+  country: Spain
+  start: 2012-09
+  end: 2016-09
+  coords: [39.48, -0.39]
+  description: >-
+    BSc thesis (Thesis grade: 9.5/10): The work aimed to provide new knowledge
+    about the ant communities of Sierra de Javalambre. The main goals were:
+    1) study how ant species are distributed along the altitudinal gradient,
+    studying variables like ground temperature, nest density and stone density;
+    2) study the patching effect of *Juniperus sabina* over ant activity and
+    nesting areas.
+  description_web: >-
+    Thesis graded 9.5/10. Ant communities of the Sierra de Javalambre: species
+    distribution along an altitudinal gradient, and the patching effect of
+    *Juniperus sabina* on ant activity and nesting.

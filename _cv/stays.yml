@@ -1,0 +1,33 @@
+# Estancias de investigacion.
+# Campos: host, org, unit, city, country, start, end (opcional si es un solo mes),
+#         description, description_web, coords, short, web
+- host: Prof. Luca Pietro Casacci
+  org: University of Turin
+  unit: Department of Life Sciences and Systems Biology
+  city: Turin
+  country: Italy
+  start: 2021-10
+  coords: [45.0703, 7.6869]
+  description: >-
+    I received training in recording insect vibroacoustic signals, sonogram
+    analysis and performing behavioral assays, which enhanced my skills in
+    experimental design and data interpretation.
+  description_web: >-
+    Recording of insect vibroacoustic signals, sonogram analysis and behavioural
+    assays.
+
+- host: Prof. Patrizia d'Ettorre
+  org: Sorbonne Paris North University
+  unit: Laboratory of Experimental and Comparative Ethology
+  city: Paris
+  country: France
+  start: 2020-01
+  end: 2020-02
+  coords: [48.8566, 2.3522]
+  description: >-
+    I received training in GC-MS analysis of cuticular hydrocarbons and
+    bioinformatics workflows, which deepened my understanding of chemical
+    communication in social insects and enhanced my analytical skills.
+  description_web: >-
+    GC-MS analysis of cuticular hydrocarbons and bioinformatics workflows for
+    chemical communication in social insects.

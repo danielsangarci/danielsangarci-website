@@ -1,0 +1,372 @@
+---
+# Plantilla del CV en PDF. No lleva datos: todo sale de los archivos .yml de
+# la carpeta _cv/. Se compila con _cv/pdf/render_cv.R.
+name: "`r source('../leer_cv.R'); cv <- cv_leer('..'); cv$profile$name`"
+position: "`r cv$profile$position`"
+address: "`r cv$profile$address`"
+profilepic: "`r cv$profile$photo`"
+phone: "`r cv$private$phone %||% ''`"
+email: "`r cv$profile$email`"
+www: "`r cv$profile$www`"
+twitter: "`r cv$profile$twitter`"
+github: "`r cv$profile$github`"
+orcid: "`r cv$profile$orcid`"
+headcolor: 009ACD
+date: "`r {Sys.setlocale('LC_TIME', 'C'); format(Sys.time(), '%B %Y')}`"
+csl: apa-cv.csl
+params:
+  short: FALSE
+output:
+  vitae::awesomecv:
+    pandoc_args: ["--lua-filter=lua/strong.lua"]
+    keep_tex: false
+    show_footer: true
+    includes:
+      in_header: header.txt
+header-includes:
+  - \raggedbottom
+  - \usepackage{needspace}
+  - \let\oldsection\section
+  - \renewcommand{\section}[1]{\needspace{2.5cm}\oldsection{#1}}
+  - \let\oldsubsection\subsection
+  - \renewcommand{\subsection}[1]{\needspace{2cm}\oldsubsection{#1}}
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(kableExtra)
+
+version <- if (params$short) "short" else "full"
+
+# Tabla con los campos que usa vitae a partir de una lista de entradas
+tabla <- function(entradas, ...) {
+  if (!length(entradas)) return(tibble::tibble())
+  dplyr::bind_rows(lapply(entradas, function(e) tibble::tibble(...)))
+}
+
+# Entradas detalladas (puesto, lugar, fecha y descripcion). Cada entrada va en
+# su propio bloque: con todas en uno, awesome-cv.cls monta el titulo de una
+# entrada sobre la descripcion de la anterior.
+detalladas <- function(seccion, que = function(e) e$title) {
+  bloques <- lapply(cv_seccion(cv, seccion, version), function(e) {
+    tibble::tibble(
+      what  = cv_md_latex(que(e)),
+      where = cv_md_latex(cv_lugar(e, "pdf")),
+      when  = sub(" – ", " - ", cv_periodo(e$start, e$end)),
+      why   = na_if(cv_md_latex(cv_descripcion(e, "pdf")), "")
+    ) |>
+      detailed_entries(what = what, where = where, when = when, why = why, .protect = FALSE) |>
+      knitr::knit_print()
+  })
+  knitr::asis_output(paste(unlist(bloques), collapse = "\n\n"))
+}
+
+breves <- function(entradas, what, when, with = NULL) {
+  if (!length(entradas)) return(invisible(NULL))
+  dplyr::bind_rows(lapply(entradas, function(e) tibble::tibble(
+    what = what(e), when = when(e), with = if (is.null(with)) NA_character_ else with(e)
+  ))) |>
+    brief_entries(what = what, when = when, with = with, .protect = FALSE)
+}
+```
+
+`r if(!params$short) "# \\faIcon{plane} My journey"`
+
+```{r edu_plot, fig.align='center', fig.width=7, fig.asp=0.5, dpi=300, fig.showtext=TRUE, eval=!params$short, dev='cairo_pdf'}
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+library(emojifont)
+
+# El mapa se dibuja con las `coords` de education.yml, experience.yml y
+# stays.yml: la ruta principal une el origen (profile.yml) con los estudios y
+# puestos en orden cronologico; las estancias salen del sitio donde estabas.
+load.fontawesome()
+iconos <- c(dot = fontawesome("fa-circle"), university = fontawesome("fa-university"),
+            flask = fontawesome("fa-flask"), person = fontawesome("fa-male"))
+
+etapas <- Filter(function(e) !is.null(e$coords), c(cv$education, cv$experience))
+etapas <- etapas[order(vapply(etapas, function(e) .cv_fecha_num(e$start), numeric(1)))]
+estancias <- Filter(function(e) !is.null(e$coords), cv$stays)
+
+punto <- function(coords, icono, tamano, color = "#009ACD") {
+  data.frame(lat = coords[[1]], lon = coords[[2]], label = iconos[[icono]], size = tamano, color = color)
+}
+ruta <- rbind(
+  punto(cv$profile$origin$coords, "dot", 1.6),
+  do.call(rbind, lapply(seq_along(etapas), function(i) {
+    e <- etapas[[i]]
+    actual <- identical(as.character(e$end), "present")
+    punto(e$coords, if (actual) "person" else e$map_icon %||% "dot",
+          if (actual) 3.5 else if (i == 1) 2.4 else 2.7,
+          if (actual) "#005c7b" else "#009ACD")
+  }))
+)
+
+# Lugares repetidos (p. ej. volver a Sevilla): se separan un poco los iconos
+clave <- paste(round(ruta$lat, 1), round(ruta$lon, 1))
+for (k in unique(clave[duplicated(clave)])) {
+  filas <- which(clave == k)
+  desplaz <- seq(-0.35, 0.35, length.out = length(filas))
+  ruta$lon[filas] <- ruta$lon[filas] + desplaz
+  ruta$lat[filas] <- ruta$lat[filas] - desplaz
+}
+
+# Cada estancia sale de la etapa en la que estabas en esa fecha
+origen_estancia <- function(s) {
+  f <- .cv_fecha_num(s$start)
+  for (i in rev(seq_along(etapas))) {
+    if (.cv_fecha_num(etapas[[i]]$start) <= f &&
+        f <= .cv_fecha_num(etapas[[i]]$end %||% "present")) return(ruta[i + 1, ])
+  }
+  ruta[nrow(ruta), ]
+}
+destinos <- do.call(rbind, lapply(estancias, function(s) punto(s$coords, "flask", 2.5)))
+origenes <- do.call(rbind, lapply(estancias, origen_estancia))
+
+robin <- "+proj=robin"
+proyectar <- function(df) {
+  xy <- st_coordinates(st_transform(st_as_sf(df, coords = c("lon", "lat"), crs = 4326), robin))
+  cbind(df, X = xy[, 1], Y = xy[, 2])
+}
+ruta <- proyectar(ruta)
+destinos <- proyectar(destinos)
+origenes <- proyectar(origenes)
+puntos <- rbind(ruta, destinos)
+
+curva <- function(x0, y0, x1, y1, curvatura, id, n = 100) {
+  dx <- x1 - x0; dy <- y1 - y0
+  cx <- x0 + dx / 2 + dy * curvatura
+  cy <- y0 + dy / 2 - dx * curvatura
+  t <- seq(0, 1, length.out = n)
+  data.frame(x = (1 - t)^2 * x0 + 2 * (1 - t) * t * cx + t^2 * x1,
+             y = (1 - t)^2 * y0 + 2 * (1 - t) * t * cy + t^2 * y1, id = id)
+}
+flechas <- function(df, indices = c(33, 66)) {
+  do.call(rbind, lapply(split(df, df$id), function(d) {
+    do.call(rbind, lapply(indices, function(i) {
+      data.frame(x = d$x[i - 2], y = d$y[i - 2], xend = d$x[i], yend = d$y[i])
+    }))
+  }))
+}
+
+n <- nrow(ruta)
+curvas_ruta <- do.call(rbind, lapply(seq_len(n - 1), function(i) {
+  curva(ruta$X[i], ruta$Y[i], ruta$X[i + 1], ruta$Y[i + 1], -0.3, paste0("m_", i))
+}))
+curvas_estancias <- do.call(rbind, lapply(seq_len(nrow(destinos)), function(i) {
+  curva(origenes$X[i], origenes$Y[i], destinos$X[i], destinos$Y[i], 0.2, paste0("s_", i))
+}))
+
+# Encuadre: Europa occidental, ampliado si algun lugar queda fuera
+margen <- 4e5
+xlim <- range(c(-1.8e6, 2.8e6, puntos$X - margen, puntos$X + margen))
+ylim <- range(c(3.8e6, 5.8e6, puntos$Y - margen, puntos$Y + margen))
+
+mundo <- ne_countries("medium", returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = mundo, color = "white", lwd = 0.1) +
+  geom_path(data = curvas_ruta, aes(x, y, group = id),
+            color = "#009ACD", linewidth = 0.35, alpha = 0.7, linetype = "dashed") +
+  geom_segment(data = flechas(subset(curvas_ruta, id != "m_1")),
+               aes(x = x, y = y, xend = xend, yend = yend), color = "#009ACD", linewidth = 0.35,
+               arrow = grid::arrow(length = unit(0.16, "cm"), type = "closed", angle = 22)) +
+  geom_path(data = curvas_estancias, aes(x, y, group = id),
+            color = "#009ACD", linewidth = 0.25, alpha = 0.6, linetype = "dotted") +
+  geom_segment(data = flechas(curvas_estancias),
+               aes(x = x, y = y, xend = xend, yend = yend), color = "#009ACD", linewidth = 0.25,
+               arrow = grid::arrow(length = unit(0.13, "cm"), type = "open", angle = 22)) +
+  geom_text(data = puntos, aes(X, Y, label = label),
+            family = "fontawesome-webfont", size = puntos$size, color = puntos$color) +
+  coord_sf(crs = robin, xlim = xlim, ylim = ylim) +
+  theme_void() +
+  theme(plot.margin = margin(0, 0, 0, 0, "cm"))
+```
+
+# \faIcon{briefcase} Professional experience
+
+```{r experience}
+detalladas("experience")
+```
+
+# \faIcon{university} Education
+
+```{r education}
+detalladas("education")
+```
+
+# \faIcon{flask} Research stays
+
+```{r stays}
+detalladas("stays", que = function(e) e$host)
+```
+
+# \faIcon{shapes} Internships
+
+```{r internships}
+detalladas("internships")
+```
+
+# \faIcon{file} Publications
+
+`r if(!params$short) sprintf("Also in [*my Google Scholar profile*](%s) and available to download from [*my Website*](https://%s/publications.html).", cv$profile$scholar, cv$profile$www)`
+
+`r if(params$short) sprintf("Note: Showing only the 5 most recent publications. For a complete list of peer-reviewed publications and manuscripts, please refer to my [*Google Scholar profile*](%s) or [*personal website*](https://%s/publications.html).", cv$profile$scholar, cv$profile$www)`
+
+```{r publications}
+# Las publicaciones salen de publications.yml (la misma lista de la web,
+# actualizada desde ORCID)
+cv_bib_publicaciones("../../publications.yml", "publicaciones.bib")
+pubs <- bibliography_entries("publicaciones.bib")
+
+if (params$short) slice(pubs, 1:5) else pubs
+```
+
+\smallskip
+
+# \faIcon{comments} Conference talks and posters
+
+```{r conferences-bib}
+congresos <- cv_seccion(cv, "conferences", version)
+cv_bib_congresos(congresos, "congresos.bib")
+```
+
+`r if(params$short) sprintf("I have presented my research as oral talks and posters in **%d** national and international conferences. For a list of presentations, [*click here*](https://%s/cv.pdf) to download my full cv.", length(congresos), cv$profile$www)`
+
+```{r conferences, eval=!params$short}
+bibliography_entries("congresos.bib") |>
+  arrange(desc(issued))
+```
+
+# \faIcon{hand-holding-usd} Funding
+
+```{r funding}
+breves(cv_seccion(cv, "funding", version),
+       what = function(e) cv_md_latex(sprintf("%s %s (%s, %s). %s", e$name, e$code %||% "",
+                                              e$funder_short %||% e$funder, e$country, e$project %||% "")),
+       when = function(e) sub(" – ", " - ", cv_periodo(e$start, e$end)),
+       with = function(e) cv_md_latex(e$amount %||% ""))
+```
+
+# \faIcon{medal} Awards
+
+```{r awards}
+breves(cv_seccion(cv, "awards", version),
+       what = function(e) cv_md_latex(paste0(e$title, if (!is.null(e$context)) paste(" at the", e$context))),
+       when = function(e) cv_periodo(e$date))
+```
+
+`r if(!params$short && length(cv$organization)) "# \\faIcon{calendar} Organization of Conferences and Scientific Events"`
+
+```{r organization, eval=!params$short}
+breves(cv_seccion(cv, "organization", version),
+       what = function(e) cv_md_latex(e$event),
+       when = function(e) cv_periodo(e$date),
+       with = function(e) cv_md_latex(e$role))
+```
+
+# \faIcon{eye} Reviews
+
+```{r reviews, results='asis'}
+cat("Manuscripts reviewed for:",
+    paste(vapply(cv$reviews, function(r) sprintf("%s (%s)", r$journal, r$count), ""), collapse = ", "))
+```
+
+`r if(!params$short && length(cv$workshops)) "# \\faIcon{users-cog} Workshops"`
+
+```{r workshops, eval=!params$short}
+breves(cv_seccion(cv, "workshops", version),
+       what = function(e) cv_md_latex(paste0(paste(c(e$role, e$title), collapse = " in "),
+                                             if (!is.null(e$description)) paste0(": ", e$description))),
+       when = function(e) cv_periodo(e$date))
+```
+
+# \faIcon{book-open} Courses
+
+```{r courses}
+breves(cv_seccion(cv, "courses", version),
+       what = function(e) cv_md_latex(paste0(e$title, if (!is.null(e$org)) paste0(" (", e$org, ")"))),
+       when = function(e) cv_periodo(e$date))
+```
+
+`r if(!params$short) "# \\faIcon{users} Memberships"`
+
+```{r memberships, eval=!params$short}
+breves(cv_seccion(cv, "memberships", version),
+       what = function(e) paste0(cv_md_latex(paste(c(e$name, e$full_name), collapse = " - ")),
+                                 if (!is.null(e$role)) paste0(" (", cv_md_latex(e$role), ")"),
+                                 if (!is.null(e$url)) sprintf(" \\href{%s}{\\tiny{\\faIcon{link}}}", e$url)),
+       when = function(e) paste("since", e$since))
+```
+
+`r if(!params$short) "\\needspace{7cm}"`
+
+`r if(!params$short) "# \\faIcon{brain} Skills"`
+
+`r if(!params$short) "\\smallskip"`
+
+`r if(!params$short) "## \\faIcon{cogs} Technical skills"`
+
+```{r techtable, eval=!params$short, results='markup'}
+grupos <- cv$skills$technical
+fila <- as.data.frame(
+  setNames(lapply(grupos, function(g) paste(cv_md_latex(unlist(g$items)), collapse = " -- ")),
+           vapply(grupos, function(g) g$group, "")),
+  check.names = FALSE
+)
+fila |>
+  kable(booktabs = TRUE, align = "c", escape = FALSE, format = "latex") |>
+  kable_styling(full_width = FALSE, font_size = 9, latex_options = "HOLD_position") |>
+  row_spec(0, bold = TRUE, color = "#009acd") |>
+  row_spec(1, bold = FALSE, color = "#7f7f7f") |>
+  column_spec(column = seq_along(grupos), width = sprintf("%.2fcm", 14.25 / length(grupos)))
+```
+
+`r if(!params$short) "\\smallskip"`
+
+`r if(!params$short) "## \\faIcon{language} Languages"`
+
+```{r languages, eval=!params$short, results='markup'}
+destrezas <- c("reading", "writing", "listening", "speaking")
+idiomas <- cv$skills$languages
+tabla_idiomas <- data.frame(Skill = tools::toTitleCase(destrezas))
+for (l in idiomas) {
+  niveles <- vapply(destrezas, function(d) as.character(l[[d]] %||% l$level), "")
+  color <- if (tolower(l$level) == "native") "#005c7b" else "#009acd"
+  tabla_idiomas[[l$language]] <- cell_spec(niveles, "latex", color = color)
+}
+tabla_idiomas |>
+  kable(booktabs = TRUE, align = "c", escape = FALSE, format = "latex") |>
+  kable_styling(full_width = FALSE, font_size = 9, latex_options = "HOLD_position") |>
+  footnote(
+    footnote_as_chunk = TRUE,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = FALSE
+  ) |>
+  column_spec(column = seq_len(ncol(tabla_idiomas)), width = "2.4cm")
+```
+
+`r if(!params$short) "# \\faIcon{comment} References"`
+
+```{r references, eval=!params$short, results='asis'}
+correos <- cv$private$emails
+if (is.null(correos)) {
+  cat("References available on request.\n")
+} else {
+  for (r in cv$references) {
+    cat(sprintf("-   %s: **%s**, %s  \n", r$role, r$name, r$org))
+    mails <- correos[[r$name]]
+    if (length(mails)) {
+      enlaces <- sprintf("[%s](mailto:%s){.email}", gsub("@", "\\\\@", mails), mails)
+      cat("\\faIcon{envelope}", paste(enlaces, collapse = "; "), "\n\n")
+    } else cat("\n")
+  }
+}
+```
+
+\normalsize

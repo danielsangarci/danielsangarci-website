@@ -1,0 +1,27 @@
+# Puestos de trabajo.
+# Campos: title, org, unit (opcional), city, country, start, end,
+#         description, description_web, coords, short, web
+- title: Postdoctoral Researcher
+  org: Doñana Biological Station (EBD-CSIC)
+  unit: Department of Conservation Biology and Global Change
+  city: Seville
+  country: Spain
+  start: 2025-01
+  end: present
+  coords: [37.40, -5.98]
+
+- title: Specialist in ant species identification
+  org: Doñana Biological Station (EBD-CSIC)
+  unit: Department of Conservation Biology and Global Change
+  city: Seville
+  country: Spain
+  start: 2024-05
+  end: 2024-06
+  description: >-
+    Identification of ant species from pitfall trap samples from Spain, France,
+    Belgium and the Netherlands, contributing to ecological research and
+    biodiversity assessments through taxonomic expertise.
+  description_web: >-
+    Identification of ant species from pitfall-trap samples from Spain, France,
+    Belgium and the Netherlands, for ecological research and biodiversity
+    assessments.

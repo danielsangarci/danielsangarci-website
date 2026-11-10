@@ -1,0 +1,11 @@
+# Cursos.
+# Campos: title, org (opcional), hours (opcional), date,
+#         type (received | taught; por defecto received), short, web
+- title: Systematic Reviews and Meta-analysis in R
+  date: 2025
+- title: Optimizing the use of R for ecological analyses
+  date: 2025
+- title: Advanced University Course in Ecological Network Analysis
+  date: 2019
+- title: Animal Tracking Course
+  date: 2018

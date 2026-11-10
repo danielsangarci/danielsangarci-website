@@ -7,3 +7,10 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# CV: datos privados (telefono, correos de referencias) y restos de compilar
+_cv/private.yml
+_cv/pdf/*.log
+_cv/pdf/*.tex
+_cv/pdf/*.bib
+_cv/pdf/*_files/

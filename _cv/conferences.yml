@@ -1,0 +1,108 @@
+# Charlas y posters en congresos.
+# Campos: title, authors ("Apellido, Nombre; Apellido, Nombre; ..."), event,
+#         city (opcional),
+#         country (u "Online"), date (AAAA o AAAA-MM),
+#         type (talk | poster | invited), short, web
+# Los premios van en awards.yml.
+- title: Ants shape the phyllosphere microbiome and drive tree health
+  authors: Sánchez-García, Daniel; Stefanini, Irene; Lőrincz, Ádám; Trigos-Peral, Gema; Casacci, Luca Pietro; Ślipiński, Piotr; Maák, István Elek; Malewski, Tadeusz; Oszako, Tomasz; Witek, Magdalena
+  event: XX Iberian Congress of Myrmecology, Taxomara 2026
+  city: Móstoles
+  country: Spain
+  date: 2026
+  type: poster
+
+- title: Reintroduction provides insight into multimodal mimicry evolution in an ant social parasite
+  authors: Sánchez-García, Daniel; Wynhoff, Irma; d'Ettorre, Patrizia; Leroy, Chloé; Kajzer-Bonk, Joanna; Maák, István Elek; Barbero, Francesca; Casacci, Luca Pietro; Witek, Magdalena
+  event: XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology
+  city: Seville
+  country: Spain
+  date: 2025
+  type: talk
+
+- title: "ANT HUNTERS: A citizen science initiative for ant biodiversity research"
+  authors: Sánchez-García, Daniel; Taheri, Ahmed; Cerdá, Xim; Angulo, Elena
+  event: XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology
+  city: Seville
+  country: Spain
+  date: 2025
+  type: poster
+
+- title: Mariposas mirmecófilas reescriben su lenguaje para adaptarse a nuevas hormigas huésped
+  authors: Sánchez-García, Daniel; Wynhoff, Irma; d'Ettorre, Patrizia; Leroy, Chloé; Kajzer-Bonk, Joanna; Maák, István Elek; Barbero, Francesca; Casacci, Luca Pietro; Witek, Magdalena
+  event: XIX International Congress of Myrmecology, Taxomara 2025
+  city: Girona
+  country: Spain
+  date: 2025
+  type: talk
+
+- title: "ANT HUNTERS: La ciudadanía a la caza de la biodiversidad de hormigas"
+  authors: Sánchez-García, Daniel; Taheri, Ahmed; Cerdá, Xim; Angulo, Elena
+  event: XIX International Congress of Myrmecology, Taxomara 2025
+  city: Girona
+  country: Spain
+  date: 2025
+  type: poster
+
+- title: Modificación del hábitat como herramienta de control de la invasión de la hormiga argentina
+  authors: Sánchez-García, Daniel; Cerdá, Xim; Angulo, Elena
+  event: XVIII International Congress of Myrmecology, Taxomara 2024
+  city: Málaga
+  country: Spain
+  date: 2024
+  type: talk
+
+- title: Recovering native ant communities by removing suitable conditions for the invasive Argentine ant
+  authors: Sánchez-García, Daniel; Cerdá, Xim; Angulo, Elena
+  event: IV International Young Researchers Conference on Invasive Species (IyrCIS)
+  country: Online
+  date: 2024
+  type: talk
+
+- title: Changes in morphology and genetic structure in two populations of *Phengaris* (= *Maculinea*) *teleius* 30 years after separation
+  authors: Sánchez-García, Daniel; Casacci, Luca Pietro; Wynhoff, Irma; Kajzer-Bonk, Joanna; Sztencel-Jabłonka, Anna; Nowicki, Piotr; Witek, Magdalena
+  event: Butterfly Conservation Symposium 2023
+  city: Wyboston
+  country: England
+  date: 2023
+  type: talk
+
+- title: Short-time evolution in the morphology of the myrmecophilous *Maculinea teleius* butterfly
+  authors: Sánchez-García, Daniel; Casacci, Luca Pietro; Wynhoff, Irma; Kajzer-Bonk, Joanna; Nowicki, Piotr; Witek, Magdalena
+  event: 8th Polish Evolutionary Conference
+  city: Toruń
+  country: Poland
+  date: 2022
+  type: talk
+
+- title: "Fotografía de insectos: material, técnicas y aplicaciones"
+  authors: Sánchez-García, Daniel
+  event: XIV International Congress of Myrmecology, Taxomara 2019
+  city: Chefchaouen
+  country: Morocco
+  date: 2019
+  type: talk
+
+- title: ¿Temperatura o competencia, qué afecta más a las hormigas de Doñana?
+  authors: Sánchez-García, Daniel; Cerdá, Xim; Angulo, Elena
+  event: XIII Iberian Congress of Myrmecology, Taxomara 2018
+  city: León
+  country: Spain
+  date: 2018
+  type: talk
+
+- title: "Listado actualizado de las hormigas de la península ibérica e islas Baleares (Hymenoptera: Formicidae)"
+  authors: Sánchez-García, Daniel; Cuesta-Segura, Antonio David; Herraiz, J. A.; Trigos-Peral, Gema; García García, Federico; Catarineu, Chema; Arcos González, Javi; Fernández Martínez, José Alberto
+  event: XII Iberian Congress of Myrmecology, Taxomara 2017
+  city: Madrid
+  country: Spain
+  date: 2017
+  type: poster
+
+- title: Aspectos ecológicos sobre la mirmecocenosis de solana de la Sierra de Javalambre (Teruel)
+  authors: Sánchez-García, Daniel
+  event: XI Iberian Congress of Myrmecology, Taxomara 2016
+  city: Murcia
+  country: Spain
+  date: 2016
+  type: talk
