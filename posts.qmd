@@ -16,3 +16,7 @@ listing:
 page-layout: full
 title-block-banner: false
 ---
+::: pagina-intro
+Free, open-source R Shiny tools I built to make everyday lab work faster and more reproducible, from PCR master mixes to DNA pooling and quality control, plus code to visualise data.
+:::
+

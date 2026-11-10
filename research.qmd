@@ -35,6 +35,10 @@ title-block-banner: false
 comments: false
 ---
 
+::: pagina-intro
+I study how ants interact with each other and with the microbes they carry: from the assembly of ant communities and the spread of invasive species in Doñana to the coevolution of social parasites and their hosts. Here are my main research lines and the projects behind them.
+:::
+
 ## Research lines
 
 ::: {#research_lines}

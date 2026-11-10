@@ -1,4 +1,8 @@
 ---
+# Direcciones antiguas de esta pagina: redirigen aqui
+aliases:
+  - ../../../projects/phd-thesis/phd-thesis.html
+  - ../phd-thesis.html
 description-meta: "Research project by Daniel Sánchez-García: Phengaris teleius adaptations after reintroduction."
 title: "*Phengaris teleius* adaptations after reintroduction"
 description: "Genetic, morphological and behavioural change in a butterfly three decades after its reintroduction."

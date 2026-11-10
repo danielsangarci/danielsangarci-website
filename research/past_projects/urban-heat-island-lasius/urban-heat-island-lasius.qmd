@@ -1,4 +1,7 @@
 ---
+# Direcciones antiguas de esta pagina: redirigen aqui
+aliases:
+  - ../../../projects/urban-heat-island-lasius/urban-heat-island-lasius.html
 description-meta: "Research project by Daniel Sánchez-García: Urban heat island effect on Lasius niger activity."
 title: "Urban heat island effect on *Lasius niger* activity"
 description: "How urban heat and other abiotic stressors shape the activity and growth of the black garden ant."

@@ -126,9 +126,11 @@ comments: false
 
 <script>
 // ---------------------------------------------------------------------
-//  Portada: red de nodos + parallax y desvanecido al bajar
-//  Los nodos flotan despacio y se unen con una línea cuando se acercan,
-//  como una red de co-ocurrencia formándose sola.
+//  Portada: red de interacciones
+//  Hormigas, bacterias y hongos forman una red de dos niveles. Cada pocos
+//  segundos un nodo se enciende y manda una chispa a sus vecinos; al pasar
+//  el raton por un nodo, se enciende mientras siga encima. Ninguna linea
+//  cruza el nombre, el lema ni el boton.
 // ---------------------------------------------------------------------
 (function () {
   var hero   = document.querySelector('.hero-full');
@@ -138,116 +140,299 @@ comments: false
 
   var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ctx = canvas.getContext('2d');
+  var ancho = 0, alto = 0, lazo = null, enPantalla = true, t0 = performance.now();
+  var activo = null;
 
-  var nodos = [], ancho = 0, alto = 0, lazo = null, enPantalla = true;
-  var raton = { x: -9999, y: -9999 };
+  // Tonos de azul del sitio
+  var COL = {
+    ant:       { c: [35, 72, 119] },    // marino
+    bacterium: { c: [79, 124, 181] },   // azul medio
+    fungus:    { c: [147, 176, 212] },  // azul cielo
+    butterfly: { c: [35, 72, 119] }
+  };
+  var RESALTE = [46, 109, 180];         // azul vivo de los destellos
+  var LINEA = [79, 124, 181];
+  var ESPECIES = [
+    ['Lasius niger','ant'], ['Lasius grandis','ant'], ['Messor structor','ant'],
+    ['Linepithema humile','ant'], ['Cataglyphis tartessica','ant'], ['Cataglyphis floricola','ant'],
+    ['Myrmica scabrinodis','ant'], ['Formica fusca','ant'], ['Tapinoma nigerrimum','ant'],
+    ['Aphaenogaster senilis','ant'], ['Temnothorax ibericus','ant'], ['Cardiocondyla obscurior','ant'],
+    ['Phengaris teleius','butterfly'],
+    ['Wolbachia','bacterium'], ['Acinetobacter','bacterium'], ['Pseudomonas','bacterium'],
+    ['Bacillus','bacterium'], ['Streptomyces','bacterium'], ['Serratia','bacterium'],
+    ['Enterobacter','bacterium'], ['Lactobacillus','bacterium'], ['Rhizobium','bacterium'],
+    ['Metarhizium','fungus'], ['Beauveria','fungus'], ['Aspergillus','fungus'],
+    ['Penicillium','fungus'], ['Cladosporium','fungus']
+  ];
 
-  var DIST_ENLACE = 150;   // distancia a la que dos nodos se unen
-  var DIST_RATON  = 190;   // radio de influencia del cursor
+  // Generador aleatorio con semilla: la red sale igual en cada visita
+  var semilla = 7;
+  function azar() { semilla = (semilla * 16807) % 2147483647; return (semilla - 1) / 2147483646; }
+
+  var nodos = [], enlaces = [];
+  function construir() {
+    semilla = 7; nodos = []; enlaces = [];
+    ESPECIES.forEach(function (e) {
+      var tipo = e[1];
+      nodos.push({ nombre: e[0], tipo: tipo, r: tipo === 'ant' ? 6 : tipo === 'butterfly' ? 6.5 : 4,
+                   x: 0, y: 0, ax: 0, ay: 0, fase: azar() * 6.283, grado: 0 });
+    });
+    var hormigas = nodos.filter(function (n) { return n.tipo === 'ant'; });
+    var micro = nodos.filter(function (n) { return n.tipo === 'bacterium' || n.tipo === 'fungus'; });
+    function unir(a, b, tipo) {
+      if (a === b || enlaces.some(function (l) { return (l.a === a && l.b === b) || (l.a === b && l.b === a); })) return;
+      enlaces.push({ a: a, b: b, tipo: tipo }); a.grado++; b.grado++;
+    }
+    micro.forEach(function (m) {
+      var k = 1 + Math.floor(azar() * 3);
+      for (var i = 0; i < k; i++) unir(m, hormigas[Math.floor(azar() * hormigas.length)], 'micro');
+    });
+    for (var i = 0; i < 14; i++) unir(hormigas[Math.floor(azar() * hormigas.length)], hormigas[Math.floor(azar() * hormigas.length)], 'coocurrencia');
+    var phengaris = nodos.find(function (n) { return n.tipo === 'butterfly'; });
+    unir(phengaris, nodos.find(function (n) { return n.nombre === 'Myrmica scabrinodis'; }), 'parasitismo');
+    // particulas de fondo: microbios anonimos que dan densidad
+    for (var j = 0; j < 26; j++) {
+      var p = { nombre: null, tipo: azar() < 0.65 ? 'bacterium' : 'fungus', r: 1.8 + azar() * 1.0,
+                x: 0, y: 0, ax: 0, ay: 0, fase: azar() * 6.283, grado: 0, fondo: true };
+      nodos.push(p);
+      enlaces.push({ a: p, b: hormigas[Math.floor(azar() * hormigas.length)], tipo: 'fondo' });
+    }
+  }
+
+  // Disposicion: muelles en los enlaces, repulsion entre nodos y un hueco
+  // central (elipse) para que el nombre se lea bien
+  function disponer() {
+    var cx = ancho / 2, cy = alto / 2, rx = Math.min(ancho * 0.27, 360), ry = Math.min(alto * 0.25, 210);
+    semilla = 11;
+    nodos.forEach(function (n) {
+      var ang = azar() * 6.283, rad = 0.55 + azar() * 0.45;
+      n.x = cx + Math.cos(ang) * ancho * 0.5 * rad;
+      n.y = cy + Math.sin(ang) * alto * 0.5 * rad;
+    });
+    for (var it = 0; it < 260; it++) {
+      for (var i = 0; i < nodos.length; i++) {
+        var a = nodos[i], fx = 0, fy = 0;
+        for (var j = 0; j < nodos.length; j++) {
+          if (i === j) continue;
+          var b = nodos[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy + 0.01;
+          if (d2 < 40000) { var f = 1600 / d2; fx += dx * f; fy += dy * f; }
+        }
+        var ex = (a.x - cx) / rx, ey = (a.y - cy) / ry, e = ex * ex + ey * ey;
+        if (e < 1) { fx += ex * 40 * (1 - e); fy += ey * 40 * (1 - e); }
+        a.vx = fx; a.vy = fy;
+      }
+      enlaces.forEach(function (l) {
+        var dx = l.b.x - l.a.x, dy = l.b.y - l.a.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+        var largo = l.tipo === 'fondo' ? 80 : 170, f = (d - largo) * 0.02;
+        l.a.vx += dx / d * f * 8; l.a.vy += dy / d * f * 8;
+        l.b.vx -= dx / d * f * 8; l.b.vy -= dy / d * f * 8;
+      });
+      nodos.forEach(function (n) {
+        n.x += Math.max(-6, Math.min(6, n.vx * 0.08));
+        n.y += Math.max(-6, Math.min(6, n.vy * 0.08));
+        n.x = Math.max(24, Math.min(ancho - 24, n.x));
+        n.y = Math.max(24, Math.min(alto - 100, n.y));
+      });
+    }
+    // nada dentro del hueco del texto: se empuja al borde de la elipse
+    nodos.forEach(function (n) {
+      var ex = (n.x - cx) / (rx * 1.12), ey = (n.y - cy) / (ry * 1.12), e = Math.sqrt(ex * ex + ey * ey);
+      if (e < 1) {
+        var k = (1 + azar() * 0.35) / Math.max(e, 0.05);
+        n.x = cx + (n.x - cx) * k; n.y = cy + (n.y - cy) * k;
+        if (e < 0.05) { n.x = cx + rx * 1.12; }
+      }
+      n.x = Math.max(24, Math.min(ancho - 24, n.x));
+      if (n.y > alto - 150) n.y = alto - 150 - azar() * 90;   // sin fila plana abajo
+      n.y = Math.max(24, n.y);
+      n.ax = n.x; n.ay = n.y;
+    });
+  }
+
+  // ---- Zona del texto: ninguna linea cruza el nombre, el lema ni el boton
+  var interior = hero.querySelector('.hero-full__inner'), todos = [];
+  function zonaTexto() {
+    var h = hero.getBoundingClientRect(), r = interior.getBoundingClientRect(), m = 26;
+    return { x0: r.left - h.left - m, y0: r.top - h.top - m, x1: r.right - h.left + m, y1: r.bottom - h.top + m };
+  }
+  // Recorte de Liang-Barsky: ¿el segmento a-b pisa el rectangulo z?
+  function cruza(a, b, z) {
+    var dx = b.ax - a.ax, dy = b.ay - a.ay, t0 = 0, t1 = 1;
+    var p = [-dx, dx, -dy, dy], q = [a.ax - z.x0, z.x1 - a.ax, a.ay - z.y0, z.y1 - a.ay];
+    for (var i = 0; i < 4; i++) {
+      if (p[i] === 0) { if (q[i] < 0) return false; continue; }
+      var t = q[i] / p[i];
+      if (p[i] < 0) { if (t > t1) return false; if (t > t0) t0 = t; }
+      else { if (t < t0) return false; if (t < t1) t1 = t; }
+    }
+    return true;
+  }
+  function podar() {
+    if (!interior) return;
+    var z = zonaTexto();
+    // nodos que caigan dentro de la zona: fuera por el borde mas cercano
+    nodos.forEach(function (n) {
+      if (n.ax > z.x0 && n.ax < z.x1 && n.ay > z.y0 && n.ay < z.y1) {
+        var dArr = n.ay - z.y0, dAb = z.y1 - n.ay, dIz = n.ax - z.x0, dDe = z.x1 - n.ax, min = Math.min(dArr, dAb, dIz, dDe);
+        if (min === dArr) n.ay = z.y0 - 10; else if (min === dAb) n.ay = z.y1 + 10;
+        else if (min === dIz) n.ax = z.x0 - 10; else n.ax = z.x1 + 10;
+      }
+    });
+    enlaces = todos.filter(function (l) { return !cruza(l.a, l.b, z); });
+    // si un nodo se queda sin enlaces, se une al vecino mas cercano que no cruce
+    nodos.forEach(function (n) { n.grado = 0; });
+    enlaces.forEach(function (l) { l.a.grado++; l.b.grado++; });
+    nodos.forEach(function (n) {
+      if (n.grado) return;
+      var mejor = null, dmin = Infinity;
+      nodos.forEach(function (o) {
+        if (o === n || o.fondo) return;
+        var d = Math.hypot(o.ax - n.ax, o.ay - n.ay);
+        if (d < dmin && !cruza(n, o, z)) { dmin = d; mejor = o; }
+      });
+      if (mejor) { enlaces.push({ a: n, b: mejor, tipo: n.fondo ? 'fondo' : 'micro' }); n.grado++; mejor.grado++; }
+    });
+    destellos = [];
+  }
 
   function medir() {
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var r = hero.getBoundingClientRect();
-    ancho = Math.max(1, r.width);
-    alto  = Math.max(1, r.height);
-    canvas.width  = Math.round(ancho * dpr);
-    canvas.height = Math.round(alto * dpr);
-    canvas.style.width  = ancho + 'px';
-    canvas.style.height = alto + 'px';
+    ancho = Math.max(1, r.width); alto = Math.max(1, r.height);
+    canvas.width = Math.round(ancho * dpr); canvas.height = Math.round(alto * dpr);
+    canvas.style.width = ancho + 'px'; canvas.style.height = alto + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    poblar();
+    disponer();
+    podar();
   }
 
-  // Colores tomados del sitio y de tus macros: el azul de la casa, el
-  // azul de la barra, la terracota de la arena, el verde de la hoja y
-  // un ámbar de polen.
-  var PALETA = [
-    [42, 98, 146],
-    [136, 167, 194],
-    [193, 106, 59],
-    [122, 154, 84],
-    [214, 160, 66]
-  ];
-
-  function poblar() {
-    // Densidad proporcional al área, con tope para no castigar al móvil
-    var n = Math.max(26, Math.min(70, Math.round(ancho * alto / 18000)));
-    nodos = [];
-    for (var i = 0; i < n; i++) {
-      nodos.push({
-        x: Math.random() * ancho,
-        y: Math.random() * alto,
-        vx: (Math.random() - 0.5) * 0.20,
-        vy: (Math.random() - 0.5) * 0.20,
-        r: 1.6 + Math.random() * 2.2,
-        c: PALETA[(Math.random() * PALETA.length) | 0]
-      });
-    }
+  function vecinos(n) {
+    var s = new Set([n]);
+    enlaces.forEach(function (l) { if (l.a === n) s.add(l.b); if (l.b === n) s.add(l.a); });
+    return s;
   }
 
-  function pintar() {
+  function rgba(c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a.toFixed(3) + ')'; }
+
+  // ---- Destellos: conexiones que se encienden y se apagan solas -----
+  // Cada destello nace en un nodo, lanza una chispa por cada uno de sus
+  // enlaces y, al llegar, enciende al vecino. Luego todo se desvanece.
+  var destellos = [];
+  var DURA = 4200, VIAJE = 1100;
+  function suave(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function intensidad(d, t) {
+    var e = t - d.t0;
+    if (d.fijo) return suave(e / 400);
+    return suave(e / 500) * (1 - suave((e - DURA + 1400) / 1400));
+  }
+  function encender(n, t, fijo) {
+    if (destellos.some(function (d) { return d.n === n; })) return;
+    destellos.push({ n: n, t0: t, fijo: !!fijo,
+      enlaces: enlaces.filter(function (l) { return l.a === n || l.b === n; }) });
+  }
+
+  function pintar(t) {
     ctx.clearRect(0, 0, ancho, alto);
-    ctx.lineWidth = 1;
+    // movimiento suave alrededor de su sitio (la red no se deshace)
+    nodos.forEach(function (n) {
+      var amp = n.fondo ? 7 : 4;
+      n.x = n.ax + Math.sin(t / 2600 + n.fase) * amp;
+      n.y = n.ay + Math.cos(t / 3100 + n.fase * 1.3) * amp;
+      n.luz = 0;
+    });
+    var luzEnlace = new Map();
+    destellos.forEach(function (d) {
+      var k = intensidad(d, t), avance = suave((t - d.t0) / VIAJE);
+      d.n.luz = Math.max(d.n.luz, k);
+      d.enlaces.forEach(function (l) {
+        var otro = l.a === d.n ? l.b : l.a;
+        luzEnlace.set(l, Math.max(luzEnlace.get(l) || 0, k * (0.35 + 0.65 * avance)));
+        otro.luz = Math.max(otro.luz, k * 0.75 * suave(((t - d.t0) - VIAJE * 0.8) / 500));
+      });
+    });
 
-    for (var i = 0; i < nodos.length; i++) {
-      var a = nodos[i];
+    // enlaces en reposo
+    enlaces.forEach(function (l) {
+      var base = l.tipo === 'fondo' ? 0.10 : l.tipo === 'coocurrencia' ? 0.20 : 0.26;
+      ctx.lineWidth = 1;
+      ctx.setLineDash(l.tipo === 'parasitismo' ? [4, 4] : []);
+      ctx.strokeStyle = rgba(LINEA, base);
+      ctx.beginPath(); ctx.moveTo(l.a.x, l.a.y); ctx.lineTo(l.b.x, l.b.y); ctx.stroke();
+    });
+    ctx.setLineDash([]);
 
-      for (var j = i + 1; j < nodos.length; j++) {
-        var b = nodos[j];
-        var dx = a.x - b.x, dy = a.y - b.y;
-        var d = Math.sqrt(dx * dx + dy * dy);
-        if (d < DIST_ENLACE) {
-          // El enlace hereda la mezcla de los dos nodos que une
-          var m = 1 - d / DIST_ENLACE;
-          ctx.strokeStyle = 'rgba(' +
-            ((a.c[0] + b.c[0]) >> 1) + ',' +
-            ((a.c[1] + b.c[1]) >> 1) + ',' +
-            ((a.c[2] + b.c[2]) >> 1) + ',' +
-            (0.5 * m).toFixed(3) + ')';
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
+    // enlaces encendidos, con un halo suave
+    ctx.save();
+    ctx.lineCap = 'round';
+    luzEnlace.forEach(function (k, l) {
+      if (k < 0.01) return;
+      ctx.shadowColor = rgba(RESALTE, 0.6 * k); ctx.shadowBlur = 8;
+      ctx.lineWidth = 1.6; ctx.strokeStyle = rgba(RESALTE, 0.85 * k);
+      ctx.beginPath(); ctx.moveTo(l.a.x, l.a.y); ctx.lineTo(l.b.x, l.b.y); ctx.stroke();
+    });
+    // chispas que viajan del nodo de origen a sus vecinos
+    destellos.forEach(function (d) {
+      var e = t - d.t0;
+      if (e > VIAJE * 1.1) return;
+      var p = suave(e / VIAJE), k = 1 - suave((e - VIAJE * 0.85) / (VIAJE * 0.25));
+      d.enlaces.forEach(function (l) {
+        var o = l.a === d.n ? l.b : l.a;
+        var x = d.n.x + (o.x - d.n.x) * p, y = d.n.y + (o.y - d.n.y) * p;
+        ctx.shadowColor = rgba(RESALTE, 0.9 * k); ctx.shadowBlur = 14;
+        ctx.fillStyle = 'rgba(255,255,255,' + (0.95 * k).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(x, y, 2.2, 0, 6.283); ctx.fill();
+      });
+    });
+    ctx.restore();
+
+    // nodos
+    nodos.forEach(function (n) {
+      var c = COL[n.tipo].c, a = n.fondo ? 0.55 : 0.95;
+      if (n.luz > 0.01) {
+        var g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r + 16);
+        g.addColorStop(0, rgba(RESALTE, 0.35 * n.luz));
+        g.addColorStop(1, rgba(RESALTE, 0));
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 16, 0, 6.283); ctx.fill();
       }
-
-      // El cursor también teje red a su alrededor
-      var rx = a.x - raton.x, ry = a.y - raton.y;
-      var rd = Math.sqrt(rx * rx + ry * ry);
-      if (rd < DIST_RATON) {
-        ctx.strokeStyle = 'rgba(20,33,61,' + (0.34 * (1 - rd / DIST_RATON)).toFixed(3) + ')';
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(raton.x, raton.y);
-        ctx.stroke();
+      var r = n.r * (1 + 0.25 * n.luz);
+      if (n.tipo === 'butterfly') {
+        ctx.lineWidth = 2.2; ctx.strokeStyle = rgba(c, a);
+        ctx.fillStyle = 'rgba(255,255,255,' + a + ')';
+        ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.283); ctx.fill(); ctx.stroke();
+      } else {
+        ctx.fillStyle = rgba(c, a);
+        ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.283); ctx.fill();
       }
-
-      ctx.fillStyle = 'rgba(' + a.c[0] + ',' + a.c[1] + ',' + a.c[2] + ',0.92)';
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, a.r, 0, 6.283185);
-      ctx.fill();
-    }
+    });
   }
 
-  function paso() {
-    for (var i = 0; i < nodos.length; i++) {
-      var n = nodos[i];
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < -20) n.x = ancho + 20; else if (n.x > ancho + 20) n.x = -20;
-      if (n.y < -20) n.y = alto + 20;  else if (n.y > alto + 20)  n.y = -20;
+  function buscar(x, y) {
+    var mejor = null, dmin = 26;
+    nodos.forEach(function (n) {
+      if (n.fondo) return;
+      var d = Math.hypot(n.x - x, n.y - y);
+      if (d < dmin) { dmin = d; mejor = n; }
+    });
+    return mejor;
+  }
+
+  var proximo = 0;
+  function paso(t) {
+    // un destello nuevo cada ~1,7 s; suele haber dos o tres a la vez
+    if (t > proximo) {
+      var libres = nodos.filter(function (n) {
+        return !n.fondo && n.grado > 1 && n !== activo && !destellos.some(function (d) { return d.n === n; });
+      });
+      if (libres.length) encender(libres[Math.floor(Math.random() * libres.length)], t);
+      proximo = t + 1500 + Math.random() * 600;
     }
-    pintar();
+    destellos = destellos.filter(function (d) { return d.fijo || t - d.t0 < DURA; });
+    pintar(t);
     lazo = requestAnimationFrame(paso);
   }
-
-  function arrancar() {
-    if (quieto || lazo) return;
-    lazo = requestAnimationFrame(paso);
-  }
-  function parar() {
-    if (lazo) { cancelAnimationFrame(lazo); lazo = null; }
-  }
+  function arrancar() { if (quieto || lazo) return; lazo = requestAnimationFrame(paso); }
+  function parar() { if (lazo) { cancelAnimationFrame(lazo); lazo = null; } }
 
   // ---- Parallax y desvanecido -------------------------------------
   function aplicarScroll() {
@@ -257,56 +442,45 @@ comments: false
     hero.style.setProperty('--hero-progreso', p.toFixed(4));
     bg.style.transform = 'translate3d(0,' + (y * 0.35).toFixed(1) + 'px,0)';
   }
-
   var pendiente = false;
   function alHacerScroll() {
-    if (pendiente) return;
-    pendiente = true;
-    requestAnimationFrame(function () {
-      pendiente = false;
-      aplicarScroll();
-    });
+    if (pendiente) return; pendiente = true;
+    requestAnimationFrame(function () { pendiente = false; aplicarScroll(); });
   }
 
   // ---- Puesta en marcha -------------------------------------------
-  medir();
-  pintar();   // primer fotograma inmediato: si la pestaña se abre en
-              // segundo plano rAF está suspendido y la portada se
-              // quedaría vacía hasta que el visitante la mirase.
+  construir(); todos = enlaces.slice(); medir(); pintar(performance.now());
+
+  // Al pasar el raton por un nodo, se enciende mientras siga encima
+  hero.addEventListener('pointermove', function (e) {
+    if (quieto) return;
+    var r = hero.getBoundingClientRect();
+    var n = buscar(e.clientX - r.left, e.clientY - r.top);
+    if (n === activo) return;
+    var t = performance.now();
+    destellos.forEach(function (d) { if (d.fijo) { d.fijo = false; d.t0 = t - DURA + 1400; } });
+    activo = n;
+    if (n) { destellos = destellos.filter(function (d) { return d.n !== n; }); encender(n, t, true); }
+  });
+  hero.addEventListener('pointerleave', function () {
+    var t = performance.now();
+    destellos.forEach(function (d) { if (d.fijo) { d.fijo = false; d.t0 = t - DURA + 1400; } });
+    activo = null;
+  });
 
   if (!quieto) {
     arrancar();
     window.addEventListener('scroll', alHacerScroll, { passive: true });
     aplicarScroll();
-
-    hero.addEventListener('pointermove', function (e) {
-      var r = hero.getBoundingClientRect();
-      raton.x = e.clientX - r.left;
-      raton.y = e.clientY - r.top;
-    });
-    hero.addEventListener('pointerleave', function () {
-      raton.x = raton.y = -9999;
-    });
-
-    // No gastar batería dibujando una portada que ya no se ve
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entradas) {
-        enPantalla = entradas[0].isIntersecting;
-        if (enPantalla) arrancar(); else parar();
-      }, { threshold: 0 }).observe(hero);
+      new IntersectionObserver(function (en) { enPantalla = en[0].isIntersecting; if (enPantalla) arrancar(); else parar(); }, { threshold: 0 }).observe(hero);
     }
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) parar(); else if (enPantalla) arrancar();
-    });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) parar(); else if (enPantalla) arrancar(); });
   }
-
   var temporizador;
   window.addEventListener('resize', function () {
     clearTimeout(temporizador);
-    temporizador = setTimeout(function () {
-      medir();
-      if (quieto) pintar();
-    }, 150);
+    temporizador = setTimeout(function () { medir(); pintar(performance.now()); }, 150);
   });
 })();
 </script>
@@ -468,7 +642,12 @@ comments: false
 ```
 
 ::::::::::::: {.home .column-page}
-::::::: {#about .grid .align-items-center .py-5 .my-4}
+<!-- Portada en dos columnas a partir de 1440 px: a la izquierda el perfil y
+     las tarjetas, a la derecha la columna de noticias de arriba abajo. En
+     pantallas mas estrechas las noticias van justo debajo del perfil. -->
+:::::::::::::: home-columnas
+:::::::::::: home-principal
+::::::: {#about .grid .align-items-center .pt-5 .pb-4 .mt-4 .mb-3}
 ::: {.g-col-12 .g-col-lg-4 .about-photo .animate-fade-up}
 ![](img/dani.jpg){.hero-avatar-lg .rounded-circle fig-alt="Daniel Sánchez-García"}
 :::
@@ -484,7 +663,7 @@ I am an ecologist and Postdoctoral Researcher at the Doñana Biological Station 
 :::::
 :::::::
 
-::::: {.grid .my-5}
+::::: {.grid .mt-4 .mb-5}
 ::: {.g-col-12 .g-col-md-6 .card .home-card .p-4 .animate-fade-up .delay-1}
 ::: home-card__cabecera
 [{{< fa dna >}}]{.card-icon}
@@ -530,26 +709,72 @@ Feel free to [contact me](contact.qmd) for scientific collaboration or getting s
 :::
 ::::
 
-```{=html}
-<!-- Sección de novedades, lista y a la espera de contenido. Para
-     activarla: quitar esta línea de comentario y la del final, y añadir
-     una entrada por línea dentro de news-list, la más reciente arriba.
-     La fecha va en [ ]{.news-date} y el texto detrás. Con las 5 últimas
-     es suficiente. Mientras no haya noticias se queda sin renderizar:
-     una tarjeta "News" vacía en la portada parece un fallo.
+::::::::::::
 
-::::: {.grid .my-5}
-:::: {.g-col-12 .card .home-card .p-4 .animate-fade-up .delay-1}
-[{{< fa bullhorn >}}]{.card-icon}
-
-### News
+<!-- Noticias: todas, la mas reciente arriba. La fecha va en [ ]{.news-date}.
+     Si una noticia tiene enlace, toda ella se puede pulsar y lleva al
+     primero (por ejemplo, al DOI de la publicacion). -->
+:::::::::::: {.home-noticias .animate-fade-up .delay-2}
+[{{< fa bullhorn >}} News]{.about-news__titulo}
 
 ::: news-list
-- [Mes Año]{.news-date} Texto de la novedad.
+- [Oct 2026]{.news-date} New preprint on how habitat management reduced the invasive [Argentine ant in Doñana](https://doi.org/10.64898/2026.10.08.756264).
+- [May 2026]{.news-date} Our study of ant diversity in the Yangambi Biosphere Reserve (DR Congo) is out in [*African Invertebrates*](https://doi.org/10.3897/afrinvertebr.67.180461).
+- [Dec 2025]{.news-date} New preprint on the [ongoing coevolution](https://doi.org/10.64898/2025.12.02.691951) between reintroduced *Phengaris teleius* and its host ants.
+- [Sep 2025]{.news-date} [Best oral presentation award](cv.qmd#funding-and-awards) at the XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology.
+- [Jan 2025]{.news-date} I joined the [Ant Ecology Group](https://www.ant-ecology.eu/) at the Doñana Biological Station (EBD-CSIC) as a postdoctoral researcher.
 :::
-::::
-:::::
 
--->
+```{=html}
+<button type="button" class="home-noticias__mas" aria-expanded="false">Show all news ↓</button>
+<script>
+// En pantallas estrechas se ven las 3 ultimas noticias; el boton muestra el resto
+document.addEventListener('click', function (ev) {
+  var b = ev.target.closest('.home-noticias__mas');
+  if (!b) return;
+  var caja = b.closest('.home-noticias');
+  var abierta = caja.classList.toggle('is-abierta');
+  b.setAttribute('aria-expanded', abierta);
+  b.textContent = abierta ? 'Show fewer ↑' : 'Show all news ↓';
+});
+</script>
 ```
+::::::::::::
+::::::::::::::
 :::::::::::::
+
+```{=html}
+<!-- Datos estructurados (schema.org) para Google: quien es el autor de la
+     web y sus perfiles. No se ven en la pagina. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniel Sánchez-García",
+  "url": "https://danielsangarci.com/",
+  "image": "https://danielsangarci.com/img/dani.jpg",
+  "jobTitle": "Postdoctoral Researcher",
+  "description": "Ecologist studying species interactions in ant, microbiome and mycobiome communities.",
+  "worksFor": {
+    "@type": "ResearchOrganization",
+    "name": "Doñana Biological Station (EBD-CSIC)",
+    "url": "https://www.ebd.csic.es/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Seville", "addressCountry": "ES" }
+  },
+  "alumniOf": [
+    { "@type": "ResearchOrganization", "name": "Museum and Institute of Zoology, Polish Academy of Sciences" },
+    { "@type": "CollegeOrUniversity", "name": "Universidad Pablo de Olavide" },
+    { "@type": "CollegeOrUniversity", "name": "Universitat de València" }
+  ],
+  "knowsAbout": ["Ant ecology", "Myrmecology", "Insect microbiome", "Myrmecophilous butterflies", "Community ecology", "Invasive species", "Open science", "Macro photography"],
+  "identifier": { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0002-0710-6292" },
+  "sameAs": [
+    "https://orcid.org/0000-0002-0710-6292",
+    "https://scholar.google.com/citations?user=5EQSDqwAAAAJ",
+    "https://github.com/danielsangarci",
+    "https://www.researchgate.net/profile/Daniel-Sanchez-Garcia",
+    "https://www.instagram.com/danielsangarci_wildlife/"
+  ]
+}
+</script>
+```

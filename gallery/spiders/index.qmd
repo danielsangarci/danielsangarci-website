@@ -5,9 +5,9 @@ image: ../../img/spider2_small.jpg
 ---
 
 ::: {.photo-grid}
-![](../../img/spider1_small.jpg){group="spiders"}
+![](../../img/spider1_small.jpg){group="spiders" fig-alt="Small spider on a leaf" description="Small spider on a leaf"}
 
-![](../../img/spider2_small.jpg){group="spiders"}
+![](../../img/spider2_small.jpg){group="spiders" fig-alt="Long-legged spider on its web" description="Long-legged spider on its web"}
 
-![](../../img/spider3_small.jpg){group="spiders"}
+![](../../img/spider3_small.jpg){group="spiders" fig-alt="Jumping spider on a rock" description="Jumping spider on a rock"}
 :::

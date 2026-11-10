@@ -1,4 +1,7 @@
 ---
+# Direcciones antiguas de esta pagina: redirigen aqui
+aliases:
+  - ../../../projects/ant-plant-bacteria/ant-plant-bacteria.html
 description-meta: "Research project by Daniel Sánchez-García: Ants as bacteria dispersal vectors and indirect drivers of plant health."
 title: "Ants as bacteria dispersal vectors and indirect drivers of plant health"
 description: "Do ants selectively spread bacteria to the plants they visit, and does it affect plant health?"

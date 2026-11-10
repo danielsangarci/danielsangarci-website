@@ -5,11 +5,11 @@ image: ../../img/messor_structor_small.jpg
 ---
 
 ::: {.photo-grid}
-![](../../img/messor_structor_small.jpg){group="ants"}
+![](../../img/messor_structor_small.jpg){group="ants" fig-alt="Messor structor harvester ant carrying a seed pod" description="Messor structor harvester ant carrying a seed pod"}
 
-![](../../img/formica1_small.jpg){group="ants"}
+![](../../img/formica1_small.jpg){group="ants" fig-alt="Formica ant on sandy ground" description="Formica ant on sandy ground"}
 
-![](../../img/lasius_grandis_small.jpg){group="ants"}
+![](../../img/lasius_grandis_small.jpg){group="ants" fig-alt="Lasius grandis ant on bark" description="Lasius grandis ant on bark"}
 
-![](../../img/solenopsis1_small.jpg){group="ants"}
+![](../../img/solenopsis1_small.jpg){group="ants" fig-alt="Solenopsis ants" description="Solenopsis ants"}
 :::

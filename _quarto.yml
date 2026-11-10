@@ -22,7 +22,7 @@ website:
   twitter-card:
     card-style: summary_large_image
   navbar:
-    background: "#DCE6EF"
+    background: "#DDE5F1"
     foreground: dark
     search: false
     pinned: false
@@ -49,14 +49,34 @@ website:
   reader-mode: false
   google-analytics: "G-H3GD3Z7KWV"
   
-  page-footer: 
+  page-footer:
     left: |
-      {{< fa regular copyright >}} Daniel Sánchez-García, 2026<br>
-      All content licensed under {{< fa brands creative-commons >}}
-      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-sa >}} {{< fa brands creative-commons-nc >}} [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
-      
-    right: |
-      Made with [{{< fa brands r-project >}}](https://posit.co/) and [Quarto](https://quarto.org/)<br>
+      {{< fa regular copyright >}} 2026 Daniel Sánchez-García<br>
+      Content licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) · Made with [Quarto](https://quarto.org/)
+    center:
+      - text: Publications
+        href: publications.qmd
+      - text: CV
+        href: cv.qmd
+      - text: Contact
+        href: contact.qmd
+    right:
+      # direccion completa: con "contact.qmd" Quarto pone el titulo de la pagina en vez del icono
+      - icon: envelope
+        href: https://danielsangarci.com/contact.html
+        aria-label: Contact
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=5EQSDqwAAAAJ&hl=en
+        aria-label: Google Scholar
+      - icon: person-badge
+        href: https://orcid.org/0000-0002-0710-6292
+        aria-label: ORCID
+      - icon: github
+        href: https://github.com/danielsangarci
+        aria-label: GitHub
+      - icon: instagram
+        href: https://www.instagram.com/danielsangarci_wildlife/
+        aria-label: Instagram
   
 format:
   html:
@@ -68,7 +88,7 @@ format:
     css: styles.css
     toc: true
     page-layout: full
-    linkcolor: "#2A6292"
+    linkcolor: "#234877"
     smooth-scroll: true
     include-in-header: icono.html
 

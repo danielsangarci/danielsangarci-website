@@ -5,13 +5,13 @@ image: ../../img/bee1_small.jpg
 ---
 
 ::: {.photo-grid}
-![](../../img/bee1_small.jpg){group="others"}
+![](../../img/bee1_small.jpg){group="others" fig-alt="Bee at the entrance of its nest in the ground" description="Bee at the entrance of its nest in the ground"}
 
-![](../../img/grasshopper_small.jpg){group="others"}
+![](../../img/grasshopper_small.jpg){group="others" fig-alt="Grasshopper nymph on a leaf" description="Grasshopper nymph on a leaf"}
 
-![](../../img/mantis1_small.jpg){group="others"}
+![](../../img/mantis1_small.jpg){group="others" fig-alt="Young praying mantis on a leaf" description="Young praying mantis on a leaf"}
 
-![](../../img/ephem1_small.jpg){group="others"}
+![](../../img/ephem1_small.jpg){group="others" fig-alt="Mayfly resting on a leaf" description="Mayfly resting on a leaf"}
 
-![](../../img/snail1_small.jpg){group="others"}
+![](../../img/snail1_small.jpg){group="others" fig-alt="Snail extending its eye stalks" description="Snail extending its eye stalks"}
 :::

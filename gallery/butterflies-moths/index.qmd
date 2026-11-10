@@ -5,9 +5,9 @@ image: ../../img/macu1_small.jpg
 ---
 
 ::: {.photo-grid}
-![](../../img/macu1_small.jpg){group="lepidoptera"}
+![](../../img/macu1_small.jpg){group="lepidoptera" fig-alt="Mating pair of Phengaris butterflies on a leaf" description="Mating pair of Phengaris butterflies on a leaf"}
 
-![](../../img/macu2_small.jpg){group="lepidoptera"}
+![](../../img/macu2_small.jpg){group="lepidoptera" fig-alt="Myrmica ant with its brood and a Phengaris caterpillar" description="Myrmica ant with its brood and a Phengaris caterpillar"}
 
-![](../../img/caterpillar_small.jpg){group="lepidoptera"}
+![](../../img/caterpillar_small.jpg){group="lepidoptera" fig-alt="Moth caterpillar on a twig" description="Moth caterpillar on a twig"}
 :::

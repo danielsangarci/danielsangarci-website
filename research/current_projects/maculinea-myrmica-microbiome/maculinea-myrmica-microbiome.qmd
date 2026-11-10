@@ -1,4 +1,7 @@
 ---
+# Direcciones antiguas de esta pagina: redirigen aqui
+aliases:
+  - ../../../projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html
 description-meta: "Research project by Daniel Sánchez-García: Phengaris teleius and Myrmica spp. microbiome interaction."
 title: "*Phengaris teleius* and *Myrmica* spp. microbiome interaction"
 description: "How the microbiomes of a social-parasite butterfly and its *Myrmica* host ants interact."

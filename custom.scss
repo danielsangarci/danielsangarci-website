@@ -24,8 +24,10 @@ $headings-font-family: "Montserrat", "Inter", -apple-system, BlinkMacSystemFont,
   "Segoe UI", Roboto, sans-serif !default;
 
 // ---------------------------------------------------------------------
-//  2. Paleta — se conserva la identidad actual del sitio
-//     (#2A6292 enlaces / #DCE6EF navbar) sobre un fondo casi blanco.
+//  2. Paleta: solo tonos de azul. Marino (#234877, enlaces y botones),
+//     azul medio (#4F7CB5) y cielo (#93B0D4) para detalles, sobre un fondo
+//     casi blanco y la barra de menu en un azul muy claro (#DDE5F1).
+//     El azul anterior era #2A6292.
 //     #88A7C2 sigue vivo en el resplandor del hero, las citas y btn-secondary.
 // ---------------------------------------------------------------------
 $white:    #ffffff;
@@ -39,7 +41,7 @@ $gray-700: #49525c;
 $gray-800: #2b3138;
 $gray-900: #16191d;
 
-$primary:   #2a6292;   // azul del sitio
+$primary:   #234877;   // azul marino del sitio
 $secondary: #88a7c2;   // azul de la navbar
 $success:   #3f8f6b;
 $info:      #4b8bbe;
@@ -49,8 +51,13 @@ $light:     $gray-100;
 $dark:      $gray-900;
 
 // Tinte de acento para fondos suaves y estados hover
-$dsg-ink:          #14213d;              // "tinta" para titulares
-$dsg-primary-soft: rgba(42, 98, 146, 0.08);
+$dsg-ink:          #14213d;
+// Acento: azul medio, solo decorativo (barritas, puntos, iconos, subrayados).
+// El texto va siempre en azul marino o gris, que se leen mejor.
+$dsg-accent:       #4f7cb5;   // azul medio
+$dsg-accent-soft:  #e8eef7;   // azul palido (fondos suaves)
+$dsg-accent-dark:  #234877;   // iconos y etiquetas sobre fondo suave              // "tinta" para titulares
+$dsg-primary-soft: rgba(35, 72, 119, 0.08);
 $dsg-hairline:     rgba(20, 33, 61, 0.08); // bordes sutiles
 
 // ---------------------------------------------------------------------
@@ -88,7 +95,7 @@ $lead-font-weight: 400;
 //  4. Enlaces
 // ---------------------------------------------------------------------
 $link-color:            $primary;
-$link-hover-color:      #1c456b;
+$link-hover-color:      #16335a;
 $link-decoration:       none;
 $link-hover-decoration: underline;
 
@@ -237,11 +244,17 @@ hr {
   opacity: 1;
 }
 
+// Enlaces dentro de un parrafo: subrayado fino siempre visible. Con el azul
+// marino, el color solo no basta para distinguirlos del texto (accesibilidad)
+main p a:not(.btn):not(.home-card__enlace):not(.about-news__enlace):not(.pub-btn):not(.social-pills a) {
+  text-decoration: underline;
+}
+
 // Enlaces de contenido: subrayado elegante que aparece al pasar
 main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc-action) {
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba(42, 98, 146, 0.35);
+  text-decoration-color: rgba(35, 72, 119, 0.35);
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 
   &:hover {
@@ -277,14 +290,14 @@ main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc
 
   &:hover,
   &:focus-visible {
-    background-color: #1c456b;
-    border-color: #1c456b;
+    background-color: #16335a;
+    border-color: #16335a;
     color: $white;
   }
 }
 
 .btn-outline-primary {
-  border-color: rgba(42, 98, 146, 0.35);
+  border-color: rgba(35, 72, 119, 0.35);
   color: $primary;
   background-color: rgba(255, 255, 255, 0.6);
 
@@ -332,7 +345,7 @@ main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc
 .quarto-post:hover {
   transform: translateY(-8px);
   box-shadow: $dsg-shadow-hover;
-  border-color: rgba(42, 98, 146, 0.22);
+  border-color: rgba(35, 72, 119, 0.22);
 }
 
 // Utilidad reutilizable para elevar cualquier bloque
@@ -624,11 +637,11 @@ main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc
   // Fondo claro con lavados de color muy difusos, a medio camino
   // entre el blanco del sitio y el desenfoque de una foto macro.
   background:
-    radial-gradient(58% 48% at 12% 18%, rgba(136, 167, 194, 0.34) 0%, rgba(136, 167, 194, 0) 100%),
-    radial-gradient(52% 44% at 88% 26%, rgba(214, 160, 66, 0.20) 0%, rgba(214, 160, 66, 0) 100%),
-    radial-gradient(62% 52% at 74% 88%, rgba(122, 154, 84, 0.22) 0%, rgba(122, 154, 84, 0) 100%),
-    radial-gradient(50% 46% at 22% 86%, rgba(193, 106, 59, 0.16) 0%, rgba(193, 106, 59, 0) 100%),
-    linear-gradient(165deg, #fbfcfd 0%, #f2f7fa 48%, #edf3f6 100%);
+    radial-gradient(58% 48% at 12% 18%, rgba(147, 176, 212, 0.32) 0%, rgba(147, 176, 212, 0) 100%),
+    radial-gradient(52% 44% at 88% 26%, rgba(79, 124, 181, 0.14) 0%, rgba(79, 124, 181, 0) 100%),
+    radial-gradient(62% 52% at 74% 88%, rgba(35, 72, 119, 0.10) 0%, rgba(35, 72, 119, 0) 100%),
+    radial-gradient(50% 46% at 22% 86%, rgba(147, 176, 212, 0.22) 0%, rgba(147, 176, 212, 0) 100%),
+    linear-gradient(165deg, #fbfcfe 0%, #f2f6fb 48%, #edf2f8 100%);
 }
 
 // --- Capas de imagen -------------------------------------------------
@@ -1083,7 +1096,7 @@ main a:not(.btn):not(.nav-link):not(.about-link):not(.quarto-grid-link):not(.toc
     transition: $dsg-ease;
 
     &:hover {
-      border-left-color: rgba(42, 98, 146, 0.4);
+      border-left-color: rgba(35, 72, 119, 0.4);
       color: $primary;
     }
 
@@ -1242,8 +1255,8 @@ a.lightbox {
   &:hover {
     transform: translateY(-3px);
     box-shadow: $dsg-shadow-hover;
-    border-color: rgba(42, 98, 146, 0.25);
-    color: #1c456b;
+    border-color: rgba(35, 72, 119, 0.25);
+    color: #16335a;
   }
 }
 
@@ -1340,7 +1353,7 @@ a.lightbox {
     &:hover {
       transform: translateY(-3px);
       box-shadow: $dsg-shadow-hover;
-      border-color: rgba(42, 98, 146, 0.25);
+      border-color: rgba(35, 72, 119, 0.25);
       color: $primary;
       text-decoration: none;
     }
@@ -2253,3 +2266,229 @@ a.pub-circulo:hover .pub-circulo__aro { transform: translateY(-2px); box-shadow:
 .home-card > p:has(.home-card__enlace) { margin-top: auto; padding-top: 0.4rem; }
 // La imagen de cabecera de "jolla" tiene ancho fijo (22em): en el movil se salia
 .quarto-about-jolla .about-image { max-width: 100%; height: auto; }
+
+// ---------------------------------------------------------------------
+//  Noticias de la portada (index.qmd), tipo blog: la mas reciente arriba
+//  - >= 1440 px: columna a la derecha de toda la portada, de arriba abajo,
+//    con todas las noticias.
+//  - < 1440 px: justo debajo del perfil, las 3 ultimas y un boton para
+//    ver el resto.
+// ---------------------------------------------------------------------
+.home-columnas { display: flex; flex-direction: column; }
+// En estrecho, los bloques de la columna principal se ordenan junto a las
+// noticias: perfil, noticias, tarjetas
+.home-principal { display: contents; }
+.home-principal > * { order: 3; }
+.home-principal > #about { order: 1; }
+.home-noticias { order: 2; margin: 0 0 2.5rem; }
+
+.about-news__titulo {
+  display: block;
+  margin: 0 0 0.6rem;
+  font-family: $headings-font-family;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $primary;
+  .svg-inline--fa, i { margin-right: 0.35rem; }
+}
+.home-noticias {
+  > p { margin: 0; }
+  .news-list ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .news-list li {
+    margin: 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid $dsg-hairline;
+    border-radius: 0.8rem;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: $gray-700;
+    &:last-child { padding-bottom: 1rem; border-bottom: 1px solid $dsg-hairline; }
+  }
+  .news-date { position: static; display: block; margin-bottom: 0.25rem; }
+  // en estrecho, solo las 3 ultimas hasta pulsar "Show all news"
+  &:not(.is-abierta) .news-list li:nth-child(n + 4) { display: none; }
+}
+.home-noticias__mas {
+  margin-top: 0.8rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: $headings-font-family;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: $primary;
+  cursor: pointer;
+  &:hover { color: $dsg-ink; }
+}
+@media (max-width: 767.98px) {
+  .home-noticias .news-list ul { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; }
+}
+
+@media (min-width: 1440px) {
+  // La portada se ensancha para que quepa la columna sin estrechar el resto
+  .home-columnas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 265px;
+    column-gap: 2.25rem;
+    width: min(1480px, calc(100vw - 5.5rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .home-principal { display: block; }
+  .home-noticias {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 3rem 0 3rem;
+    padding-left: 1.75rem;
+    border-left: 1px solid $dsg-hairline;   // la linea baja hasta el final
+    .news-list ul { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .news-list li,
+    .news-list li:last-child {
+      padding: 0.9rem 0;
+      border: 0;
+      border-bottom: 1px solid $dsg-hairline;
+      border-radius: 0;
+      background: transparent;
+      font-size: 0.82rem;
+    }
+  }
+  // en ancho se ven todas (anula el limite de 3 de las pantallas estrechas)
+  .home-noticias:not(.is-abierta) .news-list li:nth-child(n + 4) { display: block; }
+  .home-noticias__mas { display: none; }
+  // Perfil dentro de la columna principal: foto a su tamano, texto amplio
+  #about {
+    grid-template-columns: 250px minmax(0, 1fr);
+    > * { grid-column: auto !important; }
+  }
+  #about .about-photo img { width: 233px; max-width: 100%; height: auto; }
+}
+
+
+// Noticias con enlace: se puede pulsar toda la noticia, que lleva a su
+// primer enlace (el ::after del enlace cubre la tarjeta entera)
+.home-noticias .news-list li:has(a) {
+  position: relative;
+  cursor: pointer;
+  transition: $dsg-ease;
+  a:first-of-type::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  // flecha que indica que hay mas informacion
+  &::after {
+    content: "→";
+    position: absolute;
+    top: 0.85rem;
+    right: 0.9rem;
+    font-size: 0.85rem;
+    color: $gray-500;
+    transition: $dsg-ease;
+  }
+  &:hover {
+    border-color: rgba($primary, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba($primary, 0.08);
+    &::after { color: $primary; transform: translateX(3px); }
+  }
+}
+@media (min-width: 1440px) {
+  // en la columna lateral, sin elevar la tarjeta: solo se resalta
+  .home-noticias .news-list li:has(a) {
+    padding-right: 1.4rem;
+    &::after { top: 0.95rem; right: 0.1rem; }
+    &:hover { transform: none; box-shadow: none; .news-date { color: $dsg-ink; } }
+  }
+}
+
+// Barra de menu: en pantallas muy anchas, el logo y el menu no se van a los
+// bordes; se alinean con el ancho del contenido de la pagina
+.navbar .navbar-container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// ---------------------------------------------------------------------
+//  Acento azul: detalles en hero, portada, menu y Publications
+// ---------------------------------------------------------------------
+.hero-full__title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin: 1rem auto 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, $primary, #93b0d4);
+}
+.hero-full .hero-cta { --hero-cta-luz: #{$dsg-accent}; }
+.hero-full .hero-cta:hover,
+.hero-full .hero-cta:focus-visible { background-color: $primary; color: #ffffff; }
+.navbar .nav-link.active { box-shadow: inset 0 -2px 0 $primary; }
+.card-icon { background-color: $dsg-accent-soft; color: $dsg-accent-dark; }
+.home-noticias .news-list li:has(a)::after { color: $dsg-accent; }
+.about-news__titulo .svg-inline--fa,
+.about-news__titulo i { color: $dsg-accent-dark; }
+.pub-badge--preprint { background-color: $dsg-accent-soft; color: $dsg-accent-dark; }
+.pubs-resumen { border-top: 4px solid $dsg-accent; }
+.pubs-columna:hover .pubs-columna__barra,
+.pubs-columna:focus-visible .pubs-columna__barra { background-color: $dsg-accent; }
+
+
+// ---------------------------------------------------------------------
+//  Introducciones de pagina (Research, Code & Tools, Gallery)
+// ---------------------------------------------------------------------
+.pagina-intro {
+  max-width: 46rem;
+  margin: -0.4rem 0 2.2rem;
+  p { margin: 0 0 0.6rem; font-size: 1.05rem; line-height: 1.7; color: $gray-600; }
+}
+
+// ---------------------------------------------------------------------
+//  Pie de pagina: licencia | accesos rapidos | redes
+// ---------------------------------------------------------------------
+.nav-footer {
+  border-top: 3px solid $primary;
+  .nav-footer-center .nav-link,
+  .nav-footer-center a { font-weight: 600; font-size: 0.8rem; color: $dsg-ink; }
+  .nav-footer-right .nav-link,
+  .nav-footer-right a { font-size: 1.05rem; color: $gray-600; transition: $dsg-ease; }
+  .nav-footer-right a:hover { color: $primary; transform: translateY(-2px); }
+}
+
+// ---------------------------------------------------------------------
+//  Boton "volver arriba"
+// ---------------------------------------------------------------------
+.volver-arriba {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border: 1px solid $dsg-hairline;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: $primary;
+  box-shadow: 0 6px 18px rgba(20, 33, 61, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: $dsg-ease;
+  &.is-visible { opacity: 1; visibility: visible; transform: none; }
+  &:hover { background-color: $primary; color: #ffffff; box-shadow: 0 0 0 3px rgba($dsg-accent, 0.6), 0 8px 20px rgba(20, 33, 61, 0.18); }
+}
+@media print { .volver-arriba { display: none; } }

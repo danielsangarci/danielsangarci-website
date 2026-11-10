@@ -179,6 +179,32 @@ const hayDimensions = conMetricas && items.some(i => i.doi);
   <% } %>
 </div>
 
+<%
+// Datos estructurados (schema.org) para Google y Google Scholar: una lista
+// de ScholarlyArticle. Texto plano, sin HTML, y "<" escapado.
+const plano = (t) => (t || "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim();
+const autoresBib = (b) => { const m = /author = \{([^}]*)\}/.exec(b || ""); return m ? m[1].split(" and ").map(a => ({ "@type": "Person", "name": a.trim() })) : []; };
+const ld = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Publications by Daniel Sánchez-García",
+  "itemListElement": items.map((it, k) => ({
+    "@type": "ListItem",
+    "position": k + 1,
+    "item": Object.assign({
+      "@type": it.type === "chapter" ? "Chapter" : "ScholarlyArticle",
+      "name": plano(it.title),
+      "headline": plano(it.title).slice(0, 110),
+      "datePublished": String(it.year),
+      "author": autoresBib(it.bibtex),
+      "isPartOf": { "@type": it.type === "chapter" ? "Book" : "Periodical", "name": plano(it.venue).split(",")[0].replace(/^In .*?, /, "") },
+      "url": it.url
+    }, it.doi ? { "sameAs": "https://doi.org/" + it.doi, "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": it.doi } } : {},
+       it.abstract ? { "abstract": plano(it.abstract) } : {})
+  }))
+};
+%>
+<script type="application/ld+json"><%= JSON.stringify(ld).replace(/</g, "\\u003c") %></script>
 <% if (hayDimensions) { %><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script><% } %>
 <script>
 (function () {

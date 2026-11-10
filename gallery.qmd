@@ -19,7 +19,9 @@ page-layout: full
 
 {{< fa hammer >}} Under construction: more photos coming soon.
 
+::: pagina-intro
 Macro photography of the small creatures I meet in the field and in the lab. If you would like to use any of these images, or see more on my [{{< fa brands instagram >}} Instagram](https://www.instagram.com/danielsangarci_wildlife/?hl=es), please [contact me](contact.qmd).
+:::
 
 ::: {#galleries}
 :::

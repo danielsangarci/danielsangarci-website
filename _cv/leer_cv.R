@@ -289,6 +289,9 @@ cv_bib_publicaciones <- function(publicaciones_yml, salida) {
       titulo <- gsub("\\s+", " ", titulo)
       b <- sub("title = \\{[^\n]*\\},", paste0("title = {", gsub("\\\\", "\\\\\\\\", titulo), "},"), b)
     }
+    # Titulo entre llaves dobles: el estilo APA pasa los titulos a minusculas
+    # ("donana", "yangambi"...); asi se respetan tal cual se publicaron
+    b <- sub("(\n\\s*title = \\{)([^\n]*)(\\},\n)", "\\1{\\2}\\3", b, perl = TRUE)
     b
   }, character(1))
   writeLines(bib, salida, useBytes = TRUE)
@@ -304,7 +307,8 @@ cv_bib_congresos <- function(congresos, salida) {
     autores <- paste(trimws(strsplit(e$authors, ";")[[1]]), collapse = " and ")
     titulo <- gsub("\\*([^*]+)\\*", "{\\\\textit{\\1}}", e$title)
     lugar <- if (.cv_vacio(e$city)) "" else sprintf("   volume = {%s},\n", e$city)
-    sprintf(paste0("@article{congreso%d,\n   author = {%s},\n   title = {%s},\n",
+    # titulo entre llaves dobles para que el estilo no lo pase a minusculas
+    sprintf(paste0("@article{congreso%d,\n   author = {%s},\n   title = {{%s}},\n",
                    "   journal = {%s},\n%s   pages = {%s (%s)},\n   year = {%s}\n}\n"),
             i, autores, titulo, e$event, lugar, e$country,
             etiqueta[[e$type]], substr(as.character(e$date), 1, 4))
