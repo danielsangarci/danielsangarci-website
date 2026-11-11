@@ -3,7 +3,10 @@
 #         description, description_web, coords, map_icon, short, web
 # map_icon: icono en el mapa (dot, university, flask, person). Por defecto, dot.
 # Traducciones: el mismo campo con _es (title_es, org_es, description_es...).
-- title: MSc in Secondary Education Teacher Training (Biology and Geology)
+- title: >-
+    Master's Degree in Teacher Training for Compulsory Secondary Education,
+    Upper Secondary Education, Vocational Training and Language Teaching
+    (specialization in Biology and Geology)
   title_es: >-
     Máster Universitario en Formación del Profesorado de Educación Secundaria
     Obligatoria, Bachillerato, Formación Profesional y Enseñanza de Idiomas
@@ -16,11 +19,11 @@
   end: 2026-06
   # Sin coords: es un master online, no sale en el mapa del PDF.
   description: >-
-    Official 60 ECTS master's degree qualifying for secondary school teaching
-    in Spain, with a specialization in Biology and Geology.
+    Official 60 ECTS master's degree (Máster Universitario) required to teach
+    in secondary schools in Spain.
   description_es: >-
     Máster oficial de 60 ECTS que habilita para la docencia en Educación
-    Secundaria, con la especialidad en Biología y Geología.
+    Secundaria.
 
 - title: PhD in Biology
   title_es: Doctorado en Biología
