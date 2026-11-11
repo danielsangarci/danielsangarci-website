@@ -279,10 +279,10 @@
     - ant-community-ecology-donana
   oa: true
   metrics: true
-  cited: 12
+  cited: 13
   cites_by_year:
     - year: 2026
-      'n': 5
+      'n': 6
     - year: 2025
       'n': 4
     - year: 2024
