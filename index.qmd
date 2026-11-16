@@ -698,6 +698,8 @@ Currently, I lead the PRELUDIUM [project](research/current_projects/ant-plant-ba
 
 I am a staunch defender of Open Science, reproducibility and "home-made" lab protocols. I believe in making high-level molecular ecology accessible by bridging the gap between benchwork and computational biology. A core part of my current technical workflow involves **Oxford Nanopore sequencing and bioinformatics** to streamline data processing from raw amplicon DNA reads to ecological insights.
 
+I also develop [**easypaper**](posts/easypaper/index.qmd), an R package [on CRAN](https://cran.r-project.org/package=easypaper) that turns reproducible Quarto manuscripts into submission-ready papers for any journal.
+
 [See my tools →](posts.qmd){.home-card__enlace}
 :::
 
