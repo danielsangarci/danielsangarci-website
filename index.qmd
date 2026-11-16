@@ -738,7 +738,7 @@ Feel free to [contact me](contact.qmd) for scientific collaboration or getting s
 - [Oct 2026]{.news-date} New preprint on how habitat management reduced the invasive [Argentine ant in Doñana](https://doi.org/10.64898/2026.10.08.756264).
 - [May 2026]{.news-date} Our study of ant diversity in the Yangambi Biosphere Reserve (DR Congo) is out in [*African Invertebrates*](https://doi.org/10.3897/afrinvertebr.67.180461).
 - [Dec 2025]{.news-date} New preprint on the [ongoing coevolution](https://doi.org/10.64898/2025.12.02.691951) between reintroduced *Phengaris teleius* and its host ants.
-- [Sep 2025]{.news-date} [Best oral presentation award](cv.qmd#funding-and-awards) at the XIX Congress of the Spanish Society of Ethology and Evolutionary Ecology.
+- [Sep 2025]{.news-date} [Best oral presentation award](cv.qmd#funding-and-awards) at the XIX National and XVI Ibero-American Conference of Ethology and Evolutionary Ecology.
 - [Jan 2025]{.news-date} I joined the [Ant Ecology Group](https://www.ant-ecology.eu/) at the Doñana Biological Station (EBD-CSIC) as a postdoctoral researcher.
 :::
 
