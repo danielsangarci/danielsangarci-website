@@ -126,7 +126,15 @@ leer_json <- function(url, cabeceras = list()) {
   h <- new_handle(timeout = 30)
   do.call(handle_setheaders, c(list(h, Accept = "application/json",
                                     `User-Agent` = "danielsangarci.com publications page"), cabeceras))
-  r <- curl_fetch_memory(url, handle = h)
+  # Los cortes puntuales (sin respuesta, 429 o 5xx) se reintentan dos veces
+  # antes de dar el fallo por bueno; un 404 o un 400 no se reintenta.
+  for (intento in 1:3) {
+    r <- tryCatch(curl_fetch_memory(url, handle = h), error = function(e) e)
+    puntual <- inherits(r, "error") || r$status_code == 429 || r$status_code >= 500
+    if (!puntual || intento == 3) break
+    Sys.sleep(c(5, 20)[intento])
+  }
+  if (inherits(r, "error")) stop(conditionMessage(r), " en ", url)
   if (r$status_code != 200) stop("HTTP ", r$status_code, " en ", url)
   txt <- rawToChar(r$content)
   Encoding(txt) <- "UTF-8"
