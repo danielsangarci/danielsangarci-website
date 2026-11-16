@@ -1,5 +1,5 @@
 ---
-title: "easypaper: Reproducible Quarto Manuscripts, Ready for Submission"
+title: "easypaper: Automate Reproducible 'Quarto' Manuscripts Ready for Submission"
 description: "An R package, now on CRAN, that builds the project around your paper: it renders the manuscript in any journal's style, checks it before every render and prepares the folder you submit."
 author:
   - name: Daniel Sánchez-García

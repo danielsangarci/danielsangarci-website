@@ -39,7 +39,7 @@
     "href": "cv.html#software",
     "title": "Curriculum vitae",
     "section": "Software",
-    "text": "Software\n\n\n R package · Nov 2026\neasypaper: R package to write reproducible scientific manuscripts in Quarto and render them ready for submission to any journal (CRAN v0.1.0).\nDOI: 10.32614/CRAN.package.easypaper"
+    "text": "Software\n\n\n R package · Nov 2026\neasypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission. R package version 0.1.0, CRAN.\nDOI: 10.32614/CRAN.package.easypaper"
   },
   {
     "objectID": "cv.html#conference-talks-and-posters",
@@ -296,28 +296,28 @@
   {
     "objectID": "posts/easypaper/index.html#the-problem-the-last-mile-of-a-paper",
     "href": "posts/easypaper/index.html#the-problem-the-last-mile-of-a-paper",
-    "title": "easypaper: Reproducible Quarto Manuscripts, Ready for Submission",
+    "title": "easypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission",
     "section": "The Problem: The Last Mile of a Paper",
     "text": "The Problem: The Last Mile of a Paper\nThe analysis is done and the results are clear, but the paper is still far from submitted. The manuscript has to be reformatted for the journal’s citation style, figures exported again at the right resolution, the supplementary material given its own references, a blinded version prepared for double-blind review, and the data and code packaged for a repository. Every new journal means doing much of it again, and each manual step is a chance to break the link between the data and the text."
   },
   {
     "objectID": "posts/easypaper/index.html#the-solution-one-project-around-your-paper",
     "href": "posts/easypaper/index.html#the-solution-one-project-around-your-paper",
-    "title": "easypaper: Reproducible Quarto Manuscripts, Ready for Submission",
+    "title": "easypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission",
     "section": "The Solution: One Project Around Your Paper",
     "text": "The Solution: One Project Around Your Paper\neasypaper is an R package that creates and builds reproducible scientific manuscripts written in Quarto. create_paper() writes a project that holds only the paper: its sections as separate files, its references and the journal style, the setup of the analysis and the data. The rest of the package then takes the manuscript from draft to submission.\n\nKey Features\n\nOne source, every output: the journal’s .docx, a .pdf for the preprint server, an .html to work with and the supplementary material, all in the citation style of any journal with a CSL style.\nChecks before every render: citations without an entry, figures that are never cited, data that is never read and packages that are not installed are reported before they reach a reviewer.\nDouble-blind review, prepared: an anonymous main text, a separate title page, figures at 600 dpi and a copy of the data and code that does not reveal the authors.\nScientific names in italics: genera and species in the reference list are checked against the GBIF Backbone Taxonomy and set in italics, which citation styles usually leave in roman.\nData and code ready to deposit: a compendium in open formats, with metadata filled in from the manuscript and the package versions recorded with renv, so the paper can be rebuilt years later."
   },
   {
     "objectID": "posts/easypaper/index.html#get-started",
     "href": "posts/easypaper/index.html#get-started",
-    "title": "easypaper: Reproducible Quarto Manuscripts, Ready for Submission",
+    "title": "easypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission",
     "section": "Get Started",
     "text": "Get Started\neasypaper is available on CRAN:\ninstall.packages(\"easypaper\")\n\nlibrary(easypaper)\ncreate_paper(\"my_paper\")\nFull documentation, with a step-by-step guide, is on the package website, and the source code is on GitHub, where you can also report issues or suggest features."
   },
   {
     "objectID": "posts/easypaper/index.html#how-to-cite",
     "href": "posts/easypaper/index.html#how-to-cite",
-    "title": "easypaper: Reproducible Quarto Manuscripts, Ready for Submission",
+    "title": "easypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission",
     "section": "How to Cite",
     "text": "How to Cite\nSánchez-García, D. (2026). easypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission. R package version 0.1.0. https://doi.org/10.32614/CRAN.package.easypaper"
   },
@@ -382,6 +382,6 @@
     "href": "posts.html",
     "title": "Code & Tools",
     "section": "",
-    "text": "Free, open-source R packages and R Shiny tools I built to make research faster and more reproducible, from PCR master mixes, DNA pooling and quality control in the lab to data visualisation and manuscripts ready for submission.\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\neasypaper: Reproducible Quarto Manuscripts, Ready for Submission\n\n\n\n\n\n13 November 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nDataViz & Script Generator: Publication-Ready Plots in Seconds\n\n\n\n\n\n9 June 2026\n\n\nDaniel Sánchez-García\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nDNA Quality Control & Traceability App\n\n\n\n\n\n25 May 2026\n\n\nDaniel Sánchez-García\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nPCR Master Mix Calculator\n\n\n\n\n\n12 March 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nDNA Molar Pooling Calculator\n\n\n\n\n\n29 January 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\nNo matching items"
+    "text": "Free, open-source R packages and R Shiny tools I built to make research faster and more reproducible, from PCR master mixes, DNA pooling and quality control in the lab to data visualisation and manuscripts ready for submission.\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\neasypaper: Automate Reproducible ‘Quarto’ Manuscripts Ready for Submission\n\n\n\n\n\n13 November 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nDataViz & Script Generator: Publication-Ready Plots in Seconds\n\n\n\n\n\n9 June 2026\n\n\nDaniel Sánchez-García\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nDNA Quality Control & Traceability App\n\n\n\n\n\n25 May 2026\n\n\nDaniel Sánchez-García\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\nPCR Master Mix Calculator\n\n\n\n\n\n12 March 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\nDNA Molar Pooling Calculator\n\n\n\n\n\n29 January 2026\n\n\nDaniel Sánchez-García\n\n2 min\n\n\n\n\nNo matching items"
   }
 ]

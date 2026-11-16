@@ -1,14 +1,9 @@
 # Software publicado (paquetes de R, aplicaciones...).
-# Campos: name, description, date (primera version publicada), version,
+# Campos: name, title (el titulo oficial, tal cual sale en CRAN; no se
+#         traduce), date (primera version publicada), version,
 #         repository (p. ej. CRAN), doi, url, short, web
-# Traducciones: description_es.
 - name: easypaper
-  description: >-
-    R package to write reproducible scientific manuscripts in Quarto and
-    render them ready for submission to any journal
-  description_es: >-
-    Paquete de R para escribir manuscritos científicos reproducibles en Quarto
-    y generarlos listos para enviar a cualquier revista
+  title: "Automate Reproducible 'Quarto' Manuscripts Ready for Submission"
   date: 2026-11
   version: 0.1.0
   repository: CRAN

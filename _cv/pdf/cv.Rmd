@@ -227,9 +227,9 @@ if (params$short) slice(pubs, 1:5) else pubs
 
 ```{r software}
 breves(cv_seccion(cv, "software", version),
-       what = function(e) paste0("\\textbf{", cv_md_latex(e$name), "}: ", cv_md_latex(e$description),
-                                 if (!is.null(e$repository)) paste0(" (", e$repository,
-                                   if (!is.null(e$version)) paste0(" v", e$version), ")"),
+       what = function(e) paste0("\\textbf{", cv_md_latex(e$name), "}: ", gsub("'([^']+)'", "`\\1'", cv_md_latex(e$title)), ". R package",
+                                 if (!is.null(e$version)) paste0(" version ", e$version),
+                                 if (!is.null(e$repository)) paste0(", ", e$repository),
                                  if (!is.null(e$doi)) sprintf(". \\href{https://doi.org/%s}{doi:%s}", e$doi, cv_md_latex(e$doi)),
                                  if (!is.null(e$url)) sprintf(" \\href{%s}{\\tiny{\\faIcon{link}}}", e$url)),
        when = function(e) cv_periodo(e$date))
