@@ -41,6 +41,7 @@ actualiza solo desde ORCID (ver `_publications/`).
 | `conferences.yml`    | charlas y pósters                                   |
 | `funding.yml`        | proyectos y becas                                   |
 | `awards.yml`         | premios                                             |
+| `software.yml`       | software publicado (paquetes de R...)               |
 | `service.yml`        | organización de eventos, revisiones, workshops      |
 | `memberships.yml`    | sociedades                                          |
 | `courses.yml`        | cursos                                              |

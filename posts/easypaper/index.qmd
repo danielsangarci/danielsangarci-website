@@ -1,0 +1,47 @@
+---
+title: "easypaper: Reproducible Quarto Manuscripts, Ready for Submission"
+description: "An R package, now on CRAN, that builds the project around your paper: it renders the manuscript in any journal's style, checks it before every render and prepares the folder you submit."
+author:
+  - name: Daniel Sánchez-García
+    url: https://danielsangarci.com/
+date: 2026-11-13
+date-format: "D MMMM YYYY"
+categories: [R, R package, Quarto, Reproducibility, Open Science]
+image: easypaper.jpg
+draft: false
+---
+
+![](easypaper.jpg){fig-alt="easypaper logo" width="320" fig-align="center"}
+
+## The Problem: The Last Mile of a Paper
+
+The analysis is done and the results are clear, but the paper is still far from submitted. The manuscript has to be reformatted for the journal's citation style, figures exported again at the right resolution, the supplementary material given its own references, a blinded version prepared for double-blind review, and the data and code packaged for a repository. Every new journal means doing much of it again, and each manual step is a chance to break the link between the data and the text.
+
+## The Solution: One Project Around Your Paper
+
+**easypaper** is an R package that creates and builds reproducible scientific manuscripts written in Quarto. `create_paper()` writes a project that holds only the paper: its sections as separate files, its references and the journal style, the setup of the analysis and the data. The rest of the package then takes the manuscript from draft to submission.
+
+### Key Features
+
+- **One source, every output:** the journal's `.docx`, a `.pdf` for the preprint server, an `.html` to work with and the supplementary material, all in the citation style of any journal with a CSL style.
+- **Checks before every render:** citations without an entry, figures that are never cited, data that is never read and packages that are not installed are reported before they reach a reviewer.
+- **Double-blind review, prepared:** an anonymous main text, a separate title page, figures at 600 dpi and a copy of the data and code that does not reveal the authors.
+- **Scientific names in italics:** genera and species in the reference list are checked against the GBIF Backbone Taxonomy and set in italics, which citation styles usually leave in roman.
+- **Data and code ready to deposit:** a compendium in open formats, with metadata filled in from the manuscript and the package versions recorded with `renv`, so the paper can be rebuilt years later.
+
+## Get Started
+
+easypaper is available on [CRAN](https://cran.r-project.org/package=easypaper):
+
+```r
+install.packages("easypaper")
+
+library(easypaper)
+create_paper("my_paper")
+```
+
+Full documentation, with a step-by-step guide, is on the [package website](https://danielsangarci.github.io/easypaper/), and the source code is on [GitHub](https://github.com/danielsangarci/easypaper), where you can also [report issues or suggest features](https://github.com/danielsangarci/easypaper/issues).
+
+## How to Cite
+
+Sánchez-García, D. (2026). *easypaper: Automate Reproducible 'Quarto' Manuscripts Ready for Submission*. R package version 0.1.0. <https://doi.org/10.32614/CRAN.package.easypaper>

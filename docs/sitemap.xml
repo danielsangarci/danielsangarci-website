@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://danielsangarci.com/cv.html</loc>
-    <lastmod>2026-11-10T00:09:52.515Z</lastmod>
+    <lastmod>2026-11-16T13:18:06.663Z</lastmod>
   </url>
   <url>
     <loc>https://danielsangarci.com/publications.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://danielsangarci.com/index.html</loc>
-    <lastmod>2026-11-10T12:18:34.104Z</lastmod>
+    <lastmod>2026-11-16T13:19:11.115Z</lastmod>
   </url>
   <url>
     <loc>https://danielsangarci.com/gallery/butterflies-moths/index.html</loc>
@@ -29,48 +29,52 @@
     <lastmod>2026-11-05T22:59:41.262Z</lastmod>
   </url>
   <url>
-    <loc>https://danielsangarci.com/contact.html</loc>
-    <lastmod>2026-11-05T23:03:38.492Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html</loc>
-    <lastmod>2026-11-05T23:30:01.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/past_projects/phd-thesis/phd-thesis.html</loc>
-    <lastmod>2026-11-05T23:30:01.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html</loc>
-    <lastmod>2026-11-05T23:07:04.239Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html</loc>
-    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html</loc>
-    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/research_lines/insect_microbiome/insect_microbiome.html</loc>
-    <lastmod>2026-11-05T23:07:04.239Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/research_lines/diy_lab_protocols/diy_lab_protocols.html</loc>
-    <lastmod>2026-11-05T23:07:04.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://danielsangarci.com/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html</loc>
-    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
+    <loc>https://danielsangarci.com/posts/dataviz/index.html</loc>
+    <lastmod>2026-11-05T22:59:41.262Z</lastmod>
   </url>
   <url>
     <loc>https://danielsangarci.com/research.html</loc>
     <lastmod>2026-11-10T02:44:50.317Z</lastmod>
   </url>
   <url>
-    <loc>https://danielsangarci.com/posts/dataviz/index.html</loc>
-    <lastmod>2026-11-05T22:59:41.262Z</lastmod>
+    <loc>https://danielsangarci.com/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html</loc>
+    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/research_lines/diy_lab_protocols/diy_lab_protocols.html</loc>
+    <lastmod>2026-11-05T23:07:04.240Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/research_lines/insect_microbiome/insect_microbiome.html</loc>
+    <lastmod>2026-11-05T23:07:04.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/current_projects/ant-plant-bacteria/ant-plant-bacteria.html</loc>
+    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/current_projects/maculinea-myrmica-microbiome/maculinea-myrmica-microbiome.html</loc>
+    <lastmod>2026-11-05T23:30:01.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html</loc>
+    <lastmod>2026-11-05T23:07:04.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/past_projects/phd-thesis/phd-thesis.html</loc>
+    <lastmod>2026-11-05T23:30:01.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html</loc>
+    <lastmod>2026-11-05T23:30:01.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/contact.html</loc>
+    <lastmod>2026-11-05T23:03:38.492Z</lastmod>
+  </url>
+  <url>
+    <loc>https://danielsangarci.com/posts/easypaper/index.html</loc>
+    <lastmod>2026-11-16T13:19:04.056Z</lastmod>
   </url>
   <url>
     <loc>https://danielsangarci.com/posts/pcr_calculator/index.html</loc>
@@ -94,6 +98,6 @@
   </url>
   <url>
     <loc>https://danielsangarci.com/posts.html</loc>
-    <lastmod>2026-11-10T02:44:50.317Z</lastmod>
+    <lastmod>2026-11-16T13:19:11.116Z</lastmod>
   </url>
 </urlset>

@@ -71,6 +71,20 @@ cv_web_tarjetas(c(
 ))
 ```
 
+## Software
+
+```{r}
+#| output: asis
+cv_web_tarjetas(lapply(web("software"), function(e) cv_web_tarjeta(
+  "code", paste("R package ·", cv_periodo(e$date)),
+  paste0("**[", e$name, "](", e$url %||% paste0("https://doi.org/", e$doi), ")**: ",
+         cv_punto(paste0(e$description,
+                         if (!is.null(e$repository)) paste0(" (", e$repository,
+                           if (!is.null(e$version)) paste0(" v", e$version), ")")))),
+  nota = if (!is.null(e$doi)) sprintf("DOI: [%s](https://doi.org/%s)", e$doi, e$doi)
+)))
+```
+
 ## Conference talks and posters
 
 ```{r}

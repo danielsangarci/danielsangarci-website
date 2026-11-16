@@ -90,9 +90,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-preprint','listing-data','listing-projects','listing-oa','listing-metrics','listing-cited','listing-cites_by_year','listing-s2_cited','listing-s2_influential','listing-s2_url','listing-scholar','listing-bibtex',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-type','listing-type_label','listing-year','listing-title','listing-url','listing-authors','listing-venue','listing-doi','listing-pdf','listing-preprint','listing-data','listing-projects','listing-oa','listing-metrics','listing-cited','listing-cites_by_year','listing-s2_cited','listing-s2_influential','listing-s2_url','listing-scholar','listing-bibtex',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-preprint","listing-data","listing-projects","listing-oa","listing-metrics","listing-cited","listing-cites_by_year","listing-s2_cited","listing-s2_influential","listing-s2_url","listing-scholar","listing-bibtex"],
+      searchColumns: ["listing-type","listing-type_label","listing-year","listing-title","listing-url","listing-authors","listing-venue","listing-doi","listing-pdf","listing-preprint","listing-data","listing-projects","listing-oa","listing-metrics","listing-cited","listing-cites_by_year","listing-s2_cited","listing-s2_influential","listing-s2_url","listing-scholar","listing-bibtex"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -309,6 +309,7 @@ window.Quarto = {
       <p class="pub__revista"><i>Science of The Total Environment</i>, 915, 170157</p>
       <div class="pub__acciones">
         <a class="pub-btn" href="https://doi.org/10.1016/j.scitotenv.2024.170157"><i class="bi bi-link-45deg" aria-hidden="true"></i>DOI</a>
+        <a class="pub-btn" href="https://iris.unito.it/bitstream/2318/1978112/1/Author_copy_Trigos-Peral_et_al_2024_Stoten.pdf"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>PDF</a>
         <a class="pub-btn" href="https://doi.org/10.2139/ssrn.4610852"><i class="bi bi-file-earmark-text" aria-hidden="true"></i>Preprint</a>
         <a class="pub-btn" href="https://doi.org/10.6084/m9.figshare.23507211"><i class="bi bi-database" aria-hidden="true"></i>Data</a>
       </div>

@@ -118,5 +118,8 @@
   },
   "news.qmd": {
     "news.html": "3a5af781"
+  },
+  "posts/easypaper/index.qmd": {
+    "index.html": "c23a02de"
   }
 }

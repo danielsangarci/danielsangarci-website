@@ -1,5 +1,5 @@
 ---
-description-meta: "Free R Shiny tools and code by Daniel Sánchez-García for the lab and data analysis: PCR master mix, DNA pooling, DNA quality control and data visualization."
+description-meta: "Free R packages, R Shiny tools and code by Daniel Sánchez-García for research, the lab and data analysis: reproducible manuscripts, PCR master mix, DNA pooling, DNA quality control and data visualization."
 title: "Code & Tools"
 listing: 
   contents: posts # all Quarto docs in the `posts` directory will be included on your listing page
@@ -17,6 +17,6 @@ page-layout: full
 title-block-banner: false
 ---
 ::: pagina-intro
-Free, open-source R Shiny tools I built to make everyday lab work faster and more reproducible, from PCR master mixes to DNA pooling and quality control, plus code to visualise data.
+Free, open-source R packages and R Shiny tools I built to make research faster and more reproducible, from PCR master mixes, DNA pooling and quality control in the lab to data visualisation and manuscripts ready for submission.
 :::
 

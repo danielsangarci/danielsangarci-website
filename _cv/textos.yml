@@ -9,6 +9,7 @@ education:        {en: Education,                  es: Formación académica}
 stays:            {en: Research stays,             es: Estancias de investigación}
 internships:      {en: Internships,                es: Prácticas}
 publications:     {en: Publications,               es: Publicaciones}
+software:         {en: Software,                   es: Software}
 conferences:      {en: Conference talks and posters, es: Comunicaciones en congresos}
 funding:          {en: Funding,                    es: Financiación}
 awards:           {en: Awards,                     es: Premios}

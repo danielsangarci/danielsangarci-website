@@ -734,6 +734,7 @@ Feel free to [contact me](contact.qmd) for scientific collaboration or getting s
 [{{< fa bullhorn >}} News]{.about-news__titulo}
 
 ::: news-list
+- [Nov 2026]{.news-date} My R package [**easypaper**](posts/easypaper/index.qmd) is now on [CRAN](https://cran.r-project.org/package=easypaper): reproducible Quarto manuscripts, ready for submission to any journal.
 - [Oct 2026]{.news-date} New preprint on how habitat management reduced the invasive [Argentine ant in Doñana](https://doi.org/10.64898/2026.10.08.756264).
 - [May 2026]{.news-date} Our study of ant diversity in the Yangambi Biosphere Reserve (DR Congo) is out in [*African Invertebrates*](https://doi.org/10.3897/afrinvertebr.67.180461).
 - [Dec 2025]{.news-date} New preprint on the [ongoing coevolution](https://doi.org/10.64898/2025.12.02.691951) between reintroduced *Phengaris teleius* and its host ants.

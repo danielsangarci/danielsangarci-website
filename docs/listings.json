@@ -4,18 +4,6 @@
     "items": []
   },
   {
-    "listing": "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
-    "items": []
-  },
-  {
-    "listing": "/research/past_projects/phd-thesis/phd-thesis.html",
-    "items": []
-  },
-  {
-    "listing": "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html",
-    "items": []
-  },
-  {
     "listing": "/research.html",
     "items": [
       "/research/research_lines/community_assembly_dynamics/community_assembly_dynamics.html",
@@ -27,6 +15,18 @@
       "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
       "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html"
     ]
+  },
+  {
+    "listing": "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/phd-thesis/phd-thesis.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
+    "items": []
   },
   {
     "listing": "/news.html",
@@ -44,6 +44,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/easypaper/index.html",
       "/posts/dataviz/index.html",
       "/posts/DNA_purity_QC_nanodrop/index.html",
       "/posts/pcr_calculator/index.html",
