@@ -48,6 +48,7 @@ jobs:
         run: Rscript _publications/actualizar.R --forzar
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
 
       - name: Comprobar si hay cambios
         id: cambios

@@ -123,6 +123,13 @@ parecido <- function(a, b) {
 # ---------------------------------------------------------------------
 
 leer_json <- function(url, cabeceras = list()) {
+  # OpenAlex: sin clave, el cupo diario es por IP y en GitHub (IP compartidas)
+  # se agota y responde 429. Con la clave gratuita (OPENALEX_API_KEY, en
+  # ~/.Renviron y en los secretos de GitHub) el cupo es propio.
+  clave_oa <- Sys.getenv("OPENALEX_API_KEY")
+  if (nzchar(clave_oa) && grepl("^https://api\\.openalex\\.org/", url)) {
+    cabeceras$Authorization <- paste("Bearer", clave_oa)
+  }
   h <- new_handle(timeout = 30)
   do.call(handle_setheaders, c(list(h, Accept = "application/json",
                                     `User-Agent` = "danielsangarci.com publications page"), cabeceras))
