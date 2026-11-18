@@ -1,0 +1,38 @@
+---
+title: "Personal Email Tool – Privacy Policy"
+pagetitle: "Personal Email Tool – Privacy Policy"
+description-meta: "Privacy policy of a private personal email tool."
+title-block-banner: false
+page-layout: article
+toc: false
+comments: false
+search: false
+open-graph: false
+twitter-card: false
+include-in-header:
+  text: '<meta name="robots" content="noindex, nofollow">'
+---
+
+This is a private tool developed and used exclusively by Daniel Sánchez García to manage his own email. It is not a public service and is not available to anyone else.
+
+**Data accessed.** The tool connects only to its owner's Gmail accounts to read, organise, send and move to trash emails, always at his request. Email content is processed only to show him summaries and is not stored permanently.
+
+**Use and storage.** Access credentials are stored locally and encrypted on the owner's computer. No data is sold, shared or transferred to third parties, or used for advertising.
+
+**Revocation.** Access can be revoked at any time at [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+
+**Contact.** [dsangarci@gmail.com](mailto:dsangarci@gmail.com)
+
+::: {lang="es"}
+## Herramienta personal de correo – Política de privacidad
+
+Es una herramienta privada desarrollada y utilizada exclusivamente por Daniel Sánchez García para gestionar su propio correo. No es un servicio público ni está disponible para otras personas.
+
+**Datos a los que accede.** La herramienta se conecta solo a las cuentas de Gmail de su propietario para leer, organizar, enviar y mover a la papelera correos, siempre a petición suya. El contenido de los correos se procesa únicamente para mostrarle resúmenes y no se guarda de forma permanente.
+
+**Uso y almacenamiento.** Los permisos de acceso se guardan de forma local y cifrada en el ordenador del propietario. Ningún dato se vende, comparte ni transfiere a terceros, ni se utiliza con fines publicitarios.
+
+**Revocación.** El acceso puede retirarse en cualquier momento en [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+
+**Contacto.** [dsangarci@gmail.com](mailto:dsangarci@gmail.com)
+:::
