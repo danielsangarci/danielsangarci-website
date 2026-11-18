@@ -1,6 +1,37 @@
 [
   {
-    "listing": "/publications.html",
+    "listing": "/posts.html",
+    "items": [
+      "/posts/easypaper/index.html",
+      "/posts/dataviz/index.html",
+      "/posts/DNA_purity_QC_nanodrop/index.html",
+      "/posts/pcr_calculator/index.html",
+      "/posts/dna_molar_pooling_calculator/index.html"
+    ]
+  },
+  {
+    "listing": "/gallery.html",
+    "items": [
+      "/gallery/ants/index.html",
+      "/gallery/butterflies-moths/index.html",
+      "/gallery/other-invertebrates/index.html",
+      "/gallery/spiders/index.html"
+    ]
+  },
+  {
+    "listing": "/news.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/phd-thesis/phd-thesis.html",
+    "items": []
+  },
+  {
+    "listing": "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html",
     "items": []
   },
   {
@@ -17,38 +48,7 @@
     ]
   },
   {
-    "listing": "/research/past_projects/urban-heat-island-lasius/urban-heat-island-lasius.html",
+    "listing": "/publications.html",
     "items": []
-  },
-  {
-    "listing": "/research/past_projects/phd-thesis/phd-thesis.html",
-    "items": []
-  },
-  {
-    "listing": "/research/past_projects/ant-community-ecology-donana/ant-community-ecology-donana.html",
-    "items": []
-  },
-  {
-    "listing": "/news.html",
-    "items": []
-  },
-  {
-    "listing": "/gallery.html",
-    "items": [
-      "/gallery/ants/index.html",
-      "/gallery/butterflies-moths/index.html",
-      "/gallery/other-invertebrates/index.html",
-      "/gallery/spiders/index.html"
-    ]
-  },
-  {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/easypaper/index.html",
-      "/posts/dataviz/index.html",
-      "/posts/DNA_purity_QC_nanodrop/index.html",
-      "/posts/pcr_calculator/index.html",
-      "/posts/dna_molar_pooling_calculator/index.html"
-    ]
   }
 ]

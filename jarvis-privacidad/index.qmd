@@ -1,0 +1,38 @@
+---
+title: "Jarvis – Privacy Policy"
+pagetitle: "Jarvis – Privacy Policy"
+description-meta: "Privacy policy of Jarvis, a private personal assistant."
+title-block-banner: false
+page-layout: article
+toc: false
+comments: false
+search: false
+open-graph: false
+twitter-card: false
+include-in-header:
+  text: '<meta name="robots" content="noindex, nofollow">'
+---
+
+Jarvis is a private personal assistant developed and used exclusively by Daniel Sánchez García. It is not a public service and is not available to anyone else.
+
+**Data accessed.** Jarvis connects to its owner's Gmail accounts solely to send emails that he requests and explicitly approves before each send. It does not read, analyse or store inbox content.
+
+**Use and storage.** Access credentials are stored locally and encrypted on the owner's computer. No data is sold, shared or transferred to third parties, or used for advertising.
+
+**Revocation.** Access can be revoked at any time at [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+
+**Contact.** [dsangarci@gmail.com](mailto:dsangarci@gmail.com)
+
+::: {lang="es"}
+## Política de privacidad de Jarvis
+
+Jarvis es un asistente personal de uso privado desarrollado y utilizado exclusivamente por Daniel Sánchez García. No es un servicio público ni está disponible para otras personas.
+
+**Datos a los que accede.** Jarvis se conecta a las cuentas de Gmail de su propietario únicamente para enviar los correos que él solicita y aprueba expresamente antes de cada envío. No lee, analiza ni almacena el contenido de la bandeja de entrada.
+
+**Uso y almacenamiento.** Los permisos de acceso se guardan de forma local y cifrada en el ordenador del propietario. Ningún dato se vende, comparte ni transfiere a terceros, ni se utiliza con fines publicitarios.
+
+**Revocación.** El acceso puede retirarse en cualquier momento en [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+
+**Contacto.** [dsangarci@gmail.com](mailto:dsangarci@gmail.com)
+:::
