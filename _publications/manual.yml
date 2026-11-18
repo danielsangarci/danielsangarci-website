@@ -75,9 +75,12 @@ ajustes:
     projects: [urban-heat-island-lasius]
   "10.64898/2025.12.02.691951":
     projects: [phd-thesis]
-  # Datos del preprint: en Zenodo cambio el titulo y ya no se emparejan solos
+    # Datos del preprint: la version v1.1 de Zenodo, la que corresponde a el
+    data: "https://doi.org/10.5281/zenodo.17791600"
+  # DOI general del repositorio de Zenodo (apunta siempre a la ultima
+  # version): no se engancha a nada, el preprint usa la v1.1 de arriba
   "10.5281/zenodo.17791047":
-    link_to: "10.64898/2025.12.02.691951"
+    link_to: none
   "10.1016/j.gecco.2024.e03104":
     projects: [phd-thesis]
     pdf: "https://www.sciencedirect.com/science/article/pii/S2351989424003081/pdfft?md5=df6f2a0432f9ac4d2cf5b814ddaaa7b6&pid=1-s2.0-S2351989424003081-main.pdf"
