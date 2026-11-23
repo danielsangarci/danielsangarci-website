@@ -1,5 +1,5 @@
 {
-  "total": 91,
+  "total": 92,
   "h": 5,
   "por_anio": [
     {
@@ -40,14 +40,14 @@
     },
     {
       "anio": 2026,
-      "n": 29
+      "n": 30
     }
   ],
   "articulos": [
     {
       "titulo": "Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger",
       "anio": 2024,
-      "citas": 31
+      "citas": 32
     },
     {
       "titulo": "Temperature or competition: Which has more influence on Mediterranean ant communities?",

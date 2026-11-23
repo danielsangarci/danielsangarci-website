@@ -48,7 +48,7 @@
       howpublished = {bioRxiv},
       doi = {10.64898/2026.10.08.756264}
     }
-  scholar_total: 91
+  scholar_total: 92
   scholar_h: 5
   scholar_by_year:
     - year: 2016
@@ -70,7 +70,7 @@
     - year: 2025
       'n': 19
     - year: 2026
-      'n': 29
+      'n': 30
 - type: article
   type_label: Journal article
   year: 2026
@@ -257,7 +257,7 @@
   s2_cited: 15
   s2_influential: 0
   s2_url: https://www.semanticscholar.org/paper/ae28335953a291f80ff83a2f21182f0741ce5b8e
-  scholar: 31
+  scholar: 32
   bibtex: |-
     @article{trigosperal2024urban,
       title = {Urban abiotic stressors drive changes in the foraging activity and colony growth of the black garden ant Lasius niger},
