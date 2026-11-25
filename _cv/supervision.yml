@@ -12,8 +12,8 @@
   program_es: Máster en Biodiversidad Terrestre
   institution: University of A Coruña
   institution_es: Universidade da Coruña
-  cosupervisor: Dr. Elena Angulo (EBD-CSIC)
-  cosupervisor_es: Dra. Elena Angulo (EBD-CSIC)
+  cosupervisor: Dr. Elena Angulo, Doñana Biological Station (EBD-CSIC)
+  cosupervisor_es: Dra. Elena Angulo, Estación Biológica de Doñana (EBD-CSIC)
   start: 2026
   end: present
 
@@ -30,4 +30,5 @@
   student: Ardalan Mehranpour
   institution: Doñana Biological Station (EBD-CSIC)
   institution_es: Estación Biológica de Doñana (EBD-CSIC)
-  start: 2025
+  start: 2025-05   # 19 May 2025
+  end: 2025-07     # 30 Jul 2025
