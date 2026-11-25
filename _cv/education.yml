@@ -3,15 +3,10 @@
 #         description, description_web, coords, map_icon, short, web
 # map_icon: icono en el mapa (dot, university, flask, person). Por defecto, dot.
 # Traducciones: el mismo campo con _es (title_es, org_es, description_es...).
-- title: >-
-    Master's Degree in Teacher Training for Compulsory Secondary Education,
-    Upper Secondary Education, Vocational Training and Language Teaching
-    (specialization in Biology and Geology)
-  title_es: >-
-    Máster Universitario en Formación del Profesorado de Educación Secundaria
-    Obligatoria, Bachillerato, Formación Profesional y Enseñanza de Idiomas
-    (especialidad en Biología y Geología)
-  org: Universidad a Distancia de Madrid (UDIMA)
+- title: Master's Degree in Teacher Training for Secondary Education and Vocational Training (Biology and Geology)
+  title_es: Máster en Formación del Profesorado de Educación Secundaria y Formación Profesional (Biología y Geología)
+  org: Madrid Open University (UDIMA)
+  org_es: Universidad a Distancia de Madrid (UDIMA)
   city: Online
   city_es: Online
   country: Spain
@@ -58,7 +53,8 @@
 
 - title: MSc in Biodiversity and Conservation Biology
   title_es: Máster en Biodiversidad y Biología de la Conservación
-  org: Universidad Pablo de Olavide
+  org: Pablo de Olavide University
+  org_es: Universidad Pablo de Olavide
   city: Seville
   country: Spain
   start: 2017-10
