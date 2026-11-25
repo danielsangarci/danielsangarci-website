@@ -42,6 +42,7 @@ actualiza solo desde ORCID (ver `_publications/`).
 | `funding.yml`        | proyectos y becas                                   |
 | `awards.yml`         | premios                                             |
 | `software.yml`       | software publicado (paquetes de R...)               |
+| `supervision.yml`    | supervisión de estudiantes (TFM, prácticas, Erasmus) |
 | `service.yml`        | organización de eventos, revisiones, workshops      |
 | `memberships.yml`    | sociedades                                          |
 | `courses.yml`        | cursos                                              |

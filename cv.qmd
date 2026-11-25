@@ -71,6 +71,21 @@ cv_web_tarjetas(c(
 ))
 ```
 
+## Student supervision
+
+```{r}
+#| output: asis
+hitos <- vapply(web("supervision"), function(e) {
+  paste0("::: cv-hito\n",
+         "[", cv_periodo(e$start, e$end, compacto = TRUE), "]{.cv-fecha}\n\n",
+         "[", e$role, "]{.cv-puesto}\n\n",
+         "[", paste(c(e$student, e$program, e$institution), collapse = " · "), "]{.cv-lugar}\n",
+         if (!is.null(e$cosupervisor)) paste0("\nCo-supervised with ", e$cosupervisor, ".\n") else "",
+         ":::\n")
+}, "")
+cat("::: cv-linea\n", paste(hitos, collapse = "\n"), ":::\n", sep = "")
+```
+
 ## Software
 
 ```{r}

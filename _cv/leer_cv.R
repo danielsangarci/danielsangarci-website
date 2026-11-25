@@ -16,6 +16,7 @@
   funding        = c("name", "funder", "start"),
   awards         = c("title", "date"),
   software       = c("name", "title", "date"),
+  supervision    = c("role", "student", "start"),
   organization   = c("event", "role", "date"),
   reviews        = c("journal", "count"),
   workshops      = c("title", "date"),
@@ -44,6 +45,7 @@ cv_leer <- function(dir = "_cv") {
     funding     = leer("funding.yml"),
     awards      = leer("awards.yml"),
     software    = leer("software.yml"),
+    supervision = leer("supervision.yml"),
     memberships = leer("memberships.yml"),
     courses     = leer("courses.yml"),
     references  = leer("references.yml"),
@@ -112,6 +114,7 @@ cv_leer <- function(dir = "_cv") {
   internships  = c("title", "description"),
   funding      = c("name", "project"),
   awards       = c("title", "context"),
+  supervision  = c("role"),
   organization = c("role"),
   workshops    = c("role", "description"),
   memberships  = c("role"),
@@ -227,10 +230,16 @@ cv_fecha_hoy <- function() {
 }
 
 # "Jan 2025 – present", "May 2024 – Jun 2024", "Oct 2021", "2022 – 2025"
-cv_periodo <- function(start, end = NULL) {
+# compacto = TRUE junta los meses del mismo anno: "Jan – Feb 2026"
+cv_periodo <- function(start, end = NULL, compacto = FALSE) {
   ini <- .cv_fecha_txt(start)
   if (.cv_vacio(end) || as.character(end) == as.character(start)) return(ini)
-  paste(ini, "–", .cv_fecha_txt(end))
+  fin <- .cv_fecha_txt(end)
+  s <- as.character(start); f <- as.character(end)
+  if (compacto && grepl("-", s) && grepl("-", f) && substr(s, 1, 4) == substr(f, 1, 4)) {
+    return(paste(sub(" .*", "", ini), "–", fin))
+  }
+  paste(ini, "–", fin)
 }
 
 # ---------------------------------------------------------------------------
@@ -263,6 +272,18 @@ cv_md_latex <- function(x) {
   x <- gsub("\\*([^*]+)\\*", "\\\\textit{\\1}", x)
   x
 }
+
+# Supervision: "Estudiante, programa, institucion; co-supervised with X"
+cv_supervision_detalle <- function(e) {
+  texto <- paste(c(e$student, e$program, e$institution), collapse = ", ")
+  if (!is.null(e$cosupervisor)) {
+    texto <- paste0(texto, "; ", cv_texto_o("cosupervised", "co-supervised with"), " ", e$cosupervisor)
+  }
+  texto
+}
+
+# Texto fijo si textos.yml esta cargado (PDF); si no (web), el texto por defecto
+cv_texto_o <- function(clave, defecto) if (is.null(.cv_env$textos)) defecto else cv_texto(clave)
 
 # Termina una frase con punto si no lo tiene ya
 cv_punto <- function(x) if (grepl("[.?!]$", x)) x else paste0(x, ".")

@@ -10,6 +10,7 @@ stays:            {en: Research stays,             es: Estancias de investigaci�
 internships:      {en: Internships,                es: Prácticas}
 publications:     {en: Publications,               es: Publicaciones}
 software:         {en: Software,                   es: Software}
+supervision:      {en: Student supervision,        es: Dirección y supervisión de estudiantes}
 conferences:      {en: Conference talks and posters, es: Comunicaciones en congresos}
 funding:          {en: Funding,                    es: Financiación}
 awards:           {en: Awards,                     es: Premios}
@@ -40,6 +41,7 @@ present:   {en: present,      es: actualidad}
 since:     {en: since,        es: desde}
 at_the:    {en: at the,       es: en el}
 in:        {en: in,           es: en}
+cosupervised: {en: co-supervised with, es: codirigido con}
 talk:      {en: Talk,         es: Comunicación oral}
 poster:    {en: Poster,       es: Póster}
 invited:   {en: Invited talk, es: Conferencia invitada}

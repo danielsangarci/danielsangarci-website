@@ -267,6 +267,14 @@ breves(cv_seccion(cv, "awards", version),
        when = function(e) cv_periodo(e$date))
 ```
 
+`r if(length(cv$supervision)) paste("# \\faIcon{user-graduate}", cv_texto("supervision"))`
+
+```{r supervision}
+breves(cv_seccion(cv, "supervision", version),
+       what = function(e) paste0("\\textbf{", cv_md_latex(e$role), "}: ", cv_md_latex(cv_supervision_detalle(e))),
+       when = function(e) sub(" – ", " - ", cv_periodo(e$start, e$end, compacto = TRUE)))
+```
+
 `r if(!params$short && length(cv$organization)) paste("# \\faIcon{calendar}", cv_texto("organization"))`
 
 ```{r organization, eval=!params$short}
