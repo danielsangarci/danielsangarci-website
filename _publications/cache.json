@@ -92,7 +92,7 @@
       "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable",
       "pdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0267547&type=printable",
       "web": "https://doi.org/10.1371/journal.pone.0267547",
-      "citas": 16,
+      "citas": 15,
       "citas_anio": [
         {
           "anio": 2026,
@@ -100,7 +100,7 @@
         },
         {
           "anio": 2025,
-          "n": 5
+          "n": 4
         },
         {
           "anio": 2024,
@@ -479,6 +479,42 @@
       "oa_url": "https://cran.r-project.org/web/packages/easypaper/easypaper.pdf",
       "pdf": "https://cran.r-project.org/web/packages/easypaper/easypaper.pdf",
       "web": "https://doi.org/10.32614/cran.package.easypaper",
+      "citas": 0,
+      "citas_anio": [],
+      "en_orcid": false
+    },
+    {
+      "doi": "10.5281/zenodo.23959598",
+      "tipo": "dataset",
+      "openalex": "https://openalex.org/W7239386492",
+      "preprint_de": null,
+      "anio": 2026,
+      "fecha": "2026-11-24",
+      "titulo": "Wing spot pattern after reintroduction",
+      "autores": [
+        "Sánchez-García, D.",
+        "Casacci, L. P.",
+        "Wynhoff, I.",
+        "Chiara, V.",
+        "Witek, M."
+      ],
+      "autores_bib": [
+        "Sánchez-García, D.",
+        "Casacci, L. P.",
+        "Wynhoff, I.",
+        "Chiara, V.",
+        "Witek, M."
+      ],
+      "revista": "Zenodo",
+      "volumen": null,
+      "numero": null,
+      "paginas": null,
+      "editorial": null,
+      "resumen": "Data and code of the manuscript Changes in the wing spot pattern of the endangered butterfly *Phengaris teleius* thirty years after its reintroduction: the data, their metadata, and the code that reproduces the analysis, with the versions of the packages it used (renv.lock).",
+      "oa": true,
+      "oa_url": "https://doi.org/10.5281/zenodo.23959598",
+      "pdf": null,
+      "web": "https://doi.org/10.5281/zenodo.23959598",
       "citas": 0,
       "citas_anio": [],
       "en_orcid": false
