@@ -235,6 +235,16 @@ breves(cv_seccion(cv, "software", version),
        when = function(e) cv_periodo(e$date))
 ```
 
+```{r repositories, results='asis'}
+# Repositorios de datos y codigo (profile.yml)
+repos <- cv$profile$repositories
+if (length(repos)) {
+  cat("\\smallskip\n\n", cv_texto("open_data"), " ",
+      paste(vapply(repos, function(r) sprintf("\\href{%s}{%s}", gsub("%", "\\%", r$url, fixed = TRUE), r$name), ""),
+            collapse = ", "), "\n", sep = "")
+}
+```
+
 # \faIcon{comments} `r cv_texto("conferences")`
 
 ```{r conferences-bib}
@@ -253,10 +263,29 @@ bibliography_entries("congresos.bib") |>
 
 ```{r funding}
 breves(cv_seccion(cv, "funding", version),
-       what = function(e) cv_md_latex(sprintf("%s %s (%s, %s). %s", e$name, e$code %||% "",
-                                              e$funder_short %||% e$funder, e$country, e$project %||% "")),
-       when = function(e) sub(" – ", " - ", cv_periodo(e$start, e$end)),
+       what = function(e) cv_md_latex(paste0(sprintf("%s %s (%s, %s). %s", e$name, e$code %||% "",
+                                                     e$funder_short %||% e$funder, e$country, e$project %||% ""),
+                                             if (!is.null(e$extension)) paste0(" ", cv_punto(e$extension)))),
+       # Solo los annos: el mes no cabe en la columna de fechas
+       when = function(e) sub(" – ", " - ", cv_periodo(substr(e$start, 1, 4), substr(e$end %||% "", 1, 4))),
        with = function(e) cv_md_latex(e$amount %||% ""))
+```
+
+`r if(length(cv$projects)) paste("# \\faIcon{project-diagram}", cv_texto("projects"))`
+
+```{r projects}
+# Proyectos en los que participas (los que diriges van en Funding)
+bloques <- lapply(cv_seccion(cv, "projects", version), function(e) {
+  tibble::tibble(
+    what  = cv_md_latex(e$title),
+    where = cv_md_latex(sprintf("%s (%s), %s · %s: %s", e$funder, e$code, e$country, cv_texto("pi"), e$pi)),
+    when  = sub(" – ", " - ", cv_periodo(e$start, e$end)),
+    why   = cv_md_latex(sprintf("%s: %s. %s: %s.", cv_texto("role"), e$role, cv_texto("budget"), e$amount))
+  ) |>
+    detailed_entries(what = what, where = where, when = when, why = why, .protect = FALSE) |>
+    knitr::knit_print()
+})
+knitr::asis_output(paste(unlist(bloques), collapse = "\n\n"))
 ```
 
 # \faIcon{medal} `r cv_texto("awards")`
@@ -271,7 +300,7 @@ breves(cv_seccion(cv, "awards", version),
 
 ```{r supervision}
 breves(cv_seccion(cv, "supervision", version),
-       what = function(e) paste0("\\textbf{", cv_md_latex(e$role), "}: ", cv_md_latex(cv_supervision_detalle(e))),
+       what = function(e) paste0("\\textbf{", cv_md_latex(e$role), "}", if (!is.null(e$at)) paste0(" ", cv_md_latex(e$at)), ": ", cv_md_latex(cv_supervision_detalle(e))),
        when = function(e) sub(" – ", " - ", cv_periodo(e$start, e$end, compacto = TRUE)))
 ```
 
@@ -282,6 +311,20 @@ breves(cv_seccion(cv, "organization", version),
        what = function(e) cv_md_latex(e$event),
        when = function(e) cv_periodo(e$date),
        with = function(e) cv_md_latex(e$role))
+```
+
+`r if(length(cv$editorial) || length(cv$juries)) paste("# \\faIcon{book-reader}", cv_texto("academic_service"))`
+
+```{r academic-service}
+breves(c(cv_filtrar(cv$editorial, version), cv_seccion(cv, "juries", version)),
+       what = function(e) {
+         if (!is.null(e$journal)) {
+           cv_md_latex(paste0(e$role, ", *", e$journal, "*", if (!is.null(e$description)) paste0(" (", e$description, ")")))
+         } else {
+           cv_md_latex(sprintf("%s: %s %s, %s", cv_texto("phd_jury"), cv_texto("phd_defence"), e$candidate, e$university))
+         }
+       },
+       when = function(e) if (!is.null(e$date)) cv_periodo(e$date) else if (!is.null(e$since)) paste(cv_texto("since"), e$since) else "")
 ```
 
 # \faIcon{eye} `r cv_texto("reviews")`
@@ -297,6 +340,15 @@ cat(cv_texto("reviews_intro"),
 breves(cv_seccion(cv, "workshops", version),
        what = function(e) cv_md_latex(paste0(paste(c(e$role, e$title), collapse = paste0(" ", cv_texto("in"), " ")),
                                              if (!is.null(e$description)) paste0(": ", e$description))),
+       when = function(e) cv_periodo(e$date))
+```
+
+`r if(length(cv$outreach)) paste("# \\faIcon{bullhorn}", cv_texto("outreach"))`
+
+```{r outreach}
+breves(cv_seccion(cv, "outreach", version),
+       what = function(e) paste0(cv_md_latex(sprintf("%s, **%s**: %s", e$role, e$title, e$description)),
+                                 if (!is.null(e$url)) sprintf(" \\href{%s}{\\tiny{\\faIcon{link}}}", e$url)),
        when = function(e) cv_periodo(e$date))
 ```
 

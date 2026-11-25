@@ -11,6 +11,9 @@ internships:      {en: Internships,                es: Prácticas}
 publications:     {en: Publications,               es: Publicaciones}
 software:         {en: Software,                   es: Software}
 supervision:      {en: Student supervision,        es: Dirección y supervisión de estudiantes}
+projects:         {en: Research projects,          es: Proyectos de investigación}
+outreach:         {en: Science outreach and citizen science, es: Divulgación y ciencia ciudadana}
+academic_service: {en: Editorial and academic service, es: Actividad editorial y académica}
 conferences:      {en: Conference talks and posters, es: Comunicaciones en congresos}
 funding:          {en: Funding,                    es: Financiación}
 awards:           {en: Awards,                     es: Premios}
@@ -42,6 +45,13 @@ since:     {en: since,        es: desde}
 at_the:    {en: at the,       es: en el}
 in:        {en: in,           es: en}
 cosupervised: {en: co-supervised with, es: codirigido con}
+under_review: {en: Under review in,   es: En revisión en}
+pi:           {en: PI,                es: IP}
+budget:       {en: Budget,            es: Presupuesto}
+role:         {en: Role,              es: Función}
+phd_jury:     {en: PhD jury member,   es: Miembro de tribunal de tesis doctoral}
+phd_defence:  {en: PhD defence of,    es: defensa de}
+open_data:    {en: "Open data and code:", es: "Datos y código abiertos:"}
 talk:      {en: Talk,         es: Comunicación oral}
 poster:    {en: Poster,       es: Póster}
 invited:   {en: Invited talk, es: Conferencia invitada}

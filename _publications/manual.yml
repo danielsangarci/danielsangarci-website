@@ -71,10 +71,12 @@ ajustes:
     projects: [ant-community-ecology-donana]
   "10.64898/2026.10.08.756264":
     projects: [ant-community-ecology-donana]
+    note: "Under review in *Pest Management Science*"
   "10.1016/j.scitotenv.2024.170157":
     projects: [urban-heat-island-lasius]
   "10.64898/2025.12.02.691951":
     projects: [phd-thesis]
+    note: "Under review in *Current Zoology*"
     # Datos del preprint: la version v1.1 de Zenodo, la que corresponde a el
     data: "https://doi.org/10.5281/zenodo.17791600"
   # DOI general del repositorio de Zenodo (apunta siempre a la ultima

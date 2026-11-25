@@ -1,0 +1,10 @@
+# Divulgacion y ciencia ciudadana.
+# Campos: title, role, description, url (opcional), date, short, web
+# Traducciones: role_es, description_es.
+- title: Ant Hunters
+  role: Developer and coordinator
+  role_es: Desarrollador y coordinador
+  description: citizen science initiative for ant biodiversity monitoring
+  description_es: iniciativa de ciencia ciudadana para el seguimiento de la biodiversidad de hormigas
+  url: https://anthunters.github.io/en/
+  date: 2025

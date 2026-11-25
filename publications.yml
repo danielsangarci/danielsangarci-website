@@ -12,6 +12,7 @@
   pdf: https://www.biorxiv.org/content/biorxiv/early/2026/10/09/2026.10.08.756264.full.pdf
   data:
     - https://doi.org/10.5281/zenodo.23105816
+  note: Under review in <i>Pest Management Science</i>
   projects:
     - ant-community-ecology-donana
   oa: true
@@ -132,6 +133,7 @@
   doi: 10.64898/2025.12.02.691951
   data:
     - https://doi.org/10.5281/zenodo.17791600
+  note: Under review in <i>Current Zoology</i>
   projects:
     - phd-thesis
   oa: true

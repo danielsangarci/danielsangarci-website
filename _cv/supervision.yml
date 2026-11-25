@@ -1,34 +1,47 @@
 # Supervision de estudiantes (TFM, practicas, Erasmus...).
-# Campos: role, student, program (opcional), institution (opcional),
-#         cosupervisor (opcional), start, end (opcional; present si sigue),
+# Campos: role, at (opcional: donde estabas tu, va detras del rol),
+#         student, program (opcional), institution (opcional: la del
+#         estudiante), cosupervisor (opcional), start, end (opcional;
+#         present si sigue), hours (opcional: horas de practicas),
 #         short, web
-# Traducciones: role_es, program_es, institution_es, cosupervisor_es.
+# Traducciones: role_es, at_es, program_es, institution_es, cosupervisor_es.
 # Fechas como en el CVA: si el inicio no consta en documentos oficiales,
 # pon solo el anno (p. ej. start: 2026).
 - role: Master's thesis co-supervisor
   role_es: Codirección de Trabajo Fin de Máster
+  at: at Doñana Biological Station (EBD-CSIC)
+  at_es: en la Estación Biológica de Doñana (EBD-CSIC)
   student: Roi Santiago Paz
   program: MSc in Terrestrial Biodiversity
   program_es: Máster en Biodiversidad Terrestre
   institution: University of A Coruña
   institution_es: Universidade da Coruña
-  cosupervisor: Dr. Elena Angulo, Doñana Biological Station (EBD-CSIC)
-  cosupervisor_es: Dra. Elena Angulo, Estación Biológica de Doñana (EBD-CSIC)
+  cosupervisor: Dr. Elena Angulo
+  cosupervisor_es: Dra. Elena Angulo
   start: 2026
   end: present
 
 - role: Vocational training (FP) laboratory internship supervisor
   role_es: Tutor de prácticas de laboratorio de Formación Profesional (FP)
+  at: at Doñana Biological Station (EBD-CSIC)
+  at_es: en la Estación Biológica de Doñana (EBD-CSIC)
   student: Cristina Juárez Gómez
-  institution: Doñana Biological Station (EBD-CSIC)
-  institution_es: Estación Biológica de Doñana (EBD-CSIC)
-  start: 2026-01
-  end: 2026-02
+  program: Higher Technician in Chemistry and Environmental Health
+  program_es: Técnico Superior en Química y Salud Ambiental
+  institution: IES Alixar (Seville)
+  institution_es: IES Alixar (Sevilla)
+  start: 2026-01   # 19 Jan 2026
+  end: 2026-02     # 13 Feb 2026
+  hours: 140
 
 - role: Erasmus+ student supervisor
   role_es: Supervisión de estudiante Erasmus+
+  at: at Doñana Biological Station (EBD-CSIC)
+  at_es: en la Estación Biológica de Doñana (EBD-CSIC)
   student: Ardalan Mehranpour
-  institution: Doñana Biological Station (EBD-CSIC)
-  institution_es: Estación Biológica de Doñana (EBD-CSIC)
+  program: MSc in Biotechnologies for Food Science
+  program_es: Máster en Biotecnologías para la Ciencia de los Alimentos
+  institution: University of Padua
+  institution_es: Universidad de Padua
   start: 2025-05   # 19 May 2025
   end: 2025-07     # 30 Jul 2025

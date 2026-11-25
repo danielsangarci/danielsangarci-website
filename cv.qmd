@@ -59,9 +59,10 @@ cv_web_linea(web("stays"), "estancia")
 #| output: asis
 cv_web_tarjetas(c(
   lapply(web("funding"), function(e) cv_web_tarjeta(
-    "coins", paste("Funding ·", cv_periodo(e$start, e$end)),
-    sprintf("**%s** %s, %s (%s), %s. *%s*", e$name, e$code %||% "", e$funder,
-            e$funder_short %||% "", e$country, e$project %||% ""),
+    "coins", paste("Funding ·", cv_periodo(substr(e$start, 1, 4), substr(e$end %||% "", 1, 4))),
+    paste0(sprintf("**%s** %s, %s (%s), %s. *%s*", e$name, e$code %||% "", e$funder,
+                   e$funder_short %||% "", e$country, e$project %||% ""),
+           if (!is.null(e$extension)) paste0(" ", cv_punto(e$extension))),
     nota = e$amount
   )),
   lapply(web("awards"), function(e) cv_web_tarjeta(
@@ -71,6 +72,23 @@ cv_web_tarjetas(c(
 ))
 ```
 
+## Research projects
+
+```{r}
+#| output: asis
+hitos <- vapply(web("projects"), function(e) {
+  paste0("::: cv-hito\n",
+         "[", cv_periodo(e$start, e$end), "]{.cv-fecha}\n\n",
+         "[", e$title, "]{.cv-puesto}\n\n",
+         "[", sprintf("%s (%s), %s · PI: %s", e$funder, e$code, e$country, e$pi), "]{.cv-lugar}\n\n",
+         cv_punto(e$role), " Budget: ", e$amount, ".\n",
+         ":::\n")
+}, "")
+cat("::: cv-linea\n", paste(hitos, collapse = "\n"), ":::\n", sep = "")
+```
+
+For the projects I lead, see [Funding and awards](#funding-and-awards).
+
 ## Student supervision
 
 ```{r}
@@ -78,8 +96,8 @@ cv_web_tarjetas(c(
 hitos <- vapply(web("supervision"), function(e) {
   paste0("::: cv-hito\n",
          "[", cv_periodo(e$start, e$end, compacto = TRUE), "]{.cv-fecha}\n\n",
-         "[", e$role, "]{.cv-puesto}\n\n",
-         "[", paste(c(e$student, e$program, e$institution), collapse = " · "), "]{.cv-lugar}\n",
+         "[", paste(c(e$role, e$at), collapse = " "), "]{.cv-puesto}\n\n",
+         "[", paste(c(e$student, e$program, e$institution, if (!is.null(e$hours)) paste(e$hours, "h")), collapse = " · "), "]{.cv-lugar}\n",
          if (!is.null(e$cosupervisor)) paste0("\nCo-supervised with ", e$cosupervisor, ".\n") else "",
          ":::\n")
 }, "")
@@ -97,6 +115,15 @@ cv_web_tarjetas(lapply(web("software"), function(e) cv_web_tarjeta(
          if (!is.null(e$repository)) paste0(", ", e$repository), "."),
   nota = if (!is.null(e$doi)) sprintf("DOI: [%s](https://doi.org/%s)", e$doi, e$doi)
 )))
+```
+
+```{r}
+#| output: asis
+if (length(cv$profile$repositories)) {
+  cat("**Open data and code:** ",
+      paste(vapply(cv$profile$repositories, function(r) sprintf("[%s](%s)", r$name, r$url), ""),
+            collapse = " · "), "\n", sep = "")
+}
 ```
 
 ## Conference talks and posters
@@ -118,6 +145,24 @@ cv_web_tarjetas(list(
     cv_web_lista(vapply(web("organization"), function(e) {
       sprintf("%s (%s): %s", e$event, cv_periodo(e$date), tolower(e$role))
     }, ""))
+  ),
+  if (length(cv$editorial) || length(web("juries"))) cv_web_tarjeta(
+    "book-open-reader", "Editorial and academic service",
+    cv_web_lista(c(
+      vapply(cv_filtrar(cv$editorial, "web"), function(e) {
+        paste0(e$role, ", *", e$journal, "*", if (!is.null(e$description)) paste0(" (", e$description, ")"))
+      }, ""),
+      vapply(web("juries"), function(e) {
+        sprintf("PhD jury member: PhD defence of %s, %s (%s)", e$candidate, e$university, cv_periodo(e$date))
+      }, "")
+    ))
+  ),
+  if (length(web("outreach"))) cv_web_tarjeta(
+    "bullhorn", "Outreach and citizen science",
+    vapply(web("outreach"), function(e) {
+      nombre <- if (is.null(e$url)) e$title else sprintf("[%s](%s)", e$title, e$url)
+      cv_punto(sprintf("%s of **%s** (%s), a %s", e$role, nombre, cv_periodo(e$date), e$description))
+    }, "")
   ),
   if (length(cv$reviews)) cv_web_tarjeta(
     "eye", "Peer review",

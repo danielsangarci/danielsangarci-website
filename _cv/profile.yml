@@ -23,3 +23,10 @@ summary_web: >-
 origin:
   label: Teruel
   coords: [40.345688, -1.106435]
+
+# Repositorios de datos y codigo abiertos
+repositories:
+  - name: Zenodo
+    url: "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22S%C3%A1nchez-Garc%C3%ADa%2C%20Daniel%22&l=list&p=1&s=10&sort=bestmatch"
+  - name: figshare
+    url: https://figshare.com/authors/Daniel_S_nchez_Garc_a/17845226

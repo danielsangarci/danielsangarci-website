@@ -1,0 +1,68 @@
+# Proyectos de investigacion en los que participas (los que diriges como IP,
+# p. ej. PRELUDIUM, van en funding.yml).
+# Campos: title, funder, code, country, start, end, amount, pi, role,
+#         short, web
+# Traducciones: funder_es, role_es, amount_es (el titulo se deja en el idioma
+# original del proyecto).
+- title: Exploring microbiome variations in native and invasive ants across demographic and geographic scales
+  funder: CSIC
+  code: 202630E024
+  country: Spain
+  start: 2026-01
+  end: 2026-12
+  amount: 54,400 €
+  amount_es: 54.400 €
+  pi: Elena Angulo (EBD-CSIC)
+  role: Postdoctoral researcher, responsible for the microbiome analyses
+  role_es: Investigador postdoctoral, responsable de los análisis de microbioma
+
+- title: "Fas@inAnt - Ecosystem effects of the invasive Argentine ant: fauna and soil"
+  funder: Junta de Andalucía
+  code: PROYEXCEL_00688
+  country: Spain
+  start: 2022-12
+  end: 2025-12
+  amount: 174,650 €
+  amount_es: 174.650 €
+  pi: Elena Angulo (EBD-CSIC)
+  role: Postdoctoral researcher, responsible for the microbiome analyses
+  role_es: Investigador postdoctoral, responsable de los análisis de microbioma
+
+- title: "Invasion dynamics of the Argentine ant in Doñana: current status and factors affecting the invasion"
+  funder: Junta de Andalucía
+  code: QUAL21-020
+  country: Spain
+  start: 2024-10
+  end: 2025-12
+  amount: 6,181 €
+  amount_es: 6.181 €
+  pi: Daniela Ortiz   # falta la institucion
+  role: Postdoctoral researcher
+  role_es: Investigador postdoctoral
+
+- title: The effect of urbanization on ant phenology
+  funder: Polish National Agency for Academic Exchange (NAWA), Poland–Germany bilateral grant
+  funder_es: Agencia Nacional Polaca de Intercambio Académico (NAWA), programa bilateral Polonia–Alemania
+  code: PPN/BDE/2020/1/00016
+  country: Poland
+  start: 2020-01
+  end: 2022-12
+  amount: 7,640 €
+  amount_es: 7.640 €
+  pi: Gema Trigos-Peral (MIZ-PAS) and Juergen Heinze (University of Regensburg)
+  pi_es: Gema Trigos-Peral (MIZ-PAS) y Juergen Heinze (Universidad de Ratisbona)
+  role: Researcher
+  role_es: Investigador
+
+- title: Ongoing adaptations and coevolution in source and reintroduced populations of the obligate myrmecophilous butterfly *Maculinea teleius*
+  funder: National Science Centre (NCN)
+  funder_es: Centro Nacional de Ciencia (NCN)
+  code: 2018/31/B/NZ8/03476
+  country: Poland
+  start: 2019-07
+  end: 2024-07
+  amount: 1,246,649 PLN (≈ 294,500 €)
+  amount_es: 1.246.649 PLN (≈ 294.500 €)
+  pi: Magdalena Witek (MIZ-PAS)
+  role: PhD researcher (PhD thesis project)
+  role_es: Investigador predoctoral (proyecto de la tesis doctoral)

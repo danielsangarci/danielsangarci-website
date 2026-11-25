@@ -35,3 +35,20 @@ workshops:
     role: Invited participant
     role_es: Participante invitado
     date: 2025
+
+# Actividad editorial.
+# Campos: role, journal, description (opcional), since (opcional), short, web
+editorial:
+  - role: Associate Editor
+    role_es: Editor asociado
+    journal: Iberomyrmex
+    description: journal of the Iberian Association of Myrmecology, AIM
+    description_es: revista de la Asociación Ibérica de Mirmecología, AIM
+
+# Tribunales de tesis doctoral.
+# Campos: candidate, university, date, short, web
+juries:
+  - candidate: Verónica Castaño
+    university: University of Seville
+    university_es: Universidad de Sevilla
+    date: 2025

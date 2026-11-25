@@ -17,6 +17,10 @@
   awards         = c("title", "date"),
   software       = c("name", "title", "date"),
   supervision    = c("role", "student", "start"),
+  projects       = c("title", "funder", "start"),
+  outreach       = c("title", "date"),
+  editorial      = c("role", "journal"),
+  juries         = c("candidate", "university", "date"),
   organization   = c("event", "role", "date"),
   reviews        = c("journal", "count"),
   workshops      = c("title", "date"),
@@ -46,6 +50,8 @@ cv_leer <- function(dir = "_cv") {
     awards      = leer("awards.yml"),
     software    = leer("software.yml"),
     supervision = leer("supervision.yml"),
+    projects    = leer("projects.yml"),
+    outreach    = leer("outreach.yml"),
     memberships = leer("memberships.yml"),
     courses     = leer("courses.yml"),
     references  = leer("references.yml"),
@@ -57,6 +63,8 @@ cv_leer <- function(dir = "_cv") {
   cv$organization <- servicio$organization
   cv$reviews      <- servicio$reviews
   cv$workshops    <- servicio$workshops
+  cv$editorial    <- servicio$editorial
+  cv$juries       <- servicio$juries
 
   for (seccion in names(.cv_obligatorios)) {
     cv[[seccion]] <- .cv_comprobar(cv[[seccion]], seccion, .cv_obligatorios[[seccion]])
@@ -114,7 +122,10 @@ cv_leer <- function(dir = "_cv") {
   internships  = c("title", "description"),
   funding      = c("name", "project"),
   awards       = c("title", "context"),
-  supervision  = c("role"),
+  supervision  = c("role", "at"),
+  projects     = c("role"),
+  outreach     = c("role", "description"),
+  editorial    = c("role"),
   organization = c("role"),
   workshops    = c("role", "description"),
   memberships  = c("role"),
@@ -255,10 +266,12 @@ cv_lugar <- function(e, formato = c("pdf", "web")) {
   else sprintf("%s · %s, %s", org, e$city, e$country)
 }
 
+# Una descripcion puede ser un texto o una lista de textos: en el PDF, cada
+# elemento de la lista es un punto; en la web, un parrafo.
 cv_descripcion <- function(e, formato = c("pdf", "web")) {
   formato <- match.arg(formato)
-  if (formato == "web") e$description_web %||% e$description %||% ""
-  else e$description %||% ""
+  x <- if (formato == "web") e$description_web %||% e$description %||% "" else e$description %||% ""
+  as.character(unlist(x))
 }
 
 # Markdown sencillo (*cursiva*, **negrita**, [texto](url)) a LaTeX
@@ -276,6 +289,7 @@ cv_md_latex <- function(x) {
 # Supervision: "Estudiante, programa, institucion; co-supervised with X"
 cv_supervision_detalle <- function(e) {
   texto <- paste(c(e$student, e$program, e$institution), collapse = ", ")
+  if (!is.null(e$hours)) texto <- paste0(texto, ", ", e$hours, " h")
   if (!is.null(e$cosupervisor)) {
     texto <- paste0(texto, "; ", cv_texto_o("cosupervised", "co-supervised with"), " ", e$cosupervisor)
   }
@@ -311,6 +325,14 @@ cv_bib_publicaciones <- function(publicaciones_yml, salida) {
       titulo <- gsub("<i>([^<]+)</i>", "{\\\\textit{\\1}}", titulo)
       titulo <- gsub("\\s+", " ", titulo)
       b <- sub("title = \\{[^\n]*\\},", paste0("title = {", gsub("\\\\", "\\\\\\\\", titulo), "},"), b)
+    }
+    # Nota de estado (p. ej. "Under review in *Journal*"), de manual.yml
+    if (!is.null(p$note)) {
+      nota <- gsub("<i>([^<]+)</i>", "\\\\textit{\\1}", p$note)
+      nota <- gsub("<[^>]+>", "", nota)
+      nota <- sub("^Under review in", cv_texto_o("under_review", "Under review in"), nota)
+      # annote: el campo que el estilo apa-cv.csl muestra bajo la referencia
+      b <- paste0(sub("\n}$", "", b), ",\n  annote = {", nota, "}\n}")
     }
     # Titulo entre llaves dobles: el estilo APA pasa los titulos a minusculas
     # ("donana", "yangambi"...); asi se respetan tal cual se publicaron
@@ -355,7 +377,7 @@ cv_web_linea <- function(entradas, tipo = c("puesto", "estancia")) {
       puesto <- e$title
       lugar <- cv_lugar(e, "web")
     }
-    desc <- cv_descripcion(e, "web")
+    desc <- paste(cv_descripcion(e, "web"), collapse = "\n\n")
     paste0("::: cv-hito\n",
            "[", cv_periodo(e$start, e$end), "]{.cv-fecha}\n\n",
            "[", puesto, "]{.cv-puesto}\n\n",
