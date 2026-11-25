@@ -615,7 +615,9 @@
       {\entrypositionstyle{#3} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+    % Descripcion alineada arriba (p, no m): centrada en vertical, una
+    % descripcion de una sola linea bajaba hacia la entrada siguiente.
+    \multicolumn{2}{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
 

@@ -18,23 +18,14 @@
   start: 2025-09
   end: 2026-06
   # Sin coords: es un master online, no sale en el mapa del PDF.
-  # Varias frases en lista: cada una es un punto en el PDF
-  description:
-    - >-
-      Official 60 ECTS master's degree (Máster Universitario) required to teach
-      in secondary schools in Spain.
-    - >-
-      Master's thesis (Thesis grade: 8.7/10): Inquiry-based learning through
-      myrmecology: applying the AntHunters project in 4th-year secondary school
-      Biology and Geology.
-  description_es:
-    - >-
-      Máster oficial de 60 ECTS que habilita para la docencia en Educación
-      Secundaria.
-    - >-
-      TFM (nota: 8,7/10): Aprendizaje basado en indagación a través de la
-      mirmecología: aplicación del proyecto AntHunters en la materia de Biología
-      y Geología de 4º de la ESO.
+  description: >-
+    Master's thesis (Thesis grade: 8.7/10): Inquiry-based learning through
+    myrmecology: applying the AntHunters project to Biology and Geology
+    teaching in the fourth year of secondary school.
+  description_es: >-
+    TFM (nota: 8,7/10): Aprendizaje basado en indagación a través de la
+    mirmecología: aplicación del proyecto AntHunters en la materia de Biología
+    y Geología de 4º de la ESO.
 
 - title: PhD in Biology
   title_es: Doctorado en Biología
